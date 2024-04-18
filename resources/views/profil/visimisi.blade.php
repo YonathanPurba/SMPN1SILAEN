@@ -23,7 +23,7 @@
             <div class="col-12">
                 <div class="page-content">
                     <h4>Visi</h4>
-                    <p>SMPN 1 SILAEN ADALAH dsadad</p>
+                    <p>SMPN 1 SILAEN ADALAH contoh</p>
                 </div>
             </div>
         </div>
