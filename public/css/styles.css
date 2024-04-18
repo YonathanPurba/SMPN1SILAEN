@@ -1,0 +1,23 @@
+.card-body  {
+
+    display: flex;
+    align-items: center;
+    gap: 100px; 
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.hero-area bg-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-overlay-2by5::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ubah alpha (0.5) untuk mengatur kekeruhan overlay */
+}
