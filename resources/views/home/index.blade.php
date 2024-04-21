@@ -16,7 +16,6 @@
   }
 </style>
 
-    </ztyle>
 </head>
 <body>
     @extends('layouts.frontend.app',[

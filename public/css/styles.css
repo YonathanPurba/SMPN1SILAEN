@@ -21,3 +21,12 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Ubah alpha (0.5) untuk mengatur kekeruhan overlay */
 }
+
+.page-content {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+}
+
+.page-content p {
+    margin: 0; /* Remove default paragraph margins */
+}
