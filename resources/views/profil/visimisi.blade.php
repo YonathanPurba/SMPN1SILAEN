@@ -23,7 +23,7 @@
             <div class="col-12">
                 <div class="page-content">
                     <h4>Visi</h4>
-                    <p>SMPN 1 SILAEN ADALAH contoh</p>
+                    <p>Terwujudnya Sekolah Berkualitas, Berkarakter dan Berwawasan Lingkungan</p>
                 </div>
             </div>
         </div>
@@ -35,7 +35,12 @@
             <div class="col-12">
                 <div class="page-content">
                     <h4>Misi</h4>
-                    <p>SMPN 1 SILAEN ADALAH</p>
+                    <p>1. Mengoptimalkan pembelajaran dan bimbingan belajar secara efektif </br>
+                       2. Menanamkan disiplin yang tinggi demi kekondusifan sekolah </br>
+                       3. Menerapkan manajemen partisipatif sesuai MBS
+                       4. Menciptakan lingkungan yang nyaman dan ASRI
+                       5. Meningkatkan profesionalisme personal sekolah dan kemandirian sekolah 
+                    </p>
                 </div>
             </div>
         </div>

@@ -13,6 +13,7 @@
   justify-content: center;
 }
 
+<<<<<<< HEAD
 .imgcntn .item {
   padding: 10px; /* Jarak antara konten dan garis kotak */
   margin: 10px; /* Jarak antara kotak */
@@ -63,6 +64,8 @@ h3{
     z-index: -1;
 }
     </style>
+=======
+>>>>>>> c3ca3d377a9a2f29f5705a8eb02e5e76aac3397a
 </head>
 <body>
     @extends('layouts.frontend.app',[
