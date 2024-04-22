@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
-                    <h3>List Artikel</h3>
+                    <h3>Galeri SMPN1 SIlaen</h3>
                 </div>
             </div>
         </div>

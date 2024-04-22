@@ -13,7 +13,6 @@
   justify-content: center;
 }
 
-<<<<<<< HEAD
 .imgcntn .item {
   padding: 10px; /* Jarak antara konten dan garis kotak */
   margin: 10px; /* Jarak antara kotak */
@@ -64,8 +63,6 @@ h3{
     z-index: -1;
 }
     </style>
-=======
->>>>>>> c3ca3d377a9a2f29f5705a8eb02e5e76aac3397a
 </head>
 <body>
     @extends('layouts.frontend.app',[
@@ -130,7 +127,6 @@ h3{
     <h3>Temukan Kami disini</h3>
     <p class="mapp">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat omnis repudiandae neque esse modi beatae similique nemo odit, explicabo vitae ea incidunt. Maiores adipisci atque velit quam quisquam error facilis tenetur tempora distinctio nisi blanditiis reprehenderit ipsum, ratione molestiae officia beatae sequi voluptatum deleniti quas, quis ea architecto. Iure, tempore?</p>
     <iframe class="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65312299.05611945!2d99.20158100240317!3d2.3904453807262036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1713237782551!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <img class="shadow" src="img/picture/bg2.png" alt="bg">
 </section>
 
 
