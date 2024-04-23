@@ -8,5 +8,10 @@ class FasilitasController extends Controller
 {
     public function index()
     {
-    	return view('fasilitas.index');
-    }   }
+        if (!view()->exists('fasilitas.index')) {
+            return response()->view('errors.404', [], 404);
+        }
+        
+        return view('fasilitas.index');
+    }
+}

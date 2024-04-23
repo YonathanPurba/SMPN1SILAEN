@@ -30,7 +30,7 @@
         <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('visimisi') }}">Visi Misi</a>
         <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('tenagapengajar') }}">Tenaga Pengajar</a>
         <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('ekstrakurikuler') }}">Ekstrakurikuler</a>
-        <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('about') }}"></a>
+        <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('contoh') }}">Contoh</a>
     </div>
 </li>                   <li><a href="{{ route('pengumuman') }}" class="{{ Request::segment(1) == 'pengumuman' ? 'text-primary' : '' }}">Pengumuman</a></li>
 

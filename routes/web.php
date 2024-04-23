@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\UsersController;
 //Controllers Namespace
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\ContohController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\PengumumanController;
@@ -52,6 +53,9 @@ Route::get('/prestasi',[PrestasiController::class,'index'])->name('prestasi');
 
 //Fasilitas
 Route::get('/fasilitas',[FasilitasController::class,'index'])->name('fasilitas');
+
+//Contoh
+Route::get('/contoh',[ContohController::class,'contoh'])->name('contoh');
 
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
