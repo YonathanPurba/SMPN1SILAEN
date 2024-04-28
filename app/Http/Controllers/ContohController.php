@@ -8,6 +8,6 @@ class ContohController extends Controller
 {
     public function contoh()
     {
-        abort(500);
+        abort(419);
     }   
 }

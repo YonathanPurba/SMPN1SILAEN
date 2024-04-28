@@ -54,7 +54,6 @@ class Handler extends ExceptionHandler
         return response()->view('errors.500', [], 500);
     }
 
-    // Tambahkan penanganan untuk semua pengecualian yang tidak tertangkap
     return $this->renderHttpException($exception);
 }
 
