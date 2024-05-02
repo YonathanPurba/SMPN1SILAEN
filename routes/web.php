@@ -43,6 +43,9 @@ Route::get('/artikel/search',[ArtikelController::class,'search'])->name('artikel
 
 Route::get('/artikel/{artikel:slug}',[ArtikelController::class,'show'])->name('artikel.show');
 
+
+//search 
+
 //Pengumuman
 Route::get('/pengumuman',[PengumumanController::class,'index'])->name('pengumuman');
 Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])->name('pengumuman.show');
