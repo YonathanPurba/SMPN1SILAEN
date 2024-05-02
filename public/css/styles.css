@@ -19,15 +19,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
     background-color: rgba(0, 0, 0, 0.5);
 }
 :root {
     --primary: #9486ef;
   }
-=======
-    background-color: rgba(0, 0, 0, 0.5); /* Ubah alpha (0.5) untuk mengatur kekeruhan overlay */
-}
 
 .page-content {
     display: flex;
@@ -37,4 +33,3 @@
 .page-content p {
     margin: 0; /* Remove default paragraph margins */
 }
->>>>>>> c3ca3d377a9a2f29f5705a8eb02e5e76aac3397a

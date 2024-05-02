@@ -104,7 +104,7 @@ h3{
     </div>
   </div>
 
-<div class="regular-page-area section-padding-10 mt-5 mb-4 b" style="background-color: #E68c3a">
+  <div class="regular-page-area section-padding-10 mt-5 mb-4 b" style="background-color: #3498db">
     <div class="col-lg-7 mx-auto">
        
             <div class="card-body d-flex align-items-center "> <!-- Menggunakan flexbox untuk penempatan bersebelahan -->
