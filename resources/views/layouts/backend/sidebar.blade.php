@@ -71,6 +71,14 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('tenagapengajar.index') }}" class="nav-link {{ Request::segment(2) == 'tenagapengajar' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-list"></i>
+            <p>
+              Tenaga Pengajar
+            </p>
+          </a>
+        </li>
 
         <li class="nav-header">PENGATURAN</li>
         <li class="nav-item">

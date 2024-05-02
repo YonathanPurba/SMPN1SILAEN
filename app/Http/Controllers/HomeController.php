@@ -19,7 +19,6 @@ class HomeController extends Controller
         }
         
         return view('home.index', [
-            'agenda' => Agenda::latest()->take(2)->get(),
             'artikel' => Artikel::with(['user','kategoriArtikel'])->latest()->take(2)->get(),
             'pengumuman' => Pengumuman::with(['user'])->latest()->take(2)->get(),
         ]);
