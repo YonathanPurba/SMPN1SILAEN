@@ -29,7 +29,7 @@
 						<input required="" class="form-control" type="" name="alamat" id="alamat" placeholder="">
 					</div>
                     <div class="form-group">
-						<label for="notelepon">No Telepon</label>
+						<label for="notelepon">No Telepone</label>
 						<input required="" class="form-control" type="" name="notelepon" id="notelepon" placeholder="">
 					</div>
                     <div class="col-lg-6">

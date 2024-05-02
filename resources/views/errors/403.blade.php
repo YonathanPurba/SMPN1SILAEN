@@ -4,9 +4,9 @@
     <title>403 Forbidden</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #333;
+            color: #fff;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,16 +17,22 @@
 
         .error-container {
             text-align: center;
+            padding: 40px;
+            background-color: #444;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 48px;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         p {
-            font-size: 18px;
-            color: #666;
+            font-size: 24px;
+            color: #ccc;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>

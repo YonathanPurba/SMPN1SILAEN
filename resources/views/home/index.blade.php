@@ -75,14 +75,14 @@ h3{
             <div class="col-12">                
                 <div class="hero-content text-center">
                     <h2 id="typing-text"></h2>
-                    <a href="#" class="btn clever-btn">Lihat Selengkapnya</a>
+                    <a href="#" class="btn clever-btn" onclick="scrollToClass('.regular-page-area')">Lihat Selengkapnya</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<h3>SMP N1 SILAEN</h3>
+<h3><center>Pengenalan</h3>
 <div class="content">
     <div class="imgcntn">
         <div class="item">
@@ -118,6 +118,14 @@ h3{
                     
                     <p style="color:aliceblue;font-weight:300;width:400px">Puji dan Syukur Kehadirat Tuhan Yang Maha Esa karena rahmatNyalah yang masih menyertai kita. Salam sejahtera untuk seluruh pengunjung website SMP N 1 Silaen. Kami sangat gembira menyambut Anda di sini, tempat di mana kami berbagi informasi terkini seputar kegiatan pendidikan dan pengembangan di sekolah kami.</p>
                 </div>
+                <script>
+                function scrollToClass(className) {
+                    var element = document.querySelector(className);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            </script>
             </div>
         </div>
     </div>

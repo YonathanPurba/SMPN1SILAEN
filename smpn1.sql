@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD:laravel.sql
 -- Waktu pembuatan: 26 Apr 2024 pada 15.40
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
+=======
+-- Generation Time: Apr 26, 2024 at 11:38 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+>>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +24,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel`
+-- Database: `smpn1`
 --
 
 -- --------------------------------------------------------
@@ -59,6 +65,13 @@ CREATE TABLE `artikel` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `artikel`
+--
+
+INSERT INTO `artikel` (`id`, `judul`, `slug`, `deskripsi`, `thumbnail`, `user_id`, `kategori_artikel_id`, `created_at`, `updated_at`) VALUES
+(3, 'Contoh', 'contoh', '<p>O</p>\n', 'TQkddZjZuorang ganteng.jpg', 3, 3, '2024-04-22 01:30:18', '2024-04-22 01:30:18');
 
 -- --------------------------------------------------------
 
@@ -104,6 +117,13 @@ CREATE TABLE `kategori_artikel` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kategori_artikel`
+--
+
+INSERT INTO `kategori_artikel` (`id`, `nama_kategori`, `slug`, `created_at`, `updated_at`) VALUES
+(3, 'Contoh', 'contoh', '2024-04-22 01:30:06', '2024-04-22 01:30:06');
 
 -- --------------------------------------------------------
 
@@ -180,11 +200,19 @@ CREATE TABLE `pengumuman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+<<<<<<< HEAD:laravel.sql
 -- Dumping data untuk tabel `pengumuman`
 --
 
 INSERT INTO `pengumuman` (`id`, `judul`, `deskripsi`, `tgl`, `slug`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'PMB', '<p>Contoh</p>', '2024-04-25', 'pmb', 1, '2024-04-25 01:36:53', '2024-04-25 01:36:53');
+=======
+-- Dumping data for table `pengumuman`
+--
+
+INSERT INTO `pengumuman` (`id`, `judul`, `deskripsi`, `tgl`, `slug`, `user_id`, `created_at`, `updated_at`) VALUES
+(3, 'Contoh', '<p>123</p>', '2024-04-25', 'contoh', 3, '2024-04-25 01:34:22', '2024-04-25 01:34:22');
+>>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 -- --------------------------------------------------------
 
@@ -237,7 +265,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `created_at`, `updated_at`) VALUES
+<<<<<<< HEAD:laravel.sql
 (1, 'Andika', 'andikatampubolon72@gmail.com', NULL, '$2y$10$Aqmq/aOItQHm9IDbL2ZcR.3n19ZNz9fCIBdIWOLe/G29O9LP9CDYG', NULL, NULL, NULL, NULL, NULL);
+=======
+(3, 'Yonathan Purba', 'yonathanpurba@yahoo.com', NULL, '$2y$10$H250u3SChrADlaYW4AxgAeHxQ9AZcG70V3oxmmY8yHU//3SxK/Sbi', NULL, NULL, NULL, NULL, '2024-04-23 16:14:16'),
+(1232, 'contoh', 'contoh@gmail.com', NULL, '$2y$10$CRJ3sfmMCOo3yh00nOzZguZay9yzov7tSwGGpURGTW1b7wSyxgVAW', NULL, NULL, NULL, '2024-04-10 04:43:56', '2024-04-10 04:43:56'),
+(1240, 'YONATHAN', 'YONATHAN@YAHOO.COM', NULL, '$2y$10$AsvIz/wfzypyne/Nznh7neYN1pkV0QvGemi3qs2tdQTBGicxRi7mG', NULL, NULL, NULL, '2024-04-25 01:33:47', '2024-04-25 01:33:47');
+>>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 --
 -- Indexes for dumped tables
@@ -325,7 +359,11 @@ ALTER TABLE `agenda`
 -- AUTO_INCREMENT untuk tabel `artikel`
 --
 ALTER TABLE `artikel`
+<<<<<<< HEAD:laravel.sql
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 --
 -- AUTO_INCREMENT untuk tabel `banners`
@@ -343,7 +381,11 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `kategori_artikel`
 --
 ALTER TABLE `kategori_artikel`
+<<<<<<< HEAD:laravel.sql
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -361,7 +403,7 @@ ALTER TABLE `navbars`
 -- AUTO_INCREMENT untuk tabel `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tenagapengajar`
@@ -373,7 +415,11 @@ ALTER TABLE `tenagapengajar`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD:laravel.sql
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1241;
+>>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

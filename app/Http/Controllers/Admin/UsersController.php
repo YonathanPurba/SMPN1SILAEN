@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Models\User;
 
@@ -36,12 +37,43 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $request->request->add(['password' => bcrypt($request->password)]);
-        User::create($request->all());
-        return redirect()->route('admin.users.index')->with('success','Data berhasil ditambah');
-    }
+    
+
+     
+     public function store(Request $request)
+     {
+         // Membuat aturan validasi
+         $rules = [
+             'email' => 'required|email',
+             'password' => 'required|string|min:8',
+         ];
+     
+         // Membuat pesan kustom untuk validasi
+         $customMessages = [
+             'email.required' => 'Email harus diisi.',
+             'email.email' => 'Format email tidak valid.',
+             'password.required' => 'Password harus diisi.',
+             'password.string' => 'Password harus berupa teks.',
+             'password.min' => 'Password harus terdiri dari minimal 8 karakter.',
+         ];
+     
+         // Melakukan validasi
+         $validator = Validator::make($request->all(), $rules, $customMessages);
+     
+         // Jika validasi gagal, kembali ke halaman sebelumnya dengan pesan kesalahan
+         if ($validator->fails()) {
+             return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Validasi tidak berhasil. Silakan periksa kembali isian Anda.');
+         }
+     
+         // Jika validasi berhasil, lanjutkan dengan menyimpan data
+         $request->request->add(['password' => bcrypt($request->password)]);
+         User::create($request->all());
+         
+         // Redirect ke halaman yang ditentukan dengan pesan sukses
+         return redirect()->route('admin.users.index')->with('success', 'Data berhasil ditambah.');
+     }
+     
+
 
     /**
      * Display the specified resource.
