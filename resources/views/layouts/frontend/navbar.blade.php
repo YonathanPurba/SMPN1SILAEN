@@ -21,29 +21,6 @@
 
                 <!-- Nav Start -->
                 <div class="classynav">
-                    <style>
-                        .classynav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-.classynav ul li {
-    margin: 0 10px; /* Sesuaikan jarak antar elemen */
-}
-
-.classynav ul li a {
-    text-decoration: none;
-    color: #000; /* Sesuaikan warna teks */
-    padding: 10px 15px; /* Sesuaikan padding */
-    display: block;
-}
-
-.classynav ul li a:hover {
-    color: #007bff; /* Warna teks saat dihover */
-}
-
-                    </style>
                     <ul>
                         <li><a href="/" class="{{ Request::is('/') || Request::is('home') ? 'text-primary' : '' }}">Home</a></li>
                         <li>
