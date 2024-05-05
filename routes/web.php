@@ -61,9 +61,6 @@ Route::get('/prestasi',[PrestasiController::class,'index'])->name('prestasi');
 //Fasilitas
 Route::get('/fasilitas',[FasilitasController::class,'index'])->name('fasilitas');
 
-//Contoh
-Route::get('/contoh',[ContohController::class,'contoh'])->name('contoh');
-
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
 Route::get('/identitas',[ProfilController::class,'identitas'])->name('identitas');
