@@ -37,10 +37,10 @@ class TenagaPengajarController extends Controller
     
          $pengajar->save();
     
-        return redirect('')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+        return redirect('tenagapengajar.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
 }
 
-public function update(Request $request, $id)
+public function edit(Request $request, $id)
 {
     $update = TenagaPengajar::find($id);
 
@@ -64,7 +64,7 @@ public function update(Request $request, $id)
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect('admin.tenagapengajar.index');
+    return redirect('tenagapengajar.index');
 }
 
 public function delete($pengajar)
@@ -78,5 +78,11 @@ public function delete($pengajar)
     public function create()
         {
             return view('tenagapengajar.create');
+        }
+
+        public function update($id)
+        {
+            $pengajar = TenagaPengajar::find($id);
+            return view('tenagapengajar.edit', compact('pengajar'));
         }
 }

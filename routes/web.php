@@ -70,8 +70,7 @@ Route::get('tenagapengajar/create', [TenagaPengajarController::class, 'create'])
 Route::get('tenagapengajar.index/delete/{id}', [TenagaPengajarController::class, 'delete']);
 Route::post('tenagapengajar', [TenagaPengajarController::class, 'store'])->name('tenagapengajar.store');
 Route::get('/tenagapengajar.index', 'TenagaPengajarController@index')->name('tenagapengajar.index');
-Route::get('/admin.tenagapengajar.edit/edit/{id}', [TenagaPengajarController::class, 'update']);
-
+Route::get('/tenagapengajar/edit/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit');
 
 //Admin
 Route::group(['namespace' => 'Admin','prefix' => 'admin','middleware' => ['auth']],function(){

@@ -45,7 +45,7 @@
 				  <td>{{ $pengajars->notelepon }}</td>
 				  <td>
 					<div class="row ml-2">
-						<a href="/admin.tenagapengajar.edit/edit/{{ $pengajars->id_tenagapengajar }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<a href="/tenagapengajar/edit/edit/{{ $pengajars->id_tenagapengajar }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
 						<a class="btn btn-danger btn-sm ml-2 "onclick="return confirm('Apakah anda yakin ingin menghapusnya?')" href="tenagapengajar.index/delete/{{$pengajars->id_tenagapengajar}}"><i class=" fas fa-trash fa-fw"></i></a>
 					</div>
 				  </td>
