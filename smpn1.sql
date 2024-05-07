@@ -3,15 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD:laravel.sql
--- Waktu pembuatan: 26 Apr 2024 pada 15.40
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
-=======
--- Generation Time: Apr 26, 2024 at 11:38 AM
+-- Generation Time: May 05, 2024 at 05:10 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
->>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `agenda`
+-- Table structure for table `agenda`
 --
 
 CREATE TABLE `agenda` (
@@ -51,7 +45,7 @@ CREATE TABLE `agenda` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `artikel`
+-- Table structure for table `artikel`
 --
 
 CREATE TABLE `artikel` (
@@ -66,17 +60,10 @@ CREATE TABLE `artikel` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `artikel`
---
-
-INSERT INTO `artikel` (`id`, `judul`, `slug`, `deskripsi`, `thumbnail`, `user_id`, `kategori_artikel_id`, `created_at`, `updated_at`) VALUES
-(3, 'Contoh', 'contoh', '<p>O</p>\n', 'TQkddZjZuorang ganteng.jpg', 3, 3, '2024-04-22 01:30:18', '2024-04-22 01:30:18');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `banners`
+-- Table structure for table `banners`
 --
 
 CREATE TABLE `banners` (
@@ -91,7 +78,7 @@ CREATE TABLE `banners` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -107,7 +94,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori_artikel`
+-- Table structure for table `kategori_artikel`
 --
 
 CREATE TABLE `kategori_artikel` (
@@ -128,7 +115,7 @@ INSERT INTO `kategori_artikel` (`id`, `nama_kategori`, `slug`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -138,27 +125,25 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(28, '2024_04_22_084001_create_tenagapengajar_table', 2),
-(100, '2014_10_12_000000_create_users_table', 3),
-(101, '2014_10_12_100000_create_password_resets_table', 3),
-(102, '2014_10_12_200000_add_two_factor_columns_to_users_table', 3),
-(103, '2019_08_19_000000_create_failed_jobs_table', 3),
-(104, '2021_03_11_230713_create_pengumuman_table', 3),
-(105, '2021_03_11_230723_create_agenda_table', 3),
-(106, '2021_03_12_170942_create_artikel_table', 3),
-(107, '2021_03_12_170959_create_kategori_artikel_table', 3),
-(108, '2021_03_12_171751_create_banners_table', 3),
-(109, '2021_03_12_172043_create_navbars_table', 3),
-(110, '2024_04_24_032916_create_tenagapengajar_table', 3);
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
+(4, '2019_08_19_000000_create_failed_jobs_table', 1),
+(5, '2021_03_11_230713_create_pengumuman_table', 1),
+(6, '2021_03_11_230723_create_agenda_table', 1),
+(7, '2021_03_12_170942_create_artikel_table', 1),
+(8, '2021_03_12_170959_create_kategori_artikel_table', 1),
+(9, '2021_03_12_171751_create_banners_table', 1),
+(10, '2021_03_12_172043_create_navbars_table', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `navbars`
+-- Table structure for table `navbars`
 --
 
 CREATE TABLE `navbars` (
@@ -173,7 +158,7 @@ CREATE TABLE `navbars` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -185,7 +170,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengumuman`
+-- Table structure for table `pengumuman`
 --
 
 CREATE TABLE `pengumuman` (
@@ -200,51 +185,16 @@ CREATE TABLE `pengumuman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
-<<<<<<< HEAD:laravel.sql
--- Dumping data untuk tabel `pengumuman`
---
-
-INSERT INTO `pengumuman` (`id`, `judul`, `deskripsi`, `tgl`, `slug`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'PMB', '<p>Contoh</p>', '2024-04-25', 'pmb', 1, '2024-04-25 01:36:53', '2024-04-25 01:36:53');
-=======
 -- Dumping data for table `pengumuman`
 --
 
 INSERT INTO `pengumuman` (`id`, `judul`, `deskripsi`, `tgl`, `slug`, `user_id`, `created_at`, `updated_at`) VALUES
 (3, 'Contoh', '<p>123</p>', '2024-04-25', 'contoh', 3, '2024-04-25 01:34:22', '2024-04-25 01:34:22');
->>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tenagapengajar`
---
-
-CREATE TABLE `tenagapengajar` (
-  `id_tenagapengajar` int(10) UNSIGNED NOT NULL,
-  `nama_tenagapengajar` varchar(255) NOT NULL,
-  `jabatan` varchar(255) NOT NULL,
-  `nip` varchar(255) NOT NULL,
-  `alamat` varchar(255) NOT NULL,
-  `notelepon` varchar(255) NOT NULL,
-  `gambar_tenagapengajar` varchar(255) NOT NULL,
-  `created_by` varchar(255) NOT NULL,
-  `update_by` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `tenagapengajar`
---
-
-INSERT INTO `tenagapengajar` (`id_tenagapengajar`, `nama_tenagapengajar`, `jabatan`, `nip`, `alamat`, `notelepon`, `gambar_tenagapengajar`, `created_by`, `update_by`, `created_at`, `updated_at`) VALUES
-(2, 'Andika', 'Guru', '13123543', 'Balige', '02020202', '', '', '', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -261,165 +211,137 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `created_at`, `updated_at`) VALUES
-<<<<<<< HEAD:laravel.sql
-(1, 'Andika', 'andikatampubolon72@gmail.com', NULL, '$2y$10$Aqmq/aOItQHm9IDbL2ZcR.3n19ZNz9fCIBdIWOLe/G29O9LP9CDYG', NULL, NULL, NULL, NULL, NULL);
-=======
 (3, 'Yonathan Purba', 'yonathanpurba@yahoo.com', NULL, '$2y$10$H250u3SChrADlaYW4AxgAeHxQ9AZcG70V3oxmmY8yHU//3SxK/Sbi', NULL, NULL, NULL, NULL, '2024-04-23 16:14:16'),
 (1232, 'contoh', 'contoh@gmail.com', NULL, '$2y$10$CRJ3sfmMCOo3yh00nOzZguZay9yzov7tSwGGpURGTW1b7wSyxgVAW', NULL, NULL, NULL, '2024-04-10 04:43:56', '2024-04-10 04:43:56'),
 (1240, 'YONATHAN', 'YONATHAN@YAHOO.COM', NULL, '$2y$10$AsvIz/wfzypyne/Nznh7neYN1pkV0QvGemi3qs2tdQTBGicxRi7mG', NULL, NULL, NULL, '2024-04-25 01:33:47', '2024-04-25 01:33:47');
->>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `agenda`
+-- Indexes for table `agenda`
 --
 ALTER TABLE `agenda`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `artikel`
+-- Indexes for table `artikel`
 --
 ALTER TABLE `artikel`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `banners`
+-- Indexes for table `banners`
 --
 ALTER TABLE `banners`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indeks untuk tabel `kategori_artikel`
+-- Indexes for table `kategori_artikel`
 --
 ALTER TABLE `kategori_artikel`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `navbars`
+-- Indexes for table `navbars`
 --
 ALTER TABLE `navbars`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indeks untuk tabel `pengumuman`
+-- Indexes for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tenagapengajar`
---
-ALTER TABLE `tenagapengajar`
-  ADD PRIMARY KEY (`id_tenagapengajar`);
-
---
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `agenda`
+-- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `artikel`
+-- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-<<<<<<< HEAD:laravel.sql
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-=======
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
->>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 --
--- AUTO_INCREMENT untuk tabel `banners`
+-- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori_artikel`
+-- AUTO_INCREMENT for table `kategori_artikel`
 --
 ALTER TABLE `kategori_artikel`
-<<<<<<< HEAD:laravel.sql
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-=======
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
->>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `navbars`
+-- AUTO_INCREMENT for table `navbars`
 --
 ALTER TABLE `navbars`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `pengumuman`
+-- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tenagapengajar`
---
-ALTER TABLE `tenagapengajar`
-  MODIFY `id_tenagapengajar` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-<<<<<<< HEAD:laravel.sql
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-=======
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1241;
->>>>>>> dd2437addbae4c509d7da310a7816cb386e0e2e9:smpn1.sql
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
