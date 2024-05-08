@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <footer class="footer-area" style="background-color: #429ebd; color: ">
+    <footer class="footer-area" style="background-color: #429ebd; color:0">
         <!-- Top Footer Area -->
         <div class="container"><br>
             <div class="row">
@@ -46,14 +46,18 @@
                             <a href="/" class="text-light hover-underline animate__animated animate__fadeInLeft">Home</a>
                         </li>
                         <li class="mb-2">
+                            <a href="/pengumuman" class="text-light hover-underline animate__animated animate__fadeInLeft">Pengumuman</a>
+                        </li>
+                        <li class="mb-2">
                             <a href="/prestasi" class="text-light hover-underline animate__animated animate__fadeInLeft">Prestasi</a>
                         </li>
                         <li class="mb-2">
-                            <a href="/pengumuman" class="text-light hover-underline animate__animated animate__fadeInLeft">Pengumuman</a>
-                        </li>
-                        <li>
                             <a href="/fasilitas" class="text-light hover-underline animate__animated animate__fadeInLeft">Fasilitas</a>
                         </li>
+                        <li class="mb-2">
+                            <a href="/artikel" class="text-light hover-underline animate__animated animate__fadeInLeft">Galeri</a>
+                        </li>
+
                     </ul>
                 </div>
                 <div class="col-md-4">
