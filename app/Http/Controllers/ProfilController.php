@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TenagaPengajar;
 use Illuminate\Support\Facades\View; // Import the View facade
 
 class ProfilController extends Controller
@@ -36,8 +37,8 @@ class ProfilController extends Controller
             // If the view file doesn't exist, return a 404 error view
             return response()->view('errors.404', [], 404);
         }
-        
-        return view('profil.tenagapengajar');
+        $pengajar = TenagaPengajar::all();
+        return view('profil.tenagapengajar',compact('pengajar'));
     } 
     
     public function ekstrakurikuler()
