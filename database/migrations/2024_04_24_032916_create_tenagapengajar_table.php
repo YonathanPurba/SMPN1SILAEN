@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nip');
             $table->string('alamat');
             $table->string('notelepon');
-            $table->string('gambar_tenagapengajar')->nullable();;
+            $table->string('gambar_tenagapengajar')->nullable();
             $table->string('created_by');
             $table->string('update_by');
             $table->timestamps();
