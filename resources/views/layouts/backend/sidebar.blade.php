@@ -79,6 +79,14 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('fasilitas.index') }}" class="nav-link {{ Request::segment(2) == 'fasilitas' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-list"></i>
+            <p>
+              Fasilitas
+            </p>
+          </a>
+        </li>
 
         <li class="nav-header">PENGATURAN</li>
         <li class="nav-item">
