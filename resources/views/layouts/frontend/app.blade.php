@@ -31,13 +31,15 @@
         <!-- Top Header Area -->
         <div class="top-header-area d-flex justify-content-between align-items-center">
             <!-- Contact Info -->
-            <div class="contact-info">
-                <a href="#"><span>Phone:</span> 082112345678</a>
-                <a href="#"><span>Email:</span> smpn1silaen@gmail.com</a>
-            </div>
+            
             <!-- Follow Us -->
             <div class="follow-us">
-                <a href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                @auth
+                    <!-- Jika pengguna telah login, tombol login tidak ditampilkan -->
+                @else
+                    <!-- Jika pengguna belum login, tampilkan tombol login -->
+                    <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                @endauth
             </div>
         </div>
 

@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <footer class="footer-area" style="background-color: #429ebd; color:0">
+    <footer class="footer-area" style="background-color: #000080; color:0">
         <!-- Top Footer Area -->
         <div class="container"><br>
             <div class="row">
