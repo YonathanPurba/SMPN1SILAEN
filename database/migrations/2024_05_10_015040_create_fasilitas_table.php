@@ -15,7 +15,9 @@ return new class extends Migration
             $table->increments('id_fasilitas');
             $table->string('nama_fasilitas');
             $table->string('gambar_fasilitas')->nullable();
-            $table->string('deskripsi_fasilitas')->nullable();
+            $table->string('deskripsi_fasilitas');
+            $table->string('created_by');
+            $table->string('update_by');
             $table->timestamps();
         });
     }

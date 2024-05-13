@@ -50,5 +50,14 @@ class ProfilController extends Controller
         }
         
         return view('profil.ekstrakurikuler');
-    }   
+    } 
+    
+    public function fasilitas()
+    {
+        if (!view()->exists('profil.fasilitas')) {
+            return response()->view('errors.404', [], 404);
+        }
+        
+        return view('profil.fasilitas');
+    }
 }

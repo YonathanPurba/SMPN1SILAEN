@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Tambah Fasilitas',
-	'contentTitle' => 'Tambah Fasilitas',
+	'title' => 'Edit Tenaga Pengajar',
+	'contentTitle' => 'Edit Fasilitas',
 ])
 @section('content')
 <div class="row">
@@ -10,24 +10,25 @@
 				<a href="{{ route('fasilitas.index') }}" class="btn btn-success btn-sm">Kembali</a>
 			</div>
 			<div class="card-body">
-				<form method="POST" action="{{ route('fasilitas.store') }}" enctype="multipart/form-data">
+				<form method="POST" action="{{ route('fasilitas.edit.edit',$fasilitas->id_fasilitas) }}" enctype="multipart/form-data">
 					@csrf
+					@method('PUT')
 					<div class="form-group">
-						<label for="nama_fasilitas">Nama Fasilitas</label>
-						<input required="" class="form-control" type="" name="nama_fasilitas" id="nama_fasilitas" placeholder="">
+						<label for="name">Nama Fasilitas</label>
+						<input required="" class="form-control" type="" name="nama_fasilitas" id="name" placeholder="" value="{{ $fasilitas->nama_fasilitas }}">
 					</div>
 					<div class="form-group">
 						<label for="deskripsi_fasilitas">Deskripsi</label>
-						<textarea required="" name="deskripsi_fasilitas" id="deskripsi_fasilitas" class="text-dark form-control summernote"></textarea>
+						<textarea required="" name="deskripsi_fasilitas" id="deskripsi_fasilitas" class="text-dark form-control summernote" value="{{ $fasilitas->deskripsi_fasilitas }}"></textarea>
 					</div>
-                    <div class="col-lg-6">
+					<div class="col-lg-6">
                         <div class="form-group">
                             <label>Gambar</label>
                             <input type="file" name="gambar_fasilitas" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
                         </div>
                     </div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
+						<button type="submit" class="btn btn-primary btn-sm">UPDATE</button>
 					</div>
 				</form>
 			</div>

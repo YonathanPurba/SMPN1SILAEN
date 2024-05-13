@@ -59,7 +59,7 @@ Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])
 Route::get('/prestasi',[PrestasiController::class,'index'])->name('prestasi');
 
 //Fasilitas
-Route::get('/fasilitas',[FasilitasController::class,'index'])->name('fasilitas');
+Route::get('/fasilitas',[ProfilController::class,'fasilitas'])->name('fasilitas');
 
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
@@ -71,9 +71,13 @@ Route::get('tenagapengajar.index/delete/{id}', [TenagaPengajarController::class,
 Route::post('tenagapengajar', [TenagaPengajarController::class, 'store'])->name('tenagapengajar.store');
 Route::get('/tenagapengajar.index', 'TenagaPengajarController@index')->name('tenagapengajar.index');
 Route::get('/tenagapengajar/edit/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit');
+Route::put('tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit.edit');
 Route::get('fasilitas/create', [FasilitasController::class, 'create'])->name('fasilitas.create');
-Route::get('/fasilitas.index', [FasilitasController::class,'indexfasilitas'])->name('fasilitas.index');
+Route::get('/fasilitas.index', [FasilitasController::class,'index'])->name('fasilitas.index');
 Route::post('fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
+Route::get('fasilitas.index/delete/{id}', [FasilitasController::class, 'delete']);
+Route::get('/fasilitas/edit/edit/{id}', [FasilitasController::class, 'update'])->name('fasilitas.edit');
+Route::put('fasilitas/edit/{id}', [FasilitasController::class, 'edit'])->name('fasilitas.edit.edit');
 //Admin
 Route::group(['namespace' => 'Admin','prefix' => 'admin','middleware' => ['auth']],function(){
 	Route::name('admin.')->group(function(){
