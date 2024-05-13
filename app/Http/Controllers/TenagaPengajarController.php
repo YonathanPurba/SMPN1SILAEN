@@ -85,4 +85,6 @@ public function delete($pengajar)
             $pengajar = TenagaPengajar::find($id);
             return view('tenagapengajar.edit', compact('pengajar'));
         }
+
+    
 }
