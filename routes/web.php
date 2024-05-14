@@ -56,7 +56,7 @@ Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])
 
 
 //Prestasi
-Route::get('/prestasi',[PrestasiController::class,'index'])->name('prestasi');
+Route::get('/prestasi',[PrestasiController::class,'view'])->name('prestasi');
 
 //Fasilitas
 Route::get('/fasilitas',[ProfilController::class,'fasilitas'])->name('fasilitas');

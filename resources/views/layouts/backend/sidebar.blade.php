@@ -1,14 +1,14 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4"style="background-color: #2B65EC;">
   <!-- Brand Logo -->
   <a href="/" class="brand-link">
     <img src="{{ asset('img/icons') }}/logo.jpeg" alt="laravel Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
-    <span class="brand-text font-weight-light">Home</span>
+    <span class="brand-text font-weight-light">SMP Negeri 1 Silaen</span>
   </a>
 
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar" style="background-color: #2B65EC;">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
@@ -73,7 +73,7 @@
         </li>
         <li class="nav-item">
           <a href="{{ route('tenagapengajar.index') }}" class="nav-link {{ Request::segment(2) == 'tenagapengajar' ? 'active' : '' }}">
-            <i class="nav-icon fas fa-list"></i>
+            <i class="nav-icon fas fa-user"></i>
             <p>
               Tenaga Pengajar
             </p>
@@ -81,7 +81,7 @@
         </li>
         <li class="nav-item">
           <a href="{{ route('fasilitas.index') }}" class="nav-link {{ Request::segment(2) == 'fasilitas' ? 'active' : '' }}">
-            <i class="nav-icon fas fa-list"></i>
+            <i class="nav-icon fas fa-landmark"></i>
             <p>
               Fasilitas
             </p>

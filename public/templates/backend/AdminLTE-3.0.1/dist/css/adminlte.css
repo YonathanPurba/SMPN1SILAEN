@@ -22149,6 +22149,23 @@ html.maximized-card {
   width: 80px;
 }
 
+#calendar {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#calendar table {
+  width: 100%;
+}
+
+#calendar th, #calendar td {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 5px;
+}
+
+
 .pace-center-atom-secondary .pace-progress::before {
   background: #6c757d;
   color: #ffffff;
