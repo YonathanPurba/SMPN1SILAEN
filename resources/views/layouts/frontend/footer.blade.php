@@ -82,11 +82,13 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <!-- Follow Us -->
-                    <h5 class="text-light mb-3">Follow Us</h5>
-                    <div class="follow-us">
-                        <a href="https://www.facebook.com/share/EM3YpLUBBtRKdk3y/?mibextid=A7sQZp" class="text-light me-3 hover-zoom animate__animated animate__fadeInLeft">
-                            <i class="fab fa-facebook fa-lg"></i>
+                    <div class="d-flex align-items-center">
+                        <h5 class="text-light mb-3 me-3">Follow Us</h5>
+                        <a href="https://www.facebook.com/share/EM3YpLUBBtRKdk3y/?mibextid=A7sQZp" class="text-light mx-3 hover-zoom animate__animated animate__fadeInLeft">
+                            <i class="fab fa-facebook fa-lg" style="padding-bottom: 17px"></i>
                         </a>
+                    </div>
+                    <div class="follow-us">
                     </div>
                 </div>
                 <div class="col-md-6 text-md-end">
