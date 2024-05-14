@@ -6,6 +6,7 @@
   <title>Admin - {{ $title ?? '' }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{ asset('templates/frontend/clever') }}/img/core-img/logo.jpeg">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('templates/backend/AdminLTE-3.0.1') }}/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -62,7 +63,6 @@
 
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="{{ asset('templates/backend/AdminLTE-3.0.1') }}/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

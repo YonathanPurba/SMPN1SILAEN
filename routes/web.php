@@ -88,7 +88,6 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin','middleware' => ['auth'
 		//Resource Controller
 		Route::resource('users','UsersController');
 		Route::resource('pengumuman','PengumumanController');
-		Route::resource('agenda','AgendaController');
 		Route::resource('artikel','ArtikelController');
 		Route::resource('kategori-artikel','KategoriArtikelController');
 

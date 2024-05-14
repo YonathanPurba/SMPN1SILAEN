@@ -53,7 +53,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         @endauth
 
@@ -63,9 +62,5 @@
             </nav>
         </div>
     </div>
-    <style>
-            .classy-nav-container {
-        width: 100%;
-        max-width: 1050px;
-    }
+    <style> 
     </style>

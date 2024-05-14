@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-    'title' => 'Manage Kategori Artikel',
-    'contentTitle' => 'Manage Kategori Artikel',
+    'title' => 'Manage Kategori Galeri',
+    'contentTitle' => 'Manage Kategori Galeri',
 ])
 @push('css')
 <!-- DataTables -->

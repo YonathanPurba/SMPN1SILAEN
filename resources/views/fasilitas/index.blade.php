@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Manage Tenaga Pengajar',
-	'contentTitle' => 'Manage Tenaga Pengajar',
+	'title' => 'Manage Fasilitas',
+	'contentTitle' => 'Manage Fasilitas',
 ])
 @push('css')
 <!-- DataTables -->
