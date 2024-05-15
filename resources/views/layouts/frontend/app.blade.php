@@ -22,7 +22,9 @@
 <body>
     <!-- Preloader -->
     <div id="preloader">
-        <div class="spinner"></div>
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+        </div>
     </div>
 
     <!-- ##### Header Area Start ##### -->

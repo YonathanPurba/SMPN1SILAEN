@@ -1,4 +1,41 @@
-<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestasi - SMPN1 Silaen</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        .section-padding-100-0 {
+            padding-top: 100px;
+            padding-bottom: 0;
+        }
+        .animate__animated.animate__delay-1s {
+            animation-delay: 0.6s;
+        }
+        .card-body .additional-info {
+            display: none;
+            color: #666;
+            margin-top: -100%;
+            opacity: 0;
+            transition: margin-top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .card-body .additional-info.show {
+            display: block;
+            margin-top: 10px;
+            opacity: 1;
+        }
+        .card:hover .card-img-top {
+            filter: blur(1.5px);
+            transition: filter 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
 @extends('layouts.frontend.app', ['title' => 'Prestasi'])
 
 @section('content')
@@ -73,5 +110,3 @@
 </script>
 </body>
 </html>
-=======
->>>>>>> 78ab92047ed80a7ec5208971b65d4f1102751da7
