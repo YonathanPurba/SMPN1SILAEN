@@ -38,10 +38,10 @@
 				  <td><img width ="270rem" src="{{ asset('folderimage/' . $fasilitases->gambar_fasilitas) }}" alt=""></td>
 				  <td>{{ $fasilitases->deskripsi_fasilitas }}</td>
 				  <td>
-					{{-- <div class="row ml-2">
-						<a href="/tenagapengajar/edit/edit/{{ $fass->id_tenagapengajar }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<a class="btn btn-danger btn-sm ml-2 "onclick="return confirm('Apakah anda yakin ingin menghapusnya?')" href="tenagapengajar.index/delete/{{$pengajars->id_tenagapengajar}}"><i class=" fas fa-trash fa-fw"></i></a>
-					</div> --}}
+					<div class="row ml-2">
+						<a href="/fasilitas/edit/edit/{{ $fasilitases->id_fasilitas }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<a class="btn btn-danger btn-sm ml-2 "onclick="return confirm('Apakah anda yakin ingin menghapusnya?')" href="fasilitas.index/delete/{{$fasilitases->id_fasilitas}}"><i class=" fas fa-trash fa-fw"></i></a>
+					</div>
 				  </td>
 				</tr>
 				@endforeach

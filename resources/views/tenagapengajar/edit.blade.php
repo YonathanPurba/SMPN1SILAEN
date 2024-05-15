@@ -10,7 +10,7 @@
 				<a href="{{ route('tenagapengajar.index') }}" class="btn btn-success btn-sm">Kembali</a>
 			</div>
 			<div class="card-body">
-				<form method="POST" action="{{ route('tenagapengajar.edit',$pengajar->id_tenagapengajar) }}" enctype="multipart/form-data">
+				<form method="POST" action="{{ route('tenagapengajar.edit.edit',$pengajar->id_tenagapengajar) }}" enctype="multipart/form-data">
 					@csrf
 					@method('PUT')
 					<div class="form-group">
