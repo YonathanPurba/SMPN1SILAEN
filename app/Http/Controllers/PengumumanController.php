@@ -7,7 +7,7 @@ use App\Models\Pengumuman;
 
 class PengumumanController extends Controller
 {
-    public function index()
+    public function view()
     {
         // Check if the view file exists
         if (!view()->exists('pengumuman.index')) {
@@ -17,6 +17,12 @@ class PengumumanController extends Controller
         
         $pengumuman = Pengumuman::with(['user'])->latest()->paginate(4);
         return view('pengumuman.index', compact('pengumuman'));
+    }
+
+    public function index()
+    {
+        $pengumuman = Pengumuman::with(['user'])->get();
+        return view('admin.pengumuman.index',compact('pengumuman'));
     }
 
     public function show(Pengumuman $pengumuman)

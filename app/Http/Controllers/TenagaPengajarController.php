@@ -11,7 +11,7 @@ class TenagaPengajarController extends Controller
     public function index()
     {
         $pengajar = TenagaPengajar::all();
-        return view('tenagapengajar.index',compact('pengajar'));
+        return view('admin.tenagapengajar.index',compact('pengajar'));
 
     }
 
@@ -37,10 +37,10 @@ class TenagaPengajarController extends Controller
     
          $pengajar->save();
     
-        return redirect('tenagapengajar.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+        return redirect()->route('admin.tenagapengajar.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
 }
 
-public function edit(Request $request, $id)
+public function update(Request $request, $id)
 {
     $update = TenagaPengajar::find($id);
 
@@ -64,7 +64,7 @@ public function edit(Request $request, $id)
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect('tenagapengajar.index');
+    return redirect()->route('admin.tenagapengajar.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
 }
 
 public function delete($pengajar)
@@ -77,13 +77,13 @@ public function delete($pengajar)
 
     public function create()
         {
-            return view('tenagapengajar.create');
+            return view('admin.tenagapengajar.create');
         }
 
-        public function update($id)
+        public function edit($id)
         {
             $pengajar = TenagaPengajar::find($id);
-            return view('tenagapengajar.edit', compact('pengajar'));
+            return view('admin.tenagapengajar.edit', compact('pengajar'));
         }
 
     

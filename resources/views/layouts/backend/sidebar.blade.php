@@ -40,7 +40,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('admin.artikel.index') }}" class="nav-link {{ Request::segment(2) == 'artikel' ? 'active' : '' }}">
+          <a href="{{ route('admin.gallery.index') }}" class="nav-link {{ Request::segment(2) == 'artikel' ? 'active' : '' }}">
             <i class="nav-icon far fa-image"></i>
             <p>
               Galeri
@@ -65,7 +65,7 @@
         </li>
         
         <li class="nav-item">
-          <a href="{{ route('tenagapengajar.index') }}" class="nav-link {{ Request::segment(2) == 'tenagapengajar' ? 'active' : '' }}">
+          <a href="{{ route('admin.tenagapengajar.index') }}" class="nav-link {{ Request::segment(2) == 'tenagapengajar' ? 'active' : '' }}">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Tenaga Pengajar
@@ -73,7 +73,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('fasilitas.index') }}" class="nav-link {{ Request::segment(2) == 'fasilitas' ? 'active' : '' }}">
+          <a href="{{ route('admin.fasilitas.index') }}" class="nav-link {{ Request::segment(2) == 'fasilitas' ? 'active' : '' }}">
             <i class="nav-icon fas fa-landmark"></i>
             <p>
               Fasilitas

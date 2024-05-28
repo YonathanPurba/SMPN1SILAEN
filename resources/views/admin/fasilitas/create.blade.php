@@ -7,10 +7,10 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				<a href="{{ route('fasilitas.index') }}" class="btn btn-success btn-sm">Kembali</a>
+				<a href="{{ route('admin.fasilitas.index') }}" class="btn btn-success btn-sm">Kembali</a>
 			</div>
 			<div class="card-body">
-				<form method="POST" action="{{ route('fasilitas.store') }}" enctype="multipart/form-data">
+				<form method="POST" action="{{ route('admin.fasilitas.store') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="form-group">
 						<label for="nama_fasilitas">Nama Fasilitas</label>
