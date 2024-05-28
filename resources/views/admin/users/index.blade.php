@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Manage Users',
-	'contentTitle' => 'Manage Users',
+	'title' => 'Manage Admin',
+	'contentTitle' => 'Manage Admin',
 ])
 @push('css')
 <!-- DataTables -->
