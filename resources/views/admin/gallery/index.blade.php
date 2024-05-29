@@ -12,7 +12,7 @@
     <div class="col">
         <div class="card">
             <div class="card-header">
-                <a href="{{ route('admin.artikel.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+                <a href="{{ route('admin.gallery.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
             </div>
             <div class="card-body table-responsive">
                 <table id="dataTable1" class="table table-bordered table-hover">
@@ -21,6 +21,7 @@
                   <th>No</th>
                   <th>Judul</th>
                   <th>Author</th>
+                  <th>Kategori</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -29,31 +30,7 @@
                     $no=1;
                 @endphp
 
-                @foreach($artikel as $art)
-                <tr>
-                  <td>{{ $no++ }}</td>
-                  <td>{{ $art->judul }}</td>
-                  <td>{{ $art->user->name }}</td>
-                  
-                  <td>
-                    @if(auth()->user()->id == $art->user_id)
-                    <div class="row ml-2">
-                        <a href="{{ route('admin.artikel.edit',$art->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-                        
-                        <form method="POST" action="{{ route('admin.artikel.destroy',$art->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button onclick="return confirm('Yakin hapus ?')" type="submit" class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i></button>
-                        </form>
-                    </div>
-                    @else
-                    <a href="javasript:void(0)" class="btn btn-danger btn-sm">
-                    <i class="fas fa-ban"></i> No Action Available
-                    </a>
-                    @endif
-                  </td>
-                </tr>
-                @endforeach
+             
                 </tbody>
                 </table>
             </div>

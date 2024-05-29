@@ -12,7 +12,7 @@ class FasilitasController extends Controller
     public function index()
     {
         $fasilitas = Fasilitas::all();
-        return view('fasilitas.index',compact('fasilitas'));
+        return view('admin.fasilitas.index',compact('fasilitas'));
     }
 
     public function store(Request $request)
@@ -34,12 +34,12 @@ class FasilitasController extends Controller
     
         $fasilitas->save();
     
-        return redirect('fasilitas.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+        return redirect()->route('admin.fasilitas.index')->with('status', 'Fasilitas berhasil ditambahkan.');
 }
     
     public function create()
     {
-        return view('fasilitas.create');
+        return view('admin.fasilitas.create');
     }
     public function delete($fasilitas)
     {
@@ -70,12 +70,12 @@ class FasilitasController extends Controller
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect('fasilitas.index');
+    return redirect()->route('admin.fasilitas.index')->with('status', 'Fasilitas berhasil ditambahkan.');
     }
     public function update($id)
     {
         $fasilitas = Fasilitas::find($id);
-        return view('fasilitas.edit', compact('fasilitas'));
+        return view('admin.fasilitas.edit', compact('fasilitas'));
     }
 
 }

@@ -57,7 +57,7 @@
             <div class="icon">
                 <i class="fas fa-chalkboard-teacher" style="color: blue;"></i> <!-- Ubah warna sesuai kebutuhan -->
             </div>
-            <a href="{{ route('tenagapengajar.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.tenagapengajar.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -71,7 +71,7 @@
             <div class="icon">
                 <i class="fas fa-info"></i>
             </div>
-            <a href="{{ route('fasilitas.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.fasilitas.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
   </div>

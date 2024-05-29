@@ -7,7 +7,7 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				<a href="{{ route('fasilitas.index') }}" class="btn btn-success btn-sm">Kembali</a>
+				<a href="{{ route('admin.fasilitas.index') }}" class="btn btn-success btn-sm">Kembali</a>
 			</div>
 			<div class="card-body">
 				<form method="POST" action="{{ route('fasilitas.edit.edit',$fasilitas->id_fasilitas) }}" enctype="multipart/form-data">

@@ -7,10 +7,10 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				<a href="{{ route('tenagapengajar.index') }}" class="btn btn-success btn-sm">Kembali</a>
+				<a href="{{ route('admin.tenagapengajar.index') }}" class="btn btn-success btn-sm">Kembali</a>
 			</div>
 			<div class="card-body">
-				<form method="POST" action="{{ route('tenagapengajar.edit.edit',$pengajar->id_tenagapengajar) }}" enctype="multipart/form-data">
+				<form method="POST" action="{{ route('admin.tenagapengajar.edit.update',$pengajar->id_tenagapengajar) }}" enctype="multipart/form-data">
 					@csrf
 					@method('PUT')
 					<div class="form-group">

@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Tambah Artikel',
-	'contentTitle' => 'Tambah Artikel'
+	'title' => 'Edit Artikel',
+	'contentTitle' => 'Edit Artikel'
 ])
 
 @push('css')
@@ -16,11 +16,11 @@
             <h4 class="card-title">Box Artikel</h4>
         </div>
         <div class="card-body">
-        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.artikel.store') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.artikel.update',$artikel->id) }}">
             @csrf
             <div class="form-group">
                 <label for="judul">Judul Artikel</label>
-                <input required="" type="" name="judul" placeholder="" class="form-control"> 
+                <input value="{{ $artikel->judul }}" required="" type="" name="judul" placeholder="" class="form-control"> 
             </div>
             <div class="row">
                 <div class="col-lg-6">
@@ -29,14 +29,25 @@
                         <input type="file" name="file" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
                     </div>
                 </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select required="" class="form-control" name="kategori_artikel_id">
+                        <option selected="" disabled="">- PILIH KATEGORI -</option>
+                        @foreach($kategoriArtikel as $kategori)
+                            <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
+                        @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
             <div id="form-group">
                 <label for="deskripsi">Isi Artikel</label>
-                <textarea required="" name="deskripsi" id="deskripsi" class="text-dark form-control summernote"></textarea>
+                <textarea required="" name="deskripsi" id="deskripsi" class="text-dark form-control summernote">{{ $artikel->deskripsi }}</textarea>
             </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary">UPLOAD</button>
+            <button type="submit" class="btn btn-primary">UPDATE</button>
         </div>
         </form>
     </div>

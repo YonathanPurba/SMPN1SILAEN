@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Manage Tenaga Pengajar',
-	'contentTitle' => 'Manage Tenaga Pengajar',
+	'title' => 'Manage Fasilitas',
+	'contentTitle' => 'Manage Fasilitas',
 ])
 @push('css')
 <!-- DataTables -->
@@ -12,7 +12,7 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				<a href="{{ route('tenagapengajar.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+				<a href="{{ route('admin.fasilitas.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
 
 			</div>
 			<div class="card-body table-responsive">
@@ -20,12 +20,9 @@
 				<thead>
 				<tr>
 				  <th>No</th>
-				  <th>Nama</th>
+				  <th>Nama Fasilitas</th>
 				  <th>Gambar</th>
-				  <th>Jabatan</th>
-				  <th>NIP</th>
-                  <th>Alamat</th>
-                  <th>No Telepon</th>
+				  <th>Deskripsi</th>
 				  <th>Action</th>
 				</tr>
 				</thead>
@@ -34,20 +31,18 @@
 					$no=1;
 				@endphp
 
-				@foreach($pengajar as $pengajars)
+				@foreach($fasilitas as $fasilitases)
 				<tr>
 				  <td>{{ $no++ }}</td>
-				  <td>{{ $pengajars->nama_tenagapengajar }}</td>
-				  <td><img width ="270rem" src="{{ asset('folderimage/' . $pengajars->gambar_tenagapengajar) }}" alt=""></td>
-				  <td>{{ $pengajars->jabatan }}</td>
-				  <td>{{ $pengajars->nip }}</td>
-				  <td>{{ $pengajars->alamat }}</td>
-				  <td>{{ $pengajars->notelepon }}</td>
+				  <td>{{ $fasilitases->nama_fasilitas }}</td>
+				  <td><img width ="270rem" src="{{ asset('folderimage/' . $fasilitases->gambar_fasilitas) }}" alt=""></td>
+				  <td>{{ $fasilitases->deskripsi_fasilitas }}</td>
 				  <td>
 					<div class="row ml-2">
-						<a href="/tenagapengajar/edit/edit/{{ $pengajars->id_tenagapengajar }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<a class="btn btn-danger btn-sm ml-2 "onclick="return confirm('Apakah anda yakin ingin menghapusnya?')" href="tenagapengajar.index/delete/{{$pengajars->id_tenagapengajar}}"><i class=" fas fa-trash fa-fw"></i></a>
+						<a href="{{ route('admin.fasilitas.edit', ['id' => $fasilitases->id_fasilitas]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<a class="btn btn-danger btn-sm ml-2 "onclick="return confirm('Apakah anda yakin ingin menghapusnya?')" href="fasilitas/index/delete/{{$fasilitases->id_fasilitas}}"><i class=" fas fa-trash fa-fw"></i></a>
 					</div>
+						
 				  </td>
 				</tr>
 				@endforeach

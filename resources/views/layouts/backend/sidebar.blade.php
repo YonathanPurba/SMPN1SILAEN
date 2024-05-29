@@ -49,14 +49,6 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('admin.kategori-artikel.index') }}" class="nav-link {{ Request::segment(2) == 'kategori-artikel' ? 'active' : '' }}">
-            <i class="nav-icon far fa-circle"></i>
-            <p>
-              Kategori Galeri
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
           <a href="{{ route('admin.pengumuman.index') }}" class="nav-link {{ Request::segment(2) == 'pengumuman' ? 'active' : '' }}">
             <i class="nav-icon fas fa-info"></i>
             <p>
@@ -66,7 +58,7 @@
         </li>
         
         <li class="nav-item">
-          <a href="{{ route('tenagapengajar.index') }}" class="nav-link {{ Request::segment(2) == 'tenagapengajar' ? 'active' : '' }}">
+          <a href="{{ route('admin.tenagapengajar.index') }}" class="nav-link {{ Request::segment(2) == 'tenagapengajar' ? 'active' : '' }}">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Tenaga Pengajar
@@ -74,10 +66,18 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('fasilitas.index') }}" class="nav-link {{ Request::segment(2) == 'fasilitas' ? 'active' : '' }}">
+          <a href="{{ route('admin.fasilitas.index') }}" class="nav-link {{ Request::segment(2) == 'fasilitas' ? 'active' : '' }}">
             <i class="nav-icon fas fa-landmark"></i>
             <p>
               Fasilitas
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.prestasi.index') }}" class="nav-link {{ Request::segment(2) == 'prestasi' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-trophy"></i>
+            <p>
+              Prestasi
             </p>
           </a>
         </li>
