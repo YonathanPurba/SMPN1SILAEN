@@ -103,10 +103,14 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit');
 		Route::put('/tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit.update');
 
-		//Galeri
-		Route::get('/gallery', [GalleryController::class,'view'])->name('gallery.index');
-		Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
-
+		//Prestasi
+		Route::get('/prestasi', [PrestasiController::class,'index'])->name('prestasi.index');
+		Route::get('/prestasi/create', [PrestasiController::class, 'create'])->name('prestasi.create');
+		Route::post('/prestasi', [PrestasiController::class, 'store'])->name('prestasi.store');
+		Route::get('/prestasi/index/delete/{id}', [PrestasiController::class, 'delete']);
+		Route::get('/prestasi/edit/{id}', [PrestasiController::class, 'edit'])->name('prestasi.edit');
+		Route::put('/prestasi/edit/{id}', [PrestasiController::class, 'update'])->name('prestasi.edit.update');
+		
 		//Pengumuman
 		Route::get('/pengumuman');
 
@@ -116,7 +120,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		//Resource Controller
 		Route::resource('users','UsersController');
 		Route::resource('pengumuman','PengumumanController');
-		// Route::resource('artikel','ArtikelController');
+		Route::resource('artikel','ArtikelController');
 		Route::resource('kategori-artikel','KategoriArtikelController');
 
 		

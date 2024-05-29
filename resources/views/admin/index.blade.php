@@ -29,7 +29,7 @@
             <div class="icon">
                 <i class="fas fa-image"></i>
             </div>
-            <a href="{{ route('admin.gallery.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.artikel.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->

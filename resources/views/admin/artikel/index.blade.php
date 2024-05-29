@@ -21,7 +21,6 @@
                   <th>No</th>
                   <th>Judul</th>
                   <th>Author</th>
-                  <th>Kategori</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -35,7 +34,6 @@
                   <td>{{ $no++ }}</td>
                   <td>{{ $art->judul }}</td>
                   <td>{{ $art->user->name }}</td>
-                  <td>{{ $art->kategoriArtikel->nama_kategori }}</td>
                   
                   <td>
                     @if(auth()->user()->id == $art->user_id)

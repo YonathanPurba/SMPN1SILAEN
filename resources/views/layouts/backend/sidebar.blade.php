@@ -40,18 +40,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('admin.gallery.index') }}" class="nav-link {{ Request::segment(2) == 'artikel' ? 'active' : '' }}">
+          <a href="{{ route('admin.artikel.index') }}" class="nav-link {{ Request::segment(2) == 'artikel' ? 'active' : '' }}">
             <i class="nav-icon far fa-image"></i>
             <p>
               Galeri
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ route('admin.kategori-artikel.index') }}" class="nav-link {{ Request::segment(2) == 'kategori-artikel' ? 'active' : '' }}">
-            <i class="nav-icon far fa-circle"></i>
-            <p>
-              Kategori Galeri
             </p>
           </a>
         </li>
@@ -77,6 +69,14 @@
             <i class="nav-icon fas fa-landmark"></i>
             <p>
               Fasilitas
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.prestasi.index') }}" class="nav-link {{ Request::segment(2) == 'prestasi' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-trophy"></i>
+            <p>
+              Prestasi
             </p>
           </a>
         </li>
