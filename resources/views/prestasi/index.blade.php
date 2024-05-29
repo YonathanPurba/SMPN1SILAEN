@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.frontend.app', ['title' => 'Prestasi'])
 
 @section('content')
@@ -73,5 +72,4 @@
 </script>
 </body>
 </html>
-=======
->>>>>>> 78ab92047ed80a7ec5208971b65d4f1102751da7
+

@@ -33,11 +33,11 @@
         </div>
     </li>                   <li><a href="{{ route('pengumuman') }}" class="{{ Request::segment(1) == 'pengumuman' ? 'text-primary' : '' }}">Pengumuman</a></li>
 
-                            <li><a href="{{ route('prestasi') }}" class="{{ Request::segment(1) == 'prestasi' ? 'text-primary' : '' }}">Prestasi</a></li>
+                            <li><a href="{{ route('prestasi.index') }}" class="{{ Request::segment(1) == 'prestasi' ? 'text-primary' : '' }}">Prestasi</a></li>
 
                             <li><a href="{{ route('fasilitas') }}" class="{{ Request::segment(1) == 'fasilitas' ? 'text-primary' : '' }}">Fasilitas</a></li>
                             
-                            <li><a href="{{ route('artikel') }}" class="{{ Request::segment(1) == 'artikel' ? 'text-primary' : '' }}">Galeri</a></li>
+                            <li><a href="{{ route('artikel.index') }}" class="{{ Request::segment(1) == 'artikel' ? 'text-primary' : '' }}">Galeri</a></li>
                         </ul>
                         @auth
                         <div class="login-state">

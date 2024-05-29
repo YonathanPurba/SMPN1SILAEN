@@ -57,7 +57,7 @@ Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])
 
 
 //Prestasi
-Route::get('/prestasi',[PrestasiController::class,'view'])->name('prestasi');
+Route::get('/prestasi',[ProfilController::class,'prestasi'])->name('prestasi.index');
 
 //Fasilitas
 Route::get('/fasilitas',[ProfilController::class,'fasilitas'])->name('fasilitas');
@@ -73,6 +73,9 @@ Route::post('tenagapengajar', [TenagaPengajarController::class, 'store'])->name(
 Route::get('/tenagapengajar.index', 'TenagaPengajarController@index')->name('tenagapengajar.index');
 Route::get('/tenagapengajar/edit/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit');
 Route::put('tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit.edit');
+
+
+Route::get('/artikel', [ProfilController::class,'artikel'])->name('artikel.index');
 // Route::get('fasilitas/create', [FasilitasController::class, 'create'])->name('fasilitas.create');
 // Route::get('/fasilitas.index', [FasilitasController::class,'index'])->name('fasilitas.index');
 // Route::post('fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
@@ -110,9 +113,11 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/prestasi/index/delete/{id}', [PrestasiController::class, 'delete']);
 		Route::get('/prestasi/edit/{id}', [PrestasiController::class, 'edit'])->name('prestasi.edit');
 		Route::put('/prestasi/edit/{id}', [PrestasiController::class, 'update'])->name('prestasi.edit.update');
-		
+
 		//Pengumuman
 		Route::get('/pengumuman');
+
+		
 
 		//Users
 		Route::get('/users', [UsersController::class,'index'])->name('users.index');

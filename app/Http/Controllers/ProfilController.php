@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TenagaPengajar;
+use App\Models\Artikel;
 use Illuminate\Support\Facades\View; // Import the View facade
 
 class ProfilController extends Controller
@@ -59,5 +60,26 @@ class ProfilController extends Controller
         }
         
         return view('profil.fasilitas');
+    }
+
+    public function prestasi()
+    {
+        if (!view()->exists('prestasi.index')) {
+            return response()->view('errors.404', [], 404);
+        }
+        
+        return view('prestasi.index');
+    }
+
+    public function artikel()
+    {
+        // Check if the view file exists
+        if (!View::exists('artikel.index')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        $artikel = Artikel::with(['user',])->latest()->paginate(4);
+        return view('artikel.index',compact('artikel'));
     }
 }

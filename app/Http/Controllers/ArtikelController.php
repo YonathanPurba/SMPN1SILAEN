@@ -10,6 +10,7 @@ use App\Services\UploadService;
 use App\Models\Artikel;
 use App\Models\KategoriArtikel;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\View;  
 use File;
 
 class ArtikelController extends Controller
@@ -123,4 +124,6 @@ class ArtikelController extends Controller
         $artikel->delete();
         return redirect()->route('admin.artikel.index')->with('success','Data berhasil dihapus');
     }
+
+    
 }
