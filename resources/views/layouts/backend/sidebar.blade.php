@@ -7,6 +7,7 @@
     <span class="brand-text font-weight-light">SMP Negeri 1 Silaen</span>
   </a>
 
+  
   <!-- Sidebar -->
   <div class="sidebar" style="background-color: #2B65EC;">
     <!-- Sidebar user panel (optional) -->
