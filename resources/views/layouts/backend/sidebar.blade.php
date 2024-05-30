@@ -81,6 +81,14 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.ekstrakulikuler.index') }}" class="nav-link {{ Request::segment(2) == 'ekstrakulikuler' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-running"></i>
+            <p>
+              Ekstrakulikuler
+            </p>
+          </a>
+        </li>
 
         <li class="nav-header">PENGATURAN</li>
         <li class="nav-item">

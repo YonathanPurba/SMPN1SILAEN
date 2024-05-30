@@ -37,7 +37,7 @@ class TenagaPengajarController extends Controller
     
          $pengajar->save();
     
-        return redirect()->route('admin.tenagapengajar.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+        return redirect()->route('admin.tenagapengajar.index')->with('success', 'Tenaga Pengajar berhasil ditambahkan.');
 }
 
 public function update(Request $request, $id)
@@ -64,16 +64,20 @@ public function update(Request $request, $id)
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect()->route('admin.tenagapengajar.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+    return redirect()->route('admin.tenagapengajar.index')->with('success', 'Tenaga Pengajar berhasil diedit.');
 }
 
-public function delete($pengajar)
-    {
-        $delete = TenagaPengajar::find($pengajar);
-        if ($delete->delete()) {
-            return redirect()->back();
-        }
+public function delete($id)
+{
+    $pengajar = TenagaPengajar::find($id);
+
+    if ($pengajar) {
+        $pengajar->delete();
+        return response()->json(['success' => 'Data berhasil dihapus!']);
     }
+
+    return response()->json(['error' => 'Data tidak ditemukan atau gagal dihapus!'], 404);
+}
 
     public function create()
         {

@@ -12,7 +12,7 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				<a href="" class="btn btn-primary btn-sm">Tambah Data</a>
+				<a href="{{ route('admin.prestasi.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
 
 			</div>
 			<div class="card-body table-responsive">
@@ -41,8 +41,10 @@
 				  <td><img width ="270rem" src="{{ asset('folderimage/' . $prestasis->gambar_prestasi) }}" alt=""></td>
 				  <td>
 					<div class="row ml-2">
-						<a href="/prestasi/edit/edit/{{ $prestasis->id_prestasi }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<a class="btn btn-danger btn-sm ml-2 "onclick="return confirm('Apakah anda yakin ingin menghapusnya?')" href="prestasi.index/delete/{{$prestasis->id_prestasi}}"><i class=" fas fa-trash fa-fw"></i></a>
+						<a href="{{ route('admin.prestasi.edit', ['id' => $prestasis->id_prestasi]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<a class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.prestasi.index.delete', ['id' => $prestasis->id_prestasi]) }}">
+							<i class="fas fa-trash fa-fw"></i>
+						</a>
 					</div>
 				  </td>
 				</tr>
@@ -71,4 +73,67 @@
     });
   });
 </script>
+<script src="{{ mix('js/app.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        @if(session('success'))
+            Swal.fire({
+                title: 'Berhasil!',
+                text: '{{ session('success') }}',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        @endif
+
+        @if(session('error'))
+            Swal.fire({
+                title: 'Gagal!',
+                text: '{{ session('error') }}',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        @endif
+
+        // SweetAlert for delete confirmation
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default link behavior
+                const url = this.dataset.url;
+
+                Swal.fire({
+                    title: 'Apakah anda yakin?',
+                    text: "Anda tidak akan bisa mengembalikan ini!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'OK',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios.delete(url)
+                            .then(response => {
+                                Swal.fire({
+                                    title: 'Berhasil!',
+                                    text: response.data.success,
+                                    icon: 'success',
+                                    confirmButtonText: 'OK'
+                                }).then(() => {
+                                    window.location.href = "{{ route('admin.prestasi.index') }}";
+                                });
+                            })
+                            .catch(error => {
+                                Swal.fire({
+                                    title: 'Gagal!',
+                                    text: 'Terjadi kesalahan saat menghapus data.',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                });
+                            });
+                    }
+                });
+            });
+        });
+    });
+    </script>
 @endpush
