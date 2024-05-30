@@ -91,6 +91,7 @@
             </div>
 
             <div class="row">
+                @foreach ( $ekstrakulikuler as $ekstrakulikulers )
                 <div class="col-md-6">
                     <div class="event">
                         <img src="/img/picture/eks1.jpg" alt="Paskibra" style="max-width: 100%; height: auto;">
@@ -99,7 +100,9 @@
                             Paskibra adalah salah satu ekstrakurikuler yang mengajarkan kedisiplinan, kerja sama tim, dan kebanggaan akan negara melalui latihan dan penampilan pada upacara-upacara sekolah dan nasional.
                         </div>
                     </div>
-                </div>
+                </div>  
+                @endforeach
+                
                 <div class="col-md-6">
                     <div class="event">
                         <img src="/img/picture/eks2.jpg" alt="Teater" style="max-width: 100%; height: auto;">

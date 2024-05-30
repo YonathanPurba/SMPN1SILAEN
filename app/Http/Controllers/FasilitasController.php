@@ -34,22 +34,27 @@ class FasilitasController extends Controller
     
         $fasilitas->save();
     
-        return redirect()->route('admin.fasilitas.index')->with('status', 'Fasilitas berhasil ditambahkan.');
+        return redirect()->route('admin.fasilitas.index')->with('success', 'Fasilitas berhasil ditambahkan.');
 }
     
     public function create()
     {
         return view('admin.fasilitas.create');
     }
-    public function delete($fasilitas)
-    {
-        $delete = Fasilitas::find($fasilitas);
-        if ($delete->delete()) {
-            return redirect()->back();
-        }
+    public function delete($id)
+{
+    $fasilitas = Fasilitas::find($id);
+
+    if ($fasilitas) {
+        $fasilitas->delete();
+        return response()->json(['success' => 'Data berhasil dihapus!']);
     }
 
-    public function edit(Request $request, $id)
+    return response()->json(['error' => 'Data tidak ditemukan atau gagal dihapus!'], 404);
+}
+
+
+    public function update(Request $request, $id)
 {
     $update = Fasilitas::find($id);
 
@@ -72,7 +77,7 @@ class FasilitasController extends Controller
     // Redirect ke halaman daftar kategori lapangan
     return redirect()->route('admin.fasilitas.index')->with('status', 'Fasilitas berhasil ditambahkan.');
     }
-    public function update($id)
+    public function edit($id)
     {
         $fasilitas = Fasilitas::find($id);
         return view('admin.fasilitas.edit', compact('fasilitas'));

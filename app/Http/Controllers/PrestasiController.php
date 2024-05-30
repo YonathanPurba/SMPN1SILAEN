@@ -75,13 +75,17 @@ public function update(Request $request, $id)
     return redirect()->route('admin.prestasi.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
 }
 
-    public function delete($prestasi)
-    {
-        $delete = Prestasi::find($prestasi);
-        if ($delete->delete()) {
-            return redirect()->back();
-        }
+public function delete($id)
+{
+    $prestasi = Prestasi::find($id);
+
+    if ($prestasi) {
+        $prestasi->delete();
+        return response()->json(['success' => 'Data berhasil dihapus!']);
     }
+
+    return response()->json(['error' => 'Data tidak ditemukan atau gagal dihapus!'], 404);
+}
 
     public function create()
         {

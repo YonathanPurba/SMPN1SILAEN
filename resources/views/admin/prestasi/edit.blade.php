@@ -1,13 +1,13 @@
 @extends('layouts.backend.app',[
-	'title' => 'Edit Tenaga Pengajar',
-	'contentTitle' => 'Edit Tenaga Pengajar',
+	'title' => 'Edit Prestasi',
+	'contentTitle' => 'Edit Prestasi',
 ])
 @section('content')
 <div class="row">
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				{{-- <a href="{{ route('admin.prestasi.index') }}" class="btn btn-success btn-sm">Kembali</a> --}}
+				<a href="{{ route('admin.prestasi.index') }}" class="btn btn-success btn-sm">Kembali</a>
 			</div>
 			<div class="card-body">
 				<form method="POST" action="{{ route('admin.prestasi.edit.update',$prestasi->id_prestasi) }}" enctype="multipart/form-data">

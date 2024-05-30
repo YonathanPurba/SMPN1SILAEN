@@ -17,6 +17,7 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ContohController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\EkstrakulikulerController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
@@ -62,17 +63,20 @@ Route::get('/prestasi',[ProfilController::class,'prestasi'])->name('prestasi.ind
 //Fasilitas
 Route::get('/fasilitas',[ProfilController::class,'fasilitas'])->name('fasilitas');
 
+//Fasilitas
+Route::get('/ekstrakulikuler',[ProfilController::class,'fasilitas'])->name('fasilitas');
+
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
 Route::get('/identitas',[ProfilController::class,'identitas'])->name('identitas');
 Route::get('/tenagapengajar', [ProfilController::class, 'tenagapengajar'])->name('tenagapengajar');
 Route::get('/ekstrakurikuler',[ProfilController::class,'ekstrakurikuler'])->name('ekstrakurikuler');
-Route::get('tenagapengajar/create', [TenagaPengajarController::class, 'create'])->name('tenagapengajar.create');
-Route::get('tenagapengajar.index/delete/{id}', [TenagaPengajarController::class, 'delete']);
-Route::post('tenagapengajar', [TenagaPengajarController::class, 'store'])->name('tenagapengajar.store');
-Route::get('/tenagapengajar.index', 'TenagaPengajarController@index')->name('tenagapengajar.index');
-Route::get('/tenagapengajar/edit/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit');
-Route::put('tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit.edit');
+// Route::get('tenagapengajar/create', [TenagaPengajarController::class, 'create'])->name('tenagapengajar.create');
+// Route::get('tenagapengajar.index/delete/{id}', [TenagaPengajarController::class, 'delete']);
+// Route::post('tenagapengajar', [TenagaPengajarController::class, 'store'])->name('tenagapengajar.store');
+// Route::get('/tenagapengajar.index', 'TenagaPengajarController@index')->name('tenagapengajar.index');
+// Route::get('/tenagapengajar/edit/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit');
+// Route::put('tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit.edit');
 
 
 Route::get('/artikel', [ProfilController::class,'artikel'])->name('artikel.index');
@@ -94,15 +98,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/fasilitas', [FasilitasController::class,'index'])->name('fasilitas.index');
 		Route::get('/fasilitas/create', [FasilitasController::class, 'create'])->name('fasilitas.create');
 		Route::post('/fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
-		Route::get('/fasilitas/index/delete/{id}', [FasilitasController::class, 'delete']);
-		Route::get('/fasilitas/edit/{id}', [FasilitasController::class, 'update'])->name('fasilitas.edit');
-		Route::put('/fasilitas/edit/{id}', [FasilitasController::class, 'edit'])->name('fasilitas.edit.edit');
+		// Route::get('/fasilitas/index/delete/{id}', [FasilitasController::class, 'delete']);
+		Route::get('/fasilitas/edit/{id}', [FasilitasController::class, 'edit'])->name('fasilitas.edit');
+		Route::put('/fasilitas/edit/{id}', [FasilitasController::class, 'update'])->name('fasilitas.edit.update');
+		Route::delete('fasilitas/{id}/delete', [FasilitasController::class, 'delete'])->name('fasilitas.index.delete');
 
 		//Tenaga Pengajar
 		Route::get('/tenagapengajar', [TenagaPengajarController::class,'index'])->name('tenagapengajar.index');
 		Route::get('/tenagapengajar/create', [TenagaPengajarController::class, 'create'])->name('tenagapengajar.create');
 		Route::post('/tenagapengajar', [TenagaPengajarController::class, 'store'])->name('tenagapengajar.store');
-		Route::get('/tenagapengajar/index/delete/{id}', [TenagaPengajarController::class, 'delete']);
+		Route::delete('tenagapengajar/{id}/delete', [TenagaPengajarController::class, 'delete'])->name('tenagapengajar.index.delete');
 		Route::get('/tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit');
 		Route::put('/tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit.update');
 
@@ -110,12 +115,27 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/prestasi', [PrestasiController::class,'index'])->name('prestasi.index');
 		Route::get('/prestasi/create', [PrestasiController::class, 'create'])->name('prestasi.create');
 		Route::post('/prestasi', [PrestasiController::class, 'store'])->name('prestasi.store');
-		Route::get('/prestasi/index/delete/{id}', [PrestasiController::class, 'delete']);
+		Route::delete('prestasi/{id}/delete', [PrestasiController::class, 'delete'])->name('prestasi.index.delete');
 		Route::get('/prestasi/edit/{id}', [PrestasiController::class, 'edit'])->name('prestasi.edit');
 		Route::put('/prestasi/edit/{id}', [PrestasiController::class, 'update'])->name('prestasi.edit.update');
 
+		//Ekstrakulikuler
+		Route::get('/ekstrakulikuler', [EkstrakulikulerController::class,'index'])->name('ekstrakulikuler.index');
+		Route::get('/ekstrakulikuler/create', [EkstrakulikulerController::class, 'create'])->name('ekstrakulikuler.create');
+		Route::post('/ekstrakulikuler', [EkstrakulikulerController::class, 'store'])->name('ekstrakulikuler.store');
+		Route::delete('ekstrakulikuler/{id}/delete', [EkstrakulikulerController::class, 'delete'])->name('ekstrakulikuler.index.delete');
+		Route::get('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'edit'])->name('ekstrakulikuler.edit');
+		Route::put('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'update'])->name('ekstrakulikuler.edit.update');
+
 		//Pengumuman
-		Route::get('/pengumuman');
+		Route::get('/pengumuman', [PrestasiController::class,'index'])->name('pengumuman.index');
+		Route::get('/pengumuman/create', [PrestasiController::class, 'create'])->name('pengumuman.create');
+		Route::post('/pengumuman', [PrestasiController::class, 'store'])->name('pengumuman.store');
+		Route::get('/pengumuman/index/delete/{id}', [PrestasiController::class, 'delete']);
+		Route::get('/pengumuman/edit/{id}', [PrestasiController::class, 'edit'])->name('pengumuman.edit');
+		Route::put('/pengumuman/edit/{id}', [PrestasiController::class, 'update'])->name('pengumuman.edit.update');
+
+		
 
 		
 

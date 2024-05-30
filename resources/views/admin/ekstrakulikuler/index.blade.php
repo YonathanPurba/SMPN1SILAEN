@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Manage Tenaga Pengajar',
-	'contentTitle' => 'Manage Tenaga Pengajar',
+	'title' => 'Manage Ekstrakulikuler',
+	'contentTitle' => 'Manage Ekstrakulikuler',
 ])
 @push('css')
 <!-- DataTables -->
@@ -12,7 +12,7 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				<a href="{{ route('admin.tenagapengajar.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+				<a href="{{ route('admin.ekstrakulikuler.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
 
 			</div>
 			<div class="card-body table-responsive">
@@ -20,12 +20,9 @@
 				<thead>
 				<tr>
 				  <th>No</th>
-				  <th>Nama</th>
-				  <th>Gambar</th>
-				  <th>Jabatan</th>
-				  <th>NIP</th>
-                  <th>Alamat</th>
-                  <th>No Telepon</th>
+				  <th>Nama Ektrakulikuler</th>
+				  <th>Deskripsi</th>
+                  <th>Gambar</th>
 				  <th>Action</th>
 				</tr>
 				</thead>
@@ -34,22 +31,20 @@
 					$no=1;
 				@endphp
 
-				@foreach($pengajar as $pengajars)
+				@foreach($ekstrakulikuler as $ekstrakulikulers)
 				<tr>
 				  <td>{{ $no++ }}</td>
-				  <td>{{ $pengajars->nama_tenagapengajar }}</td>
-				  <td><img width ="270rem" src="{{ asset('folderimage/' . $pengajars->gambar_tenagapengajar) }}" alt=""></td>
-				  <td>{{ $pengajars->jabatan }}</td>
-				  <td>{{ $pengajars->nip }}</td>
-				  <td>{{ $pengajars->alamat }}</td>
-				  <td>{{ $pengajars->notelepon }}</td>
+				  <td>{{ $ekstrakulikulers->judul_ekstrakulikuler }}</td>
+				  <td>{{ $ekstrakulikulers->deskripsi_ekstrakulikuler }}</td>
+                  <td><img width ="270rem" src="{{ asset('folderimage/' . $ekstrakulikulers->gambar_ekstrakulikuler) }}" alt=""></td>
 				  <td>
 					<div class="row ml-2">
-						<a href="{{ route('admin.tenagapengajar.edit', ['id' => $pengajars->id_tenagapengajar]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<a class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.tenagapengajar.index.delete', ['id' => $pengajars->id_tenagapengajar]) }}">
+						<a href="{{ route('admin.ekstrakulikuler.edit', ['id' => $ekstrakulikulers->id_ekstrakulikuler]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<a class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.ekstrakulikuler.index.delete', ['id' => $ekstrakulikulers->id_ekstrakulikuler]) }}">
 							<i class="fas fa-trash fa-fw"></i>
 						</a>
 					</div>
+						
 				  </td>
 				</tr>
 				@endforeach
@@ -123,7 +118,7 @@
                                     icon: 'success',
                                     confirmButtonText: 'OK'
                                 }).then(() => {
-                                    window.location.href = "{{ route('admin.tenagapengajar.index') }}";
+                                    window.location.href = "{{ route('admin.ekstrakulikuler.index') }}";
                                 });
                             })
                             .catch(error => {

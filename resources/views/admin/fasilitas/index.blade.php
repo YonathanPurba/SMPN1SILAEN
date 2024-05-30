@@ -40,7 +40,9 @@
 				  <td>
 					<div class="row ml-2">
 						<a href="{{ route('admin.fasilitas.edit', ['id' => $fasilitases->id_fasilitas]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<a class="btn btn-danger btn-sm ml-2 "onclick="return confirm('Apakah anda yakin ingin menghapusnya?')" href="fasilitas/index/delete/{{$fasilitases->id_fasilitas}}"><i class=" fas fa-trash fa-fw"></i></a>
+						<a class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.fasilitas.index.delete', ['id' => $fasilitases->id_fasilitas]) }}">
+							<i class="fas fa-trash fa-fw"></i>
+						</a>
 					</div>
 						
 				  </td>
@@ -70,4 +72,67 @@
     });
   });
 </script>
+<script src="{{ mix('js/app.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        @if(session('success'))
+            Swal.fire({
+                title: 'Berhasil!',
+                text: '{{ session('success') }}',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        @endif
+
+        @if(session('error'))
+            Swal.fire({
+                title: 'Gagal!',
+                text: '{{ session('error') }}',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        @endif
+
+        // SweetAlert for delete confirmation
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default link behavior
+                const url = this.dataset.url;
+
+                Swal.fire({
+                    title: 'Apakah anda yakin?',
+                    text: "Anda tidak akan bisa mengembalikan ini!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'OK',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios.delete(url)
+                            .then(response => {
+                                Swal.fire({
+                                    title: 'Berhasil!',
+                                    text: response.data.success,
+                                    icon: 'success',
+                                    confirmButtonText: 'OK'
+                                }).then(() => {
+                                    window.location.href = "{{ route('admin.fasilitas.index') }}";
+                                });
+                            })
+                            .catch(error => {
+                                Swal.fire({
+                                    title: 'Gagal!',
+                                    text: 'Terjadi kesalahan saat menghapus data.',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                });
+                            });
+                    }
+                });
+            });
+        });
+    });
+    </script>
 @endpush
