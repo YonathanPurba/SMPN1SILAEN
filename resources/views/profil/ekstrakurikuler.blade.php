@@ -3,12 +3,6 @@
 ])
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekstrakurikuler</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,8 +43,6 @@
             line-height: 1.6;
         }
     </style>
-</head>
-<body>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -85,36 +77,24 @@
                 <div class="col-12">
                     <div class="section-heading">
                         <h3>Ekstrakurikuler</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, quia?</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                @foreach ( $ekstrakulikuler as $ekstrakulikulers )
+                @foreach ($ekstrakulikuler as $ekstrakulikulers)
                 <div class="col-md-6">
                     <div class="event">
                         <img src="/img/picture/eks1.jpg" alt="Paskibra" style="max-width: 100%; height: auto;">
-                        <div class="event-title">Paskibra</div>
+                        <div class="event-title">{{ $ekstrakulikulers->judul_ekstrakulikuler }}</div>
                         <div class="event-description">
-                            Paskibra adalah salah satu ekstrakurikuler yang mengajarkan kedisiplinan, kerja sama tim, dan kebanggaan akan negara melalui latihan dan penampilan pada upacara-upacara sekolah dan nasional.
-                        </div>
-                    </div>
-                </div>  
-                @endforeach
-                
-                <div class="col-md-6">
-                    <div class="event">
-                        <img src="/img/picture/eks2.jpg" alt="Teater" style="max-width: 100%; height: auto;">
-                        <div class="event-title">Teater</div>
-                        <div class="event-description">
-                            Ekstrakurikuler teater memungkinkan siswa untuk mengembangkan bakat seni peran mereka, belajar kerjasama tim, dan meningkatkan kepercayaan diri melalui latihan dan pertunjukan di sekolah.
+                            <!-- You can add more description here if needed -->
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>
-</body>
-</html>
+
 @stop
