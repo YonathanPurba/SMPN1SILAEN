@@ -44,7 +44,7 @@
         }
     </style>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    {{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -69,7 +69,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
+    </div> --}}
 
     <section class="upcoming-events section-padding-100-0 mb-0">
         <div class="container">
@@ -85,10 +85,10 @@
                 @foreach ($ekstrakulikuler as $ekstrakulikulers)
                 <div class="col-md-6">
                     <div class="event">
-                        <img src="/img/picture/eks1.jpg" alt="Paskibra" style="max-width: 100%; height: auto;">
+                        <img src="{{ asset('folderimage/' . $ekstrakulikulers->gambar_ekstrakulikuler) }}" alt="Paskibra" style="max-width: 100%; height: auto;">
                         <div class="event-title">{{ $ekstrakulikulers->judul_ekstrakulikuler }}</div>
                         <div class="event-description">
-                            <!-- You can add more description here if needed -->
+                            {{ $ekstrakulikulers->deskripsi_ekstrakulikuler }}
                         </div>
                     </div>
                 </div>

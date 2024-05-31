@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TenagaPengajar;
 use App\Models\Artikel;
+use App\Models\Ekstrakulikuler;
 use App\Models\Pengumuman;
+
 use Illuminate\Support\Facades\View; // Import the View facade
 
 class ProfilController extends Controller
@@ -51,7 +53,8 @@ class ProfilController extends Controller
             return response()->view('errors.404', [], 404);
         }
         
-        return view('profil.ekstrakurikuler');
+        $ekstrakulikuler = Ekstrakulikuler::all();
+        return view('profil.ekstrakurikuler', compact('ekstrakulikuler'));
     } 
     
     public function fasilitas()
