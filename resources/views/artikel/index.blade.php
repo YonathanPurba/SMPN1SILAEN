@@ -26,10 +26,6 @@
                         <div class="card-body">
                             <img src="{{ asset('uploads/img/artikel/'.$art->thumbnail) }}" width="100%" style="height: 300px; object-fit: cover; object-position: center;">
 
-                            <div class="card-text mt-3">
-                                {!! Str::limit($art->deskripsi) !!}
-                            </div>
-
                             <a href="{{ route('artikel.show',$art->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
                         </div>
                         <div class="card-footer">
