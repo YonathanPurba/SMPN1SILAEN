@@ -53,7 +53,7 @@ Route::get('/artikel/{artikel:slug}',[ArtikelController::class,'show'])->name('a
 //search 
 
 //Pengumuman
-Route::get('/pengumuman',[PengumumanController::class,'view'])->name('pengumuman');
+Route::get('/pengumuman', [PengumumanController::class,'view'])->name('pengumuman.index');
 Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])->name('pengumuman.show');
 
 
@@ -80,6 +80,7 @@ Route::get('/ekstrakurikuler',[ProfilController::class,'ekstrakurikuler'])->name
 
 
 Route::get('/artikel', [ProfilController::class,'artikel'])->name('artikel.index');
+
 // Route::get('fasilitas/create', [FasilitasController::class, 'create'])->name('fasilitas.create');
 // Route::get('/fasilitas.index', [FasilitasController::class,'index'])->name('fasilitas.index');
 // Route::post('fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
@@ -128,12 +129,12 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::put('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'update'])->name('ekstrakulikuler.edit.update');
 
 		//Pengumuman
-		Route::get('/pengumuman', [PrestasiController::class,'index'])->name('pengumuman.index');
-		Route::get('/pengumuman/create', [PrestasiController::class, 'create'])->name('pengumuman.create');
-		Route::post('/pengumuman', [PrestasiController::class, 'store'])->name('pengumuman.store');
-		Route::get('/pengumuman/index/delete/{id}', [PrestasiController::class, 'delete']);
-		Route::get('/pengumuman/edit/{id}', [PrestasiController::class, 'edit'])->name('pengumuman.edit');
-		Route::put('/pengumuman/edit/{id}', [PrestasiController::class, 'update'])->name('pengumuman.edit.update');
+		// Route::get('/pengumuman', [PengumumanController::class,'index'])->name('pengumuman.index');
+		// Route::get('/pengumuman/create', [PengumumanController::class, 'create'])->name('pengumuman.create');
+		// Route::post('/pengumuman', [PengumumanController::class, 'store'])->name('pengumuman.store');
+		// Route::get('/pengumuman/index/delete/{id}', [PengumumanController::class, 'delete']);
+		// Route::get('/pengumuman/edit/{id}', [PengumumanController::class, 'edit'])->name('pengumuman.edit');
+		// Route::put('/pengumuman/edit/{id}', [PengumumanController::class, 'update'])->name('pengumuman.edit.update');
 
 		
 

@@ -8,7 +8,6 @@
         <div class="meta d-flex align-items-center justify-content-center">
             <a href="#">{{ $artikel->user->author }}</a>
             <span><i class="fa fa-circle" aria-hidden="true"></i></span>
-            <a href="#">{{ $artikel->kategoriArtikel->nama_kategori }}</a>
         </div>
     </div>
 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TenagaPengajar;
 use App\Models\Artikel;
+use App\Models\Pengumuman;
 use Illuminate\Support\Facades\View; // Import the View facade
 
 class ProfilController extends Controller
@@ -81,5 +82,17 @@ class ProfilController extends Controller
         
         $artikel = Artikel::with(['user',])->latest()->paginate(4);
         return view('artikel.index',compact('artikel'));
+    }
+
+    public function pengumuman()
+    {
+        // Check if the view file exists
+        if (!View::exists('pengumuman.index')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        $pengumuman = Pengumuman::with(['user',])->latest()->paginate(4);
+        return view('pengumuman.index',compact('pengumuman'));
     }
 }

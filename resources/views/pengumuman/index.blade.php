@@ -20,7 +20,7 @@
                 <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="250ms">
                     <!-- Events Thumb -->
                     <div class="events-thumb">
-                        <img src="{{ asset('img/bg') }}/pengumuman.png" alt="">
+                        <img style="height: 20rem;" src="{{ asset('img/bg') }}/bg-announcement.png" alt="">
                         <h6 class="event-date">{{ $pn->tgl }} | BY : {{ $pn->user->name }}</h6>
                         <h4 class="event-title">{{ $pn->judul }}</h4>
                     </div>

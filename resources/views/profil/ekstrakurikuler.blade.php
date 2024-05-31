@@ -117,10 +117,4 @@
     </section>
 </body>
 </html>
-
-
-
-
-
-
 @stop

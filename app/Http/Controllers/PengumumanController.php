@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pengumuman;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\View;
 
 class PengumumanController extends Controller
 {
@@ -53,9 +54,22 @@ class PengumumanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    // public function show($id)
+    // {
+    //     $pengumuman = Pengumuman::where('slug')->firstOrFail();
+    //     return view('pengumuman.show', compact('pengumuman'));
+        
+    // }
+
+    public function show(Pengumuman $pengumuman)
     {
-        //
+        // Check if the view file exists
+        if (!view()->exists('pengumuman.show')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        return view('pengumuman.show', compact('pengumuman'));
     }
 
     /**
@@ -102,6 +116,18 @@ class PengumumanController extends Controller
         
         $pengumuman->delete();
         return redirect()->route('admin.pengumuman.index')->with('success','Data berhasil dihapus');
+    }
+
+    public function view()
+    {
+        // Check if the view file exists
+        if (!View::exists('pengumuman.index')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        $pengumuman = Pengumuman::with(['user',])->latest()->paginate(4);
+        return view('pengumuman.index',compact('pengumuman'));
     }
 }
 
