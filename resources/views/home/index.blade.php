@@ -9,7 +9,6 @@
             <div class="col-12">                
                 <div class="hero-content text-center">
                     <h2 id="typing-text"></h2>
-                    <a href="#" class="btn clever-btn" onclick="scrollToClass('.regular-page-area')">Lihat Selengkapnya</a>
                 </div>
             </div>
         </div>
