@@ -14,9 +14,7 @@
         </div>
     </div>
 </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#0099ff" fill-opacity="1" d="M0,192L34.3,208C68.6,224,137,256,206,234.7C274.3,213,343,139,411,122.7C480,107,549,149,617,176C685.7,203,754,213,823,186.7C891.4,160,960,96,1029,80C1097.1,64,1166,96,1234,122.7C1302.9,149,1371,171,1406,181.3L1440,192L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
-    </svg>
+ 
     <h3 style="margin-top:-50px"><center>SMP N1 SILAEN</center></h3>
     <div class="content">
         <div class="imgcntn">
@@ -45,10 +43,10 @@
                 <div class="card-body d-flex align-items-center ">
                     <img src="{{ asset('img/picture/kepala sekolah.png') }}" class="mr-3" style="width:300px; border-radius:30px" alt="Kepala Sekolah">
                     <div style="max-width: 280px;">
-                        <h1 style="width: 350px;font-family: freshman;">
+                        <h1 style="width: 350px;font-family: freshman; color: white;">
                             Kepala Sekolah SMP N 1 Silaen
                         </h1>
-                        <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Hotlan Pangaribuan</h5>
+                        <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Hotlan Pangaribuan</h5>
                         <br>
                         <p style="color:aliceblue;font-weight:900;width:400px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Puji dan Syukur Kehadirat Tuhan Yang Maha Esa karena rahmatNyalah yang masih menyertai kita. Salam sejahtera untuk seluruh pengunjung website SMP N 1 Silaen. Kami sangat gembira menyambut Anda di sini, tempat di mana kami berbagi informasi terkini seputar kegiatan pendidikan dan pengembangan di sekolah kami.</p>
                     </div>
