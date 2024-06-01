@@ -1,7 +1,27 @@
 @extends('layouts.frontend.app', [
     'title' => 'Home',
 ])
+<style>
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 2rem; /* Jarak antar elemen */
+        }
+        .custom-card {
+            flex: 1;
+            max-width: 300px; /* Atur lebar maksimal kartu */
+        }
+        .custom-shadow {
+            box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
+        }
+        .zoom-in-on-hover {
+            transition: transform 0.3s ease;
+        }
 
+        .zoom-in-on-hover:hover {
+            transform: scale(1.05);
+        }
+</style>
 @section('content')
 <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url('/img/bg/pict1.jpg');">
     <div class="container h-100">
@@ -16,23 +36,34 @@
 </section>
  
     <h3 style="margin-top:-50px"><center>SMP N1 SILAEN</center></h3>
-    <div class="content">
-        <div class="imgcntn">
-            <div class="item">
-                <img src="{{ asset('img/picture/imgL1.jpg') }}" alt="Sekolah Kami">
-                <a href="/identitas">Sekolah Kami<span>></span></a>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="col custom-card zoom-in-on-hover">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static text-center">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Laki-laki</strong>
+                        <h3 class="mb-0">{{ $totalLakiLaki }}</h3>
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
+                    </div>
+                </div>
             </div>
-            <div class="item">
-                <img src="{{ asset('img/picture/imgL2.jpg') }}" alt="Pengumuman">
-                <a href="/pengumuman">Pengumuman<span>></span></a>
+            <div class="col custom-card zoom-in-on-hover">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static text-center">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Perempuan</strong>
+                        <h3 class="mb-0">{{ $totalPerempuan }}</h3>
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Siswi</strong>
+                    </div>
+                </div>
             </div>
-            <div class="item">
-                <img src="{{ asset('img/picture/imgL3.jpg') }}" alt="Prestasi">
-                <a href="/prestasi">Prestasi<span>></span></a>
-            </div>
-            <div class="item">
-                <img src="{{ asset('img/picture/imgL4.jpg') }}" alt="Galeri">
-                <a href="/artikel">Galeri<span>></span></a>
+            <div class="col custom-card zoom-in-on-hover">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static text-center">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Total Keseluruhan</strong>
+                        <h3 class="mb-0">{{ $total }}</h3>
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

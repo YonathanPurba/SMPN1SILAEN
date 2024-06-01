@@ -85,7 +85,7 @@
                 @foreach ($ekstrakulikuler as $ekstrakulikulers)
                 <div class="col-md-6">
                     <div class="event">
-                        <img src="{{ asset('folderimage/' . $ekstrakulikulers->gambar_ekstrakulikuler) }}" alt="Paskibra" style="max-width: 100%; height: auto;">
+                        <img src="{{ asset('folderimage/' . $ekstrakulikulers->gambar_ekstrakulikuler) }}" alt="Paskibra" style="width: 100%; height: auto;">
                         <div class="event-title">{{ $ekstrakulikulers->judul_ekstrakulikuler }}</div>
                         <div class="event-description">
                             {{ $ekstrakulikulers->deskripsi_ekstrakulikuler }}

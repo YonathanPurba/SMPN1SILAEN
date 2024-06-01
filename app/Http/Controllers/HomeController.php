@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Agenda;
 use App\Models\Artikel;
 use App\Models\Pengumuman;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -17,11 +18,23 @@ class HomeController extends Controller
             // If the view file doesn't exist, return a 404 error view
             return response()->view('errors.404', [], 404);
         }
+
+        // Calculate the total number of male students
+        $totalLakiLaki = DB::table('jumlah_siswa')
+                            ->sum('jumlah_siswa_laki_laki');
         
-        return view('home.index', [
-            'artikel' => Artikel::with(['user','kategoriArtikel'])->latest()->take(2)->get(),
-            'pengumuman' => Pengumuman::with(['user'])->latest()->take(2)->get(),
-        ]);
+        $totalPerempuan = DB::table('jumlah_siswa')
+                            ->sum('jumlah_siswa_perempuan');
+                            
+        $total = DB::table('jumlah_siswa')
+                            ->sum('total');
+        
+        // Retrieve articles and announcements
+        $artikel = Artikel::with(['user', 'kategoriArtikel'])->latest()->take(2)->get();
+        $pengumuman = Pengumuman::with(['user'])->latest()->take(2)->get();
+
+        // Pass data to the view using compact
+        return view('home.index', compact('artikel', 'pengumuman', 'totalLakiLaki', 'totalPerempuan', 'total'));
     }
 
     public function about()

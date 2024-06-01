@@ -20,6 +20,8 @@ class CreatePengumumanTable extends Migration
             $table->string('tgl')->nullable();
             $table->string('slug')->nullable();
             $table->bigInteger('user_id')->nullable();
+            $table->string('created_by');
+            $table->string('update_by');
             $table->timestamps();
         });
     }

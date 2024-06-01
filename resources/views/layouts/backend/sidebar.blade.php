@@ -89,6 +89,22 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.kelas.index') }}" class="nav-link {{ Request::segment(2) == 'kelas' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-school"></i>
+            <p>
+              Kelas
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.jumlah_siswa.index') }}" class="nav-link {{ Request::segment(2) == 'jumlah_siswa' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-user"></i>
+            <p>
+              Jumlah Siswa
+            </p>
+          </a>
+        </li>
 
         <li class="nav-header">PENGATURAN</li>
         <li class="nav-item">

@@ -18,7 +18,9 @@ use App\Http\Controllers\ContohController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\EkstrakulikulerController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\JumlahSiswaController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GalleryController;
@@ -136,12 +138,26 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		// Route::get('/pengumuman/edit/{id}', [PengumumanController::class, 'edit'])->name('pengumuman.edit');
 		// Route::put('/pengumuman/edit/{id}', [PengumumanController::class, 'update'])->name('pengumuman.edit.update');
 
-		
+		//Ekstrakulikuler
+		Route::get('/kelas', [KelasController::class,'index'])->name('kelas.index');
+		Route::get('/kelas/create', [KelasController::class, 'create'])->name('kelas.create');
+		Route::post('/kelas', [KelasController::class, 'store'])->name('kelas.store');
+		Route::delete('kelas/{id}/delete', [KelasController::class, 'delete'])->name('kelas.index.delete');
+		Route::get('/kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
+		Route::put('/kelas/edit/{id}', [KelasController::class, 'update'])->name('kelas.edit.update');
+
+		Route::get('/jumlah_siswa', [JumlahSiswaController::class,'index'])->name('jumlah_siswa.index');
+		Route::get('/jumlah_siswa/create', [JumlahSiswaController::class, 'create'])->name('jumlah_siswa.create');
+		Route::post('/jumlah_siswa', [JumlahSiswaController::class, 'store'])->name('jumlah_siswa.store');
+		Route::delete('jumlah_siswa/{id}/delete', [JumlahSiswaController::class, 'delete'])->name('jumlah_siswa.index.delete');
+		Route::get('/jumlah_siswa/edit/{id}', [JumlahSiswaController::class, 'edit'])->name('jumlah_siswa.edit');
+		Route::put('/jumlah_siswa/edit/{id}', [JumlahSiswaController::class, 'update'])->name('jumlah_siswa.edit.update');
+		Route::get('/jumlah_siswa/total_laki_laki', [JumlahSiswaController::class, 'totalLakiLaki'])->name('jumlah_siswa.total_laki_laki');
 
 		
 
 		//Users
-		Route::get('/users', [UsersController::class,'index'])->name('users.index');
+
 	
 		//Resource Controller
 		Route::resource('users','UsersController');

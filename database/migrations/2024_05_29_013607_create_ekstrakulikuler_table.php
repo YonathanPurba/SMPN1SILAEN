@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('judul_ekstrakulikuler');
             $table->string('gambar_ekstrakulikuler')->nullable();
             $table->string('deskripsi_ekstrakulikuler');
+            $table->string('slug')->nullable();
+            $table->bigInteger('user_id')->nullable();
             $table->string('created_by');
             $table->string('update_by');
             $table->timestamps();
