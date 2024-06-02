@@ -25,7 +25,7 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TenagaPengajarController;
-
+use App\Models\Fasilitas;
 use App\Models\TenagaPengajar;
 
 /*
@@ -52,7 +52,9 @@ Route::get('/artikel/search',[ArtikelController::class,'search'])->name('artikel
 Route::get('/artikel/{artikel:slug}',[ArtikelController::class,'show'])->name('artikel.show');
 
 
-//search 
+//Fasilitas
+Route::get('/fasilitas', [FasilitasController::class,'view'])->name('fasilitas.index');
+Route::get('/fasilitas/{fasilitas:slug}',[FasilitasController::class,'show'])->name('fasilitas.show');
 
 //Pengumuman
 Route::get('/pengumuman', [PengumumanController::class,'view'])->name('pengumuman.index');
@@ -62,11 +64,8 @@ Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])
 //Prestasi
 Route::get('/prestasi',[ProfilController::class,'prestasi'])->name('prestasi.index');
 
-//Fasilitas
-Route::get('/fasilitas',[ProfilController::class,'fasilitas'])->name('fasilitas');
 
-//Fasilitas
-Route::get('/ekstrakulikuler',[ProfilController::class,'fasilitas'])->name('fasilitas');
+
 
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');

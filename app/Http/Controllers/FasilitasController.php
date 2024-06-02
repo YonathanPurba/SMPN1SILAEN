@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Fasilitas;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class FasilitasController extends Controller
 {
@@ -22,6 +24,7 @@ class FasilitasController extends Controller
         $fasilitas->deskripsi_fasilitas = $request->deskripsi_fasilitas;
         $fasilitas->created_by = Auth::id();
         $fasilitas->update_by = Auth::id();
+        $fasilitas->slug = Str::slug($request->nama_fasilitas);
     
             if ($request->hasFile('gambar_fasilitas')) {
                 $file = $request->file('gambar_fasilitas');
@@ -81,6 +84,18 @@ class FasilitasController extends Controller
     {
         $fasilitas = Fasilitas::find($id);
         return view('admin.fasilitas.edit', compact('fasilitas'));
+    }
+
+    public function view()
+    {
+        // Check if the view file exists
+        if (!View::exists('fasilitas.index')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        $fasilitas = Fasilitas::all();
+        return view('fasilitas.index',compact('fasilitas'));
     }
 
 }
