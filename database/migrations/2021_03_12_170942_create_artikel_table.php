@@ -20,8 +20,8 @@ class CreateArtikelTable extends Migration
             $table->text('deskripsi')->nullable();
             $table->string('thumbnail')->nullable();
             $table->bigInteger('user_id')->nullable();
-            $table->string('created_by');
-            $table->string('update_by');
+            $table->string('created_by')->nullable();
+            $table->string('update_by')->nullable();
             $table->timestamps();
         });
     }

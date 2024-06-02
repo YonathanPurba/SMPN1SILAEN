@@ -18,7 +18,6 @@
                     <div class="card-body">
                         <h5 class="card-title"><i class="fas fa-swimming-pool"></i> Kolam Renang</h5>
                         <p class="card-text">Nikmati kesegaran di kolam renang kami yang luas dan bersih.</p>
-                        <div class="facility-info">Kolam renang dengan luas 500m2 dan fasilitas lengkap</div>
                     </div>
                 </div>
             </div>

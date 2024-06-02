@@ -37,16 +37,21 @@ class PengumumanController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $request->request->add([
-            'slug' => Str::slug($request->judul),
-            'tgl' => date('Y-m-d'),
-            'user_id' => auth()->user()->id,
-        ]);
-        Pengumuman::create($request->all());
+{
+    // Add additional data to the request
+    $request->request->add([
+        'slug' => Str::slug($request->judul),
+        'tgl' => date('Y-m-d'),
+        'user_id' => auth()->user()->id,
+        'created_by' => auth()->user()->id, // Adding created_by field
+    ]);
 
-        return redirect()->route('admin.pengumuman.index')->with('success','Data berhasil ditambah');
-    }
+    // Create the new Pengumuman
+    Pengumuman::create($request->all());
+
+    // Redirect to the index route with a success message
+    return redirect()->route('admin.pengumuman.index')->with('success', 'Data berhasil ditambah');
+}
 
     /**
      * Display the specified resource.

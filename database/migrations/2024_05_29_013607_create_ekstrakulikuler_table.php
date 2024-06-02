@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('deskripsi_ekstrakulikuler');
             $table->string('slug')->nullable();
             $table->bigInteger('user_id')->nullable();
-            $table->string('created_by');
-            $table->string('update_by');
+            $table->string('created_by')->nullable();
+            $table->string('update_by')->nullable();
             $table->timestamps();
         });
     }
