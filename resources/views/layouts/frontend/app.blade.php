@@ -35,14 +35,6 @@
             <!-- Contact Info -->
             
             <!-- Follow Us -->
-            <div class="follow-us">
-                @auth
-                    <!-- Jika pengguna telah login, tombol login tidak ditampilkan -->
-                @else
-                    <!-- Jika pengguna belum login, tampilkan tombol login -->
-                    <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
-                @endauth
-            </div>
         </div>
 
         <!-- Navbar Area -->
