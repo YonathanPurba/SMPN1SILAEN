@@ -98,4 +98,15 @@ class FasilitasController extends Controller
         return view('fasilitas.index',compact('fasilitas'));
     }
 
+    public function show(Fasilitas $fasilitas)
+    {
+        // Check if the view file exists
+        if (!View::exists('fasilitas.show')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        return view('fasilitas.show',compact('fasilitas'));
+    }
+
 }

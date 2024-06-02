@@ -7,7 +7,6 @@
             <div class="col-12">
                 <div class="section-heading">
                     <h3>Fasilitas</h3>
-                    <p>Berikut adalah fasilitas dari SMP N1 Silaen</p>
                 </div>
             </div>
         </div>
@@ -15,10 +14,10 @@
             @foreach ( $fasilitas as $fasilitases)
             <div class="col-md-4 mb-4">
                 <div class="card facility-card">
-                    <img src="{{ asset('img/picture/imgL1.jpg') }}" class="card-img-top" alt="Kolam Renang">
+                    <img src="{{ asset('folderimage/' . $fasilitases->gambar_fasilitas) }}" class="card-img-top" alt="Kolam Renang">
                     <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-swimming-pool"></i> Kolam Renang</h5>
-                        <p class="card-text">Nikmati kesegaran di kolam renang kami yang luas dan bersih.</p>
+                        <h5 class="card-title"> {{ $fasilitases->nama_fasilitas }}</h5>
+                        <a href="{{ route('fasilitas.show',$fasilitases->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
                     </div>
                 </div>
             </div>
