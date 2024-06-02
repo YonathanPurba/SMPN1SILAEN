@@ -32,12 +32,79 @@
             max-width: 18%;
 
         }
+        .identitas-names{
+            max-width: 50%;
+            }
+        .head{
+            background-color: #0099ff;
+            padding: 10px;
+            border-radius: 20px;
+            color: #f5f5f5
+        }
 
         h4 {
             width: 100%; /* Ensure the h4 takes full width */
             margin-top: 0;
         }
+        /* Gaya untuk seluruh halaman */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
 
+/* Gaya untuk judul */
+h1, h3, h4, h5 {
+    color: #333;
+    text-align: center;
+}
+
+/* Gaya untuk konten utama */
+.page-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk gambar */
+.page-content img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk paragraf */
+.page-content p {
+    margin: 0;
+    padding: 10px;
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Gaya untuk akreditas */
+.akreditas {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.akreditas img {
+    max-width: 280px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.underline {
+            border-bottom: 3px solid #0099ff;
+            display: inline-block;
+            font-family:monospace;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +118,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
-                    <h3>Identitas Sekolah</h3>
+                    <h1 class="head">Identitas Sekolah</h1>
                 </div>
             </div>
         </div>
@@ -65,7 +132,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-content">
-                    <p class="identitas-name">
+                    <center>
+                        <h2 class="underline">Identitas SMP N1 Silaen</h2>
+                        <h5 class="underline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, aspernatur?</h5>
+                    </center>
+                    <img style="max-width: 300px;max-height:300px;border-radius:20px" src="/img/picture/imgL1.jpg" alt=""> 
+                    <p class="identitas-names">
                       NPSN <br>
                       Status <br>
                       Bentuk Pendidikan <br>
@@ -103,8 +175,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-content">
-                    <h4>Akreditas</h4>
+                    <center><h2 class="underline">Akreditas</h2><br>
+                    <h5 class="underline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, et!</h5></center> 
                     <img src="img/picture/akreditas.png" class="mr-3" style="width: 280px;" alt="">
+                    <p class="identitas-names">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minima quo, consectetur quibusdam impedit praesentium placeat ex est repellendus eum quidem a porro asperiores culpa non nesciunt, vel ipsum, reprehenderit sapiente! Molestiae est suscipit alias, hic dolor placeat debitis distinctio architecto illo ullam repellat, assumenda quos! Expedita doloribus perspiciatis aspernatur.
+                      </p>
                 </div>
             </div>
         </div>
