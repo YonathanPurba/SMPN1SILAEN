@@ -6,16 +6,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\ChangePasswordController;
-use App\Http\Controllers\UsersController;
-
-
 
 
 //Controllers Namespace
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfilController;
-use App\Http\Controllers\ContohController;
-use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\EkstrakulikulerController;
 use App\Http\Controllers\KelasController;
@@ -23,10 +18,8 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\JumlahSiswaController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
-use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TenagaPengajarController;
-use App\Models\Fasilitas;
-use App\Models\TenagaPengajar;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,9 +41,7 @@ Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 //Artikel
 Route::get('/artikel',[ArtikelController::class,'index'])->name('artikel');
 Route::get('/artikel/search',[ArtikelController::class,'search'])->name('artikel.search');
-
 Route::get('/artikel/{artikel:slug}',[ArtikelController::class,'show'])->name('artikel.show');
-
 
 //Fasilitas
 Route::get('/fasilitas', [FasilitasController::class,'view'])->name('fasilitas.index');
@@ -60,34 +51,16 @@ Route::get('/fasilitas/{fasilitas:slug}',[FasilitasController::class,'show'])->n
 Route::get('/pengumuman', [PengumumanController::class,'view'])->name('pengumuman.index');
 Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])->name('pengumuman.show');
 
-
 //Prestasi
 Route::get('/prestasi',[ProfilController::class,'prestasi'])->name('prestasi.index');
-
-
-
 
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
 Route::get('/identitas',[ProfilController::class,'identitas'])->name('identitas');
 Route::get('/tenagapengajar', [ProfilController::class, 'tenagapengajar'])->name('tenagapengajar');
 Route::get('/ekstrakurikuler',[ProfilController::class,'ekstrakurikuler'])->name('ekstrakurikuler');
-// Route::get('tenagapengajar/create', [TenagaPengajarController::class, 'create'])->name('tenagapengajar.create');
-// Route::get('tenagapengajar.index/delete/{id}', [TenagaPengajarController::class, 'delete']);
-// Route::post('tenagapengajar', [TenagaPengajarController::class, 'store'])->name('tenagapengajar.store');
-// Route::get('/tenagapengajar.index', 'TenagaPengajarController@index')->name('tenagapengajar.index');
-// Route::get('/tenagapengajar/edit/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit');
-// Route::put('tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit.edit');
-
-
 Route::get('/artikel', [ProfilController::class,'artikel'])->name('artikel.index');
 
-// Route::get('fasilitas/create', [FasilitasController::class, 'create'])->name('fasilitas.create');
-// Route::get('/fasilitas.index', [FasilitasController::class,'index'])->name('fasilitas.index');
-// Route::post('fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
-// Route::get('fasilitas.index/delete/{id}', [FasilitasController::class, 'delete']);
-// Route::get('/fasilitas/edit/edit/{id}', [FasilitasController::class, 'update'])->name('fasilitas.edit');
-// Route::put('fasilitas/edit/{id}', [FasilitasController::class, 'edit'])->name('fasilitas.edit.edit');
 //Admin
 Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 	Route::name('admin.')->group(function(){
@@ -129,14 +102,6 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'edit'])->name('ekstrakulikuler.edit');
 		Route::put('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'update'])->name('ekstrakulikuler.edit.update');
 
-		//Pengumuman
-		// Route::get('/pengumuman', [PengumumanController::class,'index'])->name('pengumuman.index');
-		// Route::get('/pengumuman/create', [PengumumanController::class, 'create'])->name('pengumuman.create');
-		// Route::post('/pengumuman', [PengumumanController::class, 'store'])->name('pengumuman.store');
-		// Route::get('/pengumuman/index/delete/{id}', [PengumumanController::class, 'delete']);
-		// Route::get('/pengumuman/edit/{id}', [PengumumanController::class, 'edit'])->name('pengumuman.edit');
-		// Route::put('/pengumuman/edit/{id}', [PengumumanController::class, 'update'])->name('pengumuman.edit.update');
-
 		//Ekstrakulikuler
 		Route::get('/kelas', [KelasController::class,'index'])->name('kelas.index');
 		Route::get('/kelas/create', [KelasController::class, 'create'])->name('kelas.create');
@@ -153,11 +118,8 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::put('/jumlah_siswa/edit/{id}', [JumlahSiswaController::class, 'update'])->name('jumlah_siswa.edit.update');
 		Route::get('/jumlah_siswa/total_laki_laki', [JumlahSiswaController::class, 'totalLakiLaki'])->name('jumlah_siswa.total_laki_laki');
 
-		
-
 		//Users
 
-	
 		//Resource Controller
 		Route::resource('users','UsersController');
 		Route::resource('pengumuman','PengumumanController');
@@ -167,5 +129,3 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		
 	});
 });
-
-//Tenaga Pengajar
