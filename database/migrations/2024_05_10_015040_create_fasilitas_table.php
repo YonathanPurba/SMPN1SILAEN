@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('gambar_fasilitas')->nullable();
             $table->string('deskripsi_fasilitas');
             $table->string('slug')->nullable();
-            $table->bigInteger('user_id')->nullable();
+            $table->integer('user_id')->nullable();
             $table->string('created_by')->nullable();
             $table->string('update_by')->nullable();
             $table->timestamps();

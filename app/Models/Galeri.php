@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\User;
-use App\Models\KategoriArtikel;
 
-class Artikel extends Model
+class Galeri extends Model
 {
     use HasFactory;
 
     protected $table = 'galeri';
 
     protected $fillable = [
-    	'judul','slug','deskripsi','thumbnail','slug','user_id','kategori_artikel_id',
+    	'judul','slug','deskripsi','thumbnail','slug','user_id',
     ];
 
     public function user()
@@ -33,7 +32,3 @@ class Artikel extends Model
     	return 'uploads/img/artikel/'.$this->thumbnail;
     }
 }
-
-
-
-
