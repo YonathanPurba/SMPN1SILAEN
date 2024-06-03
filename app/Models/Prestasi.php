@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Prestasi extends Model
 {
     use HasFactory;
+    use Sluggable;
     protected $table = 'prestasi';
     protected $primaryKey = 'id_prestasi';
 
@@ -20,9 +22,13 @@ class Prestasi extends Model
      *
      * @return string
      */
-    public function getRouteKeyName()
+    public function sluggable(): array
     {
-        return 'slug';
+        return [
+            'slug' => [
+                'source' => 'judul_prestasi'
+            ]
+        ];
     }
 }   
 

@@ -40,18 +40,17 @@ Route::get('/about',[HomeController::class,'about'])->name('about');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
 //Artikel
-Route::get('/artikel',[ArtikelController::class,'index'])->name('artikel');
-Route::get('/artikel/search',[ArtikelController::class,'search'])->name('artikel.search');
-Route::get('/artikel/{artikel:slug}',[ArtikelController::class,'show'])->name('artikel.show');
+Route::get('/galeri',[GaleriController::class,'view'])->name('galeri.index');
+Route::get('/galeri/search',[GaleriController::class,'search'])->name('galeri.search');
+Route::get('/galeri/{galeri:slug}',[GaleriController::class,'show'])->name('galeri.show');
 
 //Tenaga Pengajar
-
 Route::get('/tenagapengajar', [TenagaPengajarController::class,'view'])->name('tenagapengajar.index');
 Route::get('/tenagapengajar/{tenagapengajar:slug}',[TenagaPengajarController::class,'show'])->name('tenagapengajar.show');
 
-//
-Route::get('/tenagapengajar', [TenagaPengajarController::class,'view'])->name('tenagapengajar.index');
-Route::get('/tenagapengajar/{tenagapengajar:slug}',[TenagaPengajarController::class,'show'])->name('tenagapengajar.show');
+//Prestasi
+Route::get('/prestasi', [PrestasiController::class,'view'])->name('prestasi.index');
+Route::get('/prestasi/{prestasi:slug}',[PrestasiController::class,'show'])->name('prestasi.show');
 
 
 //Fasilitas
@@ -62,14 +61,12 @@ Route::get('/fasilitas/{fasilitas:slug}',[FasilitasController::class,'show'])->n
 Route::get('/pengumuman', [PengumumanController::class,'view'])->name('pengumuman.index');
 Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])->name('pengumuman.show');
 
-//Prestasi
-Route::get('/prestasi',[ProfilController::class,'prestasi'])->name('prestasi.index');
+
 
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
 Route::get('/identitas',[ProfilController::class,'identitas'])->name('identitas');
 Route::get('/ekstrakurikuler',[ProfilController::class,'ekstrakurikuler'])->name('ekstrakurikuler');
-Route::get('/artikel', [ProfilController::class,'artikel'])->name('artikel.index');
 
 //Admin
 Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){

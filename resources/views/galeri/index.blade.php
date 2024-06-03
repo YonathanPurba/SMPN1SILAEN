@@ -1,5 +1,5 @@
 @extends('layouts.frontend.app',[
-    'title' => 'List Artikel',
+    'title' => 'List Galeri',
 ])
 @section('content')
 <!-- ##### Blog Area Start ##### -->
@@ -15,7 +15,7 @@
 
         <div class="row">
             
-            @foreach($artikel as $art)
+            @foreach($galeri as $art)
                 <div class="col-md-6 mb-3">
                     <div class="card">
                         <div class="card-header">
@@ -26,7 +26,7 @@
                         <div class="card-body">
                             <img src="{{ asset('uploads/img/artikel/'.$art->thumbnail) }}" width="100%" style="height: 300px; object-fit: cover; object-position: center;">
 
-                            <a href="{{ route('artikel.show',$art->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
+                            <a href="{{ route('galeri.show',$art->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
                         </div>
                         <div class="card-footer">
                             <div class="row">
@@ -37,7 +37,7 @@
                 </div>
             @endforeach
             <div class="col-lg pagination pagination-center justify-content-center">
-                {{ $artikel->appends(Request::all())->links() }}
+                {{ $galeri->appends(Request::all())->links() }}
             </div>
         </div>
     </div>

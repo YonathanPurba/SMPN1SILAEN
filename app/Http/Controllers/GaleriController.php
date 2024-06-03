@@ -8,7 +8,6 @@ use App\Events\GaleriDeleteEvent;
 use App\Services\SummernoteService;
 use App\Services\UploadService;
 use App\Models\Galeri;
-use App\Models\KategoriArtikel;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;  
 use File;
@@ -129,6 +128,18 @@ class GaleriController extends Controller
         
         $galeri->delete();
         return redirect()->route('admin.galeri.index')->with('success','Data berhasil dihapus');
+    }
+
+    public function view()
+    {
+        // Check if the view file exists
+        if (!View::exists('galeri.index')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        $galeri = Galeri::with(['user',])->latest()->paginate(4);
+        return view('galeri.index',compact('galeri'));
     }
 
     

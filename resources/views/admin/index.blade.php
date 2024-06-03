@@ -23,13 +23,13 @@
         <!-- small box -->
         <div class="small-box bg-success">
             <div class="inner">
-                <h3>@count('artikel')</h3>
+                <h3>@count('galeri')</h3>
                 <p>Galeri</p>
             </div>
             <div class="icon">
                 <i class="fas fa-image"></i>
             </div>
-            <a href="{{ route('admin.artikel.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.galeri.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->

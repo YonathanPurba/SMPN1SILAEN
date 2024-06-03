@@ -5,21 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Prestasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Auth; // Import the View facade
+use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Str; // Import the View facade
 
 class PrestasiController extends Controller
 {
-    public function view()
-    {
-        // Check if the view file exists
-        if (!View::exists('prestasi.index')) {
-            // If the view file doesn't exist, return a 404 error view
-            return response()->view('errors.404', [], 404);
-        }
-        
-        return view('profil.prestasi');
-    }
-
     public function index()
     {
         $prestasi = Prestasi::all();
@@ -33,6 +23,7 @@ class PrestasiController extends Controller
         $prestasi->judul_prestasi = $request->judul_prestasi;
         $prestasi->deskripsi_prestasi = $request->deskripsi_prestasi;
         $prestasi->tanggal_prestasi = $request->tanggal_prestasi;
+        $prestasi->slug = Str::slug($request->judul_prestasi);
         $prestasi->created_by = Auth::id();
         $prestasi->update_by = Auth::id();
     
@@ -66,6 +57,7 @@ public function update(Request $request, $id)
     $update->judul_prestasi = $request->judul_prestasi;
     $update->deskripsi_prestasi = $request->deskripsi_prestasi;
     $update->tanggal_prestasi = $request->tanggal_prestasi;
+    $update->slug = Str::slug($request->judul_prestasi);
     $update->update_by = Auth::id();
 
     // Simpan perubahan ke dalam database
@@ -97,4 +89,27 @@ public function delete($id)
             $prestasi = Prestasi::find($id);
             return view('admin.prestasi.edit', compact('prestasi'));
         }
+
+        public function view()
+        {
+            // Check if the view file exists
+            if (!View::exists('prestasi.index')) {
+                // If the view file doesn't exist, return a 404 error view
+                return response()->view('errors.404', [], 404);
+            }
+            
+            $prestasi = Prestasi::all();
+            return view('prestasi.index',compact('prestasi'));
+        }
+    
+        public function show(Prestasi $prestasi)
+{
+    // Check if the view file exists
+    if (!View::exists('prestasi.show')) {
+        // If the view file doesn't exist, return a 404 error view
+        return response()->view('errors.404', [], 404);
+    }
+    return view('prestasi.show', compact('prestasi'));
+}
+
 }

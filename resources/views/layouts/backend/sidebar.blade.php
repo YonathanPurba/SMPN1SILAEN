@@ -41,7 +41,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('admin.artikel.index') }}" class="nav-link {{ Request::segment(2) == 'artikel' ? 'active' : '' }}">
+          <a href="{{ route('admin.galeri.index') }}" class="nav-link {{ Request::segment(2) == 'galeri' ? 'active' : '' }}">
             <i class="nav-icon far fa-image"></i>
             <p>
               Galeri
