@@ -86,7 +86,6 @@
         </div>
     </div>
 </div>
-<svg style="margin-top: -25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,128L24,133.3C48,139,96,149,144,133.3C192,117,240,75,288,58.7C336,43,384,53,432,69.3C480,85,528,107,576,106.7C624,107,672,85,720,69.3C768,53,816,43,864,53.3C912,64,960,96,1008,112C1056,128,1104,128,1152,144C1200,160,1248,192,1296,192C1344,192,1392,160,1416,144L1440,128L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path></svg>
 <section class="map">
     <h3>Temukan Kami disini</h3>
     <p class="mapp">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat omnis repudiandae neque esse modi beatae similique nemo odit, explicabo vitae ea incidunt. Maiores adipisci atque velit quam quisquam error facilis tenetur tempora distinctio nisi blanditiis reprehenderit ipsum, ratione molestiae officia beatae sequi voluptatum deleniti quas, quis ea architecto. Iure, tempore?</p>
@@ -134,7 +133,6 @@ section {
     position: relative;
     text-align: center;
     width: 100%;
-    margin-bottom: -50px;
 } 
 .imgcntn {
   display: flex;
@@ -170,15 +168,20 @@ h3{
 }
 .map{
  text-align: center;
- margin-top: -100px;
+ margin-top: 100px;
 }
-.mapp{
-    position:relative;
+.mapp {
+    position: relative;
     margin-left: 26%;
-   max-width: 700px;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   font-weight: 600;
+    max-width: 700px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: #000000; /* Replace with a valid color value */
+    border: 2px solid #000000; /* Adjust the border color and width as needed */
+    padding: 20px; /* Adjust padding as needed */
+    background-color: #f0f0f0; /* Adjust background color as needed */
 }
+
 .gmap{
     width: 1000px;
     height: 350px;
