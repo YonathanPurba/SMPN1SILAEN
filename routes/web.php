@@ -18,10 +18,7 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\JumlahSiswaController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
-<<<<<<< Updated upstream
-=======
 use App\Http\Controllers\GaleriController;
->>>>>>> Stashed changes
 use App\Http\Controllers\TenagaPengajarController;
 use App\Models\TenagaPengajar;
 
@@ -48,13 +45,14 @@ Route::get('/artikel/search',[ArtikelController::class,'search'])->name('artikel
 Route::get('/artikel/{artikel:slug}',[ArtikelController::class,'show'])->name('artikel.show');
 
 //Tenaga Pengajar
-<<<<<<< Updated upstream
+
 Route::get('/tenagapengajar', [TenagaPengajarController::class,'view'])->name('tenagapengajar.index');
 Route::get('/tenagapengajar/{tenagapengajar:slug}',[TenagaPengajarController::class,'show'])->name('tenagapengajar.show');
-=======
-Route::get('/tenagapengajar', [FasilitasController::class,'view'])->name('tenagapengajar.index');
-Route::get('/tenagapengajar/{tenagapengajar:slug}',[FasilitasController::class,'show'])->name('tenagapengajar.show');
->>>>>>> Stashed changes
+
+//
+Route::get('/tenagapengajar', [TenagaPengajarController::class,'view'])->name('tenagapengajar.index');
+Route::get('/tenagapengajar/{tenagapengajar:slug}',[TenagaPengajarController::class,'show'])->name('tenagapengajar.show');
+
 
 //Fasilitas
 Route::get('/fasilitas', [FasilitasController::class,'view'])->name('fasilitas.index');
