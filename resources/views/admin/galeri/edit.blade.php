@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 @extends('layouts.backend.app',[
 	'title' => 'Edit Galeri',
 	'contentTitle' => 'Edit Galeri'
-=======
-@extends('layouts.backend.app', [
-    'title' => 'Edit Galeri',
-    'contentTitle' => 'Edit Galeri'
->>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
 ])
 
 @push('css')
@@ -19,7 +13,7 @@
 <div class="">    
     <div class="card">
         <div class="card-header">
-<<<<<<< HEAD
+
             <a href="{{ route('admin.galeri.index') }}" class="btn btn-success btn-sm">Kembali</a>
         </div>
         <div class="card-body">
@@ -45,7 +39,6 @@
                     <button type="submit" class="btn btn-primary btn-sm">UPDATE</button>
                 </div>
             </form>
-=======
             <h4 class="card-title">Edit Galeri</h4>
         </div>
         <div class="card-body">
@@ -72,7 +65,6 @@
                 </div>
             </form>
         </div>
->>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
     </div>
 </div>
 

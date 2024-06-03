@@ -31,8 +31,8 @@
                             $no = 1;
                         @endphp
 
-<<<<<<< HEAD
-<div class="">    
+
+    <div class="">    
     <div class="card">
         <div class="card-header">
             <h4 class="card-title">Box Artikel</h4>
@@ -55,7 +55,6 @@
             <div id="form-group">
                 <label for="deskripsi">Isi Artikel</label>
                 <textarea required="" name="deskripsi" id="deskripsi" class="text-dark form-control summernote"></textarea>
-=======
                         @foreach($galeri as $art)
                             <tr>
                                 <td>{{ $no++ }}</td>
@@ -85,7 +84,6 @@
                         @endforeach
                     </tbody>
                 </table>
->>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
             </div>
         </div>
     </div>

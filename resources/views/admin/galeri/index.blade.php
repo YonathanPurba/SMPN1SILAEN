@@ -18,7 +18,6 @@
             </div>
             <div class="card-body table-responsive">
                 <table id="dataTable1" class="table table-bordered table-hover">
-<<<<<<< HEAD
                 <thead>
                 <tr>
                   <th>No</th>
@@ -46,7 +45,6 @@
                 </tr>
                 @endforeach
                 </tbody>
-=======
                     <thead>
                         <tr>
                             <th>No</th>
@@ -92,7 +90,6 @@
                             </tr>
                         @endforeach
                     </tbody>
->>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
                 </table>
             </div>
         </div>
@@ -105,7 +102,6 @@
 <script src="{{ asset('templates/backend/AdminLTE-3.0.1/plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('templates/backend/AdminLTE-3.0.1/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 <script>
-<<<<<<< HEAD
   $(function () {
     $("#dataTable1").DataTable();
     $('#dataTable2').DataTable({
@@ -182,7 +178,6 @@
     });
     </script>
 @endpush
-=======
     $(function () {
         $("#dataTable1").DataTable();
     });
@@ -208,4 +203,3 @@
     @endif
 </script>
 @endpush
->>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
