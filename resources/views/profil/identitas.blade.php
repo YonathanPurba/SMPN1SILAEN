@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Identitas Sekolah</title>
+    <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
     <style>
         .page-content {
             display: flex;
@@ -39,7 +40,9 @@
             background-color: #0099ff;
             padding: 10px;
             border-radius: 20px;
-            color: #f5f5f5
+            color: #f5f5f5;
+            font-family: "Allura", serif;
+            font-size: 60px
         }
 
         h4 {
@@ -56,6 +59,7 @@ body {
 h1, h3, h4, h5 {
     color: #333;
     text-align: center;
+    font-family: "Allura", serif;
 }
 
 /* Gaya untuk konten utama */
@@ -102,8 +106,8 @@ h1, h3, h4, h5 {
 .underline {
             border-bottom: 3px solid #0099ff;
             display: inline-block;
-            font-family:monospace;
             padding-bottom: 5px;
+          
         }
     </style>
 </head>
@@ -176,17 +180,18 @@ h1, h3, h4, h5 {
             <div class="col-12">
                 <div class="page-content">
                     <center><h2 class="underline">Akreditas</h2><br>
-                    <h5 class="underline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, et!</h5></center> 
+                    <h5 class="underline">Lorem ipsum, dolor sit amet cl Lorem ipsum dolor sit amet.onsectetur adipisicing elit. Totam, et!</h5></center> 
                     <img src="img/picture/akreditas.png" class="mr-3" style="width: 280px;" alt="">
                     <p class="identitas-names">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minima quo, consectetur quibusdam impedit praesentium placeat ex est repellendus eum quidem a porro asperiores culpa non nesciunt, vel ipsum, reprehenderit sapiente! Molestiae est suscipit alias, hic dolor placeat debitis distinctio architecto illo ullam repellat, assumenda quos! Expedita doloribus perspiciatis aspernatur.
+                        Lorem ipsum dolor sit  amet consectetur adipisicing elit. Explicabo minima quo, consectetur quibusdam impedit praesentium placeat ex est repellendus eum quidem a porro asperiores culpa non nesciunt, vel ipsum, reprehenderit sapiente! Molestiae est suscipit alias, hic dolor placeat debitis distinctio architecto illo ullam repellat, assumenda quos! Expedita doloribus perspiciatis aspernatur.
                       </p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 @stop
 </body>
 </html>
