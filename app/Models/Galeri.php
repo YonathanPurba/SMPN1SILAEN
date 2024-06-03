@@ -27,8 +27,4 @@ class Galeri extends Model
     	return $this->belongsTo(KategoriArtikel::class);
     }
 
-    public function getThumbnail()
-    {
-    	return 'uploads/img/artikel/'.$this->thumbnail;
-    }
 }

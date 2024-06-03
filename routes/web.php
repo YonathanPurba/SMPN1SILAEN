@@ -20,6 +20,8 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TenagaPengajarController;
+use App\Models\Ekstrakulikuler;
+use App\Models\Galeri;
 use App\Models\TenagaPengajar;
 
 /*
@@ -52,7 +54,6 @@ Route::get('/tenagapengajar/{tenagapengajar:slug}',[TenagaPengajarController::cl
 Route::get('/prestasi', [PrestasiController::class,'view'])->name('prestasi.index');
 Route::get('/prestasi/{prestasi:slug}',[PrestasiController::class,'show'])->name('prestasi.show');
 
-
 //Fasilitas
 Route::get('/fasilitas', [FasilitasController::class,'view'])->name('fasilitas.index');
 Route::get('/fasilitas/{fasilitas:slug}',[FasilitasController::class,'show'])->name('fasilitas.show');
@@ -61,12 +62,14 @@ Route::get('/fasilitas/{fasilitas:slug}',[FasilitasController::class,'show'])->n
 Route::get('/pengumuman', [PengumumanController::class,'view'])->name('pengumuman.index');
 Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])->name('pengumuman.show');
 
+//Ekstrakulikuler
+Route::get('/ekstrakulikuler', [EkstrakulikulerController::class,'view'])->name('ekstrakulikuler.index');
+Route::get('/ekstrakulikuler/{ekstrakulikuler:slug}',[EkstrakulikulerController::class,'show'])->name('ekstrakulikuler.show');
 
 
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
 Route::get('/identitas',[ProfilController::class,'identitas'])->name('identitas');
-Route::get('/ekstrakurikuler',[ProfilController::class,'ekstrakurikuler'])->name('ekstrakurikuler');
 
 //Admin
 Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
@@ -117,6 +120,15 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
 		Route::put('/kelas/edit/{id}', [KelasController::class, 'update'])->name('kelas.edit.update');
 
+		//Galeri
+		//Ekstrakulikuler
+		Route::get('/galeri', [GaleriController::class,'index'])->name('galeri.index');
+		Route::get('/galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
+		Route::post('/galeri', [GaleriController::class, 'store'])->name('galeri.store');
+		Route::delete('galeri/{id}/delete', [GaleriController::class, 'delete'])->name('galeri.index.delete');
+		Route::get('/galeri/edit/{id}', [GaleriController::class, 'edit'])->name('galeri.edit');
+		Route::put('/galeri/edit/{id}', [GaleriController::class, 'update'])->name('galeri.edit.update');
+
 		Route::get('/jumlah_siswa', [JumlahSiswaController::class,'index'])->name('jumlah_siswa.index');
 		Route::get('/jumlah_siswa/create', [JumlahSiswaController::class, 'create'])->name('jumlah_siswa.create');
 		Route::post('/jumlah_siswa', [JumlahSiswaController::class, 'store'])->name('jumlah_siswa.store');
@@ -131,7 +143,6 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::resource('users','UsersController');
 		Route::resource('pengumuman','PengumumanController');
 		// Route::resource('artikel','ArtikelController');
-		Route::resource('galeri','GaleriController');
 		Route::resource('kategori-artikel','KategoriArtikelController');
 
 		

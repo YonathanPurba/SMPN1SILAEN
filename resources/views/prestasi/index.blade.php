@@ -11,18 +11,17 @@
             </div>
         </div>
         <div class="row">
-            @foreach ( $prestasi as $prestasis)
+            @foreach ($prestasi as $prestasis)
             <div class="col-md-4 mb-4">
                 <div class="card facility-card">
                     <img src="{{ asset('folderimage/' . $prestasis->gambar_prestasi) }}" class="card-img-top" alt="Kolam Renang">
                     <div class="card-body">
-                        <h5 class="card-title"> {{ $prestasis->judul_prestasi }}</h5>
-                        <a href="{{ route('prestasi.show', $prestasis->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
+                        <h5 class="card-title">{{ $prestasis->judul_prestasi }}</h5>
+                        <a href="{{ route('prestasi.show', ['prestasi' => $prestasis->slug]) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
                     </div>
                 </div>
             </div>
             @endforeach
-            
         </div>
     </div>
 </section>

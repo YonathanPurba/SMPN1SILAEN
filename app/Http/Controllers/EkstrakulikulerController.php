@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ekstrakulikuler;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\View;
 
 class EkstrakulikulerController extends Controller
 {
@@ -20,6 +22,7 @@ class EkstrakulikulerController extends Controller
         $ekstrakulikuler = new Ekstrakulikuler();
         $ekstrakulikuler->judul_ekstrakulikuler = $request->judul_ekstrakulikuler;
         $ekstrakulikuler->deskripsi_ekstrakulikuler = $request->deskripsi_ekstrakulikuler;
+        $ekstrakulikuler->slug = Str::slug($request->judul_ekstrakulikuler);
         $ekstrakulikuler->created_by = Auth::id();
         $ekstrakulikuler->update_by = Auth::id();
     
@@ -69,6 +72,7 @@ class EkstrakulikulerController extends Controller
     // Update data lainnya
     $update->judul_ekstrakulikuler = $request->judul_ekstrakulikuler;
     $update->deskripsi_ekstrakulikuler = $request->deskripsi_ekstrakulikuler;
+    $update->slug = Str::slug($request->judul_ekstrakulikuler);
     $update->update_by = Auth::id();
 
     // Simpan perubahan ke dalam database
@@ -82,6 +86,29 @@ class EkstrakulikulerController extends Controller
     {
         $ekstrakulikuler = Ekstrakulikuler::find($id);
         return view('admin.ekstrakulikuler.edit', compact('ekstrakulikuler'));
+    }
+
+    public function view()
+    {
+        // Check if the view file exists
+        if (!View::exists('ekstrakulikuler.index')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        $ekstrakulikuler = Ekstrakulikuler::all();
+        return view('ekstrakulikuler.index',compact('ekstrakulikuler'));
+    }
+
+    public function show(Ekstrakulikuler $ekstrakulikuler)
+    {
+        // Check if the view file exists
+        if (!View::exists('ekstrakulikuler.show')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        return view('ekstrakulikuler.show',compact('ekstrakulikuler'));
     }
 
 }

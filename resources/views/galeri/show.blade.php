@@ -2,12 +2,10 @@
 	'title' => 'Baca Galeri',
 ])
 @section('content')
-<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url('{{ asset($artikel->getThumbnail()) }}');">
+<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url('{{ asset('folderimage/' . $galeri->thumbnail) }}');">
     <div class="blog-details-headline">
         <h3>{{ $galeri->judul }}</h3>
         <div class="meta d-flex align-items-center justify-content-center">
-            <a href="#">{{ $galeri->user->author }}</a>
-            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
         </div>
     </div>
 </div>

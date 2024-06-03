@@ -4,70 +4,50 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Events\GaleriDeleteEvent;
-use App\Services\SummernoteService;
-use App\Services\UploadService;
 use App\Models\Galeri;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;  
 
 class GaleriController extends Controller
 {
-    private $summernoteService;
-    private $uploadService;
 
-    public function __construct(SummernoteService $summernoteService, UploadService $uploadService)
-    {
-        $this->summernoteService = $summernoteService;
-        $this->uploadService = $uploadService;
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $galeri = Galeri::with(['user'])->get();
         return view('admin.galeri.index',compact('galeri'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.galeri.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
-    {
-        Galeri::create([
-            'judul' => $request->judul,
-            'deskripsi' => $this->summernoteService->imageUpload('galeri'),
-            'thumbnail' => $this->uploadService->imageUpload('galeri'),
-            'slug' => Str::slug($request->judul),
-            'user_id' => auth()->user()->id,
-        ]);
+    {   
+        $galeri = new Galeri();
+        $galeri->judul = $request->judul;
+        $galeri->deskripsi = $request->deskripsi;
+        $galeri->created_by = Auth::id();
+        $galeri->update_by = Auth::id();
+        $galeri->slug = Str::slug($request->judul);
+    
+            if ($request->hasFile('thumbnail')) {
+                $file = $request->file('thumbnail');
+                $filename = $file->getClientOriginalName();
+                $file->move(public_path('folderimage'), $filename);
+                $galeri->thumbnail = $filename;
+            } else {
+                $galeri->thumbnail = null;
+            }
+    
+        $galeri->save();
+    
+        return redirect()->route('admin.galeri.index')->with('success', 'Galeri berhasil ditambahkan.');
 
-        return redirect()->route('admin.galeri.index')->with('success','Data berhasil ditambah');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Galeri $galeri)
     {
         // Check if the view file exists
@@ -79,54 +59,47 @@ class GaleriController extends Controller
         return view('galeri.show',compact('galeri'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Galeri $galeri)
-    {   
-
-        return view('admin.galeri.edit',compact('galeri'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Galeri $galeri)
+    public function edit($id)
     {
-        $this->authorize('update',$galeri);
-
-        Galeri::create([
-            'judul' => $request->judul,
-            'deskripsi' => $this->summernoteService->imageUpload('galeri'),
-            'thumbnail' => $this->uploadService->imageUpload('galeri'),
-            'slug' => Str::slug($request->judul),
-            'user_id' => auth()->user()->id,
-        ]);
-           
-        return redirect()->route('admin.galeri.index')->with('success','Data berhasil diupdate');
+        $galeri = Galeri::find($id);
+        return view('admin.galeri.edit', compact('galeri'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Galeri $galeri)
-    {   
-        $this->authorize('delete',$galeri);
+    public function update(Request $request, $id)
+{
+    $update = Galeri::find($id);
 
-        event(new GaleriDeleteEvent($galeri));
-        
+    // Jika ada file gambar yang diunggah
+    if ($request->hasFile('thumbnail')) {
+        $file = $request->file('thumbnail');
+        $filename = $file->getClientOriginalName();
+        $file->move(public_path('folderimage'), $filename);
+        $update->thumbnail = $filename;
+    }
+
+    // Update data lainnya
+    $update->judul = $request->judul;
+    $update->deskripsi = $request->deskripsi;
+    $update->slug = Str::slug($request->judul);
+    $update->update_by = Auth::id();
+
+    // Simpan perubahan ke dalam database
+    $update->save();
+
+    // Redirect ke halaman daftar kategori lapangan
+    return redirect()->route('admin.galeri.index')->with('success', 'Galeri berhasil diedit.');
+    }
+
+    public function delete($id)
+    {   
+        $galeri = Galeri::find($id);
+
+    if ($galeri) {
         $galeri->delete();
-        return redirect()->route('admin.galeri.index')->with('success','Data berhasil dihapus');
+        return response()->json(['success' => 'Data berhasil dihapus!']);
+    }
+
+    return response()->json(['error' => 'Data tidak ditemukan atau gagal dihapus!'], 404);
     }
 
     public function view()

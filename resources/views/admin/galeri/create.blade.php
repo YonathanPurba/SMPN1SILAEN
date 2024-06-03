@@ -16,7 +16,7 @@
             <h4 class="card-title">Box Artikel</h4>
         </div>
         <div class="card-body">
-        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.artikel.store') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.galeri.store') }}">
             @csrf
             <div class="form-group">
                 <label for="judul">Judul Artikel</label>
@@ -26,7 +26,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label>Thumbnail</label>
-                        <input type="file" name="file" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
+                        <input type="file" name="thumbnail" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
                     </div>
                 </div>
             </div>

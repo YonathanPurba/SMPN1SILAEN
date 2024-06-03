@@ -20,7 +20,6 @@
                 <tr>
                   <th>No</th>
                   <th>Judul</th>
-                  <th>Author</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -32,25 +31,14 @@
                 @foreach($galeri as $art)
                 <tr>
                   <td>{{ $no++ }}</td>
-                  <td>{{ $art->judul }}</td>
-                  <td>{{ $art->user->name }}</td>
-                  
+                  <td>{{ $art->judul }}</td>      
                   <td>
-                    @if(auth()->user()->id == $art->user_id)
                     <div class="row ml-2">
-                        <a href="{{ route('admin.galeri.edit',$art->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-                        
-                        <form method="POST" action="{{ route('admin.galeri.destroy',$art->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button onclick="return confirm('Yakin hapus ?')" type="submit" class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i></button>
-                        </form>
+                        <a href="{{ route('admin.galeri.edit', ['id' => $art->id]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<a class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.galeri.index.delete', ['id' => $art->id]) }}">
+							<i class="fas fa-trash fa-fw"></i>
+						</a>
                     </div>
-                    @else
-                    <a href="javasript:void(0)" class="btn btn-danger btn-sm">
-                    <i class="fas fa-ban"></i> No Action Available
-                    </a>
-                    @endif
                   </td>
                 </tr>
                 @endforeach
@@ -68,10 +56,19 @@
 <script>
   $(function () {
     $("#dataTable1").DataTable();
+    $('#dataTable2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+    });
   });
 </script>
 <script src="{{ mix('js/app.js') }}"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
         @if(session('success'))
             Swal.fire({
                 title: 'Berhasil!',
@@ -89,5 +86,47 @@
                 confirmButtonText: 'OK'
             });
         @endif
+
+        // SweetAlert for delete confirmation
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default link behavior
+                const url = this.dataset.url;
+
+                Swal.fire({
+                    title: 'Apakah anda yakin?',
+                    text: "Anda tidak akan bisa mengembalikan ini!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'OK',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios.delete(url)
+                            .then(response => {
+                                Swal.fire({
+                                    title: 'Berhasil!',
+                                    text: response.data.success,
+                                    icon: 'success',
+                                    confirmButtonText: 'OK'
+                                }).then(() => {
+                                    window.location.href = "{{ route('admin.galeri.index') }}";
+                                });
+                            })
+                            .catch(error => {
+                                Swal.fire({
+                                    title: 'Gagal!',
+                                    text: 'Terjadi kesalahan saat menghapus data.',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                });
+                            });
+                    }
+                });
+            });
+        });
+    });
     </script>
 @endpush

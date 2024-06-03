@@ -20,11 +20,9 @@
                     <div class="card">
                         <div class="card-header">
                             {{ $art->judul }}
-
-                            <span class="badge badge-danger float-right">by : {{ $art->user->name }}</span>
                         </div>
                         <div class="card-body">
-                            <img src="{{ asset('uploads/img/artikel/'.$art->thumbnail) }}" width="100%" style="height: 300px; object-fit: cover; object-position: center;">
+                            <img src="{{ asset('folderimage/' . $art->thumbnail) }}" width="100%" style="height: 300px; object-fit: cover; object-position: center;">
 
                             <a href="{{ route('galeri.show',$art->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
                         </div>
