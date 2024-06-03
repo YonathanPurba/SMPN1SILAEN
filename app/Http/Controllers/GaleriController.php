@@ -8,10 +8,8 @@ use App\Events\GaleriDeleteEvent;
 use App\Services\SummernoteService;
 use App\Services\UploadService;
 use App\Models\Galeri;
-use App\Models\KategoriArtikel;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;  
-use File;
 
 class GaleriController extends Controller
 {

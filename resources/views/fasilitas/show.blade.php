@@ -2,7 +2,7 @@
 	'title' => 'Baca Artikel',
 ])
 @section('content')
-<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url('{{ asset('folderimage/' . $fasilitas->gambar_fasilitas) }}');">
+    <div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url('{{ asset('folderimage/' . $fasilitas->gambar_fasilitas) }}');">
     <div class="blog-details-headline">
         <h3>{{ $fasilitas->nama_fasilitas }}</h3>
         <div class="meta d-flex align-items-center justify-content-center">
