@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('jabatan');
             $table->string('nip');
             $table->string('alamat');
-            $table->string('notelepon');
             $table->string('gambar_tenagapengajar')->nullable();
             $table->string('slug')->nullable();
             $table->bigInteger('user_id')->nullable();

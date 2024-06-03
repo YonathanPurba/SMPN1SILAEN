@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TenagaPengajar;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View; 
 
 class TenagaPengajarController extends Controller
 {
@@ -22,7 +23,6 @@ class TenagaPengajarController extends Controller
         $pengajar->jabatan = $request->jabatan;
         $pengajar->nip = $request->nip;
         $pengajar->alamat = $request->alamat;
-        $pengajar->notelepon = $request->notelepon;
         $pengajar->created_by = Auth::id();
         $pengajar->update_by = Auth::id();
     
@@ -57,7 +57,6 @@ public function update(Request $request, $id)
     $update->jabatan = $request->jabatan;
     $update->nip = $request->nip;
     $update->alamat = $request->alamat;
-    $update->notelepon = $request->notelepon;
     $update->update_by = Auth::id();
 
     // Simpan perubahan ke dalam database
@@ -88,6 +87,29 @@ public function delete($id)
         {
             $pengajar = TenagaPengajar::find($id);
             return view('admin.tenagapengajar.edit', compact('pengajar'));
+        }
+
+        public function view()
+        {
+            // Check if the view file exists
+            if (!View::exists('tenagapengajar.index')) {
+                // If the view file doesn't exist, return a 404 error view
+                return response()->view('errors.404', [], 404);
+            }
+            
+            $pengajar = TenagaPengajar::all();
+            return view('tenagapengajar.index',compact('pengajar'));
+        }
+    
+        public function show(TenagaPengajar $pengajar)
+        {
+            // Check if the view file exists
+            if (!View::exists('tenagapengajar.show')) {
+                // If the view file doesn't exist, return a 404 error view
+                return response()->view('errors.404', [], 404);
+            }
+            
+            return view('tenagapengajar.show',compact('pengajar'));
         }
 
     
