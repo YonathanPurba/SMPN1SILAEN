@@ -20,7 +20,7 @@
                     </div>
 
                     <!-- Nav Start -->
-                    <div class="classynav">
+                    <center><div class="classynav">
                         <ul>
                             <li><a href="/" class="{{ Request::is('/') || Request::is('home') ? 'text-primary' : '' }}">Home</a></li>
                             <li>
@@ -35,10 +35,18 @@
 
                             <li><a href="{{ route('prestasi.index') }}" class="{{ Request::segment(1) == 'prestasi' ? 'text-primary' : '' }}">Prestasi</a></li>
 
-                            <li><a href="{{ route('fasilitas.index') }}" class="{{ Request::segment(1) == 'fasilitas' ? 'text-primary' : '' }}">Fasilitas</a></li>
+                            <li><a href="{{ route('fasilitas') }}" class="{{ Request::segment(1) == 'fasilitas' ? 'text-primary' : '' }}">Fasilitas</a></li>
                             
                             <li><a href="{{ route('artikel.index') }}" class="{{ Request::segment(1) == 'artikel' ? 'text-primary' : '' }}">Galeri</a></li>
                         </ul>
+                        <div class="follow-us">
+                            @auth
+                                <!-- Jika pengguna telah login, tombol login tidak ditampilkan -->
+                            @else
+                                <!-- Jika pengguna belum login, tampilkan tombol login -->
+                                <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            @endauth
+                        </div>
                         @auth
                         <div class="login-state">
                             <div class="user-name mr-30">
