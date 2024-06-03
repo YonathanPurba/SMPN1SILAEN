@@ -29,10 +29,6 @@
 						<label for="alamat">Alamat</label>
 						<input required="" class="form-control" type="" name="alamat" id="alamat" placeholder="" value="{{ $pengajar->alamat }}">
 					</div>
-                    <div class="form-group">
-						<label for="notelepon">No Telepon</label>
-						<input required="" class="form-control" type="" name="notelepon" id="notelepon" placeholder="" value="{{ $pengajar->notelepon }}">
-					</div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label>Gambar</label>
