@@ -74,7 +74,7 @@
                 <div class="card-body d-flex align-items-center ">
                     <img src="{{ asset('img/picture/kepala sekolah.png') }}" class="mr-3" style="width:300px; border-radius:30px" alt="Kepala Sekolah">
                     <div style="max-width: 280px;">
-                        <h1 style="width: 350px;font-family: freshman; color: white;">
+                        <h1 style="width: 350px;font-family: freshman; color: black;">
                             Kepala Sekolah SMP N 1 Silaen
                         </h1>
                         <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Hotlan Pangaribuan</h5>
@@ -88,7 +88,7 @@
 </div>
 <section class="map">
     <h3>Temukan Kami disini</h3>
-    <p class="mapp">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat omnis repudiandae neque esse modi beatae similique nemo odit, explicabo vitae ea incidunt. Maiores adipisci atque velit quam quisquam error facilis tenetur tempora distinctio nisi blanditiis reprehenderit ipsum, ratione molestiae officia beatae sequi voluptatum deleniti quas, quis ea architecto. Iure, tempore?</p>
+    <p class="mapp" id="mapp"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat omnis repudiandae neque esse modi beatae similique nemo odit, explicabo vitae ea incidunt. Maiores adipisci atque velit quam quisquam error facilis tenetur tempora distinctio nisi blanditiis reprehenderit ipsum, ratione molestiae officia beatae sequi voluptatum deleniti quas, quis ea architecto. Iure, tempore?</p>
     <iframe class="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65312299.05611945!2d99.20158100240317!3d2.3904453807262036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1713237782551!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
@@ -171,16 +171,14 @@ h3{
  margin-top: 100px;
 }
 .mapp {
-    position: relative;
-    margin-left: 26%;
-    max-width: 700px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    color: #000000; /* Replace with a valid color value */
-    border: 2px solid #000000; /* Adjust the border color and width as needed */
-    padding: 20px; /* Adjust padding as needed */
-    background-color: #f0f0f0; /* Adjust background color as needed */
-}
+            position: relative;
+            margin-left: 26%;
+            max-width: 700px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background-color: #ffffff   ; /* Contoh warna latar belakang */
+            color: #000000; /* Warna teks default, akan diubah oleh JS */
+        }
 
 .gmap{
     width: 1000px;

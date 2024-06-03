@@ -10,7 +10,6 @@ use App\Services\UploadService;
 use App\Models\Galeri;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;  
-use File;
 
 class GaleriController extends Controller
 {

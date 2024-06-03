@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Models\Agenda;
 use App\Models\Artikel;
 use App\Models\Pengumuman;
 use Illuminate\Support\Facades\DB;
