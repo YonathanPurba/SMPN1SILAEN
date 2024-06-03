@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('gambar_prestasi')->nullable();
             $table->string('deskripsi_prestasi');
             $table->date('tanggal_prestasi');
+            $table->string('slug')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->string('created_by')->nullable();
             $table->string('update_by')->nullable();

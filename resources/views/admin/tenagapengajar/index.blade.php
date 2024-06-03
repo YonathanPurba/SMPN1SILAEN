@@ -24,7 +24,6 @@
                             <th>Jabatan</th>
                             <th>NIP</th>
                             <th>Alamat</th>
-                            <th>No Telepon</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -41,7 +40,6 @@
                             <td>{{ $pengajars->jabatan }}</td>
                             <td>{{ $pengajars->nip }}</td>
                             <td>{{ $pengajars->alamat }}</td>
-                            <td>{{ $pengajars->notelepon }}</td>
                             <td>
                                 <div class="row ml-2">
                                     <a href="{{ route('admin.tenagapengajar.edit', ['id' => $pengajars->id_tenagapengajar]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>

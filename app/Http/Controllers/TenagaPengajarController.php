@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\TenagaPengajar;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View; 
+use Illuminate\Support\Str;
 
 class TenagaPengajarController extends Controller
 {
@@ -23,6 +24,7 @@ class TenagaPengajarController extends Controller
         $pengajar->jabatan = $request->jabatan;
         $pengajar->nip = $request->nip;
         $pengajar->alamat = $request->alamat;
+        $pengajar->slug = Str::slug($request->nama_tenagapengajar);
         $pengajar->created_by = Auth::id();
         $pengajar->update_by = Auth::id();
     
@@ -101,15 +103,14 @@ public function delete($id)
             return view('tenagapengajar.index',compact('pengajar'));
         }
     
-        public function show(TenagaPengajar $pengajar)
+        public function show(TenagaPengajar $tenagapengajar)
         {
             // Check if the view file exists
             if (!View::exists('tenagapengajar.show')) {
                 // If the view file doesn't exist, return a 404 error view
                 return response()->view('errors.404', [], 404);
             }
-            
-            return view('tenagapengajar.show',compact('pengajar'));
+            return view('tenagapengajar.show', ['pengajar' => $tenagapengajar]);
         }
 
     
