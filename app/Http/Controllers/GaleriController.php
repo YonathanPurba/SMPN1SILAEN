@@ -129,5 +129,17 @@ class GaleriController extends Controller
         return redirect()->route('admin.galeri.index')->with('success','Data berhasil dihapus');
     }
 
+    public function view()
+    {
+        // Check if the view file exists
+        if (!View::exists('galeri.index')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        $galeri = Galeri::with(['user',])->latest()->paginate(4);
+        return view('galeri.index',compact('galeri'));
+    }
+
     
 }

@@ -74,17 +74,7 @@ class ProfilController extends Controller
         return view('prestasi.index');
     }
 
-    public function artikel()
-    {
-        // Check if the view file exists
-        if (!View::exists('artikel.index')) {
-            // If the view file doesn't exist, return a 404 error view
-            return response()->view('errors.404', [], 404);
-        }
-        
-        $artikel = Artikel::with(['user',])->latest()->paginate(4);
-        return view('artikel.index',compact('artikel'));
-    }
+    
 
     public function pengumuman()
     {
