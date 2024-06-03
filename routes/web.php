@@ -162,6 +162,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::resource('users','UsersController');
 		Route::resource('pengumuman','PengumumanController');
 		Route::resource('artikel','ArtikelController');
+		Route::resource('galeri','GaleriController');
 		Route::resource('kategori-artikel','KategoriArtikelController');
 
 		
