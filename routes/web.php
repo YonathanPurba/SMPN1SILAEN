@@ -18,8 +18,9 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\JumlahSiswaController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TenagaPengajarController;
-
+use App\Models\TenagaPengajar;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,16 @@ Route::get('/artikel',[ArtikelController::class,'index'])->name('artikel');
 Route::get('/artikel/search',[ArtikelController::class,'search'])->name('artikel.search');
 Route::get('/artikel/{artikel:slug}',[ArtikelController::class,'show'])->name('artikel.show');
 
+//Tenaga Pengajar
+
+Route::get('/tenagapengajar', [TenagaPengajarController::class,'view'])->name('tenagapengajar.index');
+Route::get('/tenagapengajar/{tenagapengajar:slug}',[TenagaPengajarController::class,'show'])->name('tenagapengajar.show');
+
+//
+Route::get('/tenagapengajar', [TenagaPengajarController::class,'view'])->name('tenagapengajar.index');
+Route::get('/tenagapengajar/{tenagapengajar:slug}',[TenagaPengajarController::class,'show'])->name('tenagapengajar.show');
+
+
 //Fasilitas
 Route::get('/fasilitas', [FasilitasController::class,'view'])->name('fasilitas.index');
 Route::get('/fasilitas/{fasilitas:slug}',[FasilitasController::class,'show'])->name('fasilitas.show');
@@ -57,7 +68,6 @@ Route::get('/prestasi',[ProfilController::class,'prestasi'])->name('prestasi.ind
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
 Route::get('/identitas',[ProfilController::class,'identitas'])->name('identitas');
-Route::get('/tenagapengajar', [ProfilController::class, 'tenagapengajar'])->name('tenagapengajar');
 Route::get('/ekstrakurikuler',[ProfilController::class,'ekstrakurikuler'])->name('ekstrakurikuler');
 Route::get('/artikel', [ProfilController::class,'artikel'])->name('artikel.index');
 
@@ -123,7 +133,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		//Resource Controller
 		Route::resource('users','UsersController');
 		Route::resource('pengumuman','PengumumanController');
-		Route::resource('artikel','ArtikelController');
+		// Route::resource('artikel','ArtikelController');
 		Route::resource('galeri','GaleriController');
 		Route::resource('kategori-artikel','KategoriArtikelController');
 

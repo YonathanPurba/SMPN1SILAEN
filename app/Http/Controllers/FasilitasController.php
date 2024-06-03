@@ -72,6 +72,7 @@ class FasilitasController extends Controller
     // Update data lainnya
     $update->nama_fasilitas = $request->nama_fasilitas;
     $update->deskripsi_fasilitas = $request->deskripsi_fasilitas;
+    $update->slug = Str::slug($request->nama_fasilitas);
     $update->update_by = Auth::id();
 
     // Simpan perubahan ke dalam database

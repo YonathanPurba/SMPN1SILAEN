@@ -29,8 +29,8 @@ class GaleriController extends Controller
      */
     public function index()
     {
-        $artikel = Galeri::with(['user'])->get();
-        return view('admin.artikel.index',compact('artikel'));
+        $galeri = Galeri::with(['user'])->get();
+        return view('admin.galeri.index',compact('galeri'));
     }
 
     /**
@@ -40,7 +40,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        return view('admin.artikel.create');
+        return view('admin.galeri.create');
     }
 
     /**
@@ -53,13 +53,13 @@ class GaleriController extends Controller
     {
         Galeri::create([
             'judul' => $request->judul,
-            'deskripsi' => $this->summernoteService->imageUpload('artikel'),
-            'thumbnail' => $this->uploadService->imageUpload('artikel'),
+            'deskripsi' => $this->summernoteService->imageUpload('galeri'),
+            'thumbnail' => $this->uploadService->imageUpload('galeri'),
             'slug' => Str::slug($request->judul),
             'user_id' => auth()->user()->id,
         ]);
 
-        return redirect()->route('admin.artikel.index')->with('success','Data berhasil ditambah');
+        return redirect()->route('admin.galeri.index')->with('success','Data berhasil ditambah');
     }
 
     /**
@@ -68,15 +68,15 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Galeri $artikel)
+    public function show(Galeri $galeri)
     {
         // Check if the view file exists
-        if (!View::exists('artikel.show')) {
+        if (!View::exists('galeri.show')) {
             // If the view file doesn't exist, return a 404 error view
             return response()->view('errors.404', [], 404);
         }
         
-        return view('artikel.show',compact('artikel'));
+        return view('galeri.show',compact('galeri'));
     }
 
     /**
@@ -85,10 +85,10 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Galeri $artikel)
+    public function edit(Galeri $galeri)
     {   
 
-        return view('admin.artikel.edit',compact('artikel'));
+        return view('admin.galeri.edit',compact('galeri'));
     }
 
     /**
@@ -98,19 +98,19 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Galeri $artikel)
+    public function update(Request $request, Galeri $galeri)
     {
-        $this->authorize('update',$artikel);
+        $this->authorize('update',$galeri);
 
         Galeri::create([
             'judul' => $request->judul,
-            'deskripsi' => $this->summernoteService->imageUpload('artikel'),
-            'thumbnail' => $this->uploadService->imageUpload('artikel'),
+            'deskripsi' => $this->summernoteService->imageUpload('galeri'),
+            'thumbnail' => $this->uploadService->imageUpload('galeri'),
             'slug' => Str::slug($request->judul),
             'user_id' => auth()->user()->id,
         ]);
            
-        return redirect()->route('admin.artikel.index')->with('success','Data berhasil diupdate');
+        return redirect()->route('admin.galeri.index')->with('success','Data berhasil diupdate');
     }
 
     /**
@@ -119,14 +119,14 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Galeri $artikel)
+    public function destroy(Galeri $galeri)
     {   
-        $this->authorize('delete',$artikel);
+        $this->authorize('delete',$galeri);
 
-        event(new GaleriDeleteEvent($artikel));
+        event(new GaleriDeleteEvent($galeri));
         
-        $artikel->delete();
-        return redirect()->route('admin.artikel.index')->with('success','Data berhasil dihapus');
+        $galeri->delete();
+        return redirect()->route('admin.galeri.index')->with('success','Data berhasil dihapus');
     }
 
     
