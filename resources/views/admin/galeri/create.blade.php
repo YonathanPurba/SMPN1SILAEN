@@ -1,15 +1,37 @@
-@extends('layouts.backend.app',[
-	'title' => 'Tambah Artikel',
-	'contentTitle' => 'Tambah Artikel'
+@extends('layouts.backend.app', [
+    'title' => 'Manage Galeri',
+    'contentTitle' => 'Manage Galeri',
 ])
 
 @push('css')
-<link rel="stylesheet" type="text/css" href="{{ asset('plugins/summernote') }}/summernote-bs4.min.css">
-<link rel="stylesheet" type="text/css" href="{{ asset('plugins/dropify') }}/dist/css/dropify.min.css">
+<!-- DataTables -->
+<link rel="stylesheet" href="{{ asset('templates/backend/AdminLTE-3.0.1/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
 @endpush
 
 @section('content')
+<x-alert></x-alert>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <a href="{{ route('admin.galeri.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+            </div>
+            <div class="card-body table-responsive">
+                <table id="dataTable1" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul</th>
+                            <th>Author</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php 
+                            $no = 1;
+                        @endphp
 
+<<<<<<< HEAD
 <div class="">    
     <div class="card">
         <div class="card-header">
@@ -33,51 +55,70 @@
             <div id="form-group">
                 <label for="deskripsi">Isi Artikel</label>
                 <textarea required="" name="deskripsi" id="deskripsi" class="text-dark form-control summernote"></textarea>
+=======
+                        @foreach($galeri as $art)
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $art->judul }}</td>
+                                <td>{{ $art->user->name }}</td>
+                                <td>
+                                    @if(auth()->user()->id == $art->user_id)
+                                        <div class="btn-group" role="group" aria-label="Actions">
+                                            <a href="{{ route('admin.galeri.edit', $art->id) }}" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-edit fa-fw"></i>
+                                            </a>
+                                            <form method="POST" action="{{ route('admin.galeri.destroy', $art->id) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button onclick="return confirm('Yakin hapus?')" type="submit" class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash fa-fw"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    @else
+                                        <button class="btn btn-danger btn-sm" disabled>
+                                            <i class="fas fa-ban"></i> No Action Available
+                                        </button>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+>>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
             </div>
         </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">UPLOAD</button>
-        </div>
-        </form>
     </div>
 </div>
-
 @stop
 
 @push('js')
-<script type="text/javascript" src="{{ asset('plugins/summernote') }}/summernote-bs4.min.js"></script>
-<script type="text/javascript" src="{{ asset('plugins/dropify') }}/dist/js/dropify.min.js"></script>
-<script type="text/javascript">
-    $(".summernote").summernote({
-        height:500,
-        callbacks: {
-        // callback for pasting text only (no formatting)
-            onPaste: function (e) {
-              var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-              e.preventDefault();
-              bufferText = bufferText.replace(/\r?\n/g, '<br>');
-              document.execCommand('insertHtml', false, bufferText);
-            }
-        }
-    })
-
-    $(".summernote").on("summernote.enter", function(we, e) {
-        $(this).summernote("pasteHTML", "<br><br>");
-        e.preventDefault();
+<!-- DataTables -->
+<script src="{{ asset('templates/backend/AdminLTE-3.0.1/plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('templates/backend/AdminLTE-3.0.1/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+<script>
+    $(function () {
+        $("#dataTable1").DataTable();
     });
+</script>
+<script src="{{ mix('js/app.js') }}"></script>
+<script>
+    @if(session('success'))
+        Swal.fire({
+            title: 'Berhasil!',
+            text: '{{ session('success') }}',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    @endif
 
-    $('.dropify').dropify({
-        messages: {
-            default: 'Drag atau Drop untuk memilih gambar',
-            replace: 'Ganti',
-            remove:  'Hapus',
-            error:   'error'
-        }
-    });
-
-    $('.title').keyup(function(){
-        var title = $(this).val().toLowerCase().replace(/[&\/\\#^, +()$~%.'":*?<>{}]/g,'-');
-        $('.slug').val(title);
-    });
+    @if(session('error'))
+        Swal.fire({
+            title: 'Gagal!',
+            text: '{{ session('error') }}',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+    @endif
 </script>
 @endpush

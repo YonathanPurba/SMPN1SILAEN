@@ -7,11 +7,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\ChangePasswordController;
 
-
 //Controllers Namespace
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfilController;
-use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\EkstrakulikulerController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PengumumanController;
@@ -20,9 +18,12 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TenagaPengajarController;
+<<<<<<< HEAD
 use App\Models\Ekstrakulikuler;
 use App\Models\Galeri;
 use App\Models\TenagaPengajar;
+=======
+>>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
 
 /*
 |--------------------------------------------------------------------------
@@ -62,11 +63,14 @@ Route::get('/fasilitas/{fasilitas:slug}',[FasilitasController::class,'show'])->n
 Route::get('/pengumuman', [PengumumanController::class,'view'])->name('pengumuman.index');
 Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])->name('pengumuman.show');
 
+<<<<<<< HEAD
 //Ekstrakulikuler
 Route::get('/ekstrakulikuler', [EkstrakulikulerController::class,'view'])->name('ekstrakulikuler.index');
 Route::get('/ekstrakulikuler/{ekstrakulikuler:slug}',[EkstrakulikulerController::class,'show'])->name('ekstrakulikuler.show');
 
 
+=======
+>>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
 Route::get('/identitas',[ProfilController::class,'identitas'])->name('identitas');
@@ -83,7 +87,6 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/fasilitas', [FasilitasController::class,'index'])->name('fasilitas.index');
 		Route::get('/fasilitas/create', [FasilitasController::class, 'create'])->name('fasilitas.create');
 		Route::post('/fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
-		// Route::get('/fasilitas/index/delete/{id}', [FasilitasController::class, 'delete']);
 		Route::get('/fasilitas/edit/{id}', [FasilitasController::class, 'edit'])->name('fasilitas.edit');
 		Route::put('/fasilitas/edit/{id}', [FasilitasController::class, 'update'])->name('fasilitas.edit.update');
 		Route::delete('fasilitas/{id}/delete', [FasilitasController::class, 'delete'])->name('fasilitas.index.delete');
@@ -142,7 +145,11 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		//Resource Controller
 		Route::resource('users','UsersController');
 		Route::resource('pengumuman','PengumumanController');
+<<<<<<< HEAD
 		// Route::resource('artikel','ArtikelController');
+=======
+		Route::resource('galeri','GaleriController');
+>>>>>>> e90192492c99d6db79dba4a73a1940757ad25450
 		Route::resource('kategori-artikel','KategoriArtikelController');
 
 		
