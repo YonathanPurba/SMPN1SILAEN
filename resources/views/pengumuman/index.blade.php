@@ -1,42 +1,82 @@
-@extends('layouts.frontend.app',[
+@extends('layouts.frontend.app', [
     'title' => 'List Pengumuman',
 ])
+
 @section('content')
 
 @if($pengumuman->count() > 0)
 <section class="upcoming-events section-padding-100-0 mb-5">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center mb-5">
                 <div class="section-heading">
-                    <h3>List Pengumuman</h3>
+                    <h2 class="head" >Pengumuman Terbaru</h2>
+                    <p style="font-size: 1.2rem;
+                    color: #ffffff;
+                    font-weight: 400;
+                    max-width:1150px;
+                    border-bottom: 3px solid #ffffff; /* Garis bawah dengan warna putih */
+                    padding-bottom: 5px;">Temukan informasi terkini dan penting di sini. Tetap update dengan pengumuman terbaru kami!</p>
+                    <hr class="w-25 mx-auto">
                 </div>
             </div>
         </div>
 
         <div class="row">
             @foreach($pengumuman as $pn)
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="250ms">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card single-upcoming-events shadow-sm wow fadeInUp" data-wow-delay="250ms" style="transition: transform 0.3s;">
                     <!-- Events Thumb -->
-                    <div class="events-thumb">
-                        <img style="height: 20rem;" src="{{ asset('img/bg') }}/bg-announcement.png" alt="">
-                        <h6 class="event-date">{{ $pn->tgl }} | BY : {{ $pn->user->name }}</h6>
-                        <h4 class="event-title">{{ $pn->judul }}</h4>
-                    </div>
-                    <div>
-                        <a href="{{ route('pengumuman.show',$pn->slug) }}" class="btn btn-primary col-lg">Detail</a>
+                    <img class="card-img-top" style="height: 20rem; object-fit: cover;" src="{{ asset('img/bg/bg-announcement.png') }}" alt="Event image">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-calendar-alt"></i> {{ $pn->tgl }} | <i class="fas fa-user"></i> Oleh : {{ $pn->user->name }}</h6>
+                        <h4 class="card-title">{{ $pn->judul }}</h4>
+                        <p class="card-text">{{ Str::limit($pn->konten, 100) }}</p>
+                        @if($pn->kategori)
+                        <span class="badge badge-info">{{ $pn->kategori->nama }}</span>
+                        @endif
+                        <a href="{{ route('pengumuman.show', $pn->slug) }}" class="btn btn-primary btn-block mt-3">Selengkapnya</a>
                     </div>
                 </div>
             </div>
             @endforeach
+        </div>
 
-            <div class="pagination justify-content-center">
-                {{ $pengumuman->links() }}
+        <div class="row">
+            <div class="col-12">
+                <div class="pagination justify-content-center">
+                    {{ $pengumuman->links() }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@else
+<section class="no-events section-padding-100-0 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-heading">
+                    <h2 class="font-weight-bold">Tidak Ada Pengumuman</h2>
+                    <p class="text-muted">Saat ini belum ada pengumuman yang tersedia. Silakan cek kembali nanti!</p>
+                    <img src="{{ asset('img/empty.svg') }}" alt="No announcements" class="img-fluid mt-4" style="max-width: 300px;">
+                </div>
             </div>
         </div>
     </div>
 </section>
 @endif
+
+<style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+.head{
+    font-family: "Allura", serif;
+    font-size: 5rem;
+    color: #002c4c;
+}
+</style>
+@section('additional-styles')
+
+
+@stop
 
 @stop

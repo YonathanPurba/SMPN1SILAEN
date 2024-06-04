@@ -7,6 +7,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Table Flipping | Nothing4us</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
   <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
     
     :root {
@@ -200,9 +204,9 @@
     }</style>
 </head>
 <body>
-<div class="container" id="app">
+<div class="container animate__animated animate__backInUp" id="app">
   <section>
-    <h4>Visi dan  <span>misi kami</span></h4>
+    <h4 style="color: #ffffff"> Visi dan  <span>misi kami</span></h4>
   </section>
 
   <section>

@@ -16,6 +16,14 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('templates/frontend/clever') }}/style.css">
+    <style>
+        body {
+            background: rgb(9,0,108);
+background: linear-gradient(38deg, rgba(9,0,108,1) 0%, rgba(0,153,255,1) 35%, rgba(255,255,255,1) 100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
     @stack('css')
 </head>
 

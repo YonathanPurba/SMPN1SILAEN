@@ -76,7 +76,7 @@ class GaleriController extends Controller
         $file->move(public_path('folderimage'), $filename);
         $update->thumbnail = $filename;
     }
- 
+
     // Update data lainnya
     $update->judul = $request->judul;
     $update->deskripsi = $request->deskripsi;
