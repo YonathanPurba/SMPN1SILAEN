@@ -88,7 +88,7 @@
 </div></center>
 <section class="map">
     <h3 class="animation">Temukan Kami disini</h3>
-    <p class="mapp animation" id="mapp"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat omnis repudiandae neque esse modi beatae similique nemo odit, explicabo vitae ea incidunt. Maiores adipisci atque velit quam quisquam error facilis tenetur tempora distinctio nisi blanditiis reprehenderit ipsum, ratione molestiae officia beatae sequi voluptatum deleniti quas, quis ea architecto. Iure, tempore?</p>
+    <p class="mapp animation" id="mapp">Mari mampir ke SMP Negeri 1 SIlaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
     <iframe class="gmap animation" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65312299.05611945!2d99.20158100240317!3d2.3904453807262036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1713237782551!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
@@ -189,7 +189,7 @@ section {
   justify-content: center;
 }
 .map h3{
-    font-size: 6rem;
+    font-size: 5rem;
     font-family: "Allura", serif;
     color: #191a1b;
 }
@@ -221,22 +221,23 @@ h3{
 }
 .map{
  text-align: center;
- margin-top: -80px;
+ margin-top: -30px;
 }
 .mapp {
             position: relative;
             margin-left: 26%;
             max-width: 700px;
-            padding: 20px;
             color: #ffffff; /* Warna teks default, akan diubah oleh JS */
             font-weight: 400;
+            margin-bottom: 30px;
+            font-size: 15px;
         }
 
 .gmap{
     width: 1000px;
     height: 350px;
     max-width: 1000px;
-    margin-bottom:80px; 
+    margin-bottom:80px;
 }
 .shadow{
     width: 1000px;
