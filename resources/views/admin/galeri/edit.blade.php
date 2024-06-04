@@ -27,7 +27,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label>Thumbnail</label>
-                        <input type="file" name="thumbnail" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
+                        <input type="file" name="file" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -39,31 +39,8 @@
                     <button type="submit" class="btn btn-primary btn-sm">UPDATE</button>
                 </div>
             </form>
-            <h4 class="card-title">Edit Galeri</h4>
-        </div>
-        <div class="card-body">
-            <form method="POST" enctype="multipart/form-data" action="{{ route('admin.galeri.update', $galeri->id) }}">
-                @csrf
-                <div class="form-group">
-                    <label for="judul">Judul Galeri</label>
-                    <input value="{{ $galeri->judul }}" required type="text" name="judul" id="judul" class="form-control">
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label>Thumbnail</label>
-                            <input type="file" name="file" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="deskripsi">Isi Galeri</label>
-                    <textarea required name="deskripsi" id="deskripsi" class="text-dark form-control summernote">{{ $galeri->deskripsi }}</textarea>
-                </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">UPDATE</button>
-                </div>
-            </form>
+            
+            
         </div>
     </div>
 </div>

@@ -105,7 +105,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'edit'])->name('ekstrakulikuler.edit');
 		Route::put('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'update'])->name('ekstrakulikuler.edit.update');
 
-		//Ekstrakulikuler
+		//Kelas
 		Route::get('/kelas', [KelasController::class,'index'])->name('kelas.index');
 		Route::get('/kelas/create', [KelasController::class, 'create'])->name('kelas.create');
 		Route::post('/kelas', [KelasController::class, 'store'])->name('kelas.store');
@@ -114,7 +114,6 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::put('/kelas/edit/{id}', [KelasController::class, 'update'])->name('kelas.edit.update');
 
 		//Galeri
-		//Ekstrakulikuler
 		Route::get('/galeri', [GaleriController::class,'index'])->name('galeri.index');
 		Route::get('/galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
 		Route::post('/galeri', [GaleriController::class, 'store'])->name('galeri.store');
@@ -135,12 +134,6 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		//Resource Controller
 		Route::resource('users','UsersController');
 		Route::resource('pengumuman','PengumumanController');
-
-		// Route::resource('artikel','ArtikelController');
-
-		Route::resource('galeri','GaleriController');
-
-		Route::resource('kategori-artikel','KategoriArtikelController');
 
 		
 	});
