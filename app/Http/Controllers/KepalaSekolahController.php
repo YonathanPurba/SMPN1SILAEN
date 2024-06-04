@@ -17,7 +17,7 @@ class KepalaSekolahController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {   
         $kepalasekolah = new KepalaSekolah();
         $kepalasekolah->nama = $request->nama;
         $kepalasekolah->nip = $request->nip;
