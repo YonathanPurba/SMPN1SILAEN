@@ -4,7 +4,7 @@
 @section('content')
     <div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url('{{ asset('folderimage/' . $ekstrakulikuler->gambar_ekstrakulikuler) }}');">
     <div class="blog-details-headline">
-        <h3>{{ $fasilitas->judul_ekstrakulikuler }}</h3>
+        <h3>{{ $ekstrakulikuler->judul_ekstrakulikuler }}</h3>
         <div class="meta d-flex align-items-center justify-content-center">
         </div>
     </div>
@@ -18,7 +18,7 @@
             <div class="col-12 col-lg-8">
                 <!-- Blog Details Text -->
                 <div class="blog-details-text">
-                    {!! $fasilitas->deskripsi_ekstrakulikuler !!}
+                    {!! $ekstrakulikuler->deskripsi_ekstrakulikuler !!}
                 </div>
             </div>
         </div>
