@@ -14,10 +14,12 @@ use App\Http\Controllers\EkstrakulikulerController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\JumlahSiswaController;
+use App\Http\Controllers\KepalaSekolahController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TenagaPengajarController;
+use App\Models\KepalaSekolah;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,6 +122,14 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::delete('galeri/{id}/delete', [GaleriController::class, 'delete'])->name('galeri.index.delete');
 		Route::get('/galeri/edit/{id}', [GaleriController::class, 'edit'])->name('galeri.edit');
 		Route::put('/galeri/edit/{id}', [GaleriController::class, 'update'])->name('galeri.edit.update');
+
+		//Kepala Sekolah
+		Route::get('/kepalasekolah', [KepalaSekolahController::class,'index'])->name('kepalasekolah.index');
+		Route::get('/kepalasekolah/create', [KepalaSekolahController::class, 'create'])->name('kepalasekolah.create');
+		Route::post('/kepalasekolah', [KepalaSekolahController::class, 'store'])->name('kepalasekolah.store');
+		Route::delete('kepalasekolah/{id}/delete', [KepalaSekolahController::class, 'delete'])->name('kepalasekolah.index.delete');
+		Route::get('/kepalasekolah/edit/{id}', [KepalaSekolahController::class, 'edit'])->name('kepalasekolah.edit');
+		Route::put('/kepalasekolah/edit/{id}', [KepalaSekolahController::class, 'update'])->name('kepalasekolah.edit.update');
 
 		Route::get('/jumlah_siswa', [JumlahSiswaController::class,'index'])->name('jumlah_siswa.index');
 		Route::get('/jumlah_siswa/create', [JumlahSiswaController::class, 'create'])->name('jumlah_siswa.create');
