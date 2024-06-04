@@ -26,12 +26,14 @@ class HomeController extends Controller
         $total = DB::table('jumlah_siswa')
                             ->sum('total');
         
+        $kepalasekolah = DB::table('kepala_sekolah')->first();
+        
         // Retrieve articles and announcements
         $artikel = Artikel::with(['user', 'kategoriArtikel'])->latest()->take(2)->get();
         $pengumuman = Pengumuman::with(['user'])->latest()->take(2)->get();
 
         // Pass data to the view using compact
-        return view('home.index', compact('artikel', 'pengumuman', 'totalLakiLaki', 'totalPerempuan', 'total'));
+        return view('home.index', compact('artikel', 'pengumuman', 'totalLakiLaki', 'totalPerempuan', 'total','kepalasekolah'));
     }
 
     public function about()

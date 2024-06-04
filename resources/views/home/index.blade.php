@@ -77,7 +77,7 @@
                             Kepala Sekolah SMP N 1 Silaen
                         </h1>
                         <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serifcolor: #002c4c; border-bottom: 3px solid #002c4c; /* Garis bawah dengan warna putih */
-                        padding-bottom: 5px;">Hotlan Panjaitan</h5>
+                        padding-bottom: 5px;">{{ $kepalasekolah ->nama }}</h5>
                         <br>
                         <p style="color: #002c4c;font-weight:900;width:400px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Puji dan Syukur Kehadirat Tuhan Yang Maha Esa karena rahmatNyalah yang masih menyertai kita. Salam sejahtera untuk seluruh pengunjung website SMP N 1 Silaen. Kami sangat gembira menyambut Anda di sini, tempat di mana kami berbagi informasi terkini seputar kegiatan pendidikan dan pengembangan di sekolah kami.</p>
                     </div>
