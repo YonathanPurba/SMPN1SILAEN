@@ -42,14 +42,14 @@
                     <div class="row ml-2">
                         <a href="{{ route('admin.pengumuman.edit',$pn->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
                         
-                        <form method="POST" action="{{ route('admin.pengumuman.destroy',$pn->id) }}">
+                        <form method="POST" action="{{ route('admin.pengumuman.destroy',$pn->id) }}" class="delete-form">
                             @csrf
                             @method('DELETE')
-                            <button onclick="return confirm('Yakin hapus ?')" type="submit" class="btn btn-danger btn-sm ml-2"><i class="fas fa-trash fa-fw"></i></button>
+                            <button type="submit" class="btn btn-danger btn-sm delete-button ml-2"><i class="fas fa-trash fa-fw"></i></button>
                         </form>
                     </div>
                     @else
-                    <a href="javasript:void(0)" class="btn btn-danger btn-sm">
+                    <a href="javascript:void(0)" class="btn btn-danger btn-sm">
                     <i class="fas fa-ban"></i> No Action Available
                     </a>
                     @endif
@@ -63,17 +63,20 @@
     </div>
 </div>
 @stop
+
 @push('js')
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- DataTables -->
 <script src="{{ asset('templates/backend/AdminLTE-3.0.1') }}/plugins/datatables/jquery.dataTables.js"></script>
 <script src="{{ asset('templates/backend/AdminLTE-3.0.1') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-<script>
-  $(function () {
-    $("#dataTable1").DataTable();
-  });
-</script>
+<!-- App Script -->
 <script src="{{ mix('js/app.js') }}"></script>
-    <script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
         @if(session('success'))
             Swal.fire({
                 title: 'Berhasil!',
@@ -91,5 +94,32 @@
                 confirmButtonText: 'OK'
             });
         @endif
-    </script>
+
+        // SweetAlert for delete confirmation
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default form behavior
+                const form = this.closest('form');
+
+                Swal.fire({
+                    title: 'Apakah anda yakin?',
+                    text: "Anda tidak akan bisa mengembalikan ini!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'OK',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+
+        // Initialize DataTables
+        $('#dataTable1').DataTable();
+    });
+</script>
 @endpush

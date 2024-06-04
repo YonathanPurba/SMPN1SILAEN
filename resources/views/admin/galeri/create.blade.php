@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Tambah Artikel',
-	'contentTitle' => 'Tambah Artikel'
+	'title' => 'Tambah Galeri',
+	'contentTitle' => 'Tambah Galeri'
 ])
 
 @push('css')

@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SMPN 1 SILAEN | Identitas Sekolah</title>
     <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
-    <style>
         .page-content {
             display: flex;
             justify-content: center; /* Adjust as needed */
@@ -17,7 +16,7 @@
             align-items: center;
             
         }
-
+        
         .page-content p {
             margin: 0;
             padding: 5px; /* Add padding inside each paragraph */ /* Center-align paragraph content */
