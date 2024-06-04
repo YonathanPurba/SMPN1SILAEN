@@ -30,12 +30,7 @@
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
 
-        <!-- Top Header Area -->
-        <div class="top-header-area d-flex justify-content-between align-items-center">
-            <!-- Contact Info -->
-            
-            <!-- Follow Us -->
-        </div>
+        
 
         <!-- Navbar Area -->
         @include('layouts.frontend.navbar')

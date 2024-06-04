@@ -177,10 +177,6 @@
         });
     });
     </script>
-@endpush
-    $(function () {
-        $("#dataTable1").DataTable();
-    });
 </script>
 <script src="{{ mix('js/app.js') }}"></script>
 <script>
