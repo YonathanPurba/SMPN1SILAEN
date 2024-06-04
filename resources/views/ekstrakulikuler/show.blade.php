@@ -1,5 +1,5 @@
 @extends('layouts.frontend.app',[
-	'title' => 'Baca Artikel',
+	'title' => 'Ekstrakurikuler',
 ])
 @section('content')
     <div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url('{{ asset('folderimage/' . $ekstrakulikuler->gambar_ekstrakulikuler) }}');">

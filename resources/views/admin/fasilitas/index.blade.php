@@ -40,9 +40,9 @@
 				  <td>
 					<div class="row ml-2">
 						<a href="{{ route('admin.fasilitas.edit', ['id' => $fasilitases->id_fasilitas]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<a class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.fasilitas.index.delete', ['id' => $fasilitases->id_fasilitas]) }}">
+						<button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.fasilitas.index.delete', ['id' => $fasilitases->id_fasilitas]) }}">
 							<i class="fas fa-trash fa-fw"></i>
-						</a>
+						</button>
 					</div>
 						
 				  </td>
