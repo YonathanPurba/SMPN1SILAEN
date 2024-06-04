@@ -105,6 +105,14 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.kepalasekolah.index') }}" class="nav-link {{ Request::segment(2) == 'kepalasekolah' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-user-tie"></i>
+            <p>
+              Kepala Sekolah
+            </p>
+          </a>
+        </li>
 
         <li class="nav-header">PENGATURAN</li>
         <li class="nav-item">

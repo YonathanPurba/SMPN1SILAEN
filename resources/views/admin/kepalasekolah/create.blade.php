@@ -1,50 +1,47 @@
 @extends('layouts.backend.app',[
-	'title' => 'Tambah Artikel',
-	'contentTitle' => 'Tambah Artikel'
+	'title' => 'Tambah Tenaga Pengajar',
+	'contentTitle' => 'Tambah Tenaga Pengajar',
 ])
 
 @push('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/summernote') }}/summernote-bs4.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/dropify') }}/dist/css/dropify.min.css">
 @endpush
-
 @section('content')
-
-<div class="">    
-    <div class="card">
-        <div class="card-header">
-            <a href="{{ route('admin.galeri.index') }}" class="btn btn-success btn-sm">Kembali</a>
-        </div>
-        <div class="card-body">
-        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.galeri.store') }}">
-            @csrf
-            
-            <div class="form-group">
-                <label for="judul">Judul Galeri</label>
-                <input required="" type="" name="judul" placeholder="" class="form-control"> 
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label>Thumbnail</label>
-                        <input type="file" name="file" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
+<div class="row">
+	<div class="col">
+		<div class="card">
+			<div class="card-header">
+				<a href="{{ route('admin.kepalasekolah.index') }}" class="btn btn-success btn-sm">Kembali</a>
+			</div>
+			<div class="card-body">
+				<form method="POST" action="{{ route('admin.kepalasekolah.store') }}" enctype="multipart/form-data">
+					@csrf
+					<div class="form-group">
+						<label for="name">Nama</label>
+						<input required="" class="form-control" type="" name="nama" id="name" placeholder="">
+					</div>
+					<div class="form-group">
+						<label for="nip">NIP</label>
+						<input required="" class="form-control" type="" name="nip" id="nip" placeholder="">
+					</div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Gambar</label>
+                                <input type="file" name="gambar_kepalasekolah" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div id="form-group">
-                <label for="deskripsi">Isi Deskripsi Galeri</label>
-                <textarea required="" name="deskripsi" id="deskripsi" class="text-dark form-control summernote"></textarea>
-            </div>
-        </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">UPLOAD</button>
-        </div>
-        </form>
-    </div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
-
 @stop
-
 @push('js')
 <script type="text/javascript" src="{{ asset('plugins/summernote') }}/summernote-bs4.min.js"></script>
 <script type="text/javascript" src="{{ asset('plugins/dropify') }}/dist/js/dropify.min.js"></script>

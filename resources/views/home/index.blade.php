@@ -21,19 +21,6 @@
         .zoom-in-on-hover:hover {
             transform: scale(1.05);
         }
-        .kepala {
-    background-image: url(/img/picture/blob.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
-    right: 100px;
-    width: 110%;
-    height: 100%; 
-}
-.row.custom-card {
-    background-color: white;
-}
 </style>
 @section('content')
 <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url('/img/bg/picture.jpg');">
@@ -164,6 +151,18 @@ const observer = new IntersectionObserver((entries) => {
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+.kepala {
+    background-image: url("/img/picture/blob.svg");
+    background-size: cover; /* Ensures the background image covers the entire element */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    width: 110%;
+    height: 100vh; /* Sets the height to cover the full viewport height */
+    position: relative;
+    right: 100px;
+}
+
+
 .animation {
     opacity: 0;
     transform: translateX(-300px);
