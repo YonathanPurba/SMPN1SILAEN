@@ -21,6 +21,7 @@
         .zoom-in-on-hover:hover {
             transform: scale(1.05);
         }
+        
 </style>
 @section('content')
 <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url('/img/bg/picture.jpg');">
