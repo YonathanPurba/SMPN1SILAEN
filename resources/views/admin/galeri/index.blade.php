@@ -37,58 +37,13 @@
                   <td>
                     <div class="row ml-2">
                         <a href="{{ route('admin.galeri.edit', ['id' => $art->id]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<a class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.galeri.index.delete', ['id' => $art->id]) }}">
+						<button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.galeri.index.delete', ['id' => $art->id]) }}">
 							<i class="fas fa-trash fa-fw"></i>
-						</a>
+						</button>
                     </div>
                   </td>
                 </tr>
                 @endforeach
-                </tbody>
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Judul</th>
-                            <th>Gambar</th>
-                            <th>Author</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php 
-                            $no = 1;
-                        @endphp
-
-                        @foreach($galeri as $art)
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $art->judul }}</td>
-                                <td>
-                                    <img src="{{ asset('storage/' . $art->thumbnail) }}" alt="{{ $art->judul }}" style="width: 100px; height: auto;">
-                                </td>
-                                <td>{{ $art->user->name }}</td>
-                                <td>
-                                    @if(auth()->user()->id == $art->user_id)
-                                        <div class="btn-group" role="group" aria-label="Actions">
-                                            <a href="{{ route('admin.galeri.edit', $art->id) }}" class="btn btn-primary btn-sm">
-                                                <i class="fas fa-edit fa-fw"></i>
-                                            </a>
-                                            <form method="POST" action="{{ route('admin.galeri.destroy', $art->id) }}">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button onclick="return confirm('Yakin hapus?')" type="submit" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash fa-fw"></i>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    @else
-                                        <button class="btn btn-danger btn-sm" disabled>
-                                            <i class="fas fa-ban"></i> No Action Available
-                                        </button>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -177,6 +132,10 @@
         });
     });
     </script>
+<<<<<<< HEAD
+
+=======
+>>>>>>> effe4f25043668a0126c127282a1dea3ff28142a
 </script>
 <script src="{{ mix('js/app.js') }}"></script>
 <script>
