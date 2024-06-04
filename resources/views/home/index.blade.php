@@ -23,7 +23,7 @@
         }
 </style>
 @section('content')
-<section class="hero-area bg-img bg-overlay-2by5" style="background-image: url('/img/bg/pict1.jpg');">
+<section class="hero-area bg-img bg-overlay-2by5" style="background-image: url('/img/bg/picture.jpg');">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">                
@@ -77,7 +77,7 @@
                         <h1 style="width: 350px;font-family: freshman; color: black;">
                             Kepala Sekolah SMP N 1 Silaen
                         </h1>
-                        <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Hotlan Pangaribuan</h5>
+                        <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">Hotlan Panjaitan</h5>
                         <br>
                         <p style="color:aliceblue;font-weight:900;width:400px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Puji dan Syukur Kehadirat Tuhan Yang Maha Esa karena rahmatNyalah yang masih menyertai kita. Salam sejahtera untuk seluruh pengunjung website SMP N 1 Silaen. Kami sangat gembira menyambut Anda di sini, tempat di mana kami berbagi informasi terkini seputar kegiatan pendidikan dan pengembangan di sekolah kami.</p>
                     </div>

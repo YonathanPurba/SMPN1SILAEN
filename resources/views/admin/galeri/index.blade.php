@@ -132,7 +132,10 @@
         });
     });
     </script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> effe4f25043668a0126c127282a1dea3ff28142a
 </script>
 <script src="{{ mix('js/app.js') }}"></script>
 <script>
