@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Identitas Sekolah</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
     <style>
         .page-content {
@@ -109,6 +113,19 @@ h1, h3, h4, h5 {
             padding-bottom: 5px;
           
         }
+
+        .animation {
+    opacity: 0;
+    transform: translateX(-300px);
+    transition: all 0.7s ease-out;
+    transition-delay: 0.4s;
+
+}
+
+.scroll-animation {
+    opacity: 1;
+    transform: translateX(0);
+}
     </style>
 </head>
 <body>
@@ -118,7 +135,7 @@ h1, h3, h4, h5 {
 @section('content')
 
 <section class="upcoming-events section-padding-100-0 mb-0">
-    <div class="container">
+    <div class="container animate__animated animate__fadeInDown">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
@@ -132,7 +149,7 @@ h1, h3, h4, h5 {
 </section>
 
 <div class="regular-page-area section-padding-1">
-    <div class="container">
+    <div class="container animate__animated animation">
         <div class="row">
             <div class="col-12">
                 <div class="page-content">
@@ -174,7 +191,7 @@ h1, h3, h4, h5 {
     </div>
 </div>
 
-<div class="regular-page-area section-padding-100">
+<div class="regular-page-area section-padding-100 animation">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -192,6 +209,29 @@ h1, h3, h4, h5 {
 </div>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+<script>
+        const the_animation = document.querySelectorAll('.animation')
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('scroll-animation')
+        }
+            else {
+                entry.target.classList.remove('scroll-animation')
+            }
+        
+    })
+},
+   { threshold: 0.5
+   });
+//
+  for (let i = 0; i < the_animation.length; i++) {
+   const elements = the_animation[i];
+
+    observer.observe(elements);
+  } 
+</script>
 @stop
 </body>
 </html>
