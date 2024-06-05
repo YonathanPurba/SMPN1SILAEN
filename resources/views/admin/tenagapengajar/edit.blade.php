@@ -2,6 +2,11 @@
 	'title' => 'Edit Tenaga Pengajar',
 	'contentTitle' => 'Edit Tenaga Pengajar',
 ])
+
+@push('css')
+<link rel="stylesheet" type="text/css" href="{{ asset('plugins/summernote') }}/summernote-bs4.min.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('plugins/dropify') }}/dist/css/dropify.min.css">
+@endpush
 @section('content')
 <div class="row">
 	<div class="col">
@@ -29,10 +34,12 @@
 						<label for="alamat">Alamat</label>
 						<input required="" class="form-control" type="" name="alamat" id="alamat" placeholder="" value="{{ $pengajar->alamat }}">
 					</div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label>Gambar</label>
-                            <input type="file" name="gambar_tenagapengajar" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" value="{{ $pengajar->gambar_tenagapengajar }}">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Gambar</label>
+                                <input type="file" name="gambar_tenagapengajar" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" value="{{ $pengajar->gambar_tenagapengajar }}">
+                            </div>
                         </div>
                     </div>
 					<div class="form-group">
@@ -44,3 +51,25 @@
 	</div>
 </div>
 @stop
+@push('js')
+<script type="text/javascript" src="{{ asset('plugins/summernote') }}/summernote-bs4.min.js"></script>
+<script type="text/javascript" src="{{ asset('plugins/dropify') }}/dist/js/dropify.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+        $('.dropify').dropify({
+            messages: {
+                default: 'Drag atau Drop untuk memilih gambar',
+                replace: 'Ganti',
+                remove:  'Hapus',
+                error:   'error'
+            }
+        });
+
+        $('.title').keyup(function(){
+            var title = $(this).val().toLowerCase().replace(/[&\/\\#^, +()$~%.'":*?<>{}]/g,'-');
+            $('.slug').val(title);
+        });
+    });
+</script>
+@endpush
