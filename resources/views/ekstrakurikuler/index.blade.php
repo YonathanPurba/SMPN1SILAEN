@@ -79,13 +79,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
 
         <div class="row">
-            @foreach ($ekstrakulikuler as $ekstrakulikulers)
+            @foreach ($ekstrakurikuler as $ekstrakurikulers)
             <div class="col-md-6">
                 <div class="event animate__animated animate__fadeInUp">
-                    <img src="{{ asset('folderimage/' . $ekstrakulikulers->gambar_ekstrakulikuler) }}" alt="{{ $ekstrakulikulers->judul_ekstrakulikuler }}">
-                    <div class="event-title">{{ $ekstrakulikulers->judul_ekstrakulikuler }}</div>
+                    <img src="{{ asset('folderimage/' . $ekstrakurikulers->gambar_ekstrakurikuler) }}" alt="{{ $ekstrakurikulers->judul_ekstrakurikuler }}">
+                    <div class="event-title">{{ $ekstrakurikulers->judul_ekstrakurikuler }}</div>
                     <div class="event-description">
-                        <a href="{{ route('ekstrakulikuler.show',$ekstrakulikulers->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
+                        <a href="{{ route('ekstrakurikuler.show',$ekstrakurikulers->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
                     </div>
                 </div>
             </div>

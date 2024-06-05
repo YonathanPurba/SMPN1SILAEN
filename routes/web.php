@@ -10,7 +10,7 @@ use App\Http\Controllers\ChangePasswordController;
 //Controllers Namespace
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfilController;
-use App\Http\Controllers\EkstrakulikulerController;
+use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\JumlahSiswaController;
@@ -59,9 +59,9 @@ Route::get('/fasilitas/{fasilitas:slug}',[FasilitasController::class,'show'])->n
 Route::get('/pengumuman', [PengumumanController::class,'view'])->name('pengumuman.index');
 Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])->name('pengumuman.show');
 
-//Ekstrakulikuler
-Route::get('/ekstrakulikuler', [EkstrakulikulerController::class,'view'])->name('ekstrakulikuler.index');
-Route::get('/ekstrakulikuler/{ekstrakulikuler:slug}',[EkstrakulikulerController::class,'show'])->name('ekstrakulikuler.show');
+//Ekstrakurikuler
+Route::get('/ekstrakurikuler', [EkstrakurikulerController::class,'view'])->name('ekstrakurikuler.index');
+Route::get('/ekstrakurikuler/{ekstrakurikuler:slug}',[EkstrakurikulerController::class,'show'])->name('ekstrakurikuler.show');
 
 //Profil
 Route::get('/visimisi',[ProfilController::class,'visimisi'])->name('visimisi');
@@ -99,13 +99,13 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/prestasi/edit/{id}', [PrestasiController::class, 'edit'])->name('prestasi.edit');
 		Route::put('/prestasi/edit/{id}', [PrestasiController::class, 'update'])->name('prestasi.edit.update');
 
-		//Ekstrakulikuler
-		Route::get('/ekstrakulikuler', [EkstrakulikulerController::class,'index'])->name('ekstrakulikuler.index');
-		Route::get('/ekstrakulikuler/create', [EkstrakulikulerController::class, 'create'])->name('ekstrakulikuler.create');
-		Route::post('/ekstrakulikuler', [EkstrakulikulerController::class, 'store'])->name('ekstrakulikuler.store');
-		Route::delete('ekstrakulikuler/{id}/delete', [EkstrakulikulerController::class, 'delete'])->name('ekstrakulikuler.index.delete');
-		Route::get('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'edit'])->name('ekstrakulikuler.edit');
-		Route::put('/ekstrakulikuler/edit/{id}', [EkstrakulikulerController::class, 'update'])->name('ekstrakulikuler.edit.update');
+		//Ekstrakurikuler
+		Route::get('/ekstrakurikuler', [EkstrakurikulerController::class,'index'])->name('ekstrakurikuler.index');
+		Route::get('/ekstrakurikuler/create', [EkstrakurikulerController::class, 'create'])->name('ekstrakurikuler.create');
+		Route::post('/ekstrakurikuler', [EkstrakurikulerController::class, 'store'])->name('ekstrakurikuler.store');
+		Route::delete('ekstrakurikuler/{id}/delete', [EkstrakurikulerController::class, 'delete'])->name('ekstrakurikuler.index.delete');
+		Route::get('/ekstrakurikuler/edit/{id}', [EkstrakurikulerController::class, 'edit'])->name('ekstrakurikuler.edit');
+		Route::put('/ekstrakurikuler/edit/{id}', [EkstrakurikulerController::class, 'update'])->name('ekstrakurikuler.edit.update');
 
 		//Kelas
 		Route::get('/kelas', [KelasController::class,'index'])->name('kelas.index');

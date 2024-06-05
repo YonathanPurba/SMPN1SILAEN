@@ -79,7 +79,7 @@ class FasilitasController extends Controller
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect()->route('admin.fasilitas.index')->with('status', 'Fasilitas berhasil ditambahkan.');
+    return redirect()->route('admin.fasilitas.index')->with('success', 'Fasilitas berhasil diedit.');
     }
     public function edit($id)
     {

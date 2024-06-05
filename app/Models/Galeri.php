@@ -22,9 +22,4 @@ class Galeri extends Model
     	return $this->belongsTo(User::class);
     }
 
-    public function kategoriArtikel()
-    {
-    	return $this->belongsTo(KategoriArtikel::class);
-    }
-
 }
