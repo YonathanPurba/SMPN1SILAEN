@@ -1,42 +1,118 @@
 @extends('layouts.backend.app',[
-	'title' => 'Edit Prestasi',
-	'contentTitle' => 'Edit Prestasi',
+    'title' => 'Edit Prestasi',
+    'contentTitle' => 'Edit Prestasi',
 ])
+
+@push('css')
+<link rel="stylesheet" type="text/css" href="{{ asset('plugins/summernote') }}/summernote-bs4.min.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('plugins/dropify') }}/dist/css/dropify.min.css">
+@endpush
+
 @section('content')
 <div class="row">
-	<div class="col">
-		<div class="card">
-			<div class="card-header">
-				<a href="{{ route('admin.prestasi.index') }}" class="btn btn-success btn-sm">Kembali</a>
-			</div>
-			<div class="card-body">
-				<form method="POST" action="{{ route('admin.prestasi.edit.update',$prestasi->id_prestasi) }}" enctype="multipart/form-data">
-					@csrf
-					@method('PUT')
-					<div class="form-group">
-						<label for="name">Judul</label>
-						<input required="" class="form-control" type="" name="judul_prestasi" id="name" placeholder="" value="{{ $prestasi->judul_prestasi }}">
-					</div>
-					<div class="form-group">
-						<label for="jabatan">Deskripsi</label>
-						<input required="" class="form-control" type="" name="deskripsi_prestasi" id="email" placeholder="" value="{{ $prestasi->jabatan }}">
-					</div>
-					<div class="form-group">
-						<label for="nip">Tanggal</label>
-						<input required="" class="form-control" type="date" name="tanggal_prestasi" id="nip" placeholder="" value="{{ $prestasi->tanggal_prestasi }}">
-					</div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label>Gambar</label>
-                            <input type="file" name="gambar_prestasi" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" value="{{ $prestasi->gambar_prestasi }}">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <a href="{{ route('admin.prestasi.index') }}" class="btn btn-success btn-sm">Kembali</a>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ route('admin.prestasi.edit.update', $prestasi->id_prestasi) }}" enctype="multipart/form-data" id="form-prestasi">
+                    @csrf
+                    @method('PUT')
+                    <div class="form-group">
+                        <label for="judul_prestasi">Judul</label>
+                        <input required="" class="form-control" type="" name="judul_prestasi" id="judul_prestasi" placeholder="" value="{{ $prestasi->judul_prestasi }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi">Deskripsi</label>
+                        <textarea required="" name="deskripsi_prestasi" id="deskripsi" class="text-dark form-control summernote">{{ $prestasi->deskripsi_prestasi }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal_prestasi">Tanggal</label>
+                        <input required="" class="form-control" type="date" name="tanggal_prestasi" id="tanggal_prestasi" placeholder="" value="{{ $prestasi->tanggal_prestasi }}">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Gambar</label>
+                                <input type="file" name="gambar_prestasi" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" value="{{ $prestasi->gambar_prestasi }}">
+                            </div>
                         </div>
                     </div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-sm">UPDATE</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-sm">UPDATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 @stop
+
+@push('js')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="{{ asset('plugins/summernote') }}/summernote-bs4.min.js"></script>
+<script type="text/javascript" src="{{ asset('plugins/dropify') }}/dist/js/dropify.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#tanggal_prestasi").on("change", function() {
+            var tanggalPrestasi = $(this).val();
+            var tanggalSekarang = "{{ date('Y-m-d') }}";
+
+            if (tanggalPrestasi > tanggalSekarang) {
+                Swal.fire({
+                    title: 'Perhatian!',
+                    text: 'Tanggal tidak boleh melebihi tanggal sekarang.',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $(this).val("");
+                    }
+                });
+            }
+        });
+
+        $("form#form-prestasi").submit(function(e) {
+            var tanggalPrestasi = $("#tanggal_prestasi").val();
+            var tanggalSekarang = "{{ date('Y-m-d') }}";
+
+            if (tanggalPrestasi > tanggalSekarang) {
+                e.preventDefault();
+            }
+        });
+
+        $(".summernote").summernote({
+            height:500,
+            callbacks: {
+            // callback for pasting text only (no formatting)
+                onPaste: function (e) {
+                  var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                  e.preventDefault();
+                  bufferText = bufferText.replace(/\r?\n/g, '<br>');
+                  document.execCommand('insertHtml', false, bufferText);
+                }
+            }
+        })
+
+        $(".summernote").on("summernote.enter", function(we, e) {
+            $(this).summernote("pasteHTML", "<br><br>");
+            e.preventDefault();
+        });
+
+        $('.dropify').dropify({
+            messages: {
+                default: 'Drag atau Drop untuk memilih gambar',
+                replace: 'Ganti',
+                remove:  'Hapus',
+                error:   'error'
+            }
+        });
+
+        $('.title').keyup(function(){
+            var title = $(this).val().toLowerCase().replace(/[&\/\\#^, +()$~%.'":*?<>{}]/g,'-');
+            $('.slug').val(title);
+        });
+    });
+</script>
+@endpush

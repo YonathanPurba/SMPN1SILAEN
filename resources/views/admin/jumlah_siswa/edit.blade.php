@@ -20,11 +20,11 @@
 					@method('PUT')
 					<div class="form-group">
 						<label for="name">Jumlah Siswa Laki-Laki</label>
-						<input required="" class="form-control" type="" name="jumlah_siswa_laki_laki" id="name" placeholder="" value="{{ $jumlah_siswa->jumlah_siswa_laki_laki }}">
+						<input required="" class="form-control" type="" name="jumlah_siswa_laki_laki" id="jumlah_siswa_laki_laki" placeholder="" value="{{ $jumlah_siswa->jumlah_siswa_laki_laki }}">
 					</div>
 					<div class="form-group">
 						<label for="nip">Jumlah Siswa Perempuan</label>
-						<input required="" class="form-control" type="" name="jumlah_siswa_perempuan" id="nip" placeholder="" value="{{ $jumlah_siswa->jumlah_siswa_perempuan }}">
+						<input required="" class="form-control" type="" name="jumlah_siswa_perempuan" id="jumlah_siswa_perempuan" placeholder="" value="{{ $jumlah_siswa->jumlah_siswa_perempuan }}">
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary btn-sm">UPDATE</button>
@@ -36,39 +36,35 @@
 </div>
 @stop
 @push('js')
-<script type="text/javascript" src="{{ asset('plugins/summernote') }}/summernote-bs4.min.js"></script>
-<script type="text/javascript" src="{{ asset('plugins/dropify') }}/dist/js/dropify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
-    $(".summernote").summernote({
-        height:500,
-        callbacks: {
-        // callback for pasting text only (no formatting)
-            onPaste: function (e) {
-              var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-              e.preventDefault();
-              bufferText = bufferText.replace(/\r?\n/g, '<br>');
-              document.execCommand('insertHtml', false, bufferText);
+    $(document).ready(function() {
+        $("#jumlah_siswa_laki_laki, #jumlah_siswa_perempuan").on("change", function() {
+            var jumlahSiswaLakiLaki = $("#jumlah_siswa_laki_laki").val();
+            var jumlahSiswaPerempuan = $("#jumlah_siswa_perempuan").val();
+
+            if (isNaN(jumlahSiswaLakiLaki) || isNaN(jumlahSiswaPerempuan)) {
+                Swal.fire({
+                    title: 'Perhatian!',
+                    text: 'Jumlah siswa harus berupa angka.',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $("#jumlah_siswa_laki_laki, #jumlah_siswa_perempuan").val("");
+                    }
+                });
             }
-        }
-    })
+        });
 
-    $(".summernote").on("summernote.enter", function(we, e) {
-        $(this).summernote("pasteHTML", "<br><br>");
-        e.preventDefault();
-    });
+        $("form#form-jumlah-siswa").submit(function(e) {
+            var jumlahSiswaLakiLaki = $("#jumlah_siswa_laki_laki").val();
+            var jumlahSiswaPerempuan = $("#jumlah_siswa_perempuan").val();
 
-    $('.dropify').dropify({
-        messages: {
-            default: 'Drag atau Drop untuk memilih gambar',
-            replace: 'Ganti',
-            remove:  'Hapus',
-            error:   'error'
-        }
-    });
-
-    $('.title').keyup(function(){
-        var title = $(this).val().toLowerCase().replace(/[&\/\\#^, +()$~%.'":*?<>{}]/g,'-');
-        $('.slug').val(title);
+            if (isNaN(jumlahSiswaLakiLaki) || isNaN(jumlahSiswaPerempuan)) {
+                e.preventDefault();
+            }
+        });
     });
 </script>
 @endpush

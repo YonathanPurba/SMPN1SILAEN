@@ -30,7 +30,7 @@ class JumlahSiswaController extends Controller
     }
 
     public function store(Request $request)
-{
+{   
     $jumlah_siswa = new JumlahSiswa;
     $jumlah_siswa->jumlah_siswa_laki_laki = $request->jumlah_siswa_laki_laki;
     $jumlah_siswa->jumlah_siswa_perempuan = $request->jumlah_siswa_perempuan;
