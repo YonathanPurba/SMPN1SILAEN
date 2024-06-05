@@ -23,8 +23,9 @@ class EkstrakurikulerController extends Controller
         $ekstrakurikuler->judul_ekstrakurikuler = $request->judul_ekstrakurikuler;
         $ekstrakurikuler->deskripsi_ekstrakurikuler = $request->deskripsi_ekstrakurikuler;
         $ekstrakurikuler->slug = Str::slug($request->judul_ekstrakurikuler);
-        $ekstrakurikuler->created_by = Auth::id();
-        $ekstrakurikuler->update_by = Auth::id();
+        $ekstrakurikuler->user_id = Auth::id();
+        $ekstrakurikuler->created_by = Auth::user()->name;
+        $ekstrakurikuler->update_by = Auth::user()->name;
     
             if ($request->hasFile('gambar_ekstrakurikuler')) {
                 $file = $request->file('gambar_ekstrakurikuler');
@@ -73,7 +74,8 @@ class EkstrakurikulerController extends Controller
     $update->judul_ekstrakurikuler = $request->judul_ekstrakurikuler;
     $update->deskripsi_ekstrakurikuler = $request->deskripsi_ekstrakurikuler;
     $update->slug = Str::slug($request->judul_ekstrakurikuler);
-    $update->update_by = Auth::id();
+    $update->user_id = Auth::id();
+    $update->update_by = Auth::user()->name;
 
     // Simpan perubahan ke dalam database
     $update->save();

@@ -39,8 +39,9 @@ class JumlahSiswaController extends Controller
     $jumlah_siswa->total = $request->jumlah_siswa_laki_laki + $request->jumlah_siswa_perempuan;
     
     $jumlah_siswa->id_kelas = $request->id_kelas;
-    $jumlah_siswa->created_by = Auth::id();
-    $jumlah_siswa->update_by = Auth::id();
+    $jumlah_siswa->user_id = Auth::id();
+    $jumlah_siswa->created_by = Auth::user()->name;
+    $jumlah_siswa->update_by = Auth::user()->name;
     
     if ($jumlah_siswa->save())
     {
@@ -71,8 +72,8 @@ public function edit($id)
     $update->jumlah_siswa_laki_laki = $request->jumlah_siswa_laki_laki;
     $update->jumlah_siswa_perempuan = $request->jumlah_siswa_perempuan;
     $update->total = $request->jumlah_siswa_laki_laki + $request->jumlah_siswa_perempuan;
-    $update->created_by = Auth::id();
-    $update->update_by = Auth::id();
+    $update->user_id = Auth::id();
+    $update->update_by = Auth::user()->name;
 
     // Simpan perubahan ke dalam database
     $update->save();

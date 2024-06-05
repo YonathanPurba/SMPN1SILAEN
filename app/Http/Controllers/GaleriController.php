@@ -28,8 +28,9 @@ class GaleriController extends Controller
         $galeri = new Galeri();
         $galeri->judul = $request->judul;
         $galeri->deskripsi = $request->deskripsi;
-        $galeri->created_by = Auth::id();
-        $galeri->update_by = Auth::id();
+        $galeri->user_id = Auth::id();
+        $galeri->created_by = Auth::user()->name;
+        $galeri->update_by = Auth::user()->name;
         $galeri->slug = Str::slug($request->judul);
     
             if ($request->hasFile('thumbnail')) {
@@ -81,7 +82,8 @@ class GaleriController extends Controller
     $update->judul = $request->judul;
     $update->deskripsi = $request->deskripsi;
     $update->slug = Str::slug($request->judul);
-    $update->update_by = Auth::id();
+    $update->user_id = Auth::id();
+    $update->update_by = Auth::user()->name;
 
     // Simpan perubahan ke dalam database
     $update->save();
