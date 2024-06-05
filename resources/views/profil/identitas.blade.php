@@ -6,15 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
     <title>Identitas Sekolah</title>
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-=======
     <title>SMPN 1 SILAEN | Identitas Sekolah</title>
->>>>>>> 80df4b6c344bf443438ed30c457df19653c41327
     <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
         .page-content {
             display: flex;
