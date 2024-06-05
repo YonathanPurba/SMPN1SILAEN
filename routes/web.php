@@ -19,6 +19,7 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TenagaPengajarController;
+use App\Models\JumlahSiswa;
 use App\Models\KepalaSekolah;
 
 /*
@@ -46,6 +47,9 @@ Route::get('/galeri/{galeri:slug}',[GaleriController::class,'show'])->name('gale
 //Tenaga Pengajar
 Route::get('/tenagapengajar', [TenagaPengajarController::class,'view'])->name('tenagapengajar.index');
 Route::get('/tenagapengajar/{tenagapengajar:slug}',[TenagaPengajarController::class,'show'])->name('tenagapengajar.show');
+
+//Jumlah Siswa
+Route::get('/jumlahsiswa', [JumlahSiswaController::class,'view'])->name('jumlahsiswa.index');
 
 //Prestasi
 Route::get('/prestasi', [PrestasiController::class,'view'])->name('prestasi.index');

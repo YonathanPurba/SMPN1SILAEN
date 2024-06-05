@@ -91,5 +91,11 @@ public function edit($id)
         return redirect()->back()->with('error', 'Terjadi kesalahan saat menghitung total siswa laki-laki.');
     }
 }
+public function view()
+{   
+    $kelas = DB::table('kelas')->get();
+    $jumlah_siswa = JumlahSiswa::all();
+    return view('jumlahsiswa.index',compact('kelas','jumlah_siswa'));
+}
 
 }

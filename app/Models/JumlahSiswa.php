@@ -10,4 +10,9 @@ class JumlahSiswa extends Model
     use HasFactory;
     protected $table = 'jumlah_siswa';
     protected $primaryKey = 'id_jumlah_siswa';
+
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class, 'id_kelas');
+    }
 }

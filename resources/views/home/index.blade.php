@@ -95,11 +95,22 @@
 </section>
 <script>
     const totalLakiLakiCard = document.getElementById('totalLakiLaki');
+    const totalPerempuanCard = document.getElementById('totalPerempuan');
+    const totalCard = document.getElementById('total');
 
-totalLakiLakiCard.addEventListener('click', () => {
-    // Navigasi ke tampilan baru
-    window.location.href = '/galeri';
-});
+    totalLakiLakiCard.addEventListener('click', () => {
+        // Navigasi ke tampilan baru
+        window.location.href = '/jumlahsiswa';
+    });
+
+    totalPerempuanCard.addEventListener('click', () => {
+        // Navigasi ke tampilan baru
+        window.location.href = '/jumlahsiswa';
+    });
+    totalCard.addEventListener('click', () => {
+        // Navigasi ke tampilan baru
+        window.location.href = '/jumlahsiswa';
+    });
 </script>
 <script>
 
