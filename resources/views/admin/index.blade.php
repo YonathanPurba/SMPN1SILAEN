@@ -2,11 +2,12 @@
     'title' => 'Dashboard',
     'contentTitle' => 'Dashboard',
 ])
+
 @section('content')
 <!-- Small boxes (Stat box) -->
 <div class="row">
+    <!-- Admin Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-info">
             <div class="inner">
                 <h3>@count('users')</h3>
@@ -18,9 +19,8 @@
             <a href="{{ route('admin.users.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
+    <!-- Galeri Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-success">
             <div class="inner">
                 <h3>@count('galeri')</h3>
@@ -32,9 +32,8 @@
             <a href="{{ route('admin.galeri.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
+    <!-- Pengumuman Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
                 <h3>@count('pengumuman')</h3>
@@ -46,9 +45,8 @@
             <a href="{{ route('admin.pengumuman.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
+    <!-- Tenaga Pengajar Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-primary">
             <div class="inner">
                 <h3>@count('tenagapengajar')</h3>
@@ -60,9 +58,8 @@
             <a href="{{ route('admin.tenagapengajar.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
+    <!-- Fasilitas Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-danger">
             <div class="inner">
                 <h3>@count('fasilitas')</h3>
@@ -74,9 +71,8 @@
             <a href="{{ route('admin.fasilitas.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
+    <!-- Prestasi Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-secondary">
             <div class="inner">
                 <h3>@count('prestasi')</h3>
@@ -88,9 +84,8 @@
             <a href="{{ route('admin.prestasi.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
+    <!-- Ekstrakurikuler Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-dark">
             <div class="inner">
                 <h3>@count('ekstrakurikuler')</h3>
@@ -102,9 +97,8 @@
             <a href="{{ route('admin.ekstrakurikuler.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
+    <!-- Kelas Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-light">
             <div class="inner">
                 <h3>@count('kelas')</h3>
@@ -116,9 +110,8 @@
             <a href="{{ route('admin.kelas.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    <!-- ./col -->
+    <!-- Jumlah Siswa Box -->
     <div class="col-lg-4 col-6">
-        <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
                 <h3>@count('jumlah_siswa')</h3>
@@ -128,6 +121,19 @@
                 <i class="fas fa-user-graduate"></i>
             </div>
             <a href="{{ route('admin.jumlah_siswa.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- Kepala Sekolah Box -->
+    <div class="col-lg-4 col-6">
+        <div class="small-box bg-teal">
+            <div class="inner">
+                <h3>@count('users')</h3>
+                <p>Kepala Sekolah</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <a href="{{ route('admin.kepalasekolah.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
 </div>
