@@ -40,7 +40,7 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Laki-laki</strong>
-                    <h3 class="mb-0">{{ $totalLakiLaki }}</h3>
+                    <h3 class="mb-0 count-number" data-count="{{ $totalLakiLaki }}">{{ $totalLakiLaki }}</h3>
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Perempuan</strong>
-                    <h3 class="mb-0">{{ $totalPerempuan }}</h3>
+                    <h3 class="mb-0 count-number" data-count="{{ $totalPerempuan }}">{{ $totalPerempuan }}</h3>
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Siswi</strong>
                 </div>
             </div>
@@ -58,13 +58,14 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Keseluruhan</strong>
-                    <h3 class="mb-0">{{ $total }}</h3>
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
+                    <h3 class="mb-0 count-number" data-count="{{ $total }}">{{ $total }}</h3>
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">Murid</strong>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
     <center>
 <div class="regular-page-area section-padding-10 mt-5 mb-4 b kepala">
     <div class="container animation ">
@@ -93,56 +94,74 @@
 </section>
 
 <script>
-    const the_animation = document.querySelectorAll('.animation')
+const the_animation = document.querySelectorAll('.animation');
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('scroll-animation')
+            entry.target.classList.add('scroll-animation');
+            observer.unobserve(entry.target); // Stop observing the element once it has been animated
         }
-            else {
-                entry.target.classList.remove('scroll-animation')
-            }
-        
-    })
-},
-   { threshold: 0.5
-   });
-//
-  for (let i = 0; i < the_animation.length; i++) {
-   const elements = the_animation[i];
-
-    observer.observe(elements);
-  } 
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var text = "Selamat Datang di SMP Negeri 1 Silaen";
-        var index = 0;
-        var typingSpeed = 100;
-        var repeatDelay = 1900; 
-
-        function type() {
-            if (index < text.length) {
-                document.getElementById('typing-text').textContent += text.charAt(index);
-                index++;
-                setTimeout(type, typingSpeed);
-            } else {
-                // Delay sebelum mengulang animasi
-                setTimeout(resetAndType, repeatDelay);
-            }
-        }
-
-        function resetAndType() {
-            // Mengosongkan teks dan mengatur ulang index
-            document.getElementById('typing-text').textContent = '';
-            index = 0;
-            // Mulai animasi pengetikan lagi
-            type();
-        }
-
-        // Memulai animasi pengetikan ketika halaman dimuat
-        type();
     });
+}, {
+    threshold: 0.5
+});
+
+the_animation.forEach((element) => {
+    observer.observe(element);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var text = "Selamat Datang di SMP Negeri 1 Silaen";
+    var index = 0;
+    var typingSpeed = 100;
+    var repeatDelay = 1900;
+
+    function type() {
+        if (index < text.length) {
+            document.getElementById('typing-text').textContent += text.charAt(index);
+            index++;
+            setTimeout(type, typingSpeed);
+        } else {
+            // Delay sebelum mengulang animasi
+            setTimeout(resetAndType, repeatDelay);
+        }
+    }
+
+    function resetAndType() {
+        // Mengosongkan teks dan mengatur ulang index
+        document.getElementById('typing-text').textContent = '';
+        index = 0;
+        // Mulai animasi pengetikan lagi
+        type();
+    }
+
+    // Memulai animasi pengetikan ketika halaman dimuat
+    type();
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll(".count-number");
+
+    elements.forEach(el => {
+        const endValue = parseInt(el.getAttribute("data-count"));
+        let startValue = 0;
+        const duration = 2000; // durasi animasi dalam milidetik
+        const incrementTime = 50; // waktu jeda antara setiap increment
+        const step = Math.ceil(endValue / (duration / incrementTime));
+
+        function count() {
+            startValue += step;
+            if (startValue >= endValue) {
+                el.textContent = endValue;
+            } else {
+                el.textContent = startValue;
+                setTimeout(count, incrementTime);
+            }
+        }
+
+        count();
+    });
+});
 </script>
 
 @endsection
@@ -151,6 +170,12 @@ const observer = new IntersectionObserver((entries) => {
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+.count-number {
+    font-size: 2em; /* ukuran font */
+    font-weight: bold; /* ketebalan font */
+}
+
+
 .kepala {
     background-image: url("/img/picture/blob.svg");
     background-size: cover; /* Ensures the background image covers the entire element */
