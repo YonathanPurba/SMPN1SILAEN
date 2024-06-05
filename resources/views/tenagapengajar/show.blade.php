@@ -2,63 +2,53 @@
     'title' => 'Baca Artikel',
 ])
 @section('content')
-<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url('{{ asset('folderimage/' . $pengajar->gambar_tenagapengajar) }}');">
-    <div class="blog-details-headline">
-        <h3 class="text-capitalize">{{ $pengajar->nama_tenagapengajar }}</h3>
-        <div class="meta d-flex align-items-center justify-content-center">
-        </div>
+<style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+ h2{
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-family: "Allura", serif;
+    color: #ffffff;
+ }
+ h4{
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-family: "Allura", serif; 
+ }
+</style>
+<!-- Blog Details Header -->
+<div class="blog-details-header bg-img d-flex align-items-center justify-content-center p-5" style="background-image: url('{{ asset('folderimage/' . $pengajar->gambar_tenagapengajar) }}');">
+    <div class="blog-details-headline text-center">
+        <h2 class="text-capitalize mb-3">{{ $pengajar->nama_tenagapengajar }}</h2>
+        <p class="text-white">{{ $pengajar->jabatan }}</p>
     </div>
 </div>
-<style>
-    .blog-details-text .info {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: 10px;
-    }
 
-    .blog-details-text h4 {
-        font-weight: bold;
-        margin-right: 10px;
-        min-width: 80px; /* Adjust based on the longest label */
-    }
-
-    .blog-details-text .colon {
-        margin: 0 10px;
-        min-width: 10px;
-    }
-
-    .blog-details-text p {
-        margin: 0;
-        color: #555;
-    }
-</style>
-<!-- ##### Catagory Area End ##### -->
-
-<!-- ##### Blog Details Content ##### -->
+<!-- Blog Details Content -->
 <div class="blog-details-content section-padding-100">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <!-- Blog Details Text -->
-                <div class="blog-details-text">
+                <div class="blog-details-text bg-white p-4 shadow-sm rounded">
+                    <div class="info mb-4">
+                        <h4 class="text-primary">Informasi Tenaga Pengajar</h4>
+                    </div>
                     <div class="info">
-                        <h4>Nama</h4>
-                        <div class="colon">:</div>
+                        <h5>Nama:</h5>
                         <p>{{ $pengajar->nama_tenagapengajar }}</p>
                     </div>
                     <div class="info">
-                        <h4>Jabatan</h4>
-                        <div class="colon">:</div>
+                        <h5>Jabatan:</h5>
                         <p>{{ $pengajar->jabatan }}</p>
                     </div>
                     <div class="info">
-                        <h4>NIP</h4>
-                        <div class="colon">:</div>
+                        <h5>NIP:</h5>
                         <p>{{ $pengajar->nip }}</p>
                     </div>
                     <div class="info">
-                        <h4>Alamat</h4>
-                        <div class="colon">:</div>
+                        <h5>Alamat:</h5>
                         <p>{{ $pengajar->alamat }}</p>
                     </div>
                 </div>
