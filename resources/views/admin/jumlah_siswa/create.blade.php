@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Tambah Kelas',
-	'contentTitle' => 'Tambah Kelas',
+	'title' => 'Tambah Jumlah Siswa',
+	'contentTitle' => 'Tambah Jumlah Siswa',
 ])
 @section('content')
 <div class="row">

@@ -40,7 +40,11 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Laki-laki</strong>
+<<<<<<< HEAD
                     <h3 class="mb-0 count-number" data-count="{{ $totalLakiLaki }}">{{ $totalLakiLaki }}</h3>
+=======
+                    <h3 class="mb-0" id="totalLakiLaki">{{ $totalLakiLaki }}</h3>
+>>>>>>> c7b55f6ad3e1d42943db4672f42cfd1d38b923e2
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
                 </div>
             </div>
@@ -49,7 +53,11 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Perempuan</strong>
+<<<<<<< HEAD
                     <h3 class="mb-0 count-number" data-count="{{ $totalPerempuan }}">{{ $totalPerempuan }}</h3>
+=======
+                    <h3 class="mb-0" id="totalPerempuan">0</h3>
+>>>>>>> c7b55f6ad3e1d42943db4672f42cfd1d38b923e2
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Siswi</strong>
                 </div>
             </div>
@@ -58,8 +66,13 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Keseluruhan</strong>
+<<<<<<< HEAD
                     <h3 class="mb-0 count-number" data-count="{{ $total }}">{{ $total }}</h3>
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Murid</strong>
+=======
+                    <h3 class="mb-0" id="total">0</h3>
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
+>>>>>>> c7b55f6ad3e1d42943db4672f42cfd1d38b923e2
                 </div>
             </div>
         </div>
@@ -72,13 +85,15 @@
         <div class="row ">
             <div class="col-lg-7 mx-auto" style="position:relative;top:170px">
                 <div class="card-body d-flex align-items-center ">
-                    <img src="{{ asset('img/picture/kepala sekolah.png') }}" class="mr-3" style="width:300px; border-radius:30px;" alt="Kepala Sekolah">
+                    <img style="width: 12rem; border-radius: 5%;"
+                        src="{{ ($kepalasekolah ?? (object)['gambar_kepalasekolah' => 'img/picture/kepala sekolah.png'])->gambar_kepalasekolah }}"class="mr-3" style="width:300px; border-radius:30px;" alt="Kepala Sekolah">
                     <div style="max-width: 280px;">
                         <h1 style="width: 350px;font-family: freshman; color: #002c4c;">
                             Kepala Sekolah SMP N 1 Silaen
                         </h1>
-                        <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serifcolor: #002c4c; border-bottom: 3px solid #002c4c; /* Garis bawah dengan warna putih */
-                        padding-bottom: 5px;">{{ $kepalasekolah ->nama }}</h5>
+                        <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: #002c4c; border-bottom: 3px solid #002c4c; padding-bottom: 5px;">
+                            {{ $kepalasekolah->nama ?? 'Hotlan Panjaitan' }}
+                        </h5>
                         <br>
                         <p style="color: #002c4c;font-weight:900;width:400px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Puji dan Syukur Kehadirat Tuhan Yang Maha Esa karena rahmatNyalah yang masih menyertai kita. Salam sejahtera untuk seluruh pengunjung website SMP N 1 Silaen. Kami sangat gembira menyambut Anda di sini, tempat di mana kami berbagi informasi terkini seputar kegiatan pendidikan dan pengembangan di sekolah kami.</p>
                     </div>
@@ -92,7 +107,56 @@
     <p class="mapp animation" id="mapp">Mari mampir ke SMP Negeri 1 SIlaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
     <iframe class="gmap animation" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65312299.05611945!2d99.20158100240317!3d2.3904453807262036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1713237782551!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
+<script>
+    const totalLakiLakiCard = document.getElementById('totalLakiLaki');
 
+totalLakiLakiCard.addEventListener('click', () => {
+    // Navigasi ke tampilan baru
+    window.location.href = '/galeri';
+});
+</script>
+<script>
+
+const totalLakiLakiElement = document.getElementById('totalLakiLaki');
+const totalPerempuanElement = document.getElementById('totalPerempuan');
+const totalElement = document.getElementById('total');
+
+// Target values for the animation
+const targetLakiLaki = {{ $totalLakiLaki }};
+const targetPerempuan = {{ $totalPerempuan }};
+const targetTotal = {{ $total }};
+
+// Initial values for the animation (set to 0)
+let currentLakiLaki = 0;
+let currentPerempuan = 0;
+let currentTotal = 0;
+
+// Animation duration (in milliseconds)
+const animationDuration = 5000; // Adjust as desired (e.g., 3000 for a slower animation)
+
+// Animation step (increment for each update)
+const animationStep = Math.ceil(Math.max(targetLakiLaki, targetPerempuan, targetTotal) / (animationDuration / 100));
+
+function updateCounts() {
+  // Update each count with the animation step
+  currentLakiLaki = Math.min(currentLakiLaki + animationStep, targetLakiLaki);
+  currentPerempuan = Math.min(currentPerempuan + animationStep, targetPerempuan);
+  currentTotal = Math.min(currentTotal + animationStep, targetTotal);
+
+  // Display the updated counts
+  totalLakiLakiElement.textContent = Math.floor(currentLakiLaki);
+  totalPerempuanElement.textContent = Math.floor(currentPerempuan);
+  totalElement.textContent = Math.floor(currentTotal);
+
+  // Check if the animation has reached the target values
+  if (currentLakiLaki === targetLakiLaki && currentPerempuan === targetPerempuan && currentTotal === targetTotal) {
+    clearInterval(updateInterval); // Stop the animation
+  }
+}
+
+const updateInterval = setInterval(updateCounts, 100); // Update every 100 milliseconds
+
+</script>
 <script>
 const the_animation = document.querySelectorAll('.animation');
 
@@ -163,6 +227,46 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+<script>
+    const totalLakiLakiElement = document.getElementById('totalLakiLaki');
+    const totalPerempuanElement = document.getElementById('totalPerempuan');
+    const totalElement = document.getElementById('total');
+  
+    // Target values for the animation (replace with your actual totals)
+    const targetLakiLaki = 200; // Total number of male students
+    const targetPerempuan = 150; // Total number of female students
+    const targetTotal = targetLakiLaki + targetPerempuan; // Total students
+  
+    // Initial values for the animation (set to 0)
+    let currentLakiLaki = 0;
+    let currentPerempuan = 0;
+    let currentTotal = 0;
+  
+    // Animation duration (in milliseconds)
+    const animationDuration = 2000; // Adjust as desired (e.g., 3000 for a slower animation)
+  
+    // Animation step (increment for each update)
+    const animationStep = Math.ceil(Math.max(targetLakiLaki, targetPerempuan, targetTotal) / (animationDuration / 100));
+  
+    function updateCounts() {
+      // Update each count with the animation step
+      currentLakiLaki = Math.min(currentLakiLaki + animationStep, targetLakiLaki);
+      currentPerempuan = Math.min(currentPerempuan + animationStep, targetPerempuan);
+      currentTotal = Math.min(currentTotal + animationStep, targetTotal);
+  
+      // Display the updated counts
+      totalLakiLakiElement.textContent = currentLakiLaki;
+      totalPerempuanElement.textContent = currentPerempuan;
+      totalElement.textContent = currentTotal;
+  
+      // Check if the animation has reached the target values
+      if (currentLakiLaki === targetLakiLaki && currentPerempuan === targetPerempuan && currentTotal === targetTotal) {
+        clearInterval(updateInterval); // Stop the animation
+      }
+    }
+  
+    const updateInterval = setInterval(updateCounts, 100); // Update every 100 milliseconds
+  </script>
 
 @endsection
 <link

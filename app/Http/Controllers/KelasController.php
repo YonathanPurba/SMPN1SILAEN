@@ -41,7 +41,7 @@ public function update(Request $request, $id)
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect()->route('admin.kelas.index')->with('status', 'Kelas berhasil ditambahkan.');
+    return redirect()->route('admin.kelas.index')->with('status', 'Kelas berhasil diedit.');
 }
 
 public function delete($id)

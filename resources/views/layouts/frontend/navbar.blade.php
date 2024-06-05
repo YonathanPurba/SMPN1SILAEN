@@ -19,6 +19,7 @@
                     <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                 </div>
 
+<<<<<<< HEAD
                 <!-- Nav Start -->
                 <div class="classynav">
                     <ul>
@@ -38,6 +39,44 @@
                         <li><a href="{{ route('galeri.index') }}" class="{{ Request::segment(1) == 'galeri' ? 'text-primary' : '' }}">Galeri</a></li>
                     </ul>
                     <div class="follow-us">
+=======
+                <!-- Menu -->
+                <div class="classy-menu">
+
+                    <!-- Close Button -->
+                    <div class="classycloseIcon">
+                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                    </div>
+
+                    <!-- Nav Start -->
+                    <center><div class="classynav">
+                        <ul>
+                            <li><a href="/" class="{{ Request::is('/') || Request::is('home') ? 'text-primary' : '' }}">Home</a></li>
+                            <li>
+                            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil</a>
+            <div class="dropdown-menu">
+            <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('identitas') }}">Identitas</a>
+            <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('visimisi') }}">Visi Misi</a>
+            <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('tenagapengajar.index') }}">Tenaga Pengajar</a>
+            <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('ekstrakurikuler.index') }}">Ekstrakurikuler</a>
+        </div>
+    </li>                   <li><a href="{{ route('pengumuman.index') }}" class="{{ Request::segment(1) == 'pengumuman' ? 'text-primary' : '' }}">Pengumuman</a></li>
+
+                            <li><a href="{{ route('prestasi.index') }}" class="{{ Request::segment(1) == 'prestasi' ? 'text-primary' : '' }}">Prestasi</a></li>
+
+                            <li><a href="{{ route('fasilitas.index') }}" class="{{ Request::segment(1) == 'fasilitas' ? 'text-primary' : '' }}">Fasilitas</a></li>
+                            
+                            <li><a href="{{ route('galeri.index') }}" class="{{ Request::segment(1) == 'galeri' ? 'text-primary' : '' }}">Galeri</a></li>
+                        </ul>
+                        <div class="follow-us">
+                            @auth
+                                <!-- Jika pengguna telah login, tombol login tidak ditampilkan -->
+                            @else
+                                <!-- Jika pengguna belum login, tampilkan tombol login -->
+                                <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            @endauth
+                        </div>
+>>>>>>> c7b55f6ad3e1d42943db4672f42cfd1d38b923e2
                         @auth
                             <!-- Jika pengguna telah login, tombol login tidak ditampilkan -->
                         @else

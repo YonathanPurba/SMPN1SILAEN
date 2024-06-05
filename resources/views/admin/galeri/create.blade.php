@@ -27,7 +27,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label>Thumbnail</label>
-                        <input type="file" name="file" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
+                        <input type="file" name="thumbnail" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
                     </div>
                 </div>
             </div>
