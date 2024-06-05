@@ -2,24 +2,134 @@
     'title' => 'Home',
 ])
 <style>
-        .content-wrapper {
-            display: flex;
-            justify-content: center;
-            gap: 2rem; /* Jarak antar elemen */
-        }
-        .custom-card {
-            flex: 1;
-            max-width: 300px; /* Atur lebar maksimal kartu */
-        }
-        .custom-shadow {
-            box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
-        }
-        .zoom-in-on-hover {
-            transition: transform 0.3s ease;
-        }
+        @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 
-        .zoom-in-on-hover:hover {
-            transform: scale(1.05);
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.count-number {
+    font-size: 2em; /* ukuran font */
+    font-weight: bold; /* ketebalan font */
+}
+
+.kepala {
+    background-image: url("/img/picture/blob.svg");
+    background-size: cover; /* Ensures the background image covers the entire element */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    width: 100%;
+    height: 100vh; /* Sets the height to cover the full viewport height */
+    position: relative;
+}
+
+.animation {
+    opacity: 0;
+    transform: translateX(-300px);
+    transition: all 0.7s ease-out;
+    transition-delay: 0.4s;
+}
+
+.scroll-animation {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.imgcntn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.map h3 {
+    font-size: 5rem;
+    font-family: "Allura", serif;
+    color: #191a1b;
+}
+
+.imgcntn .item {
+    padding: 10px;
+    margin: 10px;
+    padding-left: 20px;
+}
+
+.imgcntn img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.imgcntn a {
+    display: block;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+h3 {
+    padding: 20px;
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.imgcntn a span {
+    color: #E68c3a;
+}
+
+.map {
+    text-align: center;
+    margin-top: -30px;
+}
+
+.mapp {
+    position: relative;
+    margin: 0 auto;
+    max-width: 700px;
+    color: #ffffff; /* Warna teks default, akan diubah oleh JS */
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.gmap {
+    width: 100%;
+    height: 350px;
+    max-width: 1000px;
+    margin-bottom: 80px;
+}
+
+.shadow {
+    width: 1000px;
+    height: 380px;
+    position: relative;
+    bottom: 420px;
+    left: 50px;
+    z-index: -1;
+}
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Jarak antar elemen */
+}
+.custom-card {
+    flex: 1;
+    max-width: 300px; /* Atur lebar maksimal kartu */
+}
+.custom-shadow {
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
+}
+.zoom-in-on-hover {
+    transition: transform 0.3s ease;
+}
+.zoom-in-on-hover:hover {
+    transform: scale(1.05);
         }
 </style>
 @section('content')
@@ -267,112 +377,4 @@ document.addEventListener("DOMContentLoaded", function() {
   </script>
 
 @endsection
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-<style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
-.count-number {
-    font-size: 2em; /* ukuran font */
-    font-weight: bold; /* ketebalan font */
-}
-
-
-.kepala {
-    background-image: url("/img/picture/blob.svg");
-    background-size: cover; /* Ensures the background image covers the entire element */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-    width: 110%;
-    height: 100vh; /* Sets the height to cover the full viewport height */
-    position: relative;
-    right: 100px;
-}
-
-
-.animation {
-    opacity: 0;
-    transform: translateX(-300px);
-    transition: all 0.7s ease-out;
-    transition-delay: 0.4s;
-
-}
-
-.scroll-animation {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-section {
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    text-align: center;
-    width: 100%;
-} 
-.imgcntn {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.map h3{
-    font-size: 5rem;
-    font-family: "Allura", serif;
-    color: #191a1b;
-}
-.imgcntn .item {
-  padding: 10px;
-  margin: 10px; 
-  padding-left: 20px
-}
-
-.imgcntn img {
-  width: 300px;
-  height: auto; 
-  border-radius: 10px;
-}
-
-.imgcntn a {
-  display: block;
-  font-size: 15px;
-  margin-top: 5px;
-}
-h3{
-    padding: 20px;
-    font-size: 10px;
-    font-family: 'Times New Roman', Times, serif;
-}
-.imgcntn a span{    
-    color:#E68c3a;
-    
-}
-.map{
- text-align: center;
- margin-top: -30px;
-}
-.mapp {
-            position: relative;
-            margin-left: 26%;
-            max-width: 700px;
-            color: #ffffff; /* Warna teks default, akan diubah oleh JS */
-            font-weight: 400;
-            margin-bottom: 30px;
-            font-size: 15px;
-        }
-
-.gmap{
-    width: 1000px;
-    height: 350px;
-    max-width: 1000px;
-    margin-bottom:80px;
-}
-.shadow{
-    width: 1000px;
-    height: 380px;
-    position: relative;
-    bottom: 420px;
-    left: 50px;
-   
-    z-index: -1;
-}
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
