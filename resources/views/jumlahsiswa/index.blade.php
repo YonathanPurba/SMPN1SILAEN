@@ -42,7 +42,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="facility-card">
                     <div class="card-content">
-                        <h5 class="card-title">Kelas {{ $k->kelas->nama_kelas }}</h5>
+                        <h5 class="card-title">Kelas {{ $k->kelas->snama_kelas }}</h5>
                         <p class="card-text">
                             Jumlah Siswa Laki-laki: {{ $k->jumlah_siswa_laki_laki }} <br>
                             Jumlah Siswa Perempuan: {{ $k->jumlah_siswa_perempuan }} <br>

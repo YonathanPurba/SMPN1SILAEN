@@ -40,11 +40,7 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Laki-laki</strong>
-<<<<<<< HEAD
-                    <h3 class="mb-0 count-number" data-count="{{ $totalLakiLaki }}">{{ $totalLakiLaki }}</h3>
-=======
-                    <h3 class="mb-0" id="totalLakiLaki">{{ $totalLakiLaki }}</h3>
->>>>>>> c7b55f6ad3e1d42943db4672f42cfd1d38b923e2
+                    <h3 class="mb-0" id="totalLakiLaki">0</h3>
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
                 </div>
             </div>
@@ -53,11 +49,7 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Perempuan</strong>
-<<<<<<< HEAD
-                    <h3 class="mb-0 count-number" data-count="{{ $totalPerempuan }}">{{ $totalPerempuan }}</h3>
-=======
                     <h3 class="mb-0" id="totalPerempuan">0</h3>
->>>>>>> c7b55f6ad3e1d42943db4672f42cfd1d38b923e2
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Siswi</strong>
                 </div>
             </div>
@@ -66,13 +58,8 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Keseluruhan</strong>
-<<<<<<< HEAD
-                    <h3 class="mb-0 count-number" data-count="{{ $total }}">{{ $total }}</h3>
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Murid</strong>
-=======
                     <h3 class="mb-0" id="total">0</h3>
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
->>>>>>> c7b55f6ad3e1d42943db4672f42cfd1d38b923e2
                 </div>
             </div>
         </div>
