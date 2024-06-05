@@ -137,6 +137,7 @@
                 <h3>@count('users')</h3>
                 <p>Kepala Sekolah</p>
             </div>
+            
             <div class="icon">
                 <i class="fas fa-user-tie"></i>
             </div>
