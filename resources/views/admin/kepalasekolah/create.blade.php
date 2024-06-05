@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Tambah Tenaga Pengajar',
-	'contentTitle' => 'Tambah Tenaga Pengajar',
+	'title' => 'Tambah Kepala Sekolah',
+	'contentTitle' => 'Tambah Kepala Sekolah',
 ])
 
 @push('css')

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="section-heading">
-                    <h3 class="head animate__animated  animate__fadeInDown">Galeri SMP N1 SIlaen</h3>
+                    <h3 class="head animate__animated  animate__fadeInDown">Galeri SMPN 1 Silaen</h3>
                     <p style="   font-size: 1.2rem;
                     color: #ffffff;
                     font-weight: 400;

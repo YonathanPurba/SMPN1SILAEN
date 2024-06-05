@@ -30,10 +30,8 @@
                         <div class="form-group">
                             <label>Gambar</label>
                             <input type="file" name="gambar_tenagapengajar" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" value="{{ $kepalasekolah->gambar_tenagapengajar }}">
-                            <img src="{{ asset('folderimage/' . $kepalasekolah->gambar_kepalasekolah) }}" alt="Gambar Tenaga Pengajar">
                         </div>
                     </div>
-                    
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary btn-sm">UPDATE</button>
 					</div>

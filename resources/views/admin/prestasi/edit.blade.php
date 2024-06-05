@@ -62,7 +62,7 @@
             if (tanggalPrestasi > tanggalSekarang) {
                 Swal.fire({
                     title: 'Perhatian!',
-                    text: 'Tanggal tidak boleh melebihi tanggal sekarang.',
+                    text: 'Tanggal tidak boleh setelah tanggal sekarang.',
                     icon: 'warning',
                     confirmButtonText: 'OK'
                 }).then((result) => {
