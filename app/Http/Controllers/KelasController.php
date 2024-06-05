@@ -24,6 +24,34 @@ class KelasController extends Controller
         $kelas->save();
 
         return redirect()->route('admin.kelas.index')->with('success', 'Kelas berhasil ditambahkan.');
+<<<<<<< HEAD
+=======
+}
+
+public function update(Request $request, $id)
+{
+    $update = Kelas::find($id);
+
+
+    // Update data lainnya
+    $update->nama_kelas = $request->nama_kelas;
+    $update->update_by = Auth::id();
+
+    // Simpan perubahan ke dalam database
+    $update->save();
+
+    // Redirect ke halaman daftar kategori lapangan
+    return redirect()->route('admin.kelas.index')->with('status', 'Kelas berhasil diedit.');
+}
+
+public function delete($id)
+{
+    $kelas = Kelas::find($id);
+
+    if ($kelas) {
+        $kelas->delete();
+        return response()->json(['success' => 'Data berhasil dihapus!']);
+>>>>>>> 7b00bb03bb1ebfc66f58252cf84b4890d2c66a3f
     }
 
     public function update(Request $request, $id)

@@ -6,17 +6,17 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
-                    <h2 class="head">Prestasi</h2>
+                    <h2 class="head animate__animated animate__fadeInDown">Prestasi</h2>
                     <p style="font-size: 1.2rem;
                     color: #ffffff;
                     font-weight: 400;
                     max-width:1150px;
                     border-bottom: 3px solid #ffffff;
-                    padding-bottom: 5px;">Jelajahi prestasi yang telah diraih oleh institusi kami.</p>
+                    padding-bottom: 5px;" class="animate__animated animate__fadeInDown">Jelajahi prestasi yang telah diraih oleh institusi kami.</p>
                 </div>
             </div>
         </div>
-        <div style="margin-bottom:-100px" class="row justify-content-center">
+        <div style="margin-bottom:-100px" class="row justify-content-center animate__animated animate__fadeInUp">
             @foreach ($prestasi as $prestasis)
             <div class="col-md-4 mb-4">
                 <div class="facility-card">
@@ -41,7 +41,10 @@
     </div>
 </section>
 @endsection
-
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 .head{
     font-family: "Allura", serif;

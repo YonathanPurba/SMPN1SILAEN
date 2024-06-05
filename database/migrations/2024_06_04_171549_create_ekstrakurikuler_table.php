@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ekstrakulikuler', function (Blueprint $table) {
-            $table->increments('id_ekstrakulikuler');
-            $table->string('judul_ekstrakulikuler');
-            $table->string('gambar_ekstrakulikuler')->nullable();
-            $table->string('deskripsi_ekstrakulikuler');
+        Schema::create('ekstrakurikuler', function (Blueprint $table) {
+            $table->increments('id_ekstrakurikuler');
+            $table->string('judul_ekstrakurikuler');
+            $table->string('gambar_ekstrakurikuler')->nullable();
+            $table->string('deskripsi_ekstrakurikuler');
             $table->string('slug')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->string('created_by')->nullable();

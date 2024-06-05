@@ -21,6 +21,7 @@
                         <div class="card shadow-sm">
                             <div class="card-img-wrapper">
                                 <img class="card-img-top" src="{{ asset('folderimage/' . $pengajars->gambar_tenagapengajar) }}" alt="Gambar">
+                                <div class="card-overlay"></div>
                             </div>
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ $pengajars->nama_tenagapengajar }}</h5>
@@ -53,16 +54,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     font-size: 1.2rem;
     color: #ffffff;
     font-weight: 400;
-    border-bottom: 4px solid #ffffff; /* Garis bawah dengan warna putih */
-    padding-bottom: 5px; /* Menambahkan jarak antara teks dan garis bawah */
+    border-bottom: 3px solid #ffffff; 
+    padding-bottom: 5px;
 }
+
+.card-text{
+    border-bottom: 3px solid #0099ff; 
+    padding-bottom: 5px;
+}
+
 .content{
     
 }
+
 .card {
     border: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .card:hover {
@@ -85,6 +94,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
 }
 
 .card-title {

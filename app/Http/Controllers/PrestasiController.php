@@ -38,7 +38,7 @@ class PrestasiController extends Controller
     
         $prestasi->save();
     
-        return redirect()->route('admin.prestasi.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+        return redirect()->route('admin.prestasi.index')->with('success', 'Prestasi berhasil ditambahkan.');
 }
 
 public function update(Request $request, $id)
@@ -64,7 +64,7 @@ public function update(Request $request, $id)
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect()->route('admin.prestasi.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+    return redirect()->route('admin.prestasi.index')->with('success', 'Prestasi berhasil diedit.');
 }
 
 public function delete($id)

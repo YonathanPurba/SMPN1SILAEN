@@ -10,13 +10,13 @@
         <div class="row">
             <div class="col-12 text-center mb-5">
                 <div class="section-heading">
-                    <h2 class="head" >Pengumuman Terbaru</h2>
+                    <h2 class="head animate__animated animate__fadeInDown" >Pengumuman Terbaru</h2>
                     <p style="font-size: 1.2rem;
                     color: #ffffff;
                     font-weight: 400;
                     max-width:1150px;
                     border-bottom: 3px solid #ffffff; /* Garis bawah dengan warna putih */
-                    padding-bottom: 5px;">Temukan informasi terkini dan penting di sini. Tetap update dengan pengumuman terbaru kami!</p>
+                    padding-bottom: 5px;" class="animate__animated animate__fadeInDown">Temukan informasi terkini dan penting di sini. Tetap update dengan pengumuman terbaru kami!</p>
                     <hr class="w-25 mx-auto">
                 </div>
             </div>
@@ -66,6 +66,10 @@
     </div>
 </section>
 @endif
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 
 <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 .head{
@@ -73,6 +77,7 @@
     font-size: 5rem;
     color: #002c4c;
 }
+
 </style>
 @section('additional-styles')
 

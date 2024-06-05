@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Manage Ekstrakulikuler',
-	'contentTitle' => 'Manage Ekstrakulikuler',
+	'title' => 'Manage Ekstrakurikuler',
+	'contentTitle' => 'Manage Ekstrakurikuler',
 ])
 @push('css')
 <!-- DataTables -->
@@ -12,7 +12,7 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				<a href="{{ route('admin.ekstrakulikuler.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+				<a href="{{ route('admin.ekstrakurikuler.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
 
 			</div>
 			<div class="card-body table-responsive">
@@ -20,7 +20,7 @@
 				<thead>
 				<tr>
 				  <th>No</th>
-				  <th>Nama Ektrakulikuler</th>
+				  <th>Nama Ektrakurikuler</th>
 				  <th>Deskripsi</th>
                   <th>Gambar</th>
 				  <th>Action</th>
@@ -31,16 +31,16 @@
 					$no=1;
 				@endphp
 
-				@foreach($ekstrakulikuler as $ekstrakulikulers)
+				@foreach($ekstrakurikuler as $ekstrakurikulers)
 				<tr>
 				  <td>{{ $no++ }}</td>
-				  <td>{{ $ekstrakulikulers->judul_ekstrakulikuler }}</td>
-				  <td>{{ $ekstrakulikulers->deskripsi_ekstrakulikuler }}</td>
-                  <td><img width ="270rem" src="{{ asset('folderimage/' . $ekstrakulikulers->gambar_ekstrakulikuler) }}" alt=""></td>
+				  <td>{{ $ekstrakurikulers->judul_ekstrakurikuler }}</td>
+				  <td>{{ $ekstrakurikulers->deskripsi_ekstrakurikuler }}</td>
+                  <td><img width ="270rem" src="{{ asset('folderimage/' . $ekstrakurikulers->gambar_ekstrakurikuler) }}" alt=""></td>
 				  <td>
 					<div class="row ml-2">
-						<a href="{{ route('admin.ekstrakulikuler.edit', ['id' => $ekstrakulikulers->id_ekstrakulikuler]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.ekstrakulikuler.index.delete', ['id' => $ekstrakulikulers->id_ekstrakulikuler]) }}">
+						<a href="{{ route('admin.ekstrakurikuler.edit', ['id' => $ekstrakurikulers->id_ekstrakurikuler]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.ekstrakurikuler.index.delete', ['id' => $ekstrakurikulers->id_ekstrakurikuler]) }}">
 							<i class="fas fa-trash fa-fw"></i>
 						</button>
 					</div>
@@ -118,7 +118,7 @@
                                     icon: 'success',
                                     confirmButtonText: 'OK'
                                 }).then(() => {
-                                    window.location.href = "{{ route('admin.ekstrakulikuler.index') }}";
+                                    window.location.href = "{{ route('admin.ekstrakurikuler.index') }}";
                                 });
                             })
                             .catch(error => {
