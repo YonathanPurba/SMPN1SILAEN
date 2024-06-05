@@ -18,9 +18,17 @@ class KelasController extends Controller
     {
         $kelas = new Kelas();
         $kelas->nama_kelas = $request->nama_kelas;
+<<<<<<< HEAD
         $kelas->created_by = Auth::id();
         $kelas->update_by = Auth::id();
 
+=======
+        $kelas->user_id = Auth::id();
+        $kelas->created_by = Auth::user()->name;
+        $kelas->update_by = Auth::user()->name;
+    
+    
+>>>>>>> 3f50e6aaa74eaecfc08048c4835b4f408909741d
         $kelas->save();
 
         return redirect()->route('admin.kelas.index')->with('success', 'Kelas berhasil ditambahkan.');
@@ -35,7 +43,8 @@ public function update(Request $request, $id)
 
     // Update data lainnya
     $update->nama_kelas = $request->nama_kelas;
-    $update->update_by = Auth::id();
+    $update->user_id = Auth::id();
+    $update->update_by = Auth::user()->name;
 
     // Simpan perubahan ke dalam database
     $update->save();
