@@ -21,6 +21,7 @@
                         <div class="card shadow-sm">
                             <div class="card-img-wrapper">
                                 <img class="card-img-top" src="{{ asset('folderimage/' . $pengajars->gambar_tenagapengajar) }}" alt="Gambar">
+                                <div class="card-overlay"></div>
                             </div>
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ $pengajars->nama_tenagapengajar }}</h5>
@@ -42,7 +43,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 
 .section-heading h3 {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-family: "Allura", serif;
@@ -50,19 +51,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 }
 
 .section-heading p {
-    font-size: 1.2rem;
-    color: #ffffff;
+    font-size: 1rem;
+    color: #002c4c;
     font-weight: 400;
-    border-bottom: 4px solid #ffffff; /* Garis bawah dengan warna putih */
-    padding-bottom: 5px; /* Menambahkan jarak antara teks dan garis bawah */
+    border-bottom: 2px solid #002c4c; 
+    padding-bottom: 5px;
 }
+
+.card-text{
+    border-bottom: 2px solid #0099ff; 
+    padding-bottom: 5px;
+}
+
 .content{
     
 }
+
 .card {
     border: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .card:hover {
@@ -87,14 +96,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     object-fit: cover;
 }
 
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
 .card-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
 .card-text {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: #555;
     margin-bottom: 1rem;
 }
@@ -107,6 +131,59 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #004085;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .section-heading h3 {
+        font-size: 4rem;
+    }
+
+    .card-title {
+        font-size: 0.8rem;
+    }
+
+    .card-text {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-img-wrapper {
+        padding: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-heading h3 {
+        font-size: 4%;
+    }
+
+    .card-img-wrapper {
+        padding: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-heading h3 {
+        font-size: 3rem;
+    }
+
+    .section-heading p {
+        font-size: 1rem;
+    }
+
+    .card-title {
+        font-size: 0.6rem;
+    }
+
+    .card-text {
+        font-size: 0.6rem;
+    }
+
+    .card-img-wrapper {
+        padding: 150px;
+    }
 }
 </style>
 

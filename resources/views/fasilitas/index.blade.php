@@ -6,20 +6,21 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center">
-                    <h3 class="head">Fasilitas</h3>
-                    <div class="section-separator"></div>
+                    <h3 class="head animate__animated  animate__fadeInDown">Fasilitas</h3>
+        
                     <p style="font-size: 1.2rem;
                     color: #ffffff;
                     font-weight: 400;
                     max-width:1150px;
                     border-bottom: 3px solid #ffffff; /* Garis bawah dengan warna putih */
-                    padding-bottom: 5px;"   >Nikmati fasilitas terbaik yang kami sediakan untuk memberikan pengalaman yang tak terlupakan.</p>
+                    padding-bottom: 5px;
+                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated  animate__fadeInDown" >Nikmati fasilitas terbaik yang kami sediakan untuk memberikan pengalaman yang tak terlupakan.</p>
                 </div>
             </div>
         </div>
         <div class="row">
             @foreach ($fasilitas as $fasilitases)
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4 animate__animated animate__fadeInUp">
                 <div class="facility-card">
                     <div class="card-img">
                         <img src="{{ asset('folderimage/' . $fasilitases->gambar_fasilitas) }}" class="card-img-top" alt="Kolam Renang">

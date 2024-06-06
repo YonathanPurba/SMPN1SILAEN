@@ -18,7 +18,15 @@
         .text-light a:hover .hover-zoom {
             transform: scale(1.1); /* Mengubah skala ikon saat dihover */
         }
-        
+        #svg {
+    width: 100%;
+    height: auto;
+    position: relative;;
+    margin-bottom: 700px;
+    bottom: 40px;
+    left: 0;
+}
+
     </style>
 </head>
 <body>
