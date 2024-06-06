@@ -21,7 +21,7 @@
             <div class="col-md-4 mb-4">
                 <div class="facility-card">
                     <div class="card-header">
-                        <h5 class="card-title">{{ $prestasis->judul_prestasi }}</h5>
+                        <h5 style="font-family:Arial, Helvetica, sans-serif;" class="card-title">{{ $prestasis->judul_prestasi }}</h5>
                     </div>
                     <img src="{{ asset('folderimage/' . $prestasis->gambar_prestasi) }}" class="card-img-top" alt="Prestasi">
                     <div class="card-body">

@@ -63,7 +63,6 @@
                         </div>
                     </div>
                     @endauth
-
                 </div>
                 <!-- Nav End -->
             </div>

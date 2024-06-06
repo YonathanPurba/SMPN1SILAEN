@@ -13,7 +13,8 @@
                     font-weight: 400;
                     max-width:1150px;
                     border-bottom: 3px solid #ffffff; /* Garis bawah dengan warna putih */
-                    padding-bottom: 5px;" class="animate__animated  animate__fadeInDown" >Nikmati fasilitas terbaik yang kami sediakan untuk memberikan pengalaman yang tak terlupakan.</p>
+                    padding-bottom: 5px;
+                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated  animate__fadeInDown" >Nikmati fasilitas terbaik yang kami sediakan untuk memberikan pengalaman yang tak terlupakan.</p>
                 </div>
             </div>
         </div>

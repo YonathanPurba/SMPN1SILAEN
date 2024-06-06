@@ -47,6 +47,10 @@
 .blog-details-text:hover{
     color: #ffffff;
     transition: 0.5s;
+<<<<<<< HEAD
     background-color:#ced5da;
+=======
+    background-color:#002c4c;
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
 }
 </style>
