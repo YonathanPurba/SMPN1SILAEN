@@ -297,7 +297,7 @@
             <div class="col-lg-8"> <!-- Menyesuaikan lebar kolom -->
                 <div class="row principal-card align-items-center"> <!-- Mengubah 'align-items-center' -->
                     <div class="col-md-6 text-center text-md-start"> <!-- Menyesuaikan lebar kolom dan teks alignment -->
-                        <img src="{{ asset('img/picture/kepala sekolah.png') }}" class="principal-image img-fluid" alt="Kepala Sekolah">
+                        <img src="{{ ($kepalasekolah ?? (object)['gambar_kepalasekolah' => 'img/picture/kepala sekolah.png'])->gambar_kepalasekolah }}" class="principal-image img-fluid" alt="Kepala Sekolah">
                     </div>
                     <div class="col-md-6">
                         <div class="principal-text">
@@ -305,7 +305,7 @@
                                 Kepala Sekolah SMPN 1 Silaen
                             </h1>
                             <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: #002c4c; border-bottom: 3px solid #002c4c; padding-bottom: 5px;">
-                                {{ $kepalasekolah->nama }}
+                                {{ $kepalasekolah->nama ?? 'Hotlan Panjaitan' }}
                             </h5>
                             <p class="mb-0" style="font-family: 'Lucida Sans', Arial, sans-serif">
                                 Puji dan Syukur Kehadirat Tuhan Yang Maha Esa karena rahmatNyalah yang masih menyertai kita. Salam sejahtera untuk seluruh pengunjung website SMP N 1 Silaen. Kami sangat gembira menyambut Anda di sini, tempat di mana kami berbagi informasi terkini seputar kegiatan pendidikan dan pengembangan di sekolah kami.
