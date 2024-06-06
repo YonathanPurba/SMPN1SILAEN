@@ -8,12 +8,21 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="section-heading">
+<<<<<<< HEAD
                     <h3 class="head animate__animated  animate__fadeInDown">Galeri SMPN 1 Silaen</h3>
+=======
+                    <h3 class="head animate__animated  animate__fadeInDown">Galeri SMP N1 SIlaen</h3>
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
                     <p style="   font-size: 1.2rem;
                     color: #ffffff;
                     font-weight: 400;
                     border-bottom: 3px solid #ffffff; 
+<<<<<<< HEAD
                     padding-bottom: 5px;" class="animate__animated  animate__fadeInDown">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolore libero neque cumque qui consequatur!</p>
+=======
+                    padding-bottom: 5px;
+                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated  animate__fadeInDown">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolore libero neque cumque qui consequatur!</p>
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
                 </div>
             </div>
         </div>

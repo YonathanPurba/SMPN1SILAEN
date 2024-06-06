@@ -64,8 +64,8 @@
       align-self: center;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
-    .card-info p {
-      font-size: 0.8rem;
+    .card-info p, .card-info div {
+      font-size: 1rem;
       font-weight: bold;
       align-self: center;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -213,7 +213,7 @@
     <div class="card">
       <div class="card-info">
         <h1 id="card-info-title">@{{ currentCard.title }}</h1>
-        <p id="card-info-desc">@{{ currentCard.desc }}</p>
+        <div id="card-info-desc" v-html="currentCard.desc"></div>
       </div>
       <div class="card-photo">
         <div id="mask-1" class="mask"></div>
@@ -244,7 +244,7 @@ createApp({
           id: 1,
           title: "Visi kami",
           desc:
-            "In different heights and shapes, the four versions of Floema low tables offer a variety of surfaces to satisfy different needs and uses in a contract environment, from work to moments of relaxation.",
+            "Terwujudnya sekolah berkualitas, berkarakter dan berwawasan lingkungan",
           photo:
             "/img/picture/imgL2.jpg"
         },
@@ -252,7 +252,13 @@ createApp({
           id: 2,
           title: "Misi kami",
           desc:
-            "The Circle Coffee table from Wendelbo emulates almost a visual trick. A frame where mass and gravity is suspended, and the slim and delicate structure support the marble top, like a hovering platform.",
+            `<ul>
+              <li>1. Mengoptimalkan pembelajaran dan bimbingan belajar secara efektif</li>
+              <li>2. Menanamkan disiplin yang tinggi demi kekondusifan sekolah</li>
+              <li>3. Menerapkan manajemen partisipatif sesuai MBS</li>
+              <li>4. Menciptakan lingkungan yang nyaman dan asri</li>
+              <li>5. Meningkatkan profesionalisme personal sekolah dan kemandirian sekolah</li>
+            </ul>`,
           photo:
             "/img/picture/imgL3.jpg"
         }
@@ -274,7 +280,7 @@ createApp({
         },
         onComplete: () => {
           this.playReverse();
-          if (this.currentNum >= 3) {
+          if (this.currentNum >= this.cards.length - 1) {
             this.currentNum = 0;
           } else {
             this.currentNum++;

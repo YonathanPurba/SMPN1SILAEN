@@ -12,16 +12,25 @@
                     font-weight: 400;
                     max-width:1150px;
                     border-bottom: 3px solid #ffffff;
+<<<<<<< HEAD
                     padding-bottom: 5px;" class="animate__animated animate__fadeInDown">Jelajahi prestasi yang telah diraih oleh institusi kami.</p>
                 </div>
             </div>
         </div>
         <div style="margin-bottom:-100px" class="row justify-content-center animate__animated animate__fadeInUp">
+=======
+                    padding-bottom: 5px;
+                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated animate__fadeInDown">Jelajahi prestasi yang telah diraih oleh institusi kami.</p>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:100px" class="row justify-content-center animate__animated animate__fadeInUp">
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
             @foreach ($prestasi as $prestasis)
             <div class="col-md-4 mb-4">
                 <div class="facility-card">
                     <div class="card-header">
-                        <h5 class="card-title">{{ $prestasis->judul_prestasi }}</h5>
+                        <h5 style="font-family:Arial, Helvetica, sans-serif;" class="card-title">{{ $prestasis->judul_prestasi }}</h5>
                     </div>
                     <img src="{{ asset('folderimage/' . $prestasis->gambar_prestasi) }}" class="card-img-top" alt="Prestasi">
                     <div class="card-body">

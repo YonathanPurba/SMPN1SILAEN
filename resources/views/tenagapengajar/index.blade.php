@@ -43,7 +43,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 
 .section-heading h3 {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-family: "Allura", serif;
@@ -51,15 +51,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 }
 
 .section-heading p {
-    font-size: 1.2rem;
-    color: #ffffff;
+    font-size: 1rem;
+    color: #002c4c;
     font-weight: 400;
+<<<<<<< HEAD
     border-bottom: 3px solid #ffffff; 
+=======
+    border-bottom: 2px solid #002c4c; 
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
     padding-bottom: 5px;
 }
 
 .card-text{
+<<<<<<< HEAD
     border-bottom: 3px solid #0099ff; 
+=======
+    border-bottom: 2px solid #0099ff; 
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
     padding-bottom: 5px;
 }
 
@@ -112,13 +120,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 }
 
 .card-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
 .card-text {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: #555;
     margin-bottom: 1rem;
 }
@@ -131,6 +139,59 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #004085;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .section-heading h3 {
+        font-size: 4rem;
+    }
+
+    .card-title {
+        font-size: 0.8rem;
+    }
+
+    .card-text {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-img-wrapper {
+        padding: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-heading h3 {
+        font-size: 4%;
+    }
+
+    .card-img-wrapper {
+        padding: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-heading h3 {
+        font-size: 3rem;
+    }
+
+    .section-heading p {
+        font-size: 1rem;
+    }
+
+    .card-title {
+        font-size: 0.6rem;
+    }
+
+    .card-text {
+        font-size: 0.6rem;
+    }
+
+    .card-img-wrapper {
+        padding: 150px;
+    }
 }
 </style>
 

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +9,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+<<<<<<< HEAD
     <title>SMPN 1 SILAEN | Identitas Sekolah</title>
     <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
         .page-content {
@@ -21,111 +20,92 @@
             align-items: center;
             
         }
+=======
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
         
-        .page-content p {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
-            padding: 5px; /* Add padding inside each paragraph */ /* Center-align paragraph content */
-            flex: 1; /* Allow paragraphs to grow and shrink within flex container */
-             /* Remove default paragraph margins */
+            padding: 0;
         }
 
-        .t-dua {
-            max-width: 0%; 
-        }
-
-        .identitas-name {
-            max-width: 18%;
-
-        }
-        .identitas-names{
-            max-width: 50%;
-            }
-        .head{
-            background-color: #0099ff;
-            padding: 10px;
-            border-radius: 20px;
-            color: #f5f5f5;
+        h1, h3, h4, h5 {
+            color: #333;
+            text-align: center;
             font-family: "Allura", serif;
-            font-size: 60px
         }
 
-        h4 {
-            width: 100%; /* Ensure the h4 takes full width */
-            margin-top: 0;
+        .page-content, .page-contents {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+            margin-bottom: 20px;
         }
-        /* Gaya untuk seluruh halaman */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-}
 
-/* Gaya untuk judul */
-h1, h3, h4, h5 {
-    color: #333;
-    text-align: center;
-    font-family: "Allura", serif;
-}
+        .page-content img, .akreditas img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
-/* Gaya untuk konten utama */
-.page-content {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Gaya untuk gambar */
-.page-content img {
-    max-width: 300px;
-    max-height: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Gaya untuk paragraf */
-.page-content p {
-    margin: 0;
-    padding: 10px;
-    flex: 1;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #555;
-}
-
-/* Gaya untuk akreditas */
-.akreditas {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.akreditas img {
-    max-width: 280px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.underline {
+        .underline {
             border-bottom: 3px solid #0099ff;
             display: inline-block;
             padding-bottom: 5px;
-          
         }
 
         .animation {
-    opacity: 0;
-    transform: translateX(-300px);
-    transition: all 0.7s ease-out;
-    transition-delay: 0.4s;
+            opacity: 0;
+            transform: translateX(-300px);
+            transition: all 0.7s ease-out;
+            transition-delay: 0.4s;
+        }
 
-}
+        .scroll-animation {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
-.scroll-animation {
-    opacity: 1;
-    transform: translateX(0);
-}
+        .identitas-names, .identitas-isi, .t-dua {
+            flex: 1;
+            margin: 5px;
+        }
+
+        .identitas-names, .identitas-isi {
+            min-width: 200px;
+        }
+
+        @media (max-width: 768px) {
+            .identitas-names, .identitas-isi {
+                min-width: 100%;
+                text-align: center;
+            }
+
+            .page-content, .page-contents {
+                flex-direction: column;
+            }
+
+            h1.head {
+                font-size: 40px;
+            }
+
+            h2.underline {
+                font-size: 24px;
+            }
+
+            h5.underline {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -143,8 +123,6 @@ h1, h3, h4, h5 {
                 </div>
             </div>
         </div>
-
-        
     </div>
 </section>
 
@@ -154,10 +132,10 @@ h1, h3, h4, h5 {
             <div class="col-12">
                 <div class="page-content">
                     <center>
-                        <h2 class="underline">Identitas SMP N1 Silaen</h2>
-                        <h5 class="underline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, aspernatur?</h5>
+                        <h2 class="underline">Identitas SMPN 1 Silaen</h2>
+                        <h5 class="underline">Berikut identitas SMP Negeri 1 Silaen berdasarkan Data Pokok Pendidikan</h5>
                     </center>
-                    <img style="max-width: 300px;max-height:300px;border-radius:20px" src="/img/picture/imgL1.jpg" alt=""> 
+                    <img src="/img/picture/imgL1.jpg" alt="Identitas Sekolah"> 
                     <p class="identitas-names">
                       NPSN <br>
                       Status <br>
@@ -195,13 +173,13 @@ h1, h3, h4, h5 {
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="page-content">
-                    <center><h2 class="underline">Akreditas</h2><br>
-                    <h5 class="underline">Lorem ipsum, dolor sit amet cl Lorem ipsum dolor sit amet.onsectetur adipisicing elit. Totam, et!</h5></center> 
-                    <img src="img/picture/akreditas.png" class="mr-3" style="width: 280px;" alt="">
-                    <p class="identitas-names">
-                        Lorem ipsum dolor sit  amet consectetur adipisicing elit. Explicabo minima quo, consectetur quibusdam impedit praesentium placeat ex est repellendus eum quidem a porro asperiores culpa non nesciunt, vel ipsum, reprehenderit sapiente! Molestiae est suscipit alias, hic dolor placeat debitis distinctio architecto illo ullam repellat, assumenda quos! Expedita doloribus perspiciatis aspernatur.
-                      </p>
+                <div class="page-contents">
+                    <center><h2>Akreditas</h2><br>
+                    <h5>Akreditas SMP Negeri 1 Silaen saat ini yaitu A.</h5>
+                    <img src="img/picture/akreditas.png" alt="Akreditasi Sekolah"></center> 
+                    <p>
+                        Sekolah kami dengan bangga mengumumkan bahwa kami telah mendapatkan akreditasi A dari Badan Akreditasi Nasional. Pengakuan ini mencerminkan komitmen kami untuk memberikan pendidikan berkualitas tinggi, kurikulum yang inovatif, serta lingkungan belajar yang mendukung perkembangan akademis dan karakter siswa. Dengan akreditasi ini, kami terus berupaya menjaga standar pendidikan yang unggul dan membekali siswa kami dengan keterampilan serta pengetahuan yang diperlukan untuk sukses di masa depan.                      
+                    </p>
                 </div>
             </div>
         </div>
@@ -210,27 +188,22 @@ h1, h3, h4, h5 {
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 <script>
-        const the_animation = document.querySelectorAll('.animation')
+const the_animation = document.querySelectorAll('.animation');
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('scroll-animation')
+            entry.target.classList.add('scroll-animation');
+            observer.unobserve(entry.target); // Stop observing the element once it has been animated
         }
-            else {
-                entry.target.classList.remove('scroll-animation')
-            }
-        
-    })
-},
-   { threshold: 0.5
-   });
-//
-  for (let i = 0; i < the_animation.length; i++) {
-   const elements = the_animation[i];
+    });
+}, {
+    threshold: 0.5
+});
 
-    observer.observe(elements);
-  } 
+the_animation.forEach((element) => {
+    observer.observe(element);
+});
 </script>
 @stop
 </body>
