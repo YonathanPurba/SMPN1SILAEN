@@ -11,10 +11,12 @@ use Illuminate\Support\Facades\View;
 class KepalaSekolahController extends Controller
 {
     public function index()
-    {
-        $kepalasekolah = KepalaSekolah::all();
-        return view('admin.kepalasekolah.index',compact('kepalasekolah'));
-    }
+{
+    $kepalasekolah = KepalaSekolah::all();
+    $kepsekCount = $kepalasekolah->count();
+
+    return view('admin.kepalasekolah.index', compact('kepalasekolah', 'kepsekCount'));
+}
 
     public function store(Request $request)
     {   

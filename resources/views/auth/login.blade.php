@@ -171,12 +171,7 @@
       passwordError.style.display = "block";
       document.getElementById("password").classList.add("is-invalid");
       isValid = false;
-    } else if (!validatePassword(password)) {
-      passwordError.textContent = "Password tidak sesuai.";
-      passwordError.style.display = "block";
-      document.getElementById("password").classList.add("is-invalid");
-      isValid = false;
-    }
+    } 
 
     return isValid;
   }
@@ -186,6 +181,9 @@
     return re.test(email);
   }
 
+  function validatePassword(password) {
+
+  }
 </script>
 
 </body>
