@@ -52,6 +52,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     color: #002c4c;
     margin-top: 30px;
 }
+
     .facility-card {
         border: none;
         border-radius: 10px;

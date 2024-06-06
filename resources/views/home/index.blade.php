@@ -324,6 +324,7 @@
     <p class="mapp animation" id="mapp">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
     <iframe class="gmap animation"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.3463964763187!2d99.19899977472731!3d2.390438997588844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1717639446160!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
+
 <script>
     const the_animation = document.querySelectorAll('.animation');
 
@@ -395,46 +396,6 @@
         });
     });
 </script>
-<script>
-    const totalLakiLakiElement = document.getElementById('totalLakiLaki');
-    const totalPerempuanElement = document.getElementById('totalPerempuan');
-    const totalElement = document.getElementById('total');
-  
-    // Target values for the animation (replace with your actual totals)
-    const targetLakiLaki = 200; // Total number of male students
-    const targetPerempuan = 150; // Total number of female students
-    const targetTotal = targetLakiLaki + targetPerempuan; // Total students
-  
-    // Initial values for the animation (set to 0)
-    let currentLakiLaki = 0;
-    let currentPerempuan = 0;
-    let currentTotal = 0;
-  
-    // Animation duration (in milliseconds)
-    const animationDuration = 2000; // Adjust as desired (e.g., 3000 for a slower animation)
-  
-    // Animation step (increment for each update)
-    const animationStep = Math.ceil(Math.max(targetLakiLaki, targetPerempuan, targetTotal) / (animationDuration / 100));
-  
-    function updateCounts() {
-      // Update each count with the animation step
-      currentLakiLaki = Math.min(currentLakiLaki + animationStep, targetLakiLaki);
-      currentPerempuan = Math.min(currentPerempuan + animationStep, targetPerempuan);
-      currentTotal = Math.min(currentTotal + animationStep, targetTotal);
-  
-      // Display the updated counts
-      totalLakiLakiElement.textContent = currentLakiLaki;
-      totalPerempuanElement.textContent = currentPerempuan;
-      totalElement.textContent = currentTotal;
-  
-      // Check if the animation has reached the target values
-      if (currentLakiLaki === targetLakiLaki && currentPerempuan === targetPerempuan && currentTotal === targetTotal) {
-        clearInterval(updateInterval); // Stop the animation
-      }
-    }
-  
-    const updateInterval = setInterval(updateCounts, 100); // Update every 100 milliseconds
-  </script>
 
 @endsection
 <link

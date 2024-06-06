@@ -120,13 +120,8 @@
         </div>
       </form>
 
-<<<<<<< HEAD
-      <p class="mt-2">
-        <a href="/">Home</a>
-=======
       <p class="mt-3 text-center">
         <a href="/">Kembali ke Beranda</a>
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
       </p>
     </div>
     <!-- /.card-body -->

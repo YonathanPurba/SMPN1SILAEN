@@ -64,11 +64,12 @@
 
         .identitas-names, .identitas-isi, .t-dua {
             flex: 1;
-            margin: 5px;
+            margin: 10px;
+            
         }
 
         .identitas-names, .identitas-isi {
-            min-width: 200px;
+            min-width: 20px;
         }
 
         @media (max-width: 768px) {
@@ -124,32 +125,25 @@
                     </center>
                     <img src="/img/picture/imgL1.jpg" alt="Identitas Sekolah"> 
                     <p class="identitas-names">
-                      NPSN <br>
-                      Status <br>
-                      Bentuk Pendidikan <br>
-                      Status Kepemilikan <br>
-                      SK Pendirian Sekolah <br>
-                      Tanggal SK Pendirian <br>
-                      SK Izin Operasional <br>  
-                    </p>
-                    <p class="t-dua">
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                    </p>
-                    <p class="identitas-isi">
-                        10208496 <br>
-                        Negeri <br>
-                        SMP <br>
-                        Pemerintah Daerah <br>
-                        21/NP/02 N/1959 <br>
-                        1959-08-05 <br>
-                        420/2127.Disdikpora/2022 <br>
-                    </p>
+    NPSN <br>
+    Status <br>
+    Bentuk Pendidikan <br>
+    Status Kepemilikan <br>
+    SK Pendirian Sekolah <br>
+    Tanggal SK Pendirian <br>
+    SK Izin Operasional <br>  
+</p>
+
+<p class="identitas-isi">
+    : 10208496 <br>
+    : Negeri <br>
+    : SMP <br>
+    : Pemerintah Daerah <br>
+    : 21/NP/02 N/1959 <br>
+    : 1959-08-05 <br>
+    : 420/2127.Disdikpora/2022 <br>
+</p>
+
                 </div>
             </div>
         </div>
