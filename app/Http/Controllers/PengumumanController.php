@@ -45,7 +45,7 @@ class PengumumanController extends Controller
         ]);
         Pengumuman::create($request->all());
 
-        return redirect()->route('admin.pengumuman.index')->with('success','Data berhasil ditambah');
+        return redirect()->route('admin.pengumuman.index')->with('success','Pengumuman berhasil ditambahkan');
     }
 
     /**
@@ -101,7 +101,7 @@ class PengumumanController extends Controller
         ]);
         $pengumuman->update($request->all());
            
-        return redirect()->route('admin.pengumuman.index')->with('success','Data berhasil diupdate');
+        return redirect()->route('admin.pengumuman.index')->with('success','Pengumuman berhasil diedit');
     }
 
     /**

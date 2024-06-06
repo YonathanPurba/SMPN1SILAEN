@@ -54,12 +54,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     font-size: 1rem;
     color: #002c4c;
     font-weight: 400;
+<<<<<<< HEAD
     border-bottom: 2px solid #002c4c; 
+=======
+<<<<<<< HEAD
+    border-bottom: 3px solid #ffffff; 
+=======
+    border-bottom: 2px solid #002c4c; 
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
+>>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
     padding-bottom: 5px;
 }
 
 .card-text{
+<<<<<<< HEAD
     border-bottom: 2px solid #0099ff; 
+=======
+<<<<<<< HEAD
+    border-bottom: 3px solid #0099ff; 
+=======
+    border-bottom: 2px solid #0099ff; 
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
+>>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
     padding-bottom: 5px;
 }
 

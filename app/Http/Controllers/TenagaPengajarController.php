@@ -25,8 +25,9 @@ class TenagaPengajarController extends Controller
         $pengajar->nip = $request->nip;
         $pengajar->alamat = $request->alamat;
         $pengajar->slug = Str::slug($request->nama_tenagapengajar);
-        $pengajar->created_by = Auth::id();
-        $pengajar->update_by = Auth::id();
+        $pengajar->user_id = Auth::id();
+        $pengajar->created_by = Auth::user()->name;
+        $pengajar->update_by = Auth::user()->name;
     
             if ($request->hasFile('gambar_tenagapengajar')) {
                 $file = $request->file('gambar_tenagapengajar');
@@ -59,7 +60,8 @@ public function update(Request $request, $id)
     $update->jabatan = $request->jabatan;
     $update->nip = $request->nip;
     $update->alamat = $request->alamat;
-    $update->update_by = Auth::id();
+    $update->user_id = Auth::id();
+    $update->update_by = Auth::user()->name;
 
     // Simpan perubahan ke dalam database
     $update->save();

@@ -22,8 +22,9 @@ class FasilitasController extends Controller
         $fasilitas = new Fasilitas();
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
         $fasilitas->deskripsi_fasilitas = $request->deskripsi_fasilitas;
-        $fasilitas->created_by = Auth::id();
-        $fasilitas->update_by = Auth::id();
+        $fasilitas->user_id = Auth::id();
+        $fasilitas->created_by = Auth::user()->name;
+        $fasilitas->update_by = Auth::user()->name;
         $fasilitas->slug = Str::slug($request->nama_fasilitas);
     
             if ($request->hasFile('gambar_fasilitas')) {
@@ -73,13 +74,14 @@ class FasilitasController extends Controller
     $update->nama_fasilitas = $request->nama_fasilitas;
     $update->deskripsi_fasilitas = $request->deskripsi_fasilitas;
     $update->slug = Str::slug($request->nama_fasilitas);
-    $update->update_by = Auth::id();
+    $update->user_id = Auth::id();
+    $update->update_by = Auth::user()->name;
 
     // Simpan perubahan ke dalam database
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect()->route('admin.fasilitas.index')->with('status', 'Fasilitas berhasil ditambahkan.');
+    return redirect()->route('admin.fasilitas.index')->with('success', 'Fasilitas berhasil diedit.');
     }
     public function edit($id)
     {

@@ -24,8 +24,9 @@ class PrestasiController extends Controller
         $prestasi->deskripsi_prestasi = $request->deskripsi_prestasi;
         $prestasi->tanggal_prestasi = $request->tanggal_prestasi;
         $prestasi->slug = Str::slug($request->judul_prestasi);
-        $prestasi->created_by = Auth::id();
-        $prestasi->update_by = Auth::id();
+        $prestasi->user_id = Auth::id();
+        $prestasi->created_by = Auth::user()->name;
+        $prestasi->update_by = Auth::user()->name;
     
             if ($request->hasFile('gambar_prestasi')) {
                 $file = $request->file('gambar_prestasi');
@@ -38,7 +39,7 @@ class PrestasiController extends Controller
     
         $prestasi->save();
     
-        return redirect()->route('admin.prestasi.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+        return redirect()->route('admin.prestasi.index')->with('success', 'Prestasi berhasil ditambahkan.');
 }
 
 public function update(Request $request, $id)
@@ -58,13 +59,14 @@ public function update(Request $request, $id)
     $update->deskripsi_prestasi = $request->deskripsi_prestasi;
     $update->tanggal_prestasi = $request->tanggal_prestasi;
     $update->slug = Str::slug($request->judul_prestasi);
-    $update->update_by = Auth::id();
+    $update->user_id = Auth::id();
+    $update->update_by = Auth::user()->name;
 
     // Simpan perubahan ke dalam database
     $update->save();
 
     // Redirect ke halaman daftar kategori lapangan
-    return redirect()->route('admin.prestasi.index')->with('status', 'Tenaga Pengajar berhasil ditambahkan.');
+    return redirect()->route('admin.prestasi.index')->with('success', 'Prestasi berhasil diedit.');
 }
 
 public function delete($id)

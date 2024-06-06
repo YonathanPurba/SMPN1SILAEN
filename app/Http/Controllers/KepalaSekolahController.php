@@ -21,8 +21,9 @@ class KepalaSekolahController extends Controller
         $kepalasekolah = new KepalaSekolah();
         $kepalasekolah->nama = $request->nama;
         $kepalasekolah->nip = $request->nip;
-        $kepalasekolah->created_by = Auth::id();
-        $kepalasekolah->update_by = Auth::id();
+        $kepalasekolah->user_id = Auth::id();
+        $kepalasekolah->created_by = Auth::user()->name;
+        $kepalasekolah->update_by = Auth::user()->name;
     
             if ($request->hasFile('gambar_kepalasekolah')) {
                 $file = $request->file('gambar_kepalasekolah');
@@ -70,7 +71,8 @@ class KepalaSekolahController extends Controller
     // Update data lainnya
     $update->nama = $request->nama;
     $update->nip = $request->nip;
-    $update->update_by = Auth::id();
+    $update->user_id = Auth::id();
+    $update->update_by = Auth::user()->name;
 
     // Simpan perubahan ke dalam database
     $update->save();

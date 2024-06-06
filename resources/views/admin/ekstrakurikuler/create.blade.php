@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Tambah Ekstrakulikuler',
-	'contentTitle' => 'Tambah Ekstrakulikuler',
+	'title' => 'Tambah Ekstrakurikuler',
+	'contentTitle' => 'Tambah Ekstrakurikuler',
 ])
 @section('content')
 @push('css')
@@ -11,24 +11,24 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-header">
-				<a href="{{ route('admin.ekstrakulikuler.index') }}" class="btn btn-success btn-sm">Kembali</a>
+				<a href="{{ route('admin.ekstrakurikuler.index') }}" class="btn btn-success btn-sm">Kembali</a>
 			</div>
 			<div class="card-body">
-				<form method="POST" action="{{ route('admin.ekstrakulikuler.store') }}" enctype="multipart/form-data">
+				<form method="POST" action="{{ route('admin.ekstrakurikuler.store') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="form-group">
-						<label for="judul_ekstrakulikuler">Nama Ekstrakulikuler</label>
-						<input required="" class="form-control" type="" name="judul_ekstrakulikuler" id="judul_ekstrakulikuler" placeholder="">
+						<label for="judul_ekstrakurikuler">Nama Ekstrakurikuler</label>
+						<input required="" class="form-control" type="" name="judul_ekstrakurikuler" id="judul_ekstrakurikuler" placeholder="">
 					</div>
 					<div class="form-group">
 						<label for="deskripsi">Deskripsi</label>
-						<textarea required="" name="deskripsi_ekstrakulikuler" id="deskripsi" class="text-dark form-control summernote"></textarea>
+						<textarea required="" name="deskripsi_ekstrakurikuler" id="deskripsi" class="text-dark form-control summernote"></textarea>
 					</div>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Gambar</label>
-                                <input type="file" name="gambar_ekstrakulikuler" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
+                                <input type="file" name="gambar_ekstrakurikuler" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
                             </div>
                         </div>
                     </div>

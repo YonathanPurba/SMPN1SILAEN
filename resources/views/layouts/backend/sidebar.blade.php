@@ -82,10 +82,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('admin.ekstrakulikuler.index') }}" class="nav-link {{ Request::segment(2) == 'ekstrakulikuler' ? 'active' : '' }}">
+          <a href="{{ route('admin.ekstrakurikuler.index') }}" class="nav-link {{ Request::segment(2) == 'ekstrakurikuler' ? 'active' : '' }}">
             <i class="nav-icon fas fa-running"></i>
             <p>
-              Ekstrakulikuler
+              Ekstrakurikuler
             </p>
           </a>
         </li>

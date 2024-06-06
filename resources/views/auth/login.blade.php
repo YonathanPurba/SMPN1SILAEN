@@ -91,33 +91,25 @@
     </div>
     <div class="card-body">
 
-      <form action="{{ route('login') }}" method="post">
+      <form id="loginForm" method="post" onsubmit="return validateForm()">
         @csrf
         <div class="input-group mb-3">
-          <input value="{{ @old('email') }}" name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+          <input id="email" name="email" type="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
-          @error('email')
-          <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-          @enderror
+          <div id="emailError" class="invalid-feedback" style="display: none;"></div>
         </div>
         <div class="input-group mb-3">
-          <input value="{{ @old('password') }}" name="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+          <input id="password" name="password" type="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
-          @error('password')
-          <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-          @enderror
+          <div id="passwordError" class="invalid-feedback" style="display: none;"></div>
         </div>
         <div class="row">
           <!-- /.col -->
@@ -128,8 +120,18 @@
         </div>
       </form>
 
+<<<<<<< HEAD
       <p class="mt-3 text-center">
         <a href="/">Kembali ke Beranda</a>
+=======
+<<<<<<< HEAD
+      <p class="mt-2">
+        <a href="/">Home</a>
+=======
+      <p class="mt-3 text-center">
+        <a href="/">Kembali ke Beranda</a>
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
+>>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
       </p>
     </div>
     <!-- /.card-body -->
@@ -144,5 +146,57 @@
 <script src="{{ asset('templates/backend/AdminLTE-3.0.1') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('templates/backend/AdminLTE-3.0.1') }}/dist/js/adminlte.min.js"></script>
+
+<script>
+  function validateForm() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var emailError = document.getElementById("emailError");
+    var passwordError = document.getElementById("passwordError");
+
+    // Reset error messages and styles
+    emailError.style.display = "none";
+    passwordError.style.display = "none";
+    document.getElementById("email").classList.remove("is-invalid");
+    document.getElementById("password").classList.remove("is-invalid");
+
+    var isValid = true;
+
+    // Email validation
+    if (email === "") {
+      emailError.textContent = "Email tidak boleh kosong.";
+      emailError.style.display = "block";
+      document.getElementById("email").classList.add("is-invalid");
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      emailError.textContent = "Email yang Anda masukkan tidak sesuai.";
+      emailError.style.display = "block";
+      document.getElementById("email").classList.add("is-invalid");
+      isValid = false;
+    }
+
+    // Password validation
+    if (password === "") {
+      passwordError.textContent = "Password tidak boleh kosong.";
+      passwordError.style.display = "block";
+      document.getElementById("password").classList.add("is-invalid");
+      isValid = false;
+    } else if (!validatePassword(password)) {
+      passwordError.textContent = "Password tidak sesuai.";
+      passwordError.style.display = "block";
+      document.getElementById("password").classList.add("is-invalid");
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  function validateEmail(email) {
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+</script>
+
 </body>
-</html> 
+</html>

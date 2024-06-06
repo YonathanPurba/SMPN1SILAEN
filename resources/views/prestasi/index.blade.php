@@ -12,12 +12,29 @@
                     font-weight: 400;
                     max-width:1150px;
                     border-bottom: 3px solid #ffffff;
+<<<<<<< HEAD
                     padding-bottom: 5px;
                     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated animate__fadeInDown">Jelajahi prestasi yang telah diraih oleh institusi kami.</p>
                 </div>
             </div>
         </div>
         <div style="margin-bottom:100px" class="row justify-content-center animate__animated animate__fadeInUp">
+=======
+<<<<<<< HEAD
+                    padding-bottom: 5px;" class="animate__animated animate__fadeInDown">Jelajahi prestasi yang telah diraih oleh institusi kami.</p>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:-100px" class="row justify-content-center animate__animated animate__fadeInUp">
+=======
+                    padding-bottom: 5px;
+                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated animate__fadeInDown">Jelajahi prestasi yang telah diraih oleh institusi kami.</p>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:100px" class="row justify-content-center animate__animated animate__fadeInUp">
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
+>>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
             @foreach ($prestasi as $prestasis)
             <div class="col-md-4 mb-4">
                 <div class="facility-card">

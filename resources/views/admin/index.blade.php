@@ -93,13 +93,13 @@
         <!-- small box -->
         <div class="small-box bg-dark">
             <div class="inner">
-                <h3>@count('ekstrakulikuler')</h3>
+                <h3>@count('ekstrakurikuler')</h3>
                 <p>Ekstrakurikuler</p>
             </div>
             <div class="icon">
                 <i class="fas fa-futbol"></i>
             </div>
-            <a href="{{ route('admin.ekstrakulikuler.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.ekstrakurikuler.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -128,6 +128,20 @@
                 <i class="fas fa-user-graduate"></i>
             </div>
             <a href="{{ route('admin.jumlah_siswa.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-4 col-6">
+        <div class="small-box bg-teal">
+            <div class="inner">
+                <h3>@count('users')</h3>
+                <p>Kepala Sekolah</p>
+            </div>
+            
+            <div class="icon">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <a href="{{ route('admin.kepalasekolah.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
 </div>
