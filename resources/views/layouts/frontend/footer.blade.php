@@ -67,11 +67,11 @@
                     <ul class="list-unstyled">
                         <li class="mb-2 animate__animated animate__fadeInRight">
                             <i class="fas fa-phone-alt me-2"></i>
-                            <a href="#" class="text-light hover-underline">082112345678</a>
+                            <a href="#" class="text-light hover-underline">0823-7033-2820</a>
                         </li>
                         <li class="animate__animated animate__fadeInRight">
                             <i class="fas fa-envelope me-2"></i>
-                            <a href="#" class="text-light hover-underline">smpn1silaen@gmail.com</a>
+                            <a href="#" class="text-light hover-underline">smpnsatusilaen@yahoo.com</a>
                         </li>
                     </ul>
                 </div>
