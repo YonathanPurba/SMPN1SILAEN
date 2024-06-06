@@ -5,19 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SMPN 1 Silaen | Login</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Google Font: Raleway -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('templates/backend/AdminLTE-3.0.1') }}/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('templates/backend/AdminLTE-3.0.1') }}/dist/css/adminlte.min.css">
+
+  <style>
+    body {
+      background-color: #f8f8f8;
+      font-family: 'Raleway', sans-serif;
+      color: #333333;
+    }
+
+    .login-box {
+      max-width: 100%;
+      width: 500px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+    }
+
+    .login-logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .login-logo img {
+      max-width: 150px;
+    }
+
+    .card-header {
+      background-color: transparent;
+      border-bottom: none;
+      padding-bottom: 0;
+      text-align: center;
+    }
+
+    .card-header h4 {
+      font-weight: 600;
+      color: #333333;
+    }
+
+    .btn-primary {
+      background-color: #0099ff;
+      border-color: #0099ff;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #0077cc;
+      border-color: #0077cc;
+    }
+
+    .form-control:focus {
+      border-color: #0099ff;
+      box-shadow: none;
+    }
+
+    .text-center a {
+      color: #0099ff;
+      text-decoration: none;
+    }
+
+    .text-center a:hover {
+      color: #0077cc;
+    }
+  </style>
 </head>
 <body class="hold-transition login-page">
-<div class="login-box mb-5">
+<div class="login-box">
+  <div class="login-logo">
+    <img src="{{ asset('img/icons/logo.jpeg') }}" alt="Logo Sekolah">
+  </div>
+
   <!-- /.login-logo -->
-  <div class="card card-outline card-primary">
-    <div class="card-header text-center">
-      <a href="" class="h4"><b>SMPN 1 Silaen<br></a>
+  <div class="card card-outline">
+    <div class="card-header">
+      <h4><b>SMPN 1 Silaen</b></h4>
     </div>
     <div class="card-body">
 
@@ -58,9 +128,8 @@
         </div>
       </form>
 
-      <p class="mt-2">
-
-        <a href="/">Home</a>
+      <p class="mt-3 text-center">
+        <a href="/">Kembali ke Beranda</a>
       </p>
     </div>
     <!-- /.card-body -->
