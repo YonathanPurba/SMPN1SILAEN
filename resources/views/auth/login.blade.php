@@ -76,6 +76,13 @@
     .text-center a:hover {
       color: #0077cc;
     }
+
+    .invalid-feedback {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 80%;
+      color: #e3342f;
+    }
   </style>
 </head>
 <body class="hold-transition login-page">
@@ -100,7 +107,7 @@
               <span class="fas fa-envelope"></span>
             </div>
           </div>
-          <div id="emailError" class="invalid-feedback" style="display: none;"></div>
+          <div id="emailError" class="invalid-feedback"></div>
         </div>
         <div class="input-group mb-3">
           <input id="password" name="password" type="password" class="form-control" placeholder="Password">
@@ -109,7 +116,7 @@
               <span class="fas fa-lock"></span>
             </div>
           </div>
-          <div id="passwordError" class="invalid-feedback" style="display: none;"></div>
+          <div id="passwordError" class="invalid-feedback"></div>
         </div>
         <div class="row">
           <!-- /.col -->
@@ -120,13 +127,8 @@
         </div>
       </form>
 
-<<<<<<< HEAD
-      <p class="mt-2">
-        <a href="/">Home</a>
-=======
       <p class="mt-3 text-center">
         <a href="/">Kembali ke Beranda</a>
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
       </p>
     </div>
     <!-- /.card-body -->
@@ -150,8 +152,8 @@
     var passwordError = document.getElementById("passwordError");
 
     // Reset error messages and styles
-    emailError.style.display = "none";
-    passwordError.style.display = "none";
+    emailError.textContent = "";
+    passwordError.textContent = "";
     document.getElementById("email").classList.remove("is-invalid");
     document.getElementById("password").classList.remove("is-invalid");
 
@@ -160,12 +162,10 @@
     // Email validation
     if (email === "") {
       emailError.textContent = "Email tidak boleh kosong.";
-      emailError.style.display = "block";
       document.getElementById("email").classList.add("is-invalid");
       isValid = false;
     } else if (!validateEmail(email)) {
       emailError.textContent = "Email yang Anda masukkan tidak sesuai.";
-      emailError.style.display = "block";
       document.getElementById("email").classList.add("is-invalid");
       isValid = false;
     }
@@ -173,7 +173,6 @@
     // Password validation
     if (password === "") {
       passwordError.textContent = "Password tidak boleh kosong.";
-      passwordError.style.display = "block";
       document.getElementById("password").classList.add("is-invalid");
       isValid = false;
     } 
@@ -184,10 +183,6 @@
   function validateEmail(email) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
-  }
-
-  function validatePassword(password) {
-
   }
 </script>
 
