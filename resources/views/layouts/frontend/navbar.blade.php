@@ -4,15 +4,7 @@
         <nav class="classy-navbar justify-content-between" id="cleverNav">
 
             <!-- Logo -->
-<<<<<<< HEAD
             <a style="color: black;"class="nav-brand" href="/"><img src="{{ asset('img/icons/logo.jpeg') }}" width="50" alt=""> SMPN 1 SILAEN</a>
-=======
-<<<<<<< HEAD
-            <a class="nav-brand" href="/"><img src="{{ asset('img/icons') }}/logo.jpeg" width="50" alt=""> SMPN 1 SILAEN</a>
-=======
-            <a style="color: black;"class="nav-brand" href="/"><img src="{{ asset('img/icons/logo.jpeg') }}" width="50" alt=""> SMPN 1 SILAEN</a>
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -28,28 +20,6 @@
                 </div>
 
                 <!-- Nav Start -->
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                <center><div class="classynav">
-                    <ul>
-                        <li><a href="/" class="{{ Request::is('/') || Request::is('home') ? 'text-primary' : '' }}">Home</a></li>
-                        <li>
-                        <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil</a>
-        <div class="dropdown-menu">
-        <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('identitas') }}">Identitas</a>
-        <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('visimisi') }}">Visi Misi</a>
-        <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('tenagapengajar.index') }}">Tenaga Pengajar</a>
-        <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('ekstrakurikuler.index') }}">Ekstrakurikuler</a>
-    </div>
-</li>                   <li><a href="{{ route('pengumuman.index') }}" class="{{ Request::segment(1) == 'pengumuman' ? 'text-primary' : '' }}">Pengumuman</a></li>
-
-                        <li><a href="{{ route('prestasi.index') }}" class="{{ Request::segment(1) == 'prestasi' ? 'text-primary' : '' }}">Prestasi</a></li>
-
-                        <li><a href="{{ route('fasilitas.index') }}" class="{{ Request::segment(1) == 'fasilitas' ? 'text-primary' : '' }}">Fasilitas</a></li>
-                        
-=======
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
                 <div class="classynav">
                     <ul>
                         <li><a href="/" class="{{ Request::is('/') || Request::is('home') ? 'text-primary' : '' }}">Home</a></li>
@@ -58,16 +28,12 @@
                                 <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('identitas') }}">Identitas</a>
                                 <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('visimisi') }}">Visi Misi</a>
                                 <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('tenagapengajar.index') }}">Tenaga Pengajar</a>
-                                <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('ekstrakulikuler.index') }}">Ekstrakurikuler</a>
+                                <a class="dropdown-item {{ Request::is('about') ? 'text-primary' : '' }}" href="{{ route('ekstrakurikuler.index') }}">Ekstrakurikuler</a>
                             </div>
                         </li>
                         <li><a href="{{ route('pengumuman.index') }}" class="{{ Request::segment(1) == 'pengumuman' ? 'text-primary' : '' }}">Pengumuman</a></li>
                         <li><a href="{{ route('prestasi.index') }}" class="{{ Request::segment(1) == 'prestasi' ? 'text-primary' : '' }}">Prestasi</a></li>
                         <li><a href="{{ route('fasilitas.index') }}" class="{{ Request::segment(1) == 'fasilitas' ? 'text-primary' : '' }}">Fasilitas</a></li>
-<<<<<<< HEAD
-=======
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
                         <li><a href="{{ route('galeri.index') }}" class="{{ Request::segment(1) == 'galeri' ? 'text-primary' : '' }}">Galeri</a></li>
                     </ul>
                     <div class="follow-us">
@@ -75,15 +41,7 @@
                             <!-- Jika pengguna telah login, tombol login tidak ditampilkan -->
                         @else
                             <!-- Jika pengguna belum login, tampilkan tombol login -->
-<<<<<<< HEAD
                             <a class="login" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>Login</a>
-=======
-<<<<<<< HEAD
-                            <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
-=======
-                            <a class="login" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>Login</a>
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
                         @endauth
                     </div>
                     @auth
@@ -102,25 +60,12 @@
                         </div>
                     </div>
                     @endauth
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
                 </div>
                 <!-- Nav End -->
             </div>
         </nav>
     </div>
 </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<style> 
-=======
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
 <style>
     .classynav li{
         color: black;
@@ -170,8 +115,4 @@
         z-index: 999;
         background-color: #fff; /* Ganti dengan warna latar belakang yang diinginkan */
     }
-<<<<<<< HEAD
-=======
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
 </style>

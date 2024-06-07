@@ -120,19 +120,10 @@
         </div>
       </form>
 
-<<<<<<< HEAD
       <p class="mt-3 text-center">
         <a href="/">Kembali ke Beranda</a>
-=======
-<<<<<<< HEAD
-      <p class="mt-2">
+        <p class="mt-3 text-center">
         <a href="/">Home</a>
-=======
-      <p class="mt-3 text-center">
-        <a href="/">Kembali ke Beranda</a>
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
-      </p>
     </div>
     <!-- /.card-body -->
   </div>

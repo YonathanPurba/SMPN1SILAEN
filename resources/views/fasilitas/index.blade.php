@@ -7,31 +7,13 @@
             <div class="col-12">
                 <div class="text-center">
                     <h3 class="head animate__animated  animate__fadeInDown">Fasilitas</h3>
-<<<<<<< HEAD
-        
-=======
-<<<<<<< HEAD
-                    <div class="section-separator"></div>
-=======
-        
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
                     <p style="font-size: 1.2rem;
                     color: #ffffff;
                     font-weight: 400;
                     max-width:1150px;
                     border-bottom: 3px solid #ffffff; /* Garis bawah dengan warna putih */
-<<<<<<< HEAD
                     padding-bottom: 5px;
                     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated  animate__fadeInDown" >Nikmati fasilitas terbaik yang kami sediakan untuk memberikan pengalaman yang tak terlupakan.</p>
-=======
-<<<<<<< HEAD
-                    padding-bottom: 5px;" class="animate__animated  animate__fadeInDown" >Nikmati fasilitas terbaik yang kami sediakan untuk memberikan pengalaman yang tak terlupakan.</p>
-=======
-                    padding-bottom: 5px;
-                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated  animate__fadeInDown" >Nikmati fasilitas terbaik yang kami sediakan untuk memberikan pengalaman yang tak terlupakan.</p>
->>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
->>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
                 </div>
             </div>
         </div>
