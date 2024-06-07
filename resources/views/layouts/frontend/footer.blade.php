@@ -64,7 +64,7 @@
                             <a href="/fasilitas" class="text-light hover-underline animate__animated animate__fadeInLeft">Fasilitas</a>
                         </li>
                         <li class="mb-2">
-                            <a href="/artikel" class="text-light hover-underline animate__animated animate__fadeInLeft">Galeri</a>
+                            <a href="/galeri" class="text-light hover-underline animate__animated animate__fadeInLeft">Galeri</a>
                         </li>
 
                     </ul>
