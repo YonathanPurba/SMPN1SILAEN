@@ -67,6 +67,7 @@
                             <a href="/galeri" class="text-light hover-underline animate__animated animate__fadeInLeft">Galeri</a>
                         </li>
 
+                        
                     </ul>
                 </div>
                 <div class="col-md-4">
