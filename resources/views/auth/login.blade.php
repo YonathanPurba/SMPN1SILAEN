@@ -129,6 +129,8 @@
 
       <p class="mt-3 text-center">
         <a href="/">Kembali ke Beranda</a>
+      <p class="mt-3 text-center">
+        <a href="/">Home</a>
       </p>
     </div>
     <!-- /.card-body -->

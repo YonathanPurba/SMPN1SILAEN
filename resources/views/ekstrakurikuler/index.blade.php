@@ -103,7 +103,11 @@ body {
 
         <div class="row">
             @foreach ($ekstrakurikuler as $ekstrakurikulers)
+<<<<<<< HEAD
+            <div class="col-md-6 col-lg-4">
+=======
             <div class="col-md-6">
+>>>>>>> 76d93d8566232d8baa5fd42e785a524257dafe76
                 <div class="event animate__animated animate__fadeInUp">
                     <img src="{{ asset('folderimage/' . $ekstrakurikulers->gambar_ekstrakurikuler) }}" alt="{{ $ekstrakurikulers->judul_ekstrakurikuler }}">
                     <div class="event-title">{{ $ekstrakurikulers->judul_ekstrakurikuler }}</div>

@@ -9,8 +9,31 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+<<<<<<< HEAD
+<<<<<<< HEAD
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+=======
+<<<<<<< HEAD
+    <title>SMPN 1 SILAEN | Identitas Sekolah</title>
+    <style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+        .page-content {
+            display: flex;
+            justify-content: center; /* Adjust as needed */
+            gap: 20px; /* Adjust the gap between items as needed */
+            flex-wrap: wrap; /* Center align horizontally */
+            align-items: center;
+            
+        }
+=======
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+>>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
+>>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
+=======
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+>>>>>>> 76d93d8566232d8baa5fd42e785a524257dafe76
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

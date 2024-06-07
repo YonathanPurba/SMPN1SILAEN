@@ -404,4 +404,8 @@
 />
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> 76d93d8566232d8baa5fd42e785a524257dafe76

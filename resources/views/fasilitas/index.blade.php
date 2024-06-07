@@ -7,7 +7,10 @@
             <div class="col-12">
                 <div class="text-center">
                     <h3 class="head animate__animated  animate__fadeInDown">Fasilitas</h3>
+<<<<<<< HEAD
+=======
                     <div class="section-separator"></div>
+>>>>>>> 76d93d8566232d8baa5fd42e785a524257dafe76
                     <p style="font-size: 1.2rem;
                     color: #ffffff;
                     font-weight: 400;
