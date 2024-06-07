@@ -10,6 +10,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 =======
@@ -29,6 +30,10 @@
         @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 >>>>>>> 0a736fdf8103fd43e4ed0c364ae98ed5b440d1a4
 >>>>>>> ff4396a84ac782c0b9edf21e2fc027a218375a0e
+=======
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+>>>>>>> 76d93d8566232d8baa5fd42e785a524257dafe76
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -82,11 +87,12 @@
 
         .identitas-names, .identitas-isi, .t-dua {
             flex: 1;
-            margin: 5px;
+            margin: 10px;
+            
         }
 
         .identitas-names, .identitas-isi {
-            min-width: 200px;
+            min-width: 20px;
         }
 
         @media (max-width: 768px) {
@@ -142,32 +148,25 @@
                     </center>
                     <img src="/img/picture/imgL1.jpg" alt="Identitas Sekolah"> 
                     <p class="identitas-names">
-                      NPSN <br>
-                      Status <br>
-                      Bentuk Pendidikan <br>
-                      Status Kepemilikan <br>
-                      SK Pendirian Sekolah <br>
-                      Tanggal SK Pendirian <br>
-                      SK Izin Operasional <br>  
-                    </p>
-                    <p class="t-dua">
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                    </p>
-                    <p class="identitas-isi">
-                        10208496 <br>
-                        Negeri <br>
-                        SMP <br>
-                        Pemerintah Daerah <br>
-                        21/NP/02 N/1959 <br>
-                        1959-08-05 <br>
-                        420/2127.Disdikpora/2022 <br>
-                    </p>
+    NPSN <br>
+    Status <br>
+    Bentuk Pendidikan <br>
+    Status Kepemilikan <br>
+    SK Pendirian Sekolah <br>
+    Tanggal SK Pendirian <br>
+    SK Izin Operasional <br>  
+</p>
+
+<p class="identitas-isi">
+    : 10208496 <br>
+    : Negeri <br>
+    : SMP <br>
+    : Pemerintah Daerah <br>
+    : 21/NP/02 N/1959 <br>
+    : 1959-08-05 <br>
+    : 420/2127.Disdikpora/2022 <br>
+</p>
+
                 </div>
             </div>
         </div>
