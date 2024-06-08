@@ -18,14 +18,6 @@
                     border-bottom: 3px solid #ffffff; /* Garis bawah dengan warna putih */
                     padding-bottom: 5px;
                     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated animate__fadeInDown">Temukan informasi terkini dan penting di sini. Tetap update dengan pengumuman terbaru kami!</p>
-                
-<<<<<<< HEAD
-=======
-=======
-                    padding-bottom: 5px;" class="animate__animated animate__fadeInDown">Temukan informasi terkini dan penting di sini. Tetap update dengan pengumuman terbaru kami!</p>
-                    <hr class="w-25 mx-auto">
->>>>>>> 76d93d8566232d8baa5fd42e785a524257dafe76
->>>>>>> 2eee8d4fa76298fec518d3fac9f34826d5587200
                 </div>
             </div>
         </div>

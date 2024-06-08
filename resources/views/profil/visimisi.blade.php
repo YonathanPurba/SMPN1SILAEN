@@ -6,8 +6,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Table Flipping | Nothing4us</title>
-  <link
+    <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
@@ -246,7 +245,7 @@ createApp({
           desc:
             "Terwujudnya sekolah berkualitas, berkarakter dan berwawasan lingkungan",
           photo:
-            "/img/picture/imgL2.jpg"
+            "/img/picture/visi.jpg"
         },
         {
           id: 2,
@@ -257,10 +256,10 @@ createApp({
               <li>2. Menanamkan disiplin yang tinggi demi kekondusifan sekolah</li>
               <li>3. Menerapkan manajemen partisipatif sesuai MBS</li>
               <li>4. Menciptakan lingkungan yang nyaman dan asri</li>
-              <li>5. Meningkatkan profesionalisme personal sekolah dan kemandirian sekolah</li>
+              <li>5. Meningkatkan profesionalisme personal sekolah dan kemandirian sekolah</li>
             </ul>`,
           photo:
-            "/img/picture/imgL3.jpg"
+            "/img/picture/visi.jpg"
         }
       ],
       currentNum: 0

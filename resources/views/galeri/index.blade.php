@@ -14,7 +14,7 @@
                     font-weight: 400;
                     border-bottom: 3px solid #ffffff; 
                     padding-bottom: 5px;
-                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated  animate__fadeInDown">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolore libero neque cumque qui consequatur!</p>
+                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate__animated  animate__fadeInDown">Berikut adalah galeri dari SMP N1 Silaen</p>
                 </div>
             </div>
         </div>

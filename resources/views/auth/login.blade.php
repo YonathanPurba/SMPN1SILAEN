@@ -129,14 +129,7 @@
 
       <p class="mt-3 text-center">
         <a href="/">Kembali ke Beranda</a>
-<<<<<<< HEAD
-        <p class="mt-3 text-center">
-        <a href="/">Home</a>
-=======
-      <p class="mt-3 text-center">
-        <a href="/">Home</a>
       </p>
->>>>>>> 2eee8d4fa76298fec518d3fac9f34826d5587200
     </div>
     <!-- /.card-body -->
   </div>
