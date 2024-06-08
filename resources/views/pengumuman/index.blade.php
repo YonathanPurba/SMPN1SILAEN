@@ -59,7 +59,7 @@
                 <div class="section-heading">
                     <h2 class="font-weight-bold">Tidak Ada Pengumuman</h2>
                     <p class="text-muted">Saat ini belum ada pengumuman yang tersedia. Silakan cek kembali nanti!</p>
-                    <img src="{{ asset('img/empty.svg') }}" alt="No announcements" class="img-fluid mt-4" style="max-width: 300px;">
+                    <img src="{{ asset('img/picture/no.jpg') }}" alt="No announcements" class="img-fluid mt-4" style="max-width: 300px;">
                 </div>
             </div>
         </div>
