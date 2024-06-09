@@ -11,7 +11,7 @@
   />
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f5f5;
@@ -93,11 +93,54 @@
                 font-size: 18px;
             }
         }
+
+        @media (max-width: 390px) {
+            body {
+                padding: 10px;
+            }
+
+            h1.head {
+                font-size: 32px;
+            }
+
+            h2.underline {
+                font-size: 20px;
+            }
+
+            h5.underline {
+                font-size: 16px;
+            }
+
+            .page-content, .page-contents {
+                padding: 10px;
+                box-shadow: none;
+            }
+
+            .page-content img, .akreditas img {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .identitas-names, .identitas-isi {
+                min-width: 100%;
+                text-align: left;
+                margin: 0;
+                padding: 5px 0;
+            }
+
+            .identitas-names {
+                font-size: 14px;
+            }
+
+            .t-dua {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
-    @extends('layouts.frontend.app',[
-    'title' => 'Identitas Sekolah',
+@extends('layouts.frontend.app',[
+'title' => 'Identitas Sekolah',
 ])
 @section('content')
 
@@ -166,22 +209,105 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 <script>
-const the_animation = document.querySelectorAll('.animation');
+document.addEventListener('DOMContentLoaded', function () {
+    // Ensure all elements are loaded
+    const theAnimation = document.querySelectorAll('.animation');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('scroll-animation');
-            observer.unobserve(entry.target); // Stop observing the element once it has been animated
+    if (theAnimation.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-animation');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, {
+            threshold: 0.1 // Lower threshold to ensure animation triggers on small screens
+        });
+
+        theAnimation.forEach((element) => {
+            observer.observe(element);
+        });
+    }
+
+    // Typing animation
+    const typingElement = document.getElementById('typing-text');
+    if (typingElement) {
+        var text = "Selamat Datang di SMP Negeri 1 Silaen";
+        var index = 0;
+        var typingSpeed = 100;
+        var repeatDelay = 1900;
+
+        function type() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, typingSpeed);
+            } else {
+                // Delay before repeating the animation
+                setTimeout(resetAndType, repeatDelay);
+            }
         }
+
+        function resetAndType() {
+            // Clear text and reset index
+            typingElement.textContent = '';
+            index = 0;
+            // Start typing animation again
+            type();
+        }
+
+        // Start typing animation when the page loads
+        type();
+    }
+
+    // Count-up animation
+    const elements = document.querySelectorAll(".count-number");
+
+    elements.forEach(el => {
+        const endValue = parseInt(el.getAttribute("data-count"));
+        let startValue = 0;
+        const duration = 2000; // animation duration in milliseconds
+        const incrementTime = 50; // delay between increments
+        const step = Math.ceil(endValue / (duration / incrementTime));
+
+        function count() {
+            startValue += step;
+            if (startValue >= endValue) {
+                el.textContent = endValue;
+            } else {
+                el.textContent = startValue;
+                setTimeout(count, incrementTime);
+            }
+        }
+
+        count();
     });
-}, {
-    threshold: 0.5
 });
 
-the_animation.forEach((element) => {
-    observer.observe(element);
-});
+// Optional: Debounce scroll events for better performance on mobile
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
+
+window.addEventListener('scroll', debounce(() => {
+    // Add any scroll-related functions here if needed
+}, 100), { passive: true }); // Use passive listener for better performance
+
+// Ensure the script runs even on smaller screens by checking for specific screen sizes
+window.addEventListener('resize', debounce(() => {
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    if (viewportWidth <= 390) { // iPhone 12 Pro width is 390px in portrait mode
+        // Add any adjustments needed specifically for small screens
+        console.log("Viewport width is small, ensure elements are visible and animations are triggered.");
+    }
+}, 100), { passive: true });
+
 </script>
 @stop
 </body>

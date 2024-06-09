@@ -189,6 +189,7 @@
         .content-wrapper {
             flex-direction: column;
             align-items: center;
+            margin-right: 20px;
         }
 
         .custom-card {
@@ -326,24 +327,30 @@
 </section>
 
 <script>
-    const the_animation = document.querySelectorAll('.animation');
+document.addEventListener('DOMContentLoaded', function () {
+    // Ensure all elements are loaded
+    const theAnimation = document.querySelectorAll('.animation');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('scroll-animation');
-                observer.unobserve(entry.target); // Stop observing the element once it has been animated
-            }
+    if (theAnimation.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-animation');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, {
+            threshold: 0.1 // Lower threshold to ensure animation triggers on small screens
         });
-    }, {
-        threshold: 0.5
-    });
 
-    the_animation.forEach((element) => {
-        observer.observe(element);
-    });
+        theAnimation.forEach((element) => {
+            observer.observe(element);
+        });
+    }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    // Typing animation
+    const typingElement = document.getElementById('typing-text');
+    if (typingElement) {
         var text = "Selamat Datang di SMP Negeri 1 Silaen";
         var index = 0;
         var typingSpeed = 100;
@@ -351,50 +358,74 @@
 
         function type() {
             if (index < text.length) {
-                document.getElementById('typing-text').textContent += text.charAt(index);
+                typingElement.textContent += text.charAt(index);
                 index++;
                 setTimeout(type, typingSpeed);
             } else {
-                // Delay sebelum mengulang animasi
+                // Delay before repeating the animation
                 setTimeout(resetAndType, repeatDelay);
             }
         }
 
         function resetAndType() {
-            // Mengosongkan teks dan mengatur ulang index
-            document.getElementById('typing-text').textContent = '';
+            // Clear text and reset index
+            typingElement.textContent = '';
             index = 0;
-            // Mulai animasi pengetikan lagi
+            // Start typing animation again
             type();
         }
 
-        // Memulai animasi pengetikan ketika halaman dimuat
+        // Start typing animation when the page loads
         type();
-    });
+    }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const elements = document.querySelectorAll(".count-number");
+    // Count-up animation
+    const elements = document.querySelectorAll(".count-number");
 
-        elements.forEach(el => {
-            const endValue = parseInt(el.getAttribute("data-count"));
-            let startValue = 0;
-            const duration = 2000; // durasi animasi dalam milidetik
-            const incrementTime = 50; // waktu jeda antara setiap increment
-            const step = Math.ceil(endValue / (duration / incrementTime));
+    elements.forEach(el => {
+        const endValue = parseInt(el.getAttribute("data-count"));
+        let startValue = 0;
+        const duration = 2000; // animation duration in milliseconds
+        const incrementTime = 50; // delay between increments
+        const step = Math.ceil(endValue / (duration / incrementTime));
 
-            function count() {
-                startValue += step;
-                if (startValue >= endValue) {
-                    el.textContent = endValue;
-                } else {
-                    el.textContent = startValue;
-                    setTimeout(count, incrementTime);
-                }
+        function count() {
+            startValue += step;
+            if (startValue >= endValue) {
+                el.textContent = endValue;
+            } else {
+                el.textContent = startValue;
+                setTimeout(count, incrementTime);
             }
+        }
 
-            count();
-        });
+        count();
     });
+});
+
+// Optional: Debounce scroll events for better performance on mobile
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
+
+window.addEventListener('scroll', debounce(() => {
+    // Add any scroll-related functions here if needed
+}, 100), { passive: true }); // Use passive listener for better performance
+
+// Ensure the script runs even on smaller screens by checking for specific screen sizes
+window.addEventListener('resize', debounce(() => {
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    if (viewportWidth <= 390) { // iPhone 12 Pro width is 390px in portrait mode
+        // Add any adjustments needed specifically for small screens
+        console.log("Viewport width is small, ensure elements are visible and animations are triggered.");
+    }
+}, 100), { passive: true });
+
 </script>
 
 @endsection
