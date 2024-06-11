@@ -19,8 +19,7 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TenagaPengajarController;
-use App\Models\JumlahSiswa;
-use App\Models\KepalaSekolah;
+
 
 /*
 |--------------------------------------------------------------------------

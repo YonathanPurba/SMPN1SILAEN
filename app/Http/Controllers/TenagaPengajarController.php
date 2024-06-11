@@ -114,6 +114,5 @@ public function delete($id)
             }
             return view('tenagapengajar.show', ['pengajar' => $tenagapengajar]);
         }
-
     
 }

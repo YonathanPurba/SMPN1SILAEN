@@ -22,6 +22,7 @@
                             <th>Nama</th>
                             <th>Gambar</th>
                             <th>Jabatan</th>
+                            <th>Status</th>
                             <th>NIP</th>
                             <th>Alamat</th>
                             <th>Action</th>
@@ -38,6 +39,7 @@
                             <td>{{ $pengajars->nama_tenagapengajar }}</td>
                             <td><img width="270rem" src="{{ asset('folderimage/' . $pengajars->gambar_tenagapengajar) }}" alt=""></td>
                             <td>{{ $pengajars->jabatan }}</td>
+                            <td>{{ $pengajars->status }}</td>
                             <td>{{ $pengajars->nip }}</td>
                             <td>{{ $pengajars->alamat }}</td>
                             <td>
