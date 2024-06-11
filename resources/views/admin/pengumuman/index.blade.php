@@ -20,8 +20,8 @@
                 <tr>
                   <th>No</th>
                   <th>Judul</th>
-                  <th>Author</th>
-                  <th>Tgl Upload</th>
+                  <th>Deskripsi</th>
+                  <th>Tanggal Upload</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -34,7 +34,7 @@
                 <tr>
                   <td>{{ $no++ }}</td>
                   <td>{{ $pn->judul }}</td>
-                  <td>{{ $pn->user->name }}</td>
+                  <td>{{ $pn->deskripsi }}</td>
                   <td>{{ $pn->tgl }}</td>
                   
                   <td>
