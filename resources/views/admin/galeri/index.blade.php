@@ -36,8 +36,8 @@
                   <td>{{ $art->judul }}</td>      
                   <td>
                     <div class="row ml-2">
-                        <a href="{{ route('admin.galeri.edit', ['id' => $art->id]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.galeri.index.delete', ['id' => $art->id]) }}">
+                        <a href="{{ route('admin.galeri.edit', ['id' => $art->id_galeri]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.galeri.index.delete', ['id' => $art->id_galeri]) }}">
 							<i class="fas fa-trash fa-fw"></i>
 						</button>
                     </div>

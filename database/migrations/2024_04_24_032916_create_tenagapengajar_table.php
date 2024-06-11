@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id_tenagapengajar');
             $table->string('nama_tenagapengajar');
             $table->string('jabatan');
-            $table->string('nip');
+            $table->string('nip')->unique();
             $table->string('alamat');
             $table->string('gambar_tenagapengajar')->nullable();
             $table->string('slug')->nullable();
