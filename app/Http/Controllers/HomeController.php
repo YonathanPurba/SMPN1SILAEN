@@ -57,4 +57,15 @@ class HomeController extends Controller
         
         return view('home.contact');
     }
+
+    public function jumlahsiswa()
+    {
+        // Check if the view file exists
+        if (!view()->exists('home.about')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        return view('home.jumlahsiswa');
+    }
 }

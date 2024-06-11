@@ -262,7 +262,7 @@
 <div style="margin-top: 40px;" class="container animate__animated animate__fadeInDown">
     <div class="content-wrapper">
         <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative cursor-pointer" style="background-color: white;" onclick="redirectToFasilitas()">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Laki-laki</strong>
                     <h3 class="mb-0 count-number" data-count="{{ $totalLakiLaki }}">{{ $totalLakiLaki }}</h3>
@@ -290,6 +290,7 @@
         </div>
     </div>
 </div>
+
 
 
 <section class="regular-page-area section-padding-10 mt-5 mb-4 b kepala">
@@ -427,6 +428,11 @@ window.addEventListener('resize', debounce(() => {
         console.log("Viewport width is small, ensure elements are visible and animations are triggered.");
     }
 }, 100), { passive: true });
+
+
+function redirectToFasilitas() {
+        window.location.href = '{{ route("jumlahsiswa.index") }}';
+    }
 
 </script>
 

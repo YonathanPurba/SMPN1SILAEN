@@ -121,7 +121,7 @@
         <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
-                <h3>@count('jumlah_siswa')</h3>
+                <h3>@count('siswa')</h3>
                 <p>Jumlah Siswa</p>
             </div>
             <div class="icon">

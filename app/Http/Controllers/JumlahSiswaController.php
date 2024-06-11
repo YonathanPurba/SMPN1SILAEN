@@ -14,8 +14,8 @@ class JumlahSiswaController extends Controller
     public function index()
     {
         $jumlah_siswa = DB::table('kelas')
-                   ->join('jumlah_siswa', 'kelas.id_kelas', '=', 'jumlah_siswa.id_kelas')
-                   ->select('jumlah_siswa.*', 'kelas.nama_kelas')
+                   ->join('siswa', 'kelas.id_kelas', '=', 'siswa.id_kelas')
+                   ->select('siswa.*', 'kelas.nama_kelas')
                    ->get();
         return view('admin.jumlah_siswa.index',compact('jumlah_siswa'));
 
