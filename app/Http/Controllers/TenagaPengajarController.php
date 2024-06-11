@@ -114,8 +114,6 @@ public function delete($id)
             }
             return view('tenagapengajar.show', ['pengajar' => $tenagapengajar]);
         }
-<<<<<<< HEAD
-=======
 
         public function checkNIP(Request $request)
     {
@@ -125,6 +123,5 @@ public function delete($id)
     }
 
 
->>>>>>> aed8c67b3e9e1675dbdc365311a0ce477cf20531
     
 }
