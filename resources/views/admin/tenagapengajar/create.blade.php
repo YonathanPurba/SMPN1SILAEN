@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-	'title' => 'Tambah Tenaga Pengajar',
-	'contentTitle' => 'Tambah Tenaga Pengajar',
+    'title' => 'Tambah Tenaga Pengajar',
+    'contentTitle' => 'Tambah Tenaga Pengajar',
 ])
 
 @push('css')
@@ -9,30 +9,30 @@
 @endpush
 @section('content')
 <div class="row">
-	<div class="col">
-		<div class="card">
-			<div class="card-header">
-				<a href="{{ route('admin.tenagapengajar.index') }}" class="btn btn-success btn-sm">Kembali</a>
-			</div>
-			<div class="card-body">
-				<form method="POST" action="{{ route('admin.tenagapengajar.store') }}" enctype="multipart/form-data" id="form-tenaga-pengajar">
-					@csrf
-					<div class="form-group">
-						<label for="name">Nama Pengajar</label>
-						<input required="" class="form-control" type="" name="nama_tenagapengajar" id="name" placeholder="">
-					</div>
-					<div class="form-group">
-						<label for="jabatan">Jabatan</label>
-						<input required="" class="form-control" type="" name="jabatan" id="email" placeholder="">
-					</div>
-					<div class="form-group">
-						<label for="nip">NIP</label>
-						<input required="" class="form-control" type="" name="nip" id="nip" placeholder="">
-					</div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <a href="{{ route('admin.tenagapengajar.index') }}" class="btn btn-success btn-sm">Kembali</a>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ route('admin.tenagapengajar.store') }}" enctype="multipart/form-data" id="form-tenaga-pengajar">
+                    @csrf
                     <div class="form-group">
-						<label for="alamat">Alamat</label>
-						<input required="" class="form-control" type="" name="alamat" id="alamat" placeholder="">
-					</div>
+                        <label for="name">Nama Pengajar</label>
+                        <input required="" class="form-control" type="" name="nama_tenagapengajar" id="name" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="jabatan">Jabatan</label>
+                        <input required="" class="form-control" type="" name="jabatan" id="jabatan" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="nip">NIP</label>
+                        <input required="" class="form-control" type="" name="nip" id="nip" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat">Alamat</label>
+                        <input required="" class="form-control" type="" name="alamat" id="alamat" placeholder="">
+                    </div>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -41,13 +41,13 @@
                             </div>
                         </div>
                     </div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 @stop
 @push('js')
@@ -67,14 +67,14 @@ $(document).ready(function() {
               document.execCommand('insertHtml', false, bufferText);
             }
         }
-    })
+    });
 
     $(".summernote").on("summernote.enter", function(we, e) {
         $(this).summernote("pasteHTML", "<br><br>");
         e.preventDefault();
     });
 
-	$('.dropify').dropify({
+    $('.dropify').dropify({
         messages: {
             default: 'Drag atau Drop untuk memilih gambar',
             replace: 'Ganti',
@@ -87,30 +87,55 @@ $(document).ready(function() {
         var title = $(this).val().toLowerCase().replace(/[&\/\\#^, +()$~%.'":*?<>{}]/g,'-');
         $('.slug').val(title);
     });
+
     $("#nip").on("change", function() {
-            var nip = $("#nip").val();
+        var nip = $("#nip").val();
 
-            if (isNaN(nip)) {
-                Swal.fire({
-                    title: 'Perhatian!',
-                    text: 'NIP harus berupa angka.',
-                    icon: 'warning',
-                    confirmButtonText: 'OK'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $("#nip").val("");
+        if (isNaN(nip)) {
+            Swal.fire({
+                title: 'Perhatian!',
+                text: 'NIP harus berupa angka.',
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $("#nip").val("");
+                }
+            });
+        } else {
+            // Check for unique NIP
+            $.ajax({
+                url: '{{ route("admin.tenagapengajar.checkNIP") }}', // Adjust the route name as necessary
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    nip: nip
+                },
+                success: function(response) {
+                    if (response.exists) {
+                        Swal.fire({
+                            title: 'Perhatian!',
+                            text: 'NIP tidak boleh sama.',
+                            icon: 'warning',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $("#nip").val("");
+                            }
+                        });
                     }
-                });
-            }
-        });
-
-        $("form#form-tenaga-pengajar").submit(function(e) {
-            var nip = $("#nip").val();
-
-            if (isNaN(nip)) {
-                e.preventDefault();
-            }
-        });
+                }
+            });
+        }
     });
+
+    $("form#form-tenaga-pengajar").submit(function(e) {
+        var nip = $("#nip").val();
+
+        if (isNaN(nip)) {
+            e.preventDefault();
+        }
+    });
+});
 </script>
 @endpush

@@ -14,12 +14,12 @@
                     @csrf
                     <div class="form-group">
                         <label for="kelasSelect">Nama Kelas</label>
-                        <select class="form-control" id="kelasSelect" name="id_kelas">
-                          @foreach($kelas as $kelasis)
-                          <option value={{ $kelasis->id_kelas }}>{{$kelasis->nama_kelas}}</option>
-                          @endforeach
+                        <select class="form-control" id="kelasSelect" name="id_kelas" required>
+                            @foreach($kelas as $kelasis)
+                            <option value="{{ $kelasis->id_kelas }}">{{$kelasis->nama_kelas}}</option>
+                            @endforeach
                         </select>
-                    </div>
+                    </div>                    
                     <div class="form-group">
                         <label for="jumlah_siswa_laki_laki">Jumlah Siswa Laki-Laki</label>
                         <input required="" class="form-control" type="" name="jumlah_siswa_laki_laki" id="jumlah_siswa_laki_laki" placeholder="">

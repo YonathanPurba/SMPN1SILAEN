@@ -94,6 +94,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::delete('tenagapengajar/{id}/delete', [TenagaPengajarController::class, 'delete'])->name('tenagapengajar.index.delete');
 		Route::get('/tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit');
 		Route::put('/tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit.update');
+		Route::post('/tenagapengajar/checkNIP', [TenagaPengajarController::class, 'checkNIP'])->name('tenagapengajar.checkNIP');
 
 		//Prestasi
 		Route::get('/prestasi', [PrestasiController::class,'index'])->name('prestasi.index');
