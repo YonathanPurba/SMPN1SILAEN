@@ -42,15 +42,20 @@
                             <td>{{ $pengajar->nip }}</td>
                             <td>{{ $pengajar->alamat }}</td>
                             <td>
-                                <div class="row">
-                                    <a href="{{ route('admin.tenagapengajar.edit', ['id' => $pengajar->id_tenagapengajar]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-                                    <button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.tenagapengajar.index.delete', ['id' => $pengajar->id_tenagapengajar]) }}"><i class="fas fa-trash fa-fw"></i></button>
-                                    @if($pengajar->status == 'Non-Aktif')
-                                        <a href="" class="btn btn-success btn-sm" onclick="return confirm('Apakah Anda yakin ingin mengaktifkan kembali?')">Aktifkan</a>
-                                    @else
-                                        <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menonaktifkan?')">Non-Aktifkan</a>
-                                    @endif
-                                </div>
+                            <div class="row">
+    <div class="mb-1">
+        <a href="{{ route('admin.tenagapengajar.edit', ['id' => $pengajar->id_tenagapengajar]) }}" class="btn btn-primary btn-sm mr-1"><i class="fas fa-edit fa-fw"></i> Edit</a>
+    </div>
+    <div class="mb-1">
+        @if($pengajar->status == 'Non-Aktif')
+            <a href="{{ route('admin.tenagapengajar.aktif', ['id' => $pengajar->id_tenagapengajar]) }}" class="btn btn-success btn-sm ml-1" onclick="return confirm('Apakah Anda yakin ingin mengaktifkan kembali?')">Aktif</a>
+        @else
+            <a href="{{ route('admin.tenagapengajar.nonaktif', ['id' => $pengajar->id_tenagapengajar]) }}" class="btn btn-danger btn-sm ml-1" onclick="return confirm('Apakah Anda yakin ingin menonaktifkan?')">Non-Aktif</a>
+        @endif
+    </div>
+</div>
+
+
                             </td>
                         </tr>
                         @endforeach
