@@ -14,7 +14,7 @@ class CreateGaleriTable extends Migration
     public function up()
     {
         Schema::create('galeri', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_galeri');
             $table->string('judul')->nullable();
             $table->string('slug')->nullable();
             $table->text('deskripsi')->nullable();

@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class JumlahSiswa extends Model
 {
     use HasFactory;
-    protected $table = 'jumlah_siswa';
-    protected $primaryKey = 'id_jumlah_siswa';
+    protected $table = 'siswa';
+    protected $primaryKey = 'id_siswa';
 
     public function kelas()
     {

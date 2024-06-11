@@ -14,7 +14,7 @@
             <a href="{{ route('admin.pengumuman.index') }}" class="btn btn-success btn-sm">Kembali</a>
         </div>
         <div class="card-body">
-        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.pengumuman.update',$pengumuman->id) }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.pengumuman.update',$pengumuman->id_pengumuman) }}">
             @csrf
             @method('PATCH')
             <div class="form-group">

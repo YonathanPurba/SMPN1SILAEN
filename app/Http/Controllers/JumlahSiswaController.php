@@ -99,4 +99,16 @@ public function view()
     return view('jumlahsiswa.index',compact('kelas','jumlah_siswa'));
 }
 
+public function delete($id)
+{
+    $jumlah_siswa = JumlahSiswa::find($id);
+
+    if ($jumlah_siswa) {
+        $jumlah_siswa->delete();
+        return response()->json(['success' => 'Data berhasil dihapus!']);
+    }
+
+    return response()->json(['error' => 'Data tidak ditemukan atau gagal dihapus!'], 404);
+}
+
 }

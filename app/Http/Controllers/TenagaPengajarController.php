@@ -114,5 +114,17 @@ public function delete($id)
             }
             return view('tenagapengajar.show', ['pengajar' => $tenagapengajar]);
         }
+<<<<<<< HEAD
+=======
+
+        public function checkNIP(Request $request)
+    {
+    $nip = $request->input('nip');
+    $exists = TenagaPengajar::where('nip', $nip)->exists();
+    return response()->json(['exists' => $exists]);
+    }
+
+
+>>>>>>> aed8c67b3e9e1675dbdc365311a0ce477cf20531
     
 }

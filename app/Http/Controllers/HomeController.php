@@ -17,13 +17,13 @@ class HomeController extends Controller
         }
 
         // Calculate the total number of male students
-        $totalLakiLaki = DB::table('jumlah_siswa')
+        $totalLakiLaki = DB::table('siswa')
                             ->sum('jumlah_siswa_laki_laki');
         
-        $totalPerempuan = DB::table('jumlah_siswa')
+        $totalPerempuan = DB::table('siswa')
                             ->sum('jumlah_siswa_perempuan');
                             
-        $total = DB::table('jumlah_siswa')
+        $total = DB::table('siswa')
                             ->sum('total');
         
         $kepalasekolah = DB::table('kepala_sekolah')->first();
