@@ -20,8 +20,8 @@
                 <tr>
                   <th>No</th>
                   <th>Judul</th>
-                  <th>Author</th>
-                  <th>Tgl Upload</th>
+                  <th>Deskripsi</th>
+                  <th>Tanggal Upload</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -34,15 +34,15 @@
                 <tr>
                   <td>{{ $no++ }}</td>
                   <td>{{ $pn->judul }}</td>
-                  <td>{{ $pn->user->name }}</td>
+                  <td>{{ $pn->deskripsi }}</td>
                   <td>{{ $pn->tgl }}</td>
                   
                   <td>
                     @if(auth()->user()->id == $pn->user_id)
                     <div class="row ml-2">
-                        <a href="{{ route('admin.pengumuman.edit',$pn->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+                        <a href="{{ route('admin.pengumuman.edit',$pn->id_pengumuman) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
                         
-                        <form method="POST" action="{{ route('admin.pengumuman.destroy',$pn->id) }}" class="delete-form">
+                        <form method="POST" action="{{ route('admin.pengumuman.destroy',$pn->id_pengumuman) }}" class="delete-form">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm delete-button ml-2"><i class="fas fa-trash fa-fw"></i></button>

@@ -41,8 +41,8 @@
                   <td>{{ $jumlah_siswasis->total }}</td>
 				  <td>
 					<div class="row ml-2">
-						<a href="{{ route('admin.jumlah_siswa.edit', ['id' => $jumlah_siswasis->id_jumlah_siswa]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
-						<button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.jumlah_siswa.index.delete', ['id' => $jumlah_siswasis->id_jumlah_siswa]) }}">
+						<a href="{{ route('admin.jumlah_siswa.edit', ['id' => $jumlah_siswasis->id_siswa]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
+						<button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.jumlah_siswa.index.delete', ['id' => $jumlah_siswasis->id_siswa]) }}">
 							<i class="fas fa-trash fa-fw"></i>
 						</button>
 					</div>

@@ -51,10 +51,10 @@ class PengumumanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id_pengumuman
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
+    // public function show($id_pengumuman)
     // {
     //     $pengumuman = Pengumuman::where('slug')->firstOrFail();
     //     return view('pengumuman.show', compact('pengumuman'));
@@ -75,7 +75,7 @@ class PengumumanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id_pengumuman
      * @return \Illuminate\Http\Response
      */
     public function edit(Pengumuman $pengumuman)
@@ -87,12 +87,12 @@ class PengumumanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $id_pengumuman
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Pengumuman $pengumuman)
     {
-        $this->authorize('update',$pengumuman);
+        $this->authorize('update', $pengumuman);
 
         $request->request->add([
             'slug' => Str::slug($request->judul),
@@ -107,12 +107,12 @@ class PengumumanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $id_pengumuman
      * @return \Illuminate\Http\Response
      */
     public function destroy(Pengumuman $pengumuman)
     {
-        $this->authorize('delete',$pengumuman);
+        $this->authorize('delete', $pengumuman);
         
         $pengumuman->delete();
         return redirect()->route('admin.pengumuman.index')->with('success','Data berhasil dihapus');
@@ -126,8 +126,7 @@ class PengumumanController extends Controller
             return response()->view('errors.404', [], 404);
         }
         
-        $pengumuman = Pengumuman::with(['user',])->latest()->paginate(4);
+        $pengumuman = Pengumuman::with(['user'])->latest()->paginate(4);
         return view('pengumuman.index',compact('pengumuman'));
     }
 }
-

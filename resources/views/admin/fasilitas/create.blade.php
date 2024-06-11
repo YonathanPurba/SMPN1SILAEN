@@ -21,6 +21,10 @@
 						<label for="nama_fasilitas">Nama Fasilitas</label>
 						<input required="" class="form-control" type="" name="nama_fasilitas" id="nama_fasilitas" placeholder="">
 					</div>
+                    <div class="form-group">
+                        <label for="judul">Judul</label>
+                        <input required="" type="" name="judul" placeholder="" class="form-control title"> 
+                    </div>
 					<div class="form-group">
 						<label for="deskripsi">Deskripsi</label>
 						<textarea required="" name="deskripsi_fasilitas" id="deskripsi" class="text-dark form-control summernote"></textarea>

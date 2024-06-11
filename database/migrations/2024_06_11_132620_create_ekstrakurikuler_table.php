@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jumlah_siswa', function (Blueprint $table) {
-            $table->increments('id_jumlah_siswa');
-            $table->integer('id_kelas');
-            $table->integer('jumlah_siswa_laki_laki');
-            $table->integer('jumlah_siswa_perempuan');
-            $table->integer('total');
+        Schema::create('ekstrakurikuler', function (Blueprint $table) {
+            $table->increments('id_ekstrakurikuler');
+            $table->string('judul_ekstrakurikuler');
+            $table->string('gambar_ekstrakurikuler')->nullable();
+            $table->string('deskripsi_ekstrakurikuler');
+            $table->string('slug')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->string('created_by')->nullable();
             $table->string('update_by')->nullable();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jumlah_siswa');
+        Schema::dropIfExists('ekstrakurikuler');
     }
 };

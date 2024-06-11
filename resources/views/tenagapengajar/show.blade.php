@@ -44,6 +44,10 @@
                         <p>{{ $pengajar->jabatan }}</p>
                     </div>
                     <div class="info">
+                        <h5>Status:</h5>
+                        <p>{{ $pengajar->status }}</p>
+                    </div>
+                    <div class="info">
                         <h5>NIP:</h5>
                         <p>{{ $pengajar->nip }}</p>
                     </div>
@@ -51,6 +55,7 @@
                         <h5>Alamat:</h5>
                         <p>{{ $pengajar->alamat }}</p>
                     </div>
+                    
                 </div>
             </div>
         </div>

@@ -115,5 +115,30 @@ public function delete($id)
             return view('tenagapengajar.show', ['pengajar' => $tenagapengajar]);
         }
 
+        public function checkNIP(Request $request)
+    {
+    $nip = $request->input('nip');
+    $exists = TenagaPengajar::where('nip', $nip)->exists();
+    return response()->json(['exists' => $exists]);
+    }
+
+    public function aktif($id)
+    {
+        $pengajar = TenagaPengajar::findOrFail($id);
+        $pengajar->status = 'Aktif';
+        $pengajar->save();
+
+        return redirect()->back()->with('success', 'Tenaga pengajar berhasil diaktifkan.');
+    }
+
+    public function nonaktif($id)
+    {
+        $pengajar = TenagaPengajar::findOrFail($id);
+        $pengajar->status = 'Non-Aktif';
+        $pengajar->save();
+
+        return redirect()->back()->with('success', 'Tenaga pengajar berhasil dinonaktifkan.');
+    }
+
     
 }

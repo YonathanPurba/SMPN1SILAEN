@@ -11,6 +11,7 @@ use App\Models\User;
 class Pengumuman extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id_pengumuman';
 
     use Sluggable;
 

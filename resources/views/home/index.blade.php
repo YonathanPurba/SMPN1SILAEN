@@ -311,7 +311,7 @@
 <div style="margin-top: 40px;" class="container animate__animated animate__fadeInDown">
     <div class="content-wrapper">
         <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative cursor-pointer" style="background-color: white;" onclick="redirectToFasilitas()">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <h4 class="mb-3 text-primary-emphasis"  style="font-family: allura;font-size:2.2rem;color:0099ff; ">Siswa Laki-laki</h4>
                     <strong class="d-inline-block mb-2">Total Siswa Laki-laki</strong>
@@ -346,20 +346,22 @@
     </div>
 </div>
 
+
 <section class="regular-page-area section-padding-10 mt-5 mb-4 b kepala">
     <div class="container animation">
         <div class="row justify-content-center align-items-center"> <!-- Mengubah 'align-items-center' -->
             <div class="col-lg-8"> <!-- Menyesuaikan lebar kolom -->
                 <div class="row principal-card align-items-center"> <!-- Mengubah 'align-items-center' -->
-                    <div class="col-md-6 text-center text-md-start"> <!-- Menyesuaikan lebar kolom dan teks alignment -->
-                        <img src="{{ asset('img/picture/kepala sekolah.png') }}" class="principal-image img-fluid" alt="Kepala Sekolah">
-                    </div>
+                <div class="col-md-6 text-center text-md-start">
+    <img src="{{ $kepalasekolah && $kepalasekolah->gambar_kepalasekolah ? asset('folderimage/' . $kepalasekolah->gambar_kepalasekolah) : asset('img/picture/kepala sekolah.png') }}" class="principal-image img-fluid" alt="Kepala Sekolah">
+</div>
+
                     <div class="col-md-6">
                         <div class="principal-text">
                             <h1 style="font-family: freshman; color: #002c4c;">
                                 Kepala Sekolah SMPN 1 Silaen
                             </h1>
-                            <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: #FF6600; border-bottom: 3px solid #FF6600; padding-bottom: 5px;">
+                            <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: #002c4c; border-bottom: 3px solid #002c4c; padding-bottom: 5px;">
                                 {{ $kepalasekolah->nama }}
                             </h5>
                             <p class="mb-0" style="font-family: 'Lucida Sans', Arial, sans-serif">
@@ -493,6 +495,7 @@ window.addEventListener('resize', debounce(() => {
         console.log("Viewport width is small, ensure elements are visible and animations are triggered.");
     }
 }, 100), { passive: true });
+
 </script>
 
 @endsection

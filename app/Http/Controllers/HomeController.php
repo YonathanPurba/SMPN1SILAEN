@@ -17,13 +17,13 @@ class HomeController extends Controller
         }
 
         // Calculate the total number of male students
-        $totalLakiLaki = DB::table('jumlah_siswa')
+        $totalLakiLaki = DB::table('siswa')
                             ->sum('jumlah_siswa_laki_laki');
         
-        $totalPerempuan = DB::table('jumlah_siswa')
+        $totalPerempuan = DB::table('siswa')
                             ->sum('jumlah_siswa_perempuan');
                             
-        $total = DB::table('jumlah_siswa')
+        $total = DB::table('siswa')
                             ->sum('total');
         
         $kepalasekolah = DB::table('kepala_sekolah')->first();
@@ -56,5 +56,16 @@ class HomeController extends Controller
         }
         
         return view('home.contact');
+    }
+
+    public function jumlahsiswa()
+    {
+        // Check if the view file exists
+        if (!view()->exists('home.about')) {
+            // If the view file doesn't exist, return a 404 error view
+            return response()->view('errors.404', [], 404);
+        }
+        
+        return view('home.jumlahsiswa');
     }
 }

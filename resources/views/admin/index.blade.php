@@ -121,7 +121,7 @@
         <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
-                <h3>@count('jumlah_siswa')</h3>
+                <h3>@count('siswa')</h3>
                 <p>Jumlah Siswa</p>
             </div>
             <div class="icon">
@@ -134,7 +134,7 @@
     <div class="col-lg-4 col-6">
         <div class="small-box bg-teal">
             <div class="inner">
-                <h3>@count('users')</h3>
+                <h3>@count('kepala_sekolah')</h3>
                 <p>Kepala Sekolah</p>
             </div>
             

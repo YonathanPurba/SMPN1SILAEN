@@ -19,8 +19,7 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TenagaPengajarController;
-use App\Models\JumlahSiswa;
-use App\Models\KepalaSekolah;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +93,10 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::delete('tenagapengajar/{id}/delete', [TenagaPengajarController::class, 'delete'])->name('tenagapengajar.index.delete');
 		Route::get('/tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'edit'])->name('tenagapengajar.edit');
 		Route::put('/tenagapengajar/edit/{id}', [TenagaPengajarController::class, 'update'])->name('tenagapengajar.edit.update');
+		Route::post('/tenagapengajar/checkNIP', [TenagaPengajarController::class, 'checkNIP'])->name('tenagapengajar.checkNIP');
+		Route::get('/tenagapengajar/aktif/{id}', [TenagaPengajarController::class, 'aktif'])->name('tenagapengajar.aktif');
+		Route::get('/tenagapengajar/nonaktif/{id}', [TenagaPengajarController::class, 'nonaktif'])->name('tenagapengajar.nonaktif');
+
 
 		//Prestasi
 		Route::get('/prestasi', [PrestasiController::class,'index'])->name('prestasi.index');

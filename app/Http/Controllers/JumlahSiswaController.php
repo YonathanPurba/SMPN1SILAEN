@@ -14,8 +14,8 @@ class JumlahSiswaController extends Controller
     public function index()
     {
         $jumlah_siswa = DB::table('kelas')
-                   ->join('jumlah_siswa', 'kelas.id_kelas', '=', 'jumlah_siswa.id_kelas')
-                   ->select('jumlah_siswa.*', 'kelas.nama_kelas')
+                   ->join('siswa', 'kelas.id_kelas', '=', 'siswa.id_kelas')
+                   ->select('siswa.*', 'kelas.nama_kelas')
                    ->get();
         return view('admin.jumlah_siswa.index',compact('jumlah_siswa'));
 
@@ -97,6 +97,18 @@ public function view()
     $kelas = DB::table('kelas')->get();
     $jumlah_siswa = JumlahSiswa::all();
     return view('jumlahsiswa.index',compact('kelas','jumlah_siswa'));
+}
+
+public function delete($id)
+{
+    $jumlah_siswa = JumlahSiswa::find($id);
+
+    if ($jumlah_siswa) {
+        $jumlah_siswa->delete();
+        return response()->json(['success' => 'Data berhasil dihapus!']);
+    }
+
+    return response()->json(['error' => 'Data tidak ditemukan atau gagal dihapus!'], 404);
 }
 
 }

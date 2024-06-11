@@ -10,8 +10,9 @@ use App\Models\User;
 class Galeri extends Model
 {
     use HasFactory;
-
+    protected $primaryKey = 'id_galeri';
     protected $table = 'galeri';
+
 
     protected $fillable = [
     	'judul','slug','deskripsi','thumbnail','slug','user_id',
