@@ -42,7 +42,7 @@
                             <td>{{ $pengajar->nip }}</td>
                             <td>{{ $pengajar->alamat }}</td>
                             <td>
-                                <div class="btn-group">
+                                <div class="row">
                                     <a href="{{ route('admin.tenagapengajar.edit', ['id' => $pengajar->id_tenagapengajar]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
                                     <button class="btn btn-danger btn-sm ml-2 delete-button" data-url="{{ route('admin.tenagapengajar.index.delete', ['id' => $pengajar->id_tenagapengajar]) }}"><i class="fas fa-trash fa-fw"></i></button>
                                     @if($pengajar->status == 'Non-Aktif')
