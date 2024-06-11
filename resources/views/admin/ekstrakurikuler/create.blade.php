@@ -74,30 +74,5 @@
         }
     });
 
-    // Function to check if any field is empty
-    function checkEmptyFields() {
-        var isEmpty = false;
-        $('#ekstrakurikulerForm input, #ekstrakurikulerForm textarea').each(function() {
-            if ($(this).val() === '') {
-                isEmpty = true;
-                return false; // exit the loop if empty field found
-            }
-        });
-        return isEmpty;
-    }
-
-    // Form submission handling
-    $('#submitButton').click(function(event) {
-        if (checkEmptyFields()) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Tidak boleh ada bagian yang kosong!',
-            });
-        } else {
-            // If no empty fields, submit the form
-            $('#ekstrakurikulerForm').submit();
-        }
-    });
 </script>
 @endpush
