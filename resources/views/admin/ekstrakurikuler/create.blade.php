@@ -14,7 +14,7 @@
                 <a href="{{ route('admin.ekstrakurikuler.index') }}" class="btn btn-success btn-sm">Kembali</a>
             </div>
             <div class="card-body">
-                <form id="ekstrakurikulerForm" method="POST" action="{{ route('admin.ekstrakurikuler.store') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('admin.ekstrakurikuler.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="judul_ekstrakurikuler">Nama Ekstrakurikuler</label>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="button" id="submitButton" class="btn btn-primary btn-sm">SIMPAN</button>
+                        <button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
                     </div>
                 </form>
             </div>
@@ -42,20 +42,18 @@
 </div>
 @stop
 @push('js')
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('plugins/summernote') }}/summernote-bs4.min.js"></script>
-<script src="{{ asset('plugins/dropify') }}/dist/js/dropify.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="{{ asset('plugins/summernote') }}/summernote-bs4.min.js"></script>
+<script type="text/javascript" src="{{ asset('plugins/dropify') }}/dist/js/dropify.min.js"></script>
 <script type="text/javascript">
     $(".summernote").summernote({
         height:500,
         callbacks: {
-            // callback for pasting text only (no formatting)
+        // callback for pasting text only (no formatting)
             onPaste: function (e) {
-                var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                e.preventDefault();
-                bufferText = bufferText.replace(/\r?\n/g, '<br>');
-                document.execCommand('insertHtml', false, bufferText);
+              var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+              e.preventDefault();
+              bufferText = bufferText.replace(/\r?\n/g, '<br>');
+              document.execCommand('insertHtml', false, bufferText);
             }
         }
     })
@@ -65,7 +63,7 @@
         e.preventDefault();
     });
 
-    $('.dropify').dropify({
+	$('.dropify').dropify({
         messages: {
             default: 'Drag atau Drop untuk memilih gambar',
             replace: 'Ganti',
@@ -74,5 +72,9 @@
         }
     });
 
+    $('.title').keyup(function(){
+        var title = $(this).val().toLowerCase().replace(/[&\/\\#^, +()$~%.'":*?<>{}]/g,'-');
+        $('.slug').val(title);
+    });
 </script>
 @endpush
