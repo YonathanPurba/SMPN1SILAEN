@@ -40,6 +40,6 @@
     font-size: 20px;  
     font-weight: bold;  
     background-color: aliceblue;
-    margin-bottom: -300px;
+    margin-bottom: -100px;
 }
 </style>

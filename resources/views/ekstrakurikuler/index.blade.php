@@ -4,117 +4,290 @@
 @section('content')
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-}
-
-.section-heading h3 {
-    font-size: 6rem;
-    margin-bottom: 30px;
-    text-align: center;
-    font-family: "Allura", serif;
-    color: #002c4c;
-}
-
-.carousel-item img {
-    max-height: 300px;
-    object-fit: cover;
-}
-
-.event {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.5s;
-    display: flex;
-    flex-direction: column;
-}
-
-.event:hover {
-    transform: scale(1.05);
-}
-
-.event img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-}
-
-.event-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin: 15px 15px 0;
-}
-
-.event-description {
-    color: #666;
-    line-height: 1.6;
-    padding: 0 15px 15px;
-    flex-grow: 1;
-}
-
-.event-description .btn {
-    margin-top: auto;
-}
-
-@media (min-width: 768px) {
-    .event {
-        flex-direction: column;
+    body {
+        background-color: #f8f9fa;
+        color: #333;
+        font-family: 'Poppins', sans-serif;
     }
 
-    .section-heading h3 {
+    .hero-section {
+        background: url('/path/to/your/hero-image.jpg') no-repeat center center/cover;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        position: relative;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content h1 {
         font-size: 4rem;
+        margin-bottom: 20px;
     }
-}
 
-@media (max-width: 767px) {
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-content .btn {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+
+    .section-heading {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 50px 0;
+        color: #002c4c;
+    }
+
     .section-heading h3 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-family: 'Allura', cursive;
     }
 
-    .event-title {
-        font-size: 20px;
+    .section-heading p {
+        font-size: 1.2rem;
+        font-weight: 300;
     }
 
-    .event-description {
+    .cards-container {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+        position: relative;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .card-content {
+        padding: 30px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #002c4c;
+    }
+
+    .card-description {
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .card-description p {
+        margin-bottom: 10px;
+    }
+
+    .card-details {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .card-details h5 {
+        font-size: 1.2rem;
+        color: #002c4c;
+        margin-bottom: 10px;
+    }
+
+    .card-details ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .card-details ul li {
+        margin-bottom: 5px;
+    }
+
+    .btn {
+        background-color: #FF6600;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
         font-size: 14px;
+        text-transform: uppercase;
+        transition: background-color 0.3s;
+        cursor: pointer;
     }
-}
+
+    .btn:hover {
+        background-color: #002c4c;
+        color: #fff
+    }
+
+    .testimonials {
+        margin-top: -90px;
+        padding: 50px 0;
+        text-align: center;
+
+    }
+
+    .testimonials h3 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #002c4c;
+    }
+
+    .testimonial-item {
+        max-width: 800px;
+        margin: 0 auto 30px;
+    }
+
+    .testimonial-item p {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #ffffff;
+    }
+
+    .testimonial-item h5 {
+        margin-top: 20px;
+        font-size: 1.1rem;
+        color: #002c4c;
+    }
+
+    .cta-section {
+        background-color: #002c4c;
+        color: #fff;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .cta-section h3 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .cta-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .cta-section .btn {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+
+    @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-<section class="upcoming-events section-padding-100-0 mb-0">
+
+<section id="ekstrakurikuler" class="upcoming-events section-padding-100-0 mb-0">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
-                    <h3 class="head animate_animated animate_fadeInDown">Ekstrakurikuler</h3>
-                    <p style="font-weight:400;font-size:20px;color: #002c4c;border-bottom: 4px solid#002c4c; padding-bottom: 5px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="animate_animated animate_fadeInDown">Jelajahi keberagaman ekstrakurikuler SMP Negeri 1 Silaen melalui situs web kami yang menyajikan informasi dan kegiatan yang inspiratif untuk pengembangan siswa secara kreatif dan sosial.</p>
+                    <h3 style="margin-top: -100px;font-size:4rem" class="animate__animated animate__fadeInDown">Ekstrakurikuler</h3>
+                    <p class="animate__animated animate__fadeInDown">Jelajahi keberagaman ekstrakurikuler SMP Negeri 1 Silaen melalui situs web kami yang menyajikan informasi dan kegiatan yang inspiratif untuk pengembangan siswa secara kreatif dan sosial.</p>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            @foreach ($ekstrakurikuler as $ekstrakurikulers)
-            <div class="col-md-6 col-lg-4">
-                <div class="event animate_animated animate_fadeInUp">
-                    <img src="{{ asset('folderimage/' . $ekstrakurikulers->gambar_ekstrakurikuler) }}" alt="{{ $ekstrakurikulers->judul_ekstrakurikuler }}">
-                    <div class="event-title">{{ $ekstrakurikulers->judul_ekstrakurikuler }}</div>
-                    <div class="event-description">
-                        <a href="{{ route('ekstrakurikuler.show',$ekstrakurikulers->slug) }}" class="btn btn-primary btn-sm">Selengkapnya</a>
-                    </div>
+        <section class="testimonials">
+            <div class="container">
+                <h3>Apa Kata Mereka</h3>
+                <div class="testimonial-item">
+                    <p>"Ekstrakurikuler di sekolah ini sangat membantu saya dalam mengembangkan keterampilan sosial dan kreativitas saya. Saya sangat menikmati setiap kegiatannya."</p>
+                    <h5>- Alexa napitupulu, <span style="color: #FF6600">Siswa </span></h5>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Kegiatan ekstrakurikuler yang ditawarkan sangat beragam dan bermanfaat bagi siswa. Kami sangat senang bisa menjadi bagian dari sekolah ini."</p>
+                    <h5>- Romaito sitorus, <span style="color: #FF6600">Orang Tua</span></h5>
                 </div>
             </div>
+        </section>
+        <div class="cards-container">
+            @foreach ($ekstrakurikuler as $ekstrakurikulers)
+                <div class="card animate__animated animate__fadeInUp">
+                    <img src="{{ asset('folderimage/' . $ekstrakurikulers->gambar_ekstrakurikuler) }}" alt="{{ $ekstrakurikulers->judul_ekstrakurikuler }}">
+                    <div class="card-content">
+                        <h4 class="card-title">{{ $ekstrakurikulers->judul_ekstrakurikuler }}</h4>
+                        <div class="card-description">
+                            <p>{{ $ekstrakurikulers->deskripsi }}</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Aktifitas yang menarik</li>
+                                <li><i class="fas fa-check-circle"></i> Pengembangan keterampilan</li>
+                                <li><i class="fas fa-check-circle"></i> Kesempatan berpartisipasi dalam event</li>
+                            </ul>
+                        </div>
+                        <a href="{{ route('ekstrakurikuler.show', $ekstrakurikulers->slug) }}" class="btn">Selengkapnya</a>
+                    </div>
+                </div>
             @endforeach
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.querySelector('.cards-container');
+        const cards = container.querySelectorAll('.card');
+        if (cards.length <= 4) {
+            container.style.gridTemplateColumns = `repeat(${cards.length}, 1fr)`;
+        }
+    });
+</script>
 
 @stop

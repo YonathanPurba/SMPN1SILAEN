@@ -36,7 +36,7 @@
                         <li><a href="{{ route('fasilitas.index') }}" class="{{ Request::segment(1) == 'fasilitas' ? 'text-primary' : '' }}">Fasilitas</a></li>
                         <li><a href="{{ route('galeri.index') }}" class="{{ Request::segment(1) == 'galeri' ? 'text-primary' : '' }}">Galeri</a></li>
                     </ul>
-                    <div class="follow-us">
+                    <div style="margin-left:400px" class="follow-us">
                         @auth
                             <!-- Jika pengguna telah login, tombol login tidak ditampilkan -->
                         @else
@@ -67,52 +67,65 @@
     </div>
 </div>
 <style>
-    .classynav li{
-        color: black;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
-    }
-    .classynav li:hover{
-        background-color: 0099ff;
-        color: aliceblue !important;
-        border-radius: 20px;
-        transition: 0.4s;
-    }
-    .login{
-        color: black;
-    }
-    .login:hover{
-        background-color: 0099ff;
-        color: aliceblue !important;
-        border-radius: 20px;
-        transition: 0.4s;
-        padding: 5px
-    }
-    .nav-link{
-        color: black;
-    }
-    .nav-link:hover{
-        background-color: 0099ff;
-        color: black !important;
-        border-radius: 20px;
-        transition: 0.4s;  
-    }
-    .dropdown-item{
-        color: black;
-    }
-    .dropdown-item:hover{
-        background-color: 0099ff;
-        color: black !important;
-        border-radius: 20px;
-        transition: 0.4s;  
-    }
+.classynav {
+    margin-right: 1px
+}
+.classynav li {
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
 
-    /* Tambahkan CSS ini untuk menghilangkan kedipan pada navbar saat scroll */
-    .classy-navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        background-color: #fff; /* Ganti dengan warna latar belakang yang diinginkan */
-    }
+.classynav li:hover {
+    background-color: #0099ff;
+    color: aliceblue !important;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.login {
+    color: black;
+    opacity: 0.2; /* Reduce opacity */
+    font-size: 0.9em; /* Smaller font size */
+}
+
+.login:hover {
+    color: aliceblue !important;
+    border-radius: 20px;
+    transition: 0.4s;
+    padding: 5px;
+    opacity: 1; /* Full opacity on hover */
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    background-color: #0099ff;
+    color: black !important;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.dropdown-item {
+    color: black;
+}
+
+.dropdown-item:hover {
+    background-color: #0099ff;
+    color: black !important;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+/* Tambahkan CSS ini untuk menghilangkan kedipan pada navbar saat scroll */
+.classy-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff; /* Ganti dengan warna latar belakang yang diinginkan */
+}
+
 </style>

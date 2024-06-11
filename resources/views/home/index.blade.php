@@ -2,19 +2,36 @@
     'title' => 'Home',
 ])
 <style>
-    .content-wrapper {
+      .content-wrapper {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem; /* Jarak antar elemen */
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        flex-wrap: wrap; /* Ensure it wraps on smaller screens */
     }
-    .custom-card {
-        flex: 1;
-        max-width: 300px; /* Atur lebar maksimal kartu */
-        margin: 10px;
+    .stat-box {
+        font-size: 2em; /* Font size */
+        font-weight: bold; /* Font weight */
+        color: #fff; /* Text color */
+        padding: 20px; /* Padding inside the box */
+        border-radius: 10px; /* Rounded corners */
+        margin: 10px; /* Margin between boxes */
+        width: 200px; /* Fixed width for consistency */
     }
-    .custom-shadow {
-        box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
+    .stat-box h3 {
+        margin: 0;
+        font-size: 1em; /* Smaller font size for the label */
+    }
+    .stat-laki {
+        background-color: #3498db; /* Blue background for male */
+    }
+    .stat-perempuan {
+        background-color: #e74c3c; /* Red background for female */
+    }
+    .stat-total {
+        background-color: #2ecc71; /* Green background for total */
     }
     .zoom-in-on-hover {
         transition: transform 0.3s ease;
@@ -24,14 +41,7 @@
     }
 
     .kepala {
-        background-image: url("/img/picture/blob.svg");
-        background-size: cover; /* Ensures the background image covers the entire element */
-        background-position: center; /* Centers the background image */
-        background-repeat: no-repeat; /* Prevents the background image from repeating */
-        height: auto; /* Sets the height to auto */
-        padding: 20px; /* Adds padding for better spacing */
-        margin-top: 20px; /* Adds margin to separate from previous section */
-        width: 100%;
+        background-color:#ffffff;
     }
 
     .animation {
@@ -243,6 +253,41 @@
             font-size: 1.5em;
         }
     }
+
+    .hero-area::before {
+    content: "Selamat datang di SMP N1 Silaen";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family:'Playfair Display';
+    z-index: 1; /* Ensure the text is above the background but below other content */
+}
+
+.hero-area {
+    position: relative;
+}
+
+.bg-overlay-2by5::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity as needed */
+    z-index: 0; /* Ensure the overlay is below the text */
+}
+
+.underline-siswi {
+  border-bottom: 3px solid #FF6600; /* Menambahkan border bawah dengan ketebalan 3px dan warna oranye */
+  padding-bottom: 2px; /* Menambahkan jarak antara teks dan garis bawah */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     
 </style>
 
@@ -259,38 +304,47 @@
     </div>
 </section>
 
+<div style="text-align: center;">
+    <h2 style="margin-bottom: 20px;font-family:allura;font-size:4rem;margin-top:20px;">SMP N1 Silaen</h2>
+    <p style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#4e4e4e">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, maxime.</p>
+</div>
 <div style="margin-top: 40px;" class="container animate__animated animate__fadeInDown">
     <div class="content-wrapper">
         <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Laki-laki</strong>
-                    <h3 class="mb-0 count-number" data-count="{{ $totalLakiLaki }}">{{ $totalLakiLaki }}</h3>
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Siswa</strong>
+                    <h4 class="mb-3 text-primary-emphasis"  style="font-family: allura;font-size:2.2rem;color:0099ff; ">Siswa Laki-laki</h4>
+                    <strong class="d-inline-block mb-2">Total Siswa Laki-laki</strong>
+                    <h3 class="mb-0 count-number" style="font-family: Playfair Display" data-count="{{ $totalLakiLaki }}">{{ $totalLakiLaki }}</h3>
+                    <strong class="d-inline-block mb-2 underline-siswi" >Siswa</strong>
+                    <span class="additional-info">Jumlah siswa laki-laki yang terdaftar.</span>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Total Siswa Perempuan</strong>
-                    <h3 class="mb-0 count-number" data-count="{{ $totalPerempuan }}">{{ $totalPerempuan }}</h3>
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Siswi</strong>
+                    <h4 class="mb-3 text-primary-emphasis" style="font-family: allura;font-size:2.2rem;color:0099ff;">Siswa Perempuan</h4>
+                    <strong class="d-inline-block mb-2">Total Siswa Perempuan</strong>
+                    <h3 class="mb-0 count-number" style="font-family: Playfair Display" data-count="{{ $totalPerempuan }}">{{ $totalPerempuan }}</h3>
+                    <strong class="d-inline-block mb-2 underline-siswi"><span >Siswi</span></strong>
+                    <span class="additional-info">Jumlah siswa perempuan yang terdaftar.</span>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
                 <div class="col p-4 d-flex flex-column position-static text-center">
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Total Keseluruhan</strong>
-                    <h3 class="mb-0 count-number" data-count="{{ $total }}">{{ $total }}</h3>
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Murid</strong>
+                    <h4 class="mb-3 text-primary-emphasis" style="font-family: allura;font-size:2.2rem;color:0099ff;">Total Keseluruhan</h4>
+                    <strong class="d-inline-block mb-2">Total Keseluruhan</strong>
+                    <h3 class="mb-0 count-number" style="font-family: Playfair Display" data-count="{{ $total }}">{{ $total }}</h3>
+                    <strong class="d-inline-block mb-2 underline-siswi">Murid</strong>
+                    <span class="additional-info">Jumlah keseluruhan siswa yang terdaftar.</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <section class="regular-page-area section-padding-10 mt-5 mb-4 b kepala">
     <div class="container animation">
@@ -305,7 +359,7 @@
                             <h1 style="font-family: freshman; color: #002c4c;">
                                 Kepala Sekolah SMPN 1 Silaen
                             </h1>
-                            <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: #002c4c; border-bottom: 3px solid #002c4c; padding-bottom: 5px;">
+                            <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: #FF6600; border-bottom: 3px solid #FF6600; padding-bottom: 5px;">
                                 {{ $kepalasekolah->nama }}
                             </h5>
                             <p class="mb-0" style="font-family: 'Lucida Sans', Arial, sans-serif">
@@ -321,10 +375,55 @@
 
 
 <section class="map">
-    <h3 class="animation">Temukan Kami di sini</h3>
-    <p class="mapp animation" id="mapp">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
-    <iframe class="gmap animation"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.3463964763187!2d99.19899977472731!3d2.390438997588844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1717639446160!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h3 class="animation">Temukan Kami di Sini</h3>
+    <p class="animation" style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#Ffffff">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, sequi enim reiciendis neque commodi unde! Dolorum at delectus saepe voluptas commodi voluptate minima a labore, dolor tenetur suscipit corrupti quia!</p>
+    <div class="map-container">
+        <div class="map-info-container">
+            <div class="map-info animation">
+                <h4><i class="fas fa-map-marker-alt"></i> Informasi Lokasi:</h4>
+                <div style="text-align: left;margin-left:150px;color:#ffffff" class="info-details">
+                    <p style="color: #ffffff"><i  class="fas fa-school"></i> <strong>Nama Sekolah:</strong> SMP Negeri 1 Silaen</p>
+                    <p style="color: #ffffff"><i class="fas fa-map-marked-alt"></i> <strong>Alamat:</strong> Jl. Pelajar No. 123, Silaen</p>
+                    <p style="color: #ffffff"><i class="fas fa-phone-alt"></i> <strong>Kontak:</strong> 081234567890</p>
+                    <p style="color: #ffffff"><i class="fas fa-clock"></i> <strong>Jam Operasional:</strong> Senin - Jumat: 07.00 - 15.00</p>
+                    <p style="color: #ffffff"><i class="fas fa-globe"></i> <strong>Website:</strong> <a style="color: #E68c3a;font-weight:bold" href="http://www.smp1silaen.sch.id">www.smp1silaen.sch.id</a></p>
+                </div>
+                <a href="https://www.google.com/maps/dir//SMP+Negeri+1+Silaen/@2.390439,99.1989998,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3031ffdeb4e57f5d:0xe3202771e6ee8ebe!2m2!1d99.1989998!2d2.390439" target="_blank" class="btn btn-primary"><i class="fas fa-directions"></i> Dapatkan Arah</a>
+            </div>
+            <div class="map-frame animation">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.3463964763187!2d99.19899977472731!3d2.390438997588844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1717639446160!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
 </section>
+
+<style>
+    .map-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.map-info {
+    flex-basis: 40%;
+    padding-right: 20px;
+}
+
+.map-frame {
+    flex-basis: 60%;
+}
+
+@media (max-width: 768px) {
+    .map-info-container {
+        flex-direction: column;
+    }
+
+    .map-info,
+    .map-frame {
+        flex-basis: auto;
+    }
+}
+</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -346,37 +445,6 @@ document.addEventListener('DOMContentLoaded', function () {
         theAnimation.forEach((element) => {
             observer.observe(element);
         });
-    }
-
-    // Typing animation
-    const typingElement = document.getElementById('typing-text');
-    if (typingElement) {
-        var text = "Selamat Datang di SMP Negeri 1 Silaen";
-        var index = 0;
-        var typingSpeed = 100;
-        var repeatDelay = 1900;
-
-        function type() {
-            if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, typingSpeed);
-            } else {
-                // Delay before repeating the animation
-                setTimeout(resetAndType, repeatDelay);
-            }
-        }
-
-        function resetAndType() {
-            // Clear text and reset index
-            typingElement.textContent = '';
-            index = 0;
-            // Start typing animation again
-            type();
-        }
-
-        // Start typing animation when the page loads
-        type();
     }
 
     // Count-up animation
@@ -425,7 +493,6 @@ window.addEventListener('resize', debounce(() => {
         console.log("Viewport width is small, ensure elements are visible and animations are triggered.");
     }
 }, 100), { passive: true });
-
 </script>
 
 @endsection
