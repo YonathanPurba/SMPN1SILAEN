@@ -30,8 +30,7 @@
     </style>
 </head>
 <body>
-    <svg style="margin-bottom:-130px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff6600" fill-opacity="1" d="M0,288L0,320L144,320L144,224L288,224L288,224L432,224L432,192L576,192L576,256L720,256L720,96L864,96L864,192L1008,192L1008,256L1152,256L1152,256L1296,256L1296,160L1440,160L1440,320L1296,320L1296,320L1152,320L1152,320L1008,320L1008,320L864,320L864,320L720,320L720,320L576,320L576,320L432,320L432,320L288,320L288,320L144,320L144,320L0,320L0,320Z"></path></svg>
-<footer class="footer-area" style="background-color: #ff6600;margin-top:50px;" >
+<footer class="footer-area" style="background-color: #FF6600;margin-top:50px;" >
         <!-- Top Footer Area -->
         <div class="container"><br>
             <div class="row">

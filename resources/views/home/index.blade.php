@@ -322,7 +322,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;" onclick="redirectToFasilitas()" >
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <h4 class="mb-3 text-primary-emphasis" style="font-family: allura;font-size:2.2rem;color:0099ff;">Siswa Perempuan</h4>
                     <strong class="d-inline-block mb-2">Total Siswa Perempuan</strong>
@@ -333,7 +333,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;" onclick="redirectToFasilitas()">
                 <div class="col p-4 d-flex flex-column position-static text-center">
                     <h4 class="mb-3 text-primary-emphasis" style="font-family: allura;font-size:2.2rem;color:0099ff;">Total Keseluruhan</h4>
                     <strong class="d-inline-block mb-2">Total Keseluruhan</strong>
@@ -495,6 +495,10 @@ window.addEventListener('resize', debounce(() => {
         console.log("Viewport width is small, ensure elements are visible and animations are triggered.");
     }
 }, 100), { passive: true });
+
+function redirectToFasilitas() {
+        window.location.href = '{{ route("jumlahsiswa.index") }}';
+    }
 
 </script>
 
