@@ -17,7 +17,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <!-- Blog Details Text -->
-                <div class="blog-details-text">
+                <div style="margin-bottom: 10px" class="blog-details-text">
                     {!! $prestasi->deskripsi_prestasi !!}
                 </div>
             </div>

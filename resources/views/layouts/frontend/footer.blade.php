@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-<footer class="footer-area" style="background-color: #ff6600;margin-top:50px;" >
+<footer class="footer-area" style="background-color: #010434;margin-top:50px;" >
         <!-- Top Footer Area -->
         <div class="container"><br>
             <div class="row">
