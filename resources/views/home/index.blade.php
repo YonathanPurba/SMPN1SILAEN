@@ -306,7 +306,7 @@
 
 <div style="text-align: center;">
     <h2 style="margin-bottom: 20px;font-family:allura;font-size:4rem;margin-top:20px;">SMP N1 Silaen</h2>
-    <p style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#4e4e4e">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, maxime.</p>
+    <p style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#4e4e4e"></p>
 </div>
 <div style="margin-top: 40px;" class="container animate__animated animate__fadeInDown">
     <div class="content-wrapper">
@@ -362,7 +362,7 @@
                                 Kepala Sekolah SMPN 1 Silaen
                             </h1>
                             <h5 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: #002c4c; border-bottom: 3px solid #002c4c; padding-bottom: 5px;">
-                                {{ $kepalasekolah->nama }}
+                            {{ $kepalasekolah && $kepalasekolah->nama ? $kepalasekolah->nama : 'Hotlan Panjaitan' }}
                             </h5>
                             <p class="mb-0" style="font-family: 'Lucida Sans', Arial, sans-serif">
                                 Puji dan Syukur Kehadirat Tuhan Yang Maha Esa karena rahmatNyalah yang masih menyertai kita. Salam sejahtera untuk seluruh pengunjung website SMP N 1 Silaen. Kami sangat gembira menyambut Anda di sini, tempat di mana kami berbagi informasi terkini seputar kegiatan pendidikan dan pengembangan di sekolah kami.
@@ -378,7 +378,7 @@
 
 <section class="map">
     <h3 class="animation">Temukan Kami di Sini</h3>
-    <p class="animation" style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#Ffffff">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, sequi enim reiciendis neque commodi unde! Dolorum at delectus saepe voluptas commodi voluptate minima a labore, dolor tenetur suscipit corrupti quia!</p>
+    <p class="animation" style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#Ffffff">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
     <div class="map-container">
         <div class="map-info-container">
             <div class="map-info animation">

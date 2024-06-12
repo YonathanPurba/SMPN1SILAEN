@@ -48,9 +48,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer text-center">
-                        <p class="footer-text">Diperbarui pada: {{ date('d M Y', strtotime($prestasis->updated_at)) }}</p>
-                    </div>
                 </div>
             </div>
             @endforeach

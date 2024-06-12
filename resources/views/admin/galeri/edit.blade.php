@@ -17,7 +17,7 @@
             <a href="{{ route('admin.galeri.index') }}" class="btn btn-success btn-sm">Kembali</a>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ route('admin.galeri.edit.update',$galeri->id) }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.galeri.edit.update',$galeri->id_galeri) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
