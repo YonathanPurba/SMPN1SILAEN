@@ -255,7 +255,7 @@
     }
 
     .hero-area::before {
-    content: "Selamat datang di SMP N1 Silaen";
+    content: "Selamat Datang di SMPN 1 Silaen";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -305,7 +305,7 @@
 </section>
 
 <div style="text-align: center;">
-    <h2 style="margin-bottom: 20px;font-family:allura;font-size:4rem;margin-top:20px;">SMP N1 Silaen</h2>
+    <h2 style="margin-bottom: 20px;font-family:allura;font-size:4rem;margin-top:20px;">SMPN 1 Silaen</h2>
     <p style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#4e4e4e"></p>
 </div>
 <div style="margin-top: 40px;" class="container animate__animated animate__fadeInDown">
