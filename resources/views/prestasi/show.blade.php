@@ -44,10 +44,4 @@
     margin-bottom: -300px;
 }
 
-.blog-details-text:hover{
-    color: #ffffff;
-    transition: 0.5s;
-    background-color:#002c4c;
-    background-color:#002c4c;
-}
 </style>

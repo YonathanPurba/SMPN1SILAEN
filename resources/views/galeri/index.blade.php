@@ -11,7 +11,6 @@
             <div class="col-12 text-center">
                 <div class="section-heading">
                     <h2 class="head animate__animated animate__fadeInDown">Galeri SMP N1 Silaen</h2>
-                    <p class="animate__animated animate__fadeInDown">Temukan momen terbaik dan kegiatan seru dari SMP N1 Silaen di galeri kami</p>
                 </div>
             </div>
         </div>
@@ -21,7 +20,7 @@
         <div  class="row mt-5">
             <div  class="col-12 text-center">
                 <div class="about-section">
-                    <h3 style="margin-top: -60px;margin-bottom:50px;font-family:allura;font-size:3rem;color:#ff6600" class="animate__animated animate__fadeInDown">Tentang Galeri Kami</h3>
+                    <h3 style="margin-top: -60px;margin-bottom:50px;font-family:allura;font-size:3rem;color:" class="animate__animated animate__fadeInDown">Tentang Galeri Kami</h3>
                     <p style="background-color: #ffffff" class="animate__animated animate__fadeInDown">Galeri ini berisi berbagai foto dan video kegiatan siswa, event sekolah, dan momen-momen spesial yang terjadi di SMP N1 Silaen. Setiap gambar memiliki cerita tersendiri yang menggambarkan kebahagiaan dan semangat belajar para siswa.</p>
                 </div>
             </div>

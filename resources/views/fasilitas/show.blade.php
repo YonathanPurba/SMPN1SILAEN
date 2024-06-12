@@ -1,13 +1,8 @@
 @extends('layouts.frontend.app',[
-	'title' => 'Baca Artikel',
+    'title' => 'Baca Fasilitas',
 ])
 @section('content')
-    <div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url('{{ asset('folderimage/' . $fasilitas->gambar_fasilitas) }}');">
-    <div class="blog-details-headline">
-        <h3 class="text-white">{{ $fasilitas->nama_fasilitas }}</h3>
-        <div class="meta d-flex align-items-center justify-content-center">
-        </div>
-    </div>
+<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-100vh" style="background-image: url('{{ asset('folderimage/' . $fasilitas->gambar_fasilitas) }}'); background-size: cover; background-position: center;">
 </div>
 <!-- ##### Catagory Area End ##### -->
 
@@ -23,31 +18,29 @@
             </div>
         </div>
     </div>
-
-    
 </div>
 @stop
-<style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
-.text-white {
-    font-size: 4rem !important; /* Sesuaikan ukuran font yang Anda inginkan di sini */
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    font-family: "Allura", serif;
-    color: #002c4c;
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+
+.clever-catagory.blog-details {
+    height: 100vh; /* Fullscreen height */
+    width: 100%; /* Full width */
+}
+
+
+
+.blog-details-headline {
+    text-align: center;
 }
 
 .blog-details-text {
     color: #002c4c;
-    font-size: 20px;  
-    font-weight: bold;  
+    font-size: 20px;
+    font-weight: bold;
     background-color: aliceblue;
-    margin-bottom: -300px;
+    padding: 20px;
+    border-radius: 10px;
 }
-
-.blog-details-text:hover{
-    color: #ffffff;
-    transition: 0.5s;
-    background-color:#002c4c;
-}
-</style>
 </style>

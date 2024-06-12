@@ -2,26 +2,40 @@
     'title' => 'Baca Artikel',
 ])
 @section('content')
-<style>@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
- h2{
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+
+h2 {
     font-size: 5rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-family: "Allura", serif;
     color: #ffffff;
- }
- h4{
+}
+h4 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-family: "Allura", serif; 
- }
+}
+.blog-details-header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.blog-details-header img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 </style>
+
 <!-- Blog Details Header -->
-<div class="blog-details-header bg-img d-flex align-items-center justify-content-center p-5" style="background-image: url('{{ asset('folderimage/' . $pengajar->gambar_tenagapengajar) }}');">
-    <div class="blog-details-headline text-center">
+<div class="blog-details-header d-flex align-items-center justify-content-center p-5">
+    <img src="{{ asset('folderimage/' . $pengajar->gambar_tenagapengajar) }}" alt="{{ $pengajar->nama_tenagapengajar }}">
+    <div class="blog-details-headline text-center position-absolute w-100">
         <h2 class="text-capitalize mb-3">{{ $pengajar->nama_tenagapengajar }}</h2>
-        <p class="text-white">{{ $pengajar->jabatan }}</p>
     </div>
 </div>
 
