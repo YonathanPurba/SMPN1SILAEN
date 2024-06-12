@@ -17,10 +17,10 @@
         </div>
         <div style="font-weight: bold" class="row justify-content-center animate__animated animate__fadeInUp">
             <div class="col-md-6">
-                <p class="intro-text">Selamat datang di halaman prestasi kami! Di sini, Anda dapat menjelajahi berbagai pencapaian yang telah diraih oleh siswa dan staf kami di berbagai bidang.</p>
+                <p class="intro-text" style="font-weight: bold" >Selamat datang di halaman prestasi kami! Di sini, Anda dapat menjelajahi berbagai pencapaian yang telah diraih oleh siswa dan staf kami di berbagai bidang.</p>
             </div>
             <div class="col-md-6">
-                <p class="intro-text">Kami bangga dapat berbagi kisah sukses dan prestasi luar biasa yang menunjukkan dedikasi, kerja keras, dan semangat juang komunitas sekolah kami.</p>
+                <p class="intro-text" style="font-weight: bold" >Kami bangga dapat berbagi kisah sukses dan prestasi luar biasa yang menunjukkan dedikasi, kerja keras, dan semangat juang komunitas sekolah kami.</p>
             </div>
         </div>
         <div class="row justify-content-center animate__animated animate__fadeInUp">
