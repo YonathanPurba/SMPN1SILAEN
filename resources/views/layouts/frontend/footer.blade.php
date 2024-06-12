@@ -18,19 +18,19 @@
         .text-light a:hover .hover-zoom {
             transform: scale(1.1); /* Mengubah skala ikon saat dihover */
         }
-        #svg {
-    width: 100%;
-    height: auto;
-    position: relative;;
-    margin-bottom: 700px;
-    bottom: 40px;
-    left: 0;
-}
 
+        #svg {
+            width: 100%;
+            height: auto;
+            position: relative;
+            margin-bottom: 700px;
+            bottom: 40px;
+            left: 0;
+        }
     </style>
 </head>
 <body>
-<footer class="footer-area" style="background-color: #010434;margin-top:50px;" >
+    <footer class="footer-area" style="background-color: #010434; margin-top: 50px;">
         <!-- Top Footer Area -->
         <div class="container"><br>
             <div class="row">
@@ -38,7 +38,7 @@
                     <!-- Footer Logo -->
                     <div class="footer-logo mb-3">
                         <a href="/">
-                            <h3 class="text-light animate__animated animate__fadeInDown style" >SMPN 1 SILAEN</h3>
+                            <h3 class="text-light animate__animated animate__fadeInDown">SMPN 1 SILAEN</h3>
                         </a>
                     </div>
                     <!-- Copywrite -->
@@ -47,29 +47,6 @@
                     </p>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <!-- Quick Links -->
-                    <h5 class="text-light mb-4 animate__animated animate__fadeInLeft">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">
-                            <a href="/" class="text-light hover-underline animate__animated animate__fadeInLeft">Home</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/pengumuman" class="text-light hover-underline animate__animated animate__fadeInLeft">Pengumuman</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/prestasi" class="text-light hover-underline animate__animated animate__fadeInLeft">Prestasi</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/fasilitas" class="text-light hover-underline animate__animated animate__fadeInLeft">Fasilitas</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/galeri" class="text-light hover-underline animate__animated animate__fadeInLeft">Galeri</a>
-                        </li>
-
-                        
-                    </ul>
-                </div>
-                <div class="col-md-4">
                     <!-- Contact Info -->
                     <h5 class="text-light mb-4 animate__animated animate__fadeInRight">Contact Info</h5>
                     <ul class="list-unstyled">
@@ -96,8 +73,6 @@
                         <a href="https://www.facebook.com/share/EM3YpLUBBtRKdk3y/?mibextid=A7sQZp" class="text-light mx-3 hover-zoom animate__animated animate__fadeInLeft">
                             <i class="fab fa-facebook fa-lg" style="padding-bottom: 17px"></i>
                         </a>
-                    </div>
-                    <div class="follow-us">
                     </div>
                 </div>
                 <div class="col-md-6 text-md-end">

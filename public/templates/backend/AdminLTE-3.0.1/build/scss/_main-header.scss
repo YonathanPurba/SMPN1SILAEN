@@ -36,15 +36,20 @@
 
     &[class*='-right'] {
       .dropdown-menu {
-        left: auto;
-        margin-top: -3px;
-        right: 0;
+    left: auto;
+    margin-top: -3px;
+    right: 0;
+    width: max-content; /* Menyesuaikan lebar dengan isi */
+}
 
-        @media (max-width: breakpoint-max(xs)) {
-          left: 0;
-          right: auto;
-        }
-      }
+@media (max-width: breakpoint-max(xs)) {
+    .dropdown-menu {
+        left: 0;
+        right: auto;
+        width: 100%; /* Lebar penuh pada layar kecil */
+    }
+}
+  
     }
   }
 }

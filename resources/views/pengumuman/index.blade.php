@@ -5,25 +5,10 @@
 @section('content')
 
 @if($pengumuman->count() > 0)
-
-<section class="highlighted-announcement py-5 text-center">
-    <div class="container">
-        <h2 style="font-family: allura;font-size:4rem" class="display-6 animate__animated animate__fadeInUp">Pengumuman Penting</h2>
-        <p class="lead animate__animated animate__fadeInUp">Pastikan Anda tidak melewatkan pengumuman paling penting minggu ini.</p>
-        <!-- Highlighted Announcement Card (add logic to choose a featured announcement if needed) -->
-        @if($highlightedAnnouncement = $pengumuman->first())
-        <div class="card mx-auto mt-4 shadow-lg" style="max-width: 600px;">
-            <img class="card-img-top" style="height: 20rem; object-fit: cover;" src="{{ $pn->image_url ?? asset('img/bg/bg-announcement.png') }}" alt="Event image">
-            <div class="card-body">
-                <h5 class="card-title">{{ $highlightedAnnouncement->judul }}</h5>
-                <p class="card-text">{{ Str::limit($highlightedAnnouncement->konten, 150) }}</p>
-                <a href="{{ route('pengumuman.show', $highlightedAnnouncement->slug) }}" class="btn btn-warning btn-block">Baca Selengkapnya</a>
-            </div>
-        </div>
-        @endif
-    </div>
+<section class="up">
+    <h1>Pengumuman</h1>
+    <p>Berikut adalah pengumuman Terbaru dari SMp N1 Silaen</p>
 </section>
-
 <section class="upcoming-events section-padding-100-0 mb-5">
     <div class="container">
         <div class="row mb-4">
@@ -39,20 +24,19 @@
             </div>
         </div>
 
-        <div class="row" id="announcement-list">
+        <div class="list-group" id="announcement-list">
             @foreach($pengumuman as $pn)
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card single-upcoming-events shadow-sm wow fadeInUp" data-wow-delay="250ms" style="transition: transform 0.3s;">
-                    <!-- Events Thumb -->
-                    <img class="card-img-top" style="height: 20rem; object-fit: cover;" src="{{ $pn->image_url ?? asset('img/bg/bg-announcement.png') }}" alt="Event image">
-                    <div class="card-body">
-                        <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-calendar-alt"></i> {{ $pn->tgl }} | <i class="fas fa-user"></i> Oleh : {{ $pn->user->name }}</h6>
-                        <h4 class="card-title">{{ $pn->judul }}</h4>
-                        <p class="card-text">{{ Str::limit($pn->konten, 100) }}</p>
+            <div class="list-group-item mb-4 shadow-sm wow fadeInUp" data-wow-delay="250ms" style="transition: transform 0.3s;">
+                <div class="d-flex align-items-center">
+                    <img class="img-thumbnail mr-3" style="height: 100px; width: 100px; object-fit: cover;" src="{{ $pn->image_url ?? asset('img/bg/bg-announcement.png') }}" alt="Event image">
+                    <div class="flex-grow-1">
+                        <h6 class="mb-2 text-muted"><i class="fas fa-calendar-alt"></i> {{ $pn->tgl }} | <i class="fas fa-user"></i> Oleh : {{ $pn->user->name }}</h6>
+                        <h4 class="mb-2">{{ $pn->judul }}</h4>
+                        <p class="mb-2">{{ Str::limit($pn->konten, 100) }}</p>
                         @if($pn->kategori)
                         <span class="badge badge-info">{{ $pn->kategori->nama }}</span>
                         @endif
-                        <a href="{{ route('pengumuman.show', $pn->slug) }}" class="btn btn-primary btn-block mt-3">Selengkapnya</a>
+                        <a href="{{ route('pengumuman.show', $pn->slug) }}" class="btn btn-primary mt-2">Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -94,42 +78,31 @@
         color: #002c4c;
     }
 
-    .single-upcoming-events:hover {
+    .up{
+        text-align: center;
+    margin-top: 50px;
+    }
+    .up h1{
+        font-family: allura;
+        font-size: 6rem;
+    }
+
+    .up p{
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .list-group-item {
+        border: none;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .list-group-item:hover {
         transform: translateY(-10px);
         box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
-    }
-
-    .intro-section {
-        background: linear-gradient(135deg, #6b73ff, #000dff);
-        padding: 100px 0;
-        color: #ffffff;
-        text-align: center;
-    }
-
-    .intro-section h1 {
-        font-size: 4rem;
-        margin-bottom: 20px;
-    }
-
-    .intro-section p {
-        font-size: 1.5rem;
-    }
-
-    .highlighted-announcement {
-        background-color: #f7f8fc;
-        padding: 50px 0;
-    }
-
-    .highlighted-announcement h2 {
-        font-size: 2.5rem;
-    }
-
-    .highlighted-announcement p {
-        font-size: 1.25rem;
-    }
-
-    .section-heading {
-        margin-bottom: 40px;
     }
 
     .form-control {
@@ -143,22 +116,12 @@
         background-color: #007bff;
         border-color: #007bff;
         font-weight: bold;
+        font-size: 14px;
     }
 
     .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #004085;
-    }
-
-    .btn-warning {
-        background-color: #ff6600;
-        border-color: #ff6600;
-        color: #ffffff;
-    }
-
-    .btn-warning:hover {
-        background-color: #ff6600;
-        border-color: #ff6600;
+        background-color: #3167C4;
+        border-color: #3167C4;
     }
 
     .pagination {
@@ -187,7 +150,7 @@
         searchInput.addEventListener('input', function() {
             const filter = searchInput.value.toLowerCase();
             Array.from(announcements).forEach(function(announcement) {
-                const title = announcement.querySelector('.card-title').textContent.toLowerCase();
+                const title = announcement.querySelector('h4').textContent.toLowerCase();
                 if (title.includes(filter)) {
                     announcement.style.display = '';
                 } else {

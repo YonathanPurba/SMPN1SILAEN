@@ -143,16 +143,17 @@
 
 .principal-image {
     border-radius: 30px;
-    width: 100%;
-    max-width: 230px !important;
+    width: 300px;
+    max-width: 300px !important;
     
 }
 
 .principal-text {
-    max-width: 500px;
-    width: 100%;
+ width: 600px;
     padding-bottom: 100px;
     padding-top: 100px;
+    font-size: 40px;
+
 }
 
     @media (max-width: 768px) {
@@ -282,10 +283,6 @@
     z-index: 0; /* Ensure the overlay is below the text */
 }
 
-.underline-siswi {
-  border-bottom: 3px solid #FF6600; /* Menambahkan border bawah dengan ketebalan 3px dan warna oranye */
-  padding-bottom: 2px; /* Menambahkan jarak antara teks dan garis bawah */
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     
@@ -304,59 +301,19 @@
     </div>
 </section>
 
-<div style="text-align: center;">
-    <h2 style="margin-bottom: 20px;font-family:allura;font-size:4rem;margin-top:20px;">SMPN 1 Silaen</h2>
-    <p style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#4e4e4e"></p>
-</div>
-<div style="margin-top: 40px;" class="container animate__animated animate__fadeInDown">
-    <div class="content-wrapper">
-        <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative cursor-pointer" style="background-color: white;" onclick="redirectToFasilitas()">
-                <div class="col p-4 d-flex flex-column position-static text-center">
-                    <h4 class="mb-3 text-primary-emphasis"  style="font-family: allura;font-size:2.2rem;color:0099ff; ">Siswa Laki-laki</h4>
-                    <strong class="d-inline-block mb-2">Total Siswa Laki-laki</strong>
-                    <h3 class="mb-0 count-number" style="font-family: Playfair Display" data-count="{{ $totalLakiLaki }}">{{ $totalLakiLaki }}</h3>
-                    <strong class="d-inline-block mb-2 underline-siswi" >Siswa</strong>
-                    <span class="additional-info">Jumlah siswa laki-laki yang terdaftar.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;" onclick="redirectToFasilitas()" >
-                <div class="col p-4 d-flex flex-column position-static text-center">
-                    <h4 class="mb-3 text-primary-emphasis" style="font-family: allura;font-size:2.2rem;color:0099ff;">Siswa Perempuan</h4>
-                    <strong class="d-inline-block mb-2">Total Siswa Perempuan</strong>
-                    <h3 class="mb-0 count-number" style="font-family: Playfair Display" data-count="{{ $totalPerempuan }}">{{ $totalPerempuan }}</h3>
-                    <strong class="d-inline-block mb-2 underline-siswi"><span >Siswi</span></strong>
-                    <span class="additional-info">Jumlah siswa perempuan yang terdaftar.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 custom-card zoom-in-on-hover">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 custom-shadow h-md-250 position-relative" style="background-color: white;" onclick="redirectToFasilitas()">
-                <div class="col p-4 d-flex flex-column position-static text-center">
-                    <h4 class="mb-3 text-primary-emphasis" style="font-family: allura;font-size:2.2rem;color:0099ff;">Total Keseluruhan</h4>
-                    <strong class="d-inline-block mb-2">Total Keseluruhan</strong>
-                    <h3 class="mb-0 count-number" style="font-family: Playfair Display" data-count="{{ $total }}">{{ $total }}</h3>
-                    <strong class="d-inline-block mb-2 underline-siswi">Murid</strong>
-                    <span class="additional-info">Jumlah keseluruhan siswa yang terdaftar.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
 <section class="regular-page-area section-padding-10 mt-5 mb-4 b kepala">
     <div class="container animation">
-        <div class="row justify-content-center align-items-center"> <!-- Mengubah 'align-items-center' -->
-            <div class="col-lg-8"> <!-- Menyesuaikan lebar kolom -->
+        <div style="margin-top: -50px;" class="row justify-content-center align-items-center"> <!-- Mengubah 'align-items-center' -->
+            <div  class="col-lg-8"> <!-- Menyesuaikan lebar kolom -->
                 <div class="row principal-card align-items-center"> <!-- Mengubah 'align-items-center' -->
                 <div class="col-md-6 text-center text-md-start">
     <img src="{{ $kepalasekolah && $kepalasekolah->gambar_kepalasekolah ? asset('folderimage/' . $kepalasekolah->gambar_kepalasekolah) : asset('img/picture/kepala sekolah.png') }}" class="principal-image img-fluid" alt="Kepala Sekolah">
 </div>
 
-                    <div class="col-md-6">
+                    <div style="background-color:" class="col-md-6">
                         <div class="principal-text">
                             <h1 style="font-family: freshman; color: #002c4c;">
                                 Kepala Sekolah SMPN 1 Silaen
@@ -378,7 +335,7 @@
 
 <section class="map">
     <h3 class="animation">Temukan Kami di Sini</h3>
-    <p class="animation" style="max-width: 600px;text-align:center;font-size:1rem;position:relative;left:450px;margin-bottom:50px;color:#Ffffff">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
+    <p class="animation" style="max-width: 600px;text-align:center;font-size:1.1rem;position:relative;left:450px;margin-bottom:50px;color:#ffffff;font-weight:bold">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
     <div class="map-container">
         <div class="map-info-container">
             <div class="map-info animation">

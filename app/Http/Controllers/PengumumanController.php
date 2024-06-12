@@ -18,6 +18,7 @@ class PengumumanController extends Controller
     {
         $pengumuman = Pengumuman::with(['user'])->get();
         return view('admin.pengumuman.index',compact('pengumuman')); 
+        
     }
 
     /**

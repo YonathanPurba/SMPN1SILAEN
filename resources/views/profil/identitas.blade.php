@@ -243,6 +243,7 @@
                                 <td>525</td>
                             </tr>
                         </table>
+                        
 
                         <p style="color: #FF6600;font-weight:bold;font-size:40px;font-family:allura">Keterangan:</p>
                         <ul>

@@ -5,7 +5,7 @@
 
 <style>
     body {
-        background-color: #f8f9fa;
+
         color: #333;
         font-family: 'Poppins', sans-serif;
     }
@@ -56,7 +56,7 @@
         text-align: center;
         margin-bottom: 50px;
         padding: 50px 0;
-        color: #002c4c;
+        color: #ffffff;
     }
 
     .section-heading h3 {
@@ -241,23 +241,10 @@
             <div class="col-12">
                 <div class="section-heading">
                     <h3 style="margin-top: -100px;font-size:4rem" class="animate__animated animate__fadeInDown">Ekstrakurikuler</h3>
-                    <p class="animate__animated animate__fadeInDown">Jelajahi keberagaman ekstrakurikuler SMP Negeri 1 Silaen melalui situs web kami yang menyajikan informasi dan kegiatan yang inspiratif untuk pengembangan siswa secara kreatif dan sosial.</p>
+                    <p style="color: #ffffff;font-weight:bold" class="animate__animated animate__fadeInDown">Jelajahi keberagaman ekstrakurikuler SMP Negeri 1 Silaen melalui situs web kami yang menyajikan informasi dan kegiatan yang inspiratif untuk pengembangan siswa secara kreatif dan sosial.</p>
                 </div>
             </div>
         </div>
-        <section class="testimonials">
-            <div class="container">
-                <h3>Apa Kata Mereka</h3>
-                <div class="testimonial-item">
-                    <p>"Ekstrakurikuler di sekolah ini sangat membantu saya dalam mengembangkan keterampilan sosial dan kreativitas saya. Saya sangat menikmati setiap kegiatannya."</p>
-                    <h5>- Alexa napitupulu, <span style="color: #FF6600">Siswa </span></h5>
-                </div>
-                <div class="testimonial-item">
-                    <p>"Kegiatan ekstrakurikuler yang ditawarkan sangat beragam dan bermanfaat bagi siswa. Kami sangat senang bisa menjadi bagian dari sekolah ini."</p>
-                    <h5>- Romaito sitorus, <span style="color: #FF6600">Orang Tua</span></h5>
-                </div>
-            </div>
-        </section>
         <div class="cards-container">
             @foreach ($ekstrakurikuler as $ekstrakurikulers)
                 <div class="card animate__animated animate__fadeInUp">
