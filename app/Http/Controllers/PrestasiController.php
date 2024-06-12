@@ -112,6 +112,12 @@ public function delete($id)
         return response()->view('errors.404', [], 404);
     }
     return view('prestasi.show', compact('prestasi'));
+}   
+public function checkTitle(Request $request)
+{
+    $exists = Prestasi::where('judul_prestasi', $request->judul_prestasi)->exists();
+    return response()->json(['exists' => $exists]);
 }
+
 
 }

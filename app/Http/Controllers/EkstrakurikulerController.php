@@ -113,6 +113,13 @@ class EkstrakurikulerController extends Controller
         return view('ekstrakurikuler.show',compact('ekstrakurikuler'));
     }
 
+    public function checkTitle(Request $request)
+{
+    $exists = Ekstrakurikuler::where('judul_ekstrakurikuler', $request->judul_ekstrakurikuler)->exists();
+    return response()->json(['exists' => $exists]);
+}
+
+
 }
 
 

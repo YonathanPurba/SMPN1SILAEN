@@ -15,16 +15,12 @@
 				<a href="{{ route('admin.fasilitas.index') }}" class="btn btn-success btn-sm">Kembali</a>
 			</div>
 			<div class="card-body">
-				<form method="POST" action="{{ route('admin.fasilitas.store') }}" enctype="multipart/form-data">
+				<form method="POST" action="{{ route('admin.fasilitas.store') }}" enctype="multipart/form-data" id="form-fasilitas">
 					@csrf
 					<div class="form-group">
 						<label for="nama_fasilitas">Nama Fasilitas</label>
-						<input required="" class="form-control" type="" name="nama_fasilitas" id="nama_fasilitas" placeholder="">
+						<input required="" class="form-control" type="text" name="nama_fasilitas" id="nama_fasilitas" placeholder="">
 					</div>
-                    <div class="form-group">
-                        <label for="judul">Judul</label>
-                        <input required="" type="" name="judul" placeholder="" class="form-control title"> 
-                    </div>
 					<div class="form-group">
 						<label for="deskripsi">Deskripsi</label>
 						<textarea required="" name="deskripsi_fasilitas" id="deskripsi" class="text-dark form-control summernote"></textarea>
@@ -49,37 +45,81 @@
 @push('js')
 <script type="text/javascript" src="{{ asset('plugins/summernote') }}/summernote-bs4.min.js"></script>
 <script type="text/javascript" src="{{ asset('plugins/dropify') }}/dist/js/dropify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
-    $(".summernote").summernote({
-        height:500,
-        callbacks: {
-        // callback for pasting text only (no formatting)
-            onPaste: function (e) {
-              var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-              e.preventDefault();
-              bufferText = bufferText.replace(/\r?\n/g, '<br>');
-              document.execCommand('insertHtml', false, bufferText);
+    $(document).ready(function() {
+        $(".summernote").summernote({
+            height:500,
+            callbacks: {
+                onPaste: function (e) {
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    e.preventDefault();
+                    bufferText = bufferText.replace(/\r?\n/g, '<br>');
+                    document.execCommand('insertHtml', false, bufferText);
+                }
             }
-        }
-    })
+        });
 
-    $(".summernote").on("summernote.enter", function(we, e) {
-        $(this).summernote("pasteHTML", "<br><br>");
-        e.preventDefault();
-    });
+        $(".summernote").on("summernote.enter", function(we, e) {
+            $(this).summernote("pasteHTML", "<br><br>");
+            e.preventDefault();
+        });
 
-	$('.dropify').dropify({
-        messages: {
-            default: 'Drag atau Drop untuk memilih gambar',
-            replace: 'Ganti',
-            remove:  'Hapus',
-            error:   'error'
-        }
-    });
+        $('.dropify').dropify({
+            messages: {
+                default: 'Drag atau Drop untuk memilih gambar',
+                replace: 'Ganti',
+                remove:  'Hapus',
+                error:   'error'
+            }
+        });
 
-    $('.title').keyup(function(){
-        var title = $(this).val().toLowerCase().replace(/[&\/\\#^, +()$~%.'":*?<>{}]/g,'-');
-        $('.slug').val(title);
+        $('.title').keyup(function(){
+            var title = $(this).val().toLowerCase().replace(/[&\/\\#^, +()$~%.'":*?<>{}]/g,'-');
+            $('.slug').val(title);
+        });
+
+        $("#nama_fasilitas").on("change", function() {
+            var nama_fasilitas = $("#nama_fasilitas").val();
+
+            // Check for unique Nama Fasilitas
+            $.ajax({
+                url: '{{ route("admin.fasilitas.checkName") }}', // Adjust the route name as necessary
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    nama_fasilitas: nama_fasilitas
+                },
+                success: function(response) {
+                    if (response.exists) {
+                        Swal.fire({
+                            title: 'Perhatian!',
+                            text: 'Nama Fasilitas tidak boleh sama.',
+                            icon: 'warning',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $("#nama_fasilitas").val("");
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+        $("form#form-fasilitas").submit(function(e) {
+            var nama_fasilitas = $("#nama_fasilitas").val();
+
+            if (nama_fasilitas == "") {
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Perhatian!',
+                    text: 'Nama Fasilitas tidak boleh sama.',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
     });
 </script>
 @endpush

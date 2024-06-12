@@ -112,4 +112,11 @@ class GaleriController extends Controller
         $galeri = Galeri::with(['user',])->latest()->paginate(4);
         return view('galeri.index', compact('galeri'));
     }
+
+    public function checkTitle(Request $request)
+{
+    $exists = Galeri::where('judul', $request->judul_galeri)->exists();
+    return response()->json(['exists' => $exists]);
+}
+
 }

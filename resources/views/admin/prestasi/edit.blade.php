@@ -21,7 +21,7 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="judul_prestasi">Judul</label>
-                        <input required="" class="form-control" type="" name="judul_prestasi" id="judul_prestasi" placeholder="" value="{{ $prestasi->judul_prestasi }}">
+                        <input required="" class="form-control" type="text" name="judul_prestasi" id="judul_prestasi" placeholder="" value="{{ $prestasi->judul_prestasi }}">
                     </div>
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
@@ -35,7 +35,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Gambar</label>
-                                <input type="file" name="gambar_prestasi" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" value="{{ $prestasi->gambar_prestasi }}">
+                                <input type="file" name="gambar_prestasi" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" data-default-file="{{ asset('path/to/gambar/' . $prestasi->gambar_prestasi) }}">
                             </div>
                         </div>
                     </div>
@@ -71,6 +71,35 @@
                     }
                 });
             }
+        });
+
+        $("#judul_prestasi").on("change", function() {
+            var judulPrestasi = $(this).val();
+            var idPrestasi = "{{ $prestasi->id_prestasi }}";
+
+            $.ajax({
+                url: '{{ route("admin.prestasi.checkTitle") }}',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    judul_prestasi: judulPrestasi,
+                    id_prestasi: idPrestasi
+                },
+                success: function(response) {
+                    if (response.exists) {
+                        Swal.fire({
+                            title: 'Perhatian!',
+                            text: 'Judul Prestasi tidak boleh sama.',
+                            icon: 'warning',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $("#judul_prestasi").val("");
+                            }
+                        });
+                    }
+                }
+            });
         });
 
         $("form#form-prestasi").submit(function(e) {

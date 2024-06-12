@@ -20,7 +20,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="judul_prestasi">Judul</label>
-                        <input required="" class="form-control" type="" name="judul_prestasi" id="judul_prestasi" placeholder="">
+                        <input required="" class="form-control" type="text" name="judul_prestasi" id="judul_prestasi" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
@@ -72,6 +72,33 @@
             }
         });
 
+        $("#judul_prestasi").on("change", function() {
+            var judulPrestasi = $(this).val();
+
+            $.ajax({
+                url: '{{ route("admin.prestasi.checkTitle") }}',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    judul_prestasi: judulPrestasi
+                },
+                success: function(response) {
+                    if (response.exists) {
+                        Swal.fire({
+                            title: 'Perhatian!',
+                            text: 'Judul Prestasi tidak boleh sama.',
+                            icon: 'warning',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $("#judul_prestasi").val("");
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
         $("form#form-prestasi").submit(function(e) {
             var tanggalPrestasi = $("#tanggal_prestasi").val();
             var tanggalSekarang = "{{ date('Y-m-d') }}";
@@ -92,7 +119,7 @@
                   document.execCommand('insertHtml', false, bufferText);
                 }
             }
-        })
+        });
 
         $(".summernote").on("summernote.enter", function(we, e) {
             $(this).summernote("pasteHTML", "<br><br>");

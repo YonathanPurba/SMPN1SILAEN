@@ -19,7 +19,8 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TenagaPengajarController;
-
+use App\Models\Ekstrakulikuler;
+use App\Models\Fasilitas;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +86,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/fasilitas/edit/{id}', [FasilitasController::class, 'edit'])->name('fasilitas.edit');
 		Route::put('/fasilitas/edit/{id}', [FasilitasController::class, 'update'])->name('fasilitas.edit.update');
 		Route::delete('fasilitas/{id}/delete', [FasilitasController::class, 'delete'])->name('fasilitas.index.delete');
+		Route::post('/fasilitas/checkName', [FasilitasController::class, 'checkName'])->name('fasilitas.checkName');
 
 		//Tenaga Pengajar
 		Route::get('/tenagapengajar', [TenagaPengajarController::class,'index'])->name('tenagapengajar.index');
@@ -105,6 +107,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::delete('prestasi/{id}/delete', [PrestasiController::class, 'delete'])->name('prestasi.index.delete');
 		Route::get('/prestasi/edit/{id}', [PrestasiController::class, 'edit'])->name('prestasi.edit');
 		Route::put('/prestasi/edit/{id}', [PrestasiController::class, 'update'])->name('prestasi.edit.update');
+		Route::post('/prestasi/checkTitle', [PrestasiController::class, 'checkTitle'])->name('prestasi.checkTitle');
 
 		//Ekstrakurikuler
 		Route::get('/ekstrakurikuler', [EkstrakurikulerController::class,'index'])->name('ekstrakurikuler.index');
@@ -113,6 +116,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::delete('ekstrakurikuler/{id}/delete', [EkstrakurikulerController::class, 'delete'])->name('ekstrakurikuler.index.delete');
 		Route::get('/ekstrakurikuler/edit/{id}', [EkstrakurikulerController::class, 'edit'])->name('ekstrakurikuler.edit');
 		Route::put('/ekstrakurikuler/edit/{id}', [EkstrakurikulerController::class, 'update'])->name('ekstrakurikuler.edit.update');
+		Route::post('/ekstrakurikuler/checkTitle', [EkstrakurikulerController::class, 'checkTitle'])->name('ekstrakurikuler.checkTitle');
 
 		//Kelas
 		Route::get('/kelas', [KelasController::class,'index'])->name('kelas.index');
@@ -121,6 +125,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::delete('kelas/{id}/delete', [KelasController::class, 'delete'])->name('kelas.index.delete');
 		Route::get('/kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
 		Route::put('/kelas/edit/{id}', [KelasController::class, 'update'])->name('kelas.edit.update');
+		Route::post('/kelas/checkName', [KelasController::class, 'checkName'])->name('kelas.checkName');
 
 		//Galeri
 		Route::get('/galeri', [GaleriController::class,'index'])->name('galeri.index');
@@ -129,6 +134,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::delete('galeri/{id}/delete', [GaleriController::class, 'delete'])->name('galeri.index.delete');
 		Route::get('/galeri/edit/{id}', [GaleriController::class, 'edit'])->name('galeri.edit');
 		Route::put('/galeri/edit/{id}', [GaleriController::class, 'update'])->name('galeri.edit.update');
+		Route::post('/galeri/checkTitle', [GaleriController::class, 'checkTitle'])->name('galeri.checkTitle');
 
 		//Kepala Sekolah
 		Route::get('/kepalasekolah', [KepalaSekolahController::class,'index'])->name('kepalasekolah.index');
