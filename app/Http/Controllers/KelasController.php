@@ -64,4 +64,11 @@ public function delete($id)
         $kelas = Kelas::find($id);
         return view('admin.kelas.edit', compact('kelas'));
     }
+
+    public function checkName(Request $request)
+{
+    $exists = Kelas::where('nama_kelas', $request->nama_kelas)->exists();
+    return response()->json(['exists' => $exists]);
+}
+
 }

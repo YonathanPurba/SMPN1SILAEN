@@ -112,4 +112,10 @@ class FasilitasController extends Controller
         return view('fasilitas.show',compact('fasilitas'));
     }
 
+    public function checkName(Request $request)
+{
+    $exists = Fasilitas::where('nama_fasilitas', $request->nama_fasilitas)->exists();
+    return response()->json(['exists' => $exists]);
+}
+
 }

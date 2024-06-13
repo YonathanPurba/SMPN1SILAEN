@@ -16,7 +16,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="section-heading text-center">
-                        <h2 class="section-title animate__animated animate__fadeInUp" style="font-weight: bold" >Nikmatilah Fasilitas dari SMP N1 Silaen</h2>
+                        <h2 class="section-title animate__animated animate__fadeInUp" style="font-weight: bold" >Nikmatilah Fasilitas dari SMPN 1 Silaen</h2>
                         <p class="section-description animate__animated animate__fadeInUp" style="font-weight: bold" >Kami telah mempersiapkan fasilitas terbaik untuk membuat pembelajaran Anda menjadi pengalaman yang luar biasa. Nikmati setiap momen dengan fasilitas yang dirancang dengan cermat untuk memenuhi kebutuhan Anda.</p>
                     </div>
                 </div>
