@@ -198,7 +198,10 @@
                 font-size: 0.8rem;
             }
             .map p{
-                
+ 
+            }
+            .mari{
+
             }
         }
 
@@ -464,17 +467,17 @@
 
 <section class="map">
     <h3 class="animation">Temukan Kami di Sini</h3>
-    <p class="animation" style="max-width: 600px;text-align:center;font-size:1.1rem;position:relative;left:450px;margin-bottom:50px;color:#ffffff;font-weight:bold">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
+    <center><p class="animation mari" style="max-width: 600px;text-align:center;font-size:1.1rem;450px;margin-bottom:50px;color:#ffffff;font-weight:bold">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p></center>
     <div class="map-container">
         <div class="map-info-container">
             <div class="map-info animation">
                 <h4><i class="fas fa-map-marker-alt"></i> Informasi Lokasi:</h4>
-                <div style="text-align: left;margin-left:150px;color:#ffffff" class="info-details">
-                    <p style="color: #ffffff"><i  class="fas fa-school"></i> <strong>Nama Sekolah:</strong> SMP Negeri 1 Silaen</p>
-                    <p style="color: #ffffff"><i class="fas fa-map-marked-alt"></i> <strong>Alamat:</strong> Jl. Pelajar No. 123, Silaen</p>
-                    <p style="color: #ffffff"><i class="fas fa-phone-alt"></i> <strong>Kontak:</strong> 081234567890</p>
-                    <p style="color: #ffffff"><i class="fas fa-clock"></i> <strong>Jam Operasional:</strong> Senin - Jumat: 07.00 - 15.00</p>
-                    <p style="color: #ffffff"><i class="fas fa-globe"></i> <strong>Website:</strong> <a style="color: #E68c3a;font-weight:bold" href="http://www.smp1silaen.sch.id">www.smp1silaen.sch.id</a></p>
+                <div style="color:#1d1d1d" class="info-details">
+                    <p><i  class="fas fa-school"></i> <strong>Nama Sekolah:</strong> SMP Negeri 1 Silaen</p>
+                    <p><i class="fas fa-map-marked-alt"></i> <strong>Alamat:</strong> Jl. Pelajar No. 123, Silaen</p>
+                    <p><i class="fas fa-phone-alt"></i> <strong>Kontak:</strong> 081234567890</p>
+                    <p><i class="fas fa-clock"></i> <strong>Jam Operasional:</strong> Senin - Jumat: 07.00 - 15.00</p>
+                    <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a style="color: #E68c3a;font-weight:bold" href="https://smpn1silaen.strpl.cloud">www.smp1silaen.sch.id</a></p>
                 </div>
                 <a href="https://www.google.com/maps/dir//SMP+Negeri+1+Silaen/@2.390439,99.1989998,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3031ffdeb4e57f5d:0xe3202771e6ee8ebe!2m2!1d99.1989998!2d2.390439" target="_blank" class="btn btn-primary"><i class="fas fa-directions"></i> Dapatkan Arah</a>
             </div>

@@ -36,7 +36,7 @@
         </div>
         
 
-        <div class="row">
+        <div style="margin-bottom: 100px" class="row">
             @foreach($jumlah_siswa as $k)
             @if(request()->input('kelas') == null || request()->input('kelas') == $k->id_kelas)
             <div class="col-lg-4 col-md-6 mb-4">

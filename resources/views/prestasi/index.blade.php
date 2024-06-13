@@ -1,12 +1,6 @@
 @extends('layouts.frontend.app', ['title' => 'Prestasi'])
 
 @section('content')
-<section class="prestasi-hero">
-    <div class="container">
-        <h1 class="main-head animate__animated animate__fadeInDown">Pencapaian Gemilang</h1>
-        <p style="color: #f8f9fa" class="sub-text animate__animated animate__fadeInUp">Merayakan keberhasilan dan dedikasi siswa serta staf kami</p>
-    </div>
-</section>
 
 <section class="prestasi-overview">
     <div class="container">

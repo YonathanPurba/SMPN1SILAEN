@@ -7,28 +7,26 @@
 @if($pengumuman->count() > 0)
 <section class="up">
     <h1>Pengumuman</h1>
-    <p>Berikut adalah pengumuman terbaru dari SMP N1 Silaen</p>
+    <p>Berikut adalah pengumuman Terbaru dari SMPN 1 Silaen</p>
 </section>
 <section class="upcoming-events section-padding-100-0 mb-5">
     <div class="container">
         <div class="row mb-4">
             <div class="col-12">
-                <div class="d-flex justify-content-between align-items-center flex-wrap">
-                    <div class="section-heading mb-3 mb-md-0">
-                        <h2 class="head animate__animated animate__fadeInDown">Pengumuman Terbaru</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="section-heading">
+                        <h2 class="head animate_animated animate_fadeInDown">Pengumuman Terbaru</h2>
                     </div>
-                    <div class="w-100 w-md-auto">
-                        <input type="text" class="form-control" placeholder="Cari Pengumuman..." id="search-announcements">
+                    <div>
                     </div>
-                </div>
-            </div>
-        </div>
+                    </div>
+                <input style="margin-top:-30px" type="text" class="form-control" placeholder="Cari Pengumuman..." id="search-announcements">
+                    </div>
+                    </div>
 
         <div class="list-group" id="announcement-list">
             @foreach($pengumuman as $pn)
             <div class="list-group-item mb-4 shadow-sm wow fadeInUp" data-wow-delay="250ms">
-                <div class="d-flex align-items-center flex-wrap">
-                    <img class="img-thumbnail mr-3 mb-3 mb-md-0" style="height: 100px; width: 100px; object-fit: cover;" src="{{ $pn->image_url ?? asset('img/bg/bg-announcement.png') }}" alt="Event image">
                 <div class="d-flex align-items-center">
                     <img class="img-thumbnail mr-3" style="height: 100px; width: 100px; object-fit: cover;" src="{{ $pn->image_url ?? asset('img/bg/bg-announcement.png') }}" alt="Event image">
                     <div class="flex-grow-1">
@@ -73,11 +71,37 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <style>
-     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-    @import url("https://fonts.googleapis.com/css2?family=playfair display&family=Poppins:wght@300&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+    @media (max-width: 768px) {
+        .up {
+           max-width: 700px;
+           font-size: 
+        }
+
+        .map-info, .map-frame {
+            flex-basis: 100%;
+        }
+    }
+
+    .map-info {
+        text-align: left;
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+    @media (max-width: 768px) {
+        .map-info-container {
+            flex-direction: column;
+        }
+
+        .map-info,
+        .map-frame {
+            flex-basis: auto;
+        }
+    }
     .head {
-        font-family: "playfair display", serif;
-        font-size: 2rem;
+        font-family: "Allura", serif;
+        font-size: 3rem;
         color: #002c4c;
     }
 
@@ -85,18 +109,9 @@
         text-align: center;
         margin-top: 50px;
     }
-    .up h1{
-        font-family: playfair display;
-        font-size: 4rem;
-    }
-
-    .up p{
-        color: #ffffff;
-        font-size: 18px;
-    }
     .up h1 {
         font-family: "Allura", serif;
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     .up p {
@@ -152,30 +167,7 @@
     .animate__animated {
         animation-duration: 0.5s;
     }
-
-    @media (max-width: 768px) {
-        .head {
-            font-size: 2.5rem;
-        }
-        .up h1 {
-            font-size: 4rem;
-        }
-        .list-group-item {
-            padding: 1rem;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .up h1 {
-            font-size: 3rem;
-        }
-        .head {
-            font-size: 2rem;
-        }
-        .form-control {
-            width: 100%;
-        }
-    }
+    
 </style>
 
 <script>

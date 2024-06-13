@@ -46,7 +46,7 @@
             <div class="col-md-4 mb-4">
                 <div class="feature-card">
                     <i class="fas fa-book-reader fa-3x mb-3"></i>
-                    <h4>Perpustakaan Digital</h4>
+                    <h4>Perpustakaan lengkap</h4>
                     <p>Akses ke ribuan buku digital dan sumber belajar online untuk memperluas wawasan siswa.</p>
                 </div>
             </div>

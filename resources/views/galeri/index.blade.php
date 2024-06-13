@@ -9,10 +9,11 @@
         <!-- Judul Halaman -->
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="page-title">Galeri SMPN 1 Silaen</h1>
+                <h1 class="page-title">Galeri SMP N1 Silaen</h1>
                 <p class="page-subtitle">Jelajahi momen-momen berharga kami</p>
             </div>
         </div>
+
         <!-- Highlight Gallery -->
         <div class="row mt-5">
             <div class="col-12">
@@ -25,30 +26,6 @@
                                 <div class="highlight-overlay">
                                     <h3>{{ $highlight->judul }}</h3>
                                     <a href="{{ route('galeri.show', $highlight->slug) }}" class="btn-view">Lihat</a>
-        <!-- About Section -->
-        <div  class="row mt-5">
-            <div  class="col-12 text-center">
-                <div class="about-section">
-                    <h3 style="margin-top: -60px;margin-bottom:50px;font-family:allura;font-size:3rem;color:" class="animate__animated animate__fadeInDown">Tentang Galeri Kami</h3>
-                    <p style="background-color: #ffffff" class="animate__animated animate__fadeInDown">Galeri ini berisi berbagai foto dan video kegiatan siswa, event sekolah, dan momen-momen spesial yang terjadi di SMP N1 Silaen. Setiap gambar memiliki cerita tersendiri yang menggambarkan kebahagiaan dan semangat belajar para siswa.</p>
-                </div>
-            </div>
-        </div>
-        <!-- End About Section -->
-        <div class="row gallery">
-            @foreach($galeri as $art)
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate__animated animate__fadeInUp">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">{{ $art->judul }}</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="image-container">
-                                <img src="{{ asset('folderimage/' . $art->thumbnail) }}" class="card-img" alt="{{ $art->judul }}">
-                                <div class="overlay">
-                                    <div class="overlay-content">
-                                        <a href="{{ route('galeri.show', $art->slug) }}" class="btn">Selengkapnya</a>
-                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -61,7 +38,6 @@
         <div class="row mt-5">
             <div class="col-12">
                 <h2>Galeri kami</h2>
-                <div class="category-buttons">
                 
                 </div>
             </div>
