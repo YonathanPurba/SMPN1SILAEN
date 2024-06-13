@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=sans-serif&family=Poppins:wght@300&display=swap");
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,14 +16,14 @@
             padding: 0;
         }
         .head{
-            font-family: allura;
+            font-family: sans-serif;
             font-size: 5rem;
         }
 
         h1, h3, h4, h5 {
             color: #333;
             text-align: center;
-            font-family: "Allura", serif;
+            font-family: "sans-serif", serif;
         }
 
         .page-content, .page-contents {
@@ -165,7 +165,7 @@
                         <div class="page-content d-flex flex-column flex-lg-row">
                             <div class="image-container mb-4 mb-lg-0 me-lg-4 text-center">
                                 <img class="img-fluid uniform-image" src="/img/picture/imgL6.jpg" alt="Identitas Sekolah" style="max-height: 400px;"><br>
-                                <h3 class="mb-3" style="font-family: allura;font-size:3rem">Data Rinci</h3>
+                                <h3 class="mb-3" style="font-family: sans-serif;font-size:3rem">Data Rinci</h3>
                                 <p class="identitas-names mb-4" style="">
                                     Status BOS : Bersedia Menerima <br>
                                     Waktu Penyelenggaraan : Pagi <br>
@@ -178,7 +178,7 @@
                                 <img class="img-fluid uniform-image" src="/img/picture/imgL5.jpg" alt="Identitas Sekolah" style="max-height: 400px;width:540px">
                             </div>
                             <div class="text-container" style="margin-top: -100px">
-                                <h3 class="mb-3" style="font-family: allura;font-size:3rem">Identitas Sekolah</h3>
+                                <h3 class="mb-3" style="font-family: sans-serif;font-size:3rem">Identitas Sekolah</h3>
                                 <p class="identitas-names mb-4" style="text-align: center">
                                     NPSN                 : 10208496<br>
                                     Status               : Negeri  <br>
@@ -189,7 +189,7 @@
                                     SK Izin Operasional  : 420/2127.Disdikpora/2022<br>
                                 </p>
                                 <img src="/img/picture/imgL1.jpg" alt="Identitas Sekolah" style="max-height: 400px;"><br>
-                                <h3 class="mb-3" style="font-family: allura;font-size:3rem">Data Rinci</h3>
+                                <h3 class="mb-3" style="font-family: sans-serif;font-size:3rem">Data Rinci</h3>
                                 <p class="identitas-names" style="text-align: center">
                                     Kebutuhan Khusus Dilayani : Tidak ada <br>
                                     Nama Bank : BRI <br>
@@ -210,7 +210,7 @@
                     <div class="col-lg-10">
                         <table  class="table table-bordered">
                             <tr>
-                                <center><h2 style="font-family:allura;font-size:4rem">Rekapitulasi</h2>
+                                <center><h2 style="font-family:sans-serif;font-size:4rem">Rekapitulasi</h2>
                                     <p style="font-family: playfair display;font-size:1.2rem;">Situs resmi SMP Negeri 1 Silaen: informasi prestasi, kegiatan, dan profil sekolah. Segera akses untuk update terkini.</p></center>
                                 <th colspan="5" class="text-center bg-primary text-white">Data PTK dan PD</th>
                             </tr>
@@ -245,7 +245,7 @@
                         </table>
                         
 
-                        <p style="color: #FF6600;font-weight:bold;font-size:40px;font-family:allura">Keterangan:</p>
+                        <p style="color: #FF6600;font-weight:bold;font-size:40px;font-family:sans-serif">Keterangan:</p>
                         <ul>
                             <li style="color: #f5f5f5">Data Rekap Per Tanggal 11 Juni 2024</li>
                             <li style="color: #f5f5f5">Penghitungan PTK adalah yang sudah mendapat penugasan, berstatus aktif dan terdaftar di sekolah induk.</li>

@@ -7,7 +7,7 @@
 @if($pengumuman->count() > 0)
 <section class="up">
     <h1>Pengumuman</h1>
-    <p>Berikut adalah pengumuman Terbaru dari SMp N1 Silaen</p>
+    <p>Berikut adalah pengumuman terbaru dari SMP N1 Silaen</p>
 </section>
 <section class="upcoming-events section-padding-100-0 mb-5">
     <div class="container">
@@ -26,7 +26,7 @@
 
         <div class="list-group" id="announcement-list">
             @foreach($pengumuman as $pn)
-            <div class="list-group-item mb-4 shadow-sm wow fadeInUp" data-wow-delay="250ms" style="transition: transform 0.3s;">
+            <div class="list-group-item mb-4 shadow-sm wow fadeInUp" data-wow-delay="250ms">
                 <div class="d-flex align-items-center">
                     <img class="img-thumbnail mr-3" style="height: 100px; width: 100px; object-fit: cover;" src="{{ $pn->image_url ?? asset('img/bg/bg-announcement.png') }}" alt="Event image">
                     <div class="flex-grow-1">
@@ -78,17 +78,17 @@
         color: #002c4c;
     }
 
-    .up{
+    .up {
         text-align: center;
-    margin-top: 50px;
+        margin-top: 50px;
     }
-    .up h1{
-        font-family: allura;
+    .up h1 {
+        font-family: "Allura", serif;
         font-size: 6rem;
     }
 
-    .up p{
-        color: #ffffff;
+    .up p {
+        color: #002c4c;
         font-size: 20px;
         font-weight: bold;
     }

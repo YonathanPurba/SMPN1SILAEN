@@ -9,7 +9,6 @@
             <div class="col-12 text-center mb-4">
                 <div class="section-heading">
                     <h3 class="animate__animated animate__fadeInDown">Tenaga Pengajar Kami</h3>
-                    <p class="lead animate__animated animate__fadeInDown">Berkenalanlah dengan tenaga pengajar berpengalaman kami yang siap memberikan pendidikan terbaik.</p>
                 </div>
             </div>
         </div>
@@ -46,7 +45,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     font-size: 4rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    font-family: "Allura", serif;
+    font-family: sans-serif;
     color: #002c4c;
 }
 
