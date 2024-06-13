@@ -44,40 +44,40 @@
             background-color:#ffffff;
         }
 
-        .animation {
-            opacity: 0;
-            transform: translateX(-300px);
-            transition: all 0.7s ease-out;
-            transition-delay: 0.4s;
-        }
+    .animation {
+        opacity: 0;
+        transform: translateX(-300px);
+        transition: all 0.7s ease-out;
+        transition-delay: 0.4s;
+    }
 
         .scroll-animation {
             opacity: 1;
             transform: translateX(0);
         }
 
-        section {
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            text-align: center;
-            width: 100%;
-        } 
-        .imgcntn {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .map h3 {
-            font-size: 3rem; /* Adjusted for smaller screens */
-            font-family: 'Playfair Display';
-            color: #191a1b;
-        }
-        .imgcntn .item {
-            padding: 10px;
-            margin: 10px; 
-            padding-left: 20px
-        }
+    section {
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    } 
+    .imgcntn {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .map h3 {
+        font-size: 5rem; /* Adjusted for smaller screens */
+        font-family: "Allura", serif;
+        color: #191a1b;
+    }
+    .imgcntn .item {
+        padding: 10px;
+        margin: 10px; 
+        padding-left: 20px
+    }
 
         .imgcntn img {
             width: 100%;
@@ -462,30 +462,28 @@
 
 
 
-    <section class="map">
-        <h3 class="animation">Temukan Kami di Sini</h3>
-        <p class="animation map-description">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
-        <div class="map-container">
-            <div class="map-info-container">
-                <div class="map-info animation">
-                    <h4><i class="fas fa-map-marker-alt"></i> Informasi Lokasi:</h4>
-                    <div class="info-details">
-                        <p><i class="fas fa-school"></i> <strong>Nama Sekolah:</strong> SMP Negeri 1 Silaen</p>
-                        <p><i class="fas fa-map-marked-alt"></i> <strong>Alamat:</strong> Jl. Pelajar No. 123, Silaen</p>
-                        <p><i class="fas fa-phone-alt"></i> <strong>Kontak:</strong> 081234567890</p>
-                        <p><i class="fas fa-clock"></i> <strong>Jam Operasional:</strong> Senin - Jumat: 07.00 - 15.00</p>
-                        <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="http://www.smp1silaen.sch.id">www.smp1silaen.sch.id</a></p>
-                    </div>
-                    <a href="https://www.google.com/maps/dir//SMP+Negeri+1+Silaen/@2.390439,99.1989998,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3031ffdeb4e57f5d:0xe3202771e6ee8ebe!2m2!1d99.1989998!2d2.390439" target="_blank" class="btn btn-primary"><i class="fas fa-directions"></i> Dapatkan Arah</a>
+<section class="map">
+    <h3 class="animation">Temukan Kami di Sini</h3>
+    <p class="animation" style="max-width: 600px;text-align:center;font-size:1.1rem;position:relative;left:450px;margin-bottom:50px;color:#ffffff;font-weight:bold">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
+    <div class="map-container">
+        <div class="map-info-container">
+            <div class="map-info animation">
+                <h4><i class="fas fa-map-marker-alt"></i> Informasi Lokasi:</h4>
+                <div style="text-align: left;margin-left:150px;color:#ffffff" class="info-details">
+                    <p style="color: #ffffff"><i  class="fas fa-school"></i> <strong>Nama Sekolah:</strong> SMP Negeri 1 Silaen</p>
+                    <p style="color: #ffffff"><i class="fas fa-map-marked-alt"></i> <strong>Alamat:</strong> Jl. Pelajar No. 123, Silaen</p>
+                    <p style="color: #ffffff"><i class="fas fa-phone-alt"></i> <strong>Kontak:</strong> 081234567890</p>
+                    <p style="color: #ffffff"><i class="fas fa-clock"></i> <strong>Jam Operasional:</strong> Senin - Jumat: 07.00 - 15.00</p>
+                    <p style="color: #ffffff"><i class="fas fa-globe"></i> <strong>Website:</strong> <a style="color: #E68c3a;font-weight:bold" href="http://www.smp1silaen.sch.id">www.smp1silaen.sch.id</a></p>
                 </div>
-                <div class="map-frame animation">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.3463964763187!2d99.19899977472731!3d2.390438997588844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1717639446160!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+                <a href="https://www.google.com/maps/dir//SMP+Negeri+1+Silaen/@2.390439,99.1989998,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3031ffdeb4e57f5d:0xe3202771e6ee8ebe!2m2!1d99.1989998!2d2.390439" target="_blank" class="btn btn-primary"><i class="fas fa-directions"></i> Dapatkan Arah</a>
+            </div>
+            <div class="map-frame animation">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.3463964763187!2d99.19899977472731!3d2.390438997588844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031ffdeb4e57f5d%3A0xe3202771e6ee8ebe!2sSMP%20Negeri%201%20Silaen!5e0!3m2!1sid!2sid!4v1717639446160!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-    </section>
-
-    
+    </div>
+</section>
 
     <style>
 

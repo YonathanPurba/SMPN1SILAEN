@@ -32,7 +32,7 @@
     font-size: 4rem !important; /* Sesuaikan ukuran font yang Anda inginkan di sini */
     margin-bottom: 0.5rem;
     font-weight: bold;
-    font-family: "Allura", serif;
+    font-family: sans-serif;
     color: #002c4c;
 }
 

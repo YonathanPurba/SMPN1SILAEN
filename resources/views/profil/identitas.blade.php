@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=allura&family=Poppins:wght@300&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=sans-serif&family=Poppins:wght@300&display=swap");
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -196,6 +196,7 @@
                                 </p>
                                 <img src="/img/picture/imgL1.jpg" alt="Identitas Sekolah" style="max-height: 400px;"><br>
                                 <h3 class="mb-3" style="font-family: playfair display;font-size:3rem">Data Lainnya</h3>
+                                <h3 class="mb-3" style="font-family: sans-serif;font-size:3rem">Data Rinci</h3>
                                 <p class="identitas-names" style="text-align: center">
                                     Kebutuhan Khusus Dilayani : Tidak ada <br>
                                     Nama Bank : BRI <br>
@@ -249,8 +250,7 @@
                                 <td>525</td>
                             </tr>
                         </table>
-                        
-
+                    
                         <p style="color: #FF6600;font-weight:bold;font-size:40px;font-family:playfair display">Keterangan:</p>
                         <ul>
                             <li>Data Rekap Per Tanggal 11 Juni 2024</li>

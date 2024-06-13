@@ -7,7 +7,7 @@
 @if($pengumuman->count() > 0)
 <section class="up">
     <h1>Pengumuman</h1>
-    <p>Berikut adalah pengumuman Terbaru dari SMPN 1 Silaen</p>
+    <p>Berikut adalah pengumuman terbaru dari SMP N1 Silaen</p>
 </section>
 <section class="upcoming-events section-padding-100-0 mb-5">
     <div class="container">
@@ -29,6 +29,8 @@
             <div class="list-group-item mb-4 shadow-sm wow fadeInUp" data-wow-delay="250ms">
                 <div class="d-flex align-items-center flex-wrap">
                     <img class="img-thumbnail mr-3 mb-3 mb-md-0" style="height: 100px; width: 100px; object-fit: cover;" src="{{ $pn->image_url ?? asset('img/bg/bg-announcement.png') }}" alt="Event image">
+                <div class="d-flex align-items-center">
+                    <img class="img-thumbnail mr-3" style="height: 100px; width: 100px; object-fit: cover;" src="{{ $pn->image_url ?? asset('img/bg/bg-announcement.png') }}" alt="Event image">
                     <div class="flex-grow-1">
                         <h6 class="mb-2 text-muted"><i class="fas fa-calendar-alt"></i> {{ $pn->tgl }} | <i class="fas fa-user"></i> Oleh : {{ $pn->user->name }}</h6>
                         <h4 class="mb-2">{{ $pn->judul }}</h4>
@@ -79,7 +81,7 @@
         color: #002c4c;
     }
 
-    .up{
+    .up {
         text-align: center;
         margin-top: 50px;
     }
@@ -91,6 +93,15 @@
     .up p{
         color: #ffffff;
         font-size: 18px;
+    }
+    .up h1 {
+        font-family: "Allura", serif;
+        font-size: 6rem;
+    }
+
+    .up p {
+        color: #002c4c;
+        font-size: 20px;
         font-weight: bold;
     }
 

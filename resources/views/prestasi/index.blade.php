@@ -72,7 +72,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
-
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -89,6 +88,19 @@ body {
 .prestasi-hero {
     background: linear-gradient(rgba(0, 44, 76, 0.8), rgba(0, 44, 76, 0.8)), url('img/picture/imgL1.jpg') no-repeat center center/cover;
     color: #fff;
+}
+.main-head {
+    font-family: sans-serif;
+    font-size: 5rem;
+    color: #002c4c;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.head {
+    font-family: sans-serif;
+    font-size: 3rem;
+    color: #002c4c;
     text-align: center;
     padding: 6rem 0;
 }

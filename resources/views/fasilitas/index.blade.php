@@ -9,7 +9,6 @@
                 <p class="section-description">Kami menyediakan fasilitas modern dan inovatif untuk mendukung pembelajaran dan pengembangan potensi siswa.</p>
             </div>
         </div>
-
         <div class="row">
             @foreach ($fasilitas as $fasilitases)
             <div class="col-lg-4 col-md-6 mb-4">
@@ -26,7 +25,6 @@
             </div>
             @endforeach
         </div>
-
         <div class="row mt-5 feature-section">
             <div class="col-12 text-center mb-4">
                 <h2 class="feature-title">Keunggulan Fasilitas Kami</h2>

@@ -122,4 +122,16 @@ class UsersController extends Controller
         $user->delete();
         return redirect()->route('admin.users.index')->with('success','Data berhasil dihapus');
     }
+
+    // UserController.php
+
+public function checkEmail(Request $request)
+{
+    $email = $request->email;
+
+    $exists = User::where('email', $email)->exists();
+
+    return response()->json(['exists' => $exists]);
+}
+
 }
