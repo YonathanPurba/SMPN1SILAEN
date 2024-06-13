@@ -49,7 +49,10 @@
         transform: translateX(-300px);
         transition: all 0.7s ease-out;
         transition-delay: 0.4s;
+        font-family: sans-serif;
+
     }
+
 
     .scroll-animation {
         opacity: 1;
@@ -69,8 +72,7 @@
         justify-content: center;
     }
     .map h3 {
-        font-size: 5rem; /* Adjusted for smaller screens */
-        font-family: "Allura", serif;
+        font-size: 3rem; /* Adjusted for smaller screens */
         color: #191a1b;
     }
     .imgcntn .item {
@@ -334,7 +336,7 @@
 
 
 <section class="map">
-    <h3 class="animation">Temukan Kami di Sini</h3>
+    <h3 class="animation" >Temukan Kami di Sini</h3>
     <p class="animation" style="max-width: 600px;text-align:center;font-size:1.1rem;position:relative;left:450px;margin-bottom:50px;color:#ffffff;font-weight:bold">Mari mampir ke SMP Negeri 1 Silaen sesuai pada lokasi, kami sangat senang jika kalian datang.</p>
     <div class="map-container">
         <div class="map-info-container">

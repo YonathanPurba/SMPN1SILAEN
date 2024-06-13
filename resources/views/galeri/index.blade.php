@@ -27,7 +27,8 @@
         </div>
         <!-- End About Section -->
 
-        <!-- Gallery Section -->
+        <!-
+        - Gallery Section -->
         <div class="row gallery">
             @foreach($galeri as $art)
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate__animated animate__fadeInUp">

@@ -61,7 +61,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 
 .main-head {
-    font-family: "Allura", serif;
+    font-family: sans-serif;
     font-size: 5rem;
     color: #002c4c;
     margin-top: 30px;
@@ -69,7 +69,7 @@
 }
 
 .head {
-    font-family: "Allura", serif;
+    font-family: sans-serif;
     font-size: 3rem;
     color: #002c4c;
     text-align: center;
