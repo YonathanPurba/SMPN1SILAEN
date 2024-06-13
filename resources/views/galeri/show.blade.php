@@ -2,20 +2,21 @@
     'title' => 'Baca Galeri',
 ])
 @section('content')
-<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-100vh" style="background-image: url('{{ asset('folderimage/' . $galeri->thumbnail) }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="blog-details-headline text-center text-white">
-        <h3>{{ $galeri->judul }}</h3>
-    </div>
-</div>
-<!-- ##### Catagory Area End ##### -->
-
 <!-- ##### Blog Details Content ##### -->
 <div class="blog-details-content section-padding-100">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
-                <div class="blog-details-text">
-                    {!! $galeri->deskripsi !!}
+                <div class="galeri-image" style="background-image: url('{{ asset('folderimage/' . $galeri->thumbnail) }}');">
+                    <!-- You can adjust the width and height of this box as needed -->
+                </div>
+                <div class="galeri-info-box">
+                    <div class="galeri-info">
+                        <h3 class="text-center mt-4 galeri-title">{{ $galeri->judul }}</h3>
+                        <div class="mt-3 galeri-description">
+                            {!! $galeri->deskripsi !!}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,23 +31,42 @@
     color: #fff; /* Text color white for better visibility */
 }
 
-.clever-catagory.blog-details {
-    height: 100vh; /* Fullscreen height */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    /* Adjust overlay color and opacity as needed */
+.blog-details-content {
+    padding: 100px 0;
 }
 
-.blog-details-headline {
-    padding: 20px;
-}
-
-.blog-details-text {
-    color: #002c4c;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: aliceblue;
-    padding: 20px;
+.galeri-image {
+    width: 100%; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 10px;
+    margin-bottom: 20px;
+    /* Box shadow for a subtle effect */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the galeri info box */
+.galeri-info-box {
+    background-color: #fff; /* Putih */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Style for the title */
+.galeri-title {
+    color: #002c4c; /* Judul warna */
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style for the description */
+.galeri-description {
+    color: #002c4c; /* Deskripsi warna */
+    font-size: 18px;
+    line-height: 1.8;
 }
 </style>
-    
