@@ -7,7 +7,7 @@
 @if($pengumuman->count() > 0)
 <section class="up">
     <h1>Pengumuman</h1>
-    <p>Berikut adalah pengumuman Terbaru dari SMp N1 Silaen</p>
+    <p>Berikut adalah pengumuman Terbaru dari SMPN 1 Silaen</p>
 </section>
 <section class="upcoming-events section-padding-100-0 mb-5">
     <div class="container">
