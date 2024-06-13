@@ -18,6 +18,7 @@ use App\Http\Controllers\KepalaSekolahController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TenagaPengajarController;
 use App\Models\Ekstrakulikuler;
 use App\Models\Fasilitas;
@@ -153,6 +154,10 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']],function(){
 		Route::get('/jumlah_siswa/total_laki_laki', [JumlahSiswaController::class, 'totalLakiLaki'])->name('jumlah_siswa.total_laki_laki');
 
 		//Users
+		// web.php
+
+		Route::post('/users/check-email', [UsersController::class, 'checkEmail'])->name('users.checkEmail');
+
 
 		//Resource Controller
 		Route::resource('users','UsersController');
